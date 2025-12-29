@@ -1,0 +1,306 @@
+[
+    {
+        "id": "4c9a9eb5-b6f0-41db-913d-19105149dfb5",
+        "symbol": "RIAL_WALLET",
+        "title": "کیف پول ریالی",
+        "transactions": [
+            {
+                "transaction_id": "4e39e55d-39dc-4847-936f-278226bd502a",
+                "date": "2025-12-07T21:47:18.687769+00:00",
+                "type": "deposit",
+                "quantity": "1017536",
+                "price_per_unit": "1",
+                "category": "عیار آبان",
+                "comment": "انتقال سود سیو شده از عیار"
+            },
+            {
+                "transaction_id": "3a45c9f3-6ce3-414a-b882-767f853d4055",
+                "date": "2025-12-07T21:50:03.563885+00:00",
+                "type": "deposit",
+                "quantity": "721930",
+                "price_per_unit": "1",
+                "category": "",
+                "comment": "انتقال سود سیو شده از عیار"
+            },
+            {
+                "transaction_id": "569946e2-5d8d-4827-bf19-f3877fefbe54",
+                "date": "2025-12-07T21:52:18.970401+00:00",
+                "type": "deposit",
+                "quantity": "994062",
+                "price_per_unit": "1",
+                "category": "عیار آبان",
+                "comment": "انتقال سود سیو شده از عیار"
+            },
+            {
+                "transaction_id": "b4163df0-e411-4fc2-bdd8-b708c41f5258",
+                "date": "2025-12-10T12:00:00.000Z",
+                "type": "withdrawal",
+                "quantity": "2004643",
+                "price_per_unit": "1",
+                "category": "نوسان گیری",
+                "comment": "خرید 59 واحد عیار"
+            },
+            {
+                "transaction_id": "31cb6c30-170d-4b98-b0ac-622d8538eb0b",
+                "date": "2025-12-15T09:07:44.025Z",
+                "type": "withdrawal",
+                "quantity": "728885",
+                "category": "بدون دسته‌بندی",
+                "comment": "خرید عرضه اولیه "
+            },
+            {
+                "transaction_id": "c1215854-8ba1-4e1c-a549-3e0098156710",
+                "date": "2025-12-21T12:00:00.000Z",
+                "type": "deposit",
+                "quantity": "1980000",
+                "price_per_unit": "1",
+                "category": "خرید عرضه اولیه",
+                "comment": "فروش 55 واحد عیار"
+            },
+            {
+                "transaction_id": "94c81970-64db-47bb-9272-45706c34a09f",
+                "date": "2025-12-23T09:10:24.388Z",
+                "type": "deposit",
+                "quantity": "7800000",
+                "category": "بدون دسته‌بندی",
+                "comment": ""
+            },
+            {
+                "transaction_id": "77089716-24ae-41f5-bc95-07ea490e356e",
+                "date": "2025-12-23T09:11:35.724Z",
+                "type": "withdrawal",
+                "quantity": "7800000",
+                "category": "بدون دسته‌بندی",
+                "comment": ""
+            },
+            {
+                "transaction_id": "10cdef52-eb2f-4201-a775-b5cf18b0b72d",
+                "date": "2025-12-23T09:12:20.120Z",
+                "type": "deposit",
+                "quantity": "7915020.00",
+                "price_per_unit": "1",
+                "category": "فروش کل ",
+                "comment": "فروش 60.42 واحد دلار آمریکا"
+            },
+            {
+                "transaction_id": "e614f36d-5679-418d-91ac-b74159061c9c",
+                "date": "2025-12-23T09:12:59.675Z",
+                "type": "withdrawal",
+                "quantity": "100000",
+                "category": "بدون دسته‌بندی",
+                "comment": ""
+            },
+            {
+                "transaction_id": "65a28ada-a8ce-429f-9a52-b60277d83518",
+                "date": "2025-12-23T09:13:46.661Z",
+                "type": "withdrawal",
+                "quantity": "9787904",
+                "price_per_unit": "1",
+                "category": "خرید بلند مدت",
+                "comment": "خرید 256 واحد عیار"
+            },
+            {
+                "transaction_id": "a0b776ca-0b1a-48fd-a277-b52331a963d4",
+                "date": "2025-12-24T23:31:27.931Z",
+                "type": "deposit",
+                "quantity": "19999500",
+                "price_per_unit": "1",
+                "category": "",
+                "comment": "فروش 500 واحد عیار"
+            },
+            {
+                "transaction_id": "c9ba561d-efce-4ca8-91be-160d58bfa9bb",
+                "date": "2025-12-24T23:32:00.734Z",
+                "type": "withdrawal",
+                "quantity": "18000000",
+                "price_per_unit": "1",
+                "category": "",
+                "comment": "خرید 450 واحد عیار"
+            },
+            {
+                "transaction_id": "acf79bcb-ca53-4d40-9221-988d9496c7cd",
+                "date": "2025-12-27T09:33:08.229Z",
+                "type": "deposit",
+                "quantity": "537992",
+                "price_per_unit": "1",
+                "category": "",
+                "comment": "انتقال سود سیو شده از عیار"
+            },
+            {
+                "transaction_id": "fb0c8a8a-e847-42cb-aaa5-cd737dbebe7d",
+                "date": "2025-12-27T09:35:01.196Z",
+                "type": "withdrawal",
+                "quantity": "48309",
+                "category": "بدون دسته‌بندی",
+                "comment": ""
+            },
+            {
+                "transaction_id": "5a4cfbfb-fb0b-4c15-b60d-5012ad41f7f8",
+                "date": "2025-12-28T23:58:30.431Z",
+                "type": "deposit",
+                "quantity": "2765750",
+                "price_per_unit": "1",
+                "category": "",
+                "comment": "انتقال سود سیو شده از عیار"
+            }
+        ]
+    },
+    {
+        "id": "de97e994-c5c4-4898-b4c5-7cb9bbabcfeb",
+        "symbol": "USD",
+        "title": "دلار آمریکا",
+        "transactions": [
+            {
+                "transaction_id": "3dc0c0d4-b7e7-4ab6-a3ca-82956e3cf317",
+                "date": "2025-12-07T21:03:17.882130+00:00",
+                "type": "buy",
+                "quantity": "60.36",
+                "category": "دلار 1403",
+                "comment": "",
+                "price_per_unit": "60000"
+            },
+            {
+                "transaction_id": "1f6faa1d-50c8-4041-bab3-575692c0fbd2",
+                "date": "2025-12-23T09:12:20.120Z",
+                "type": "sell",
+                "quantity": "60.42",
+                "category": "فروش کل ",
+                "comment": "",
+                "price_per_unit": "131000"
+            }
+        ]
+    },
+    {
+        "id": "373aab70-2d83-4b61-9d45-8711da6aae9b",
+        "symbol": "AYAR",
+        "title": "عیار",
+        "transactions": [
+            {
+                "transaction_id": "fc2cf889-adea-432a-aeec-372df70ef6dc",
+                "date": "2025-12-07T21:45:44.612870+00:00",
+                "type": "buy",
+                "quantity": "336",
+                "category": "عیار آبان",
+                "comment": "",
+                "price_per_unit": "29716"
+            },
+            {
+                "transaction_id": "446e62fe-9f52-4232-9dcb-fcbf01c74467",
+                "date": "2025-12-07T21:46:21.645639+00:00",
+                "type": "buy",
+                "quantity": "270",
+                "category": "عیار آبان",
+                "comment": "",
+                "price_per_unit": "30586"
+            },
+            {
+                "transaction_id": "39bad917-f97a-4170-88ee-2de09167289d",
+                "date": "2025-12-07T21:47:18.687703+00:00",
+                "type": "save_profit",
+                "quantity": "32",
+                "category": "عیار آبان",
+                "comment": "",
+                "price_per_unit": "31798"
+            },
+            {
+                "transaction_id": "1260ffc6-6a5c-4fcf-98c0-a1b832f580e1",
+                "date": "2025-12-07T21:48:19.379465+00:00",
+                "type": "sell",
+                "quantity": "574",
+                "category": "عیار آبان",
+                "comment": "",
+                "price_per_unit": "31450"
+            },
+            {
+                "transaction_id": "28e52060-3540-4f52-8a0f-a7a37c362298",
+                "date": "2025-12-07T21:49:30.683151+00:00",
+                "type": "buy",
+                "quantity": "618",
+                "category": "",
+                "comment": "",
+                "price_per_unit": "31680"
+            },
+            {
+                "transaction_id": "adaa67ad-5645-402e-bab9-ecbcf2204547",
+                "date": "2025-12-07T21:50:03.563801+00:00",
+                "type": "save_profit",
+                "quantity": "22",
+                "category": "",
+                "comment": "",
+                "price_per_unit": "32815"
+            },
+            {
+                "transaction_id": "fb8e743d-69f5-41a3-84d6-0fdee9ac9108",
+                "date": "2025-12-07T21:52:18.970341+00:00",
+                "type": "save_profit",
+                "quantity": "29",
+                "category": "عیار آبان",
+                "comment": "",
+                "price_per_unit": "34278"
+            },
+            {
+                "transaction_id": "8b9ce296-dcbb-4a7a-a3ca-7efa18a45f68",
+                "date": "2025-12-10T12:00:00.000Z",
+                "type": "buy",
+                "quantity": "59",
+                "category": "نوسان گیری",
+                "comment": "",
+                "price_per_unit": "33977"
+            },
+            {
+                "transaction_id": "b129aeb3-9a12-490c-9634-004cedf4885b",
+                "date": "2025-12-21T12:00:00.000Z",
+                "type": "sell",
+                "quantity": "55",
+                "category": "خرید عرضه اولیه",
+                "comment": "",
+                "price_per_unit": "36000"
+            },
+            {
+                "transaction_id": "06c6e21c-fe7b-4eb9-ae14-5bcf4336dca4",
+                "date": "2025-12-23T09:13:46.661Z",
+                "type": "buy",
+                "quantity": "256",
+                "category": "خرید بلند مدت",
+                "comment": "",
+                "price_per_unit": "38234"
+            },
+            {
+                "transaction_id": "a01780b2-8c32-40c4-841d-a6a7a19a6076",
+                "date": "2025-12-24T23:31:27.931Z",
+                "type": "sell",
+                "quantity": "500",
+                "category": "",
+                "comment": "",
+                "price_per_unit": "39999"
+            },
+            {
+                "transaction_id": "15279631-6b83-4e40-89f1-5e8f9ce3b574",
+                "date": "2025-12-24T23:32:00.734Z",
+                "type": "buy",
+                "quantity": "450",
+                "category": "",
+                "comment": "",
+                "price_per_unit": "40000"
+            },
+            {
+                "transaction_id": "9bdc4511-40e5-4796-8c06-ee2181ccf47c",
+                "date": "2025-12-27T09:33:08.229Z",
+                "type": "save_profit",
+                "quantity": "13",
+                "category": "",
+                "comment": "",
+                "price_per_unit": "41384"
+            },
+            {
+                "transaction_id": "d11ede1a-fa87-484e-8b88-3e4012bf78b9",
+                "date": "2025-12-28T23:58:30.431Z",
+                "type": "save_profit",
+                "quantity": "65",
+                "category": "",
+                "comment": "",
+                "price_per_unit": "42550"
+            }
+        ]
+    }
+]

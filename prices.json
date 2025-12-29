@@ -1,0 +1,293 @@
+{
+    "currency": [
+        {
+            "symbol": "USD",
+            "title": "دلار آمریکا",
+            "price": 124050.0
+        },
+        {
+            "symbol": "EUR",
+            "title": "یورو",
+            "price": 144460.0
+        },
+        {
+            "symbol": "GBP",
+            "title": "پوند انگلیس",
+            "price": 165540.0
+        },
+        {
+            "symbol": "AED",
+            "title": "درهم امارات",
+            "price": 34110.0
+        },
+        {
+            "symbol": "CNY",
+            "title": "یوان چین",
+            "price": 17550.0
+        },
+        {
+            "symbol": "TRY",
+            "title": "لیر ترکیه",
+            "price": 2915.0
+        },
+        {
+            "symbol": "RUB",
+            "title": "روبل روسیه",
+            "price": 1615.0
+        },
+        {
+            "symbol": "CAD",
+            "title": "دلار کانادا",
+            "price": 89720.0
+        },
+        {
+            "symbol": "CHF",
+            "title": "فرانک سوئیس",
+            "price": 154310.0
+        },
+        {
+            "symbol": "OMR",
+            "title": "ریال عمان",
+            "price": 323220.0
+        },
+        {
+            "symbol": "NOK",
+            "title": "کرون نروژ",
+            "price": 12280.0
+        },
+        {
+            "symbol": "AZN",
+            "title": "منات آذربایجان",
+            "price": 72800.0
+        },
+        {
+            "symbol": "DKK",
+            "title": "کرون دانمارک",
+            "price": 19340.0
+        },
+        {
+            "symbol": "MYR",
+            "title": "رینگیت مالزی",
+            "price": 30170.0
+        },
+        {
+            "symbol": "AFN",
+            "title": "افغانی",
+            "price": 1875.0
+        },
+        {
+            "symbol": "KWD",
+            "title": "دینار کویت",
+            "price": 404110.0
+        },
+        {
+            "symbol": "SEK",
+            "title": "کرون سوئد",
+            "price": 13200.0
+        },
+        {
+            "symbol": "AUD",
+            "title": "دلار استرالیا",
+            "price": 82430.0
+        },
+        {
+            "symbol": "THB",
+            "title": "بات تایلند",
+            "price": 3890.0
+        },
+        {
+            "symbol": "SGD",
+            "title": "دلار سنگاپور",
+            "price": 95750.0
+        },
+        {
+            "symbol": "JPY",
+            "title": "۱۰ ین ژاپن",
+            "price": 8000.0
+        },
+        {
+            "symbol": "MEXUSD",
+            "title": "دلار صرافی ملی",
+            "price": 73391.7
+        },
+        {
+            "symbol": "INR",
+            "title": "روپیه هند",
+            "price": 1380.0
+        }
+    ],
+    "gold_coin": [
+        {
+            "symbol": "EMAMI1",
+            "title": "سکه امامی",
+            "price": 131900000.0
+        },
+        {
+            "symbol": "GOL18",
+            "title": "گرم طلا",
+            "price": 12689180.0
+        },
+        {
+            "symbol": "OUNCE",
+            "title": "انس طلا",
+            "price": 4197.0
+        },
+        {
+            "symbol": "MITHQAL",
+            "title": "مثقال طلا",
+            "price": 54967000.0
+        },
+        {
+            "symbol": "AZADI1_4",
+            "title": "ربع سکه",
+            "price": 39600000.0
+        },
+        {
+            "symbol": "AZADI1_2",
+            "title": "نیم سکه",
+            "price": 69800000.0
+        },
+        {
+            "symbol": "AZADI1",
+            "title": "تمام سکه",
+            "price": 125500000.0
+        },
+        {
+            "symbol": "AZADI1G",
+            "title": "سکه ۱ گرمی",
+            "price": 18600000.0
+        },
+        {
+            "symbol": "AYAR",
+            "title": "عیار",
+            "price": 355106.0
+        }
+    ],
+    "crypto": [
+        {
+            "symbol": "USDT",
+            "title": "تتر",
+            "price": 124390.0
+        },
+        {
+            "symbol": "BITCOIN",
+            "title": "بیت کوین",
+            "price": 91334.24859257
+        },
+        {
+            "symbol": "XRP",
+            "title": "ریپل",
+            "price": 2.08629564
+        },
+        {
+            "symbol": "ETH",
+            "title": "اتریوم",
+            "price": 3137.69237574
+        },
+        {
+            "symbol": "BNB",
+            "title": "بایننس کوین",
+            "price": 903.01166157
+        },
+        {
+            "symbol": "TRX",
+            "title": "ترون",
+            "price": 0.28695512
+        },
+        {
+            "symbol": "BCH",
+            "title": "بیت کوین کش",
+            "price": 596.94209426
+        },
+        {
+            "symbol": "DOGE",
+            "title": "دوج کوین",
+            "price": 0.14194949
+        },
+        {
+            "symbol": "LTC",
+            "title": "لایت کوین",
+            "price": 83.08701946
+        },
+        {
+            "symbol": "SOL",
+            "title": "سولانا",
+            "price": 135.82628277
+        },
+        {
+            "symbol": "XMR",
+            "title": "مونرو",
+            "price": 375.81196719
+        },
+        {
+            "symbol": "DASH",
+            "title": "دش",
+            "price": 45.90107769
+        },
+        {
+            "symbol": "EOS",
+            "title": "ایاس",
+            "price": 0.18119672
+        },
+        {
+            "symbol": "TON",
+            "title": "تون کوین",
+            "price": 1.67009812
+        },
+        {
+            "symbol": "DOT",
+            "title": "پولکادات",
+            "price": 2.14613157
+        },
+        {
+            "symbol": "ADA",
+            "title": "کاردانو",
+            "price": 0.43252373
+        },
+        {
+            "symbol": "AVAX",
+            "title": "اوالانچ",
+            "price": 13.77979733
+        },
+        {
+            "symbol": "FIL",
+            "title": "فایل کوین",
+            "price": 1.49059032
+        },
+        {
+            "symbol": "XLM",
+            "title": "استلار",
+            "price": 0.24256072
+        },
+        {
+            "symbol": "SHIB",
+            "title": "شیبا اینو",
+            "price": 8.51e-06
+        },
+        {
+            "symbol": "VET",
+            "title": "وی چین",
+            "price": 0.01262667
+        },
+        {
+            "symbol": "LINK",
+            "title": "چین لینک",
+            "price": 14.09264919
+        },
+        {
+            "symbol": "MATIC",
+            "title": "متیک - پولیگان",
+            "price": 0.17727885
+        },
+        {
+            "symbol": "ATOM",
+            "title": "کازموس",
+            "price": 2.23315104
+        },
+        {
+            "symbol": "UNI",
+            "title": "یونی سواپ",
+            "price": 5.64138652
+        }
+    ]
+}

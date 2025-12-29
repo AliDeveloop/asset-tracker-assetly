@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استزلی | Assetly</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <!-- Custom Font (Vazirmatn) -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* اعمال فونت Vazirmatn روی همه اجزا */
+        * {
+            font-family: 'Vazirmatn', sans-serif !important;
+        }
+        
+        /* استایل‌های پایه */
+        body { 
+            background-color: #0d1117; 
+            color: #c9d1d9;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0); 
+            background-size: 25px 25px; 
+            min-height: 100vh;
+        }
+        
+        /* برای اطمینان از اعمال فونت */
+        input, select, textarea, button, table, th, td, span, p, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Vazirmatn', sans-serif !important;
+        }
+        
+        /* برای اعداد */
+        .font-mono {
+            font-family: 'Vazirmatn', monospace !important;
+        }
+        
+        /* اسکرول بار */
+        ::-webkit-scrollbar { width: 6px; height: 6px; } 
+        ::-webkit-scrollbar-track { background: #0d1117; } 
+        ::webkit-scrollbar-corner { background: #0d1117; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; } 
+        ::-webkit-scrollbar-thumb:hover { background: #4f5861; }
+        
+        /* کلاس‌های کمکی */
+        .card { background-color: #161b22; border: 1px solid #30363d; }
+        .success { color: #34d399; }
+        .danger { color: #f87171; }
+        
+        /* استایل برای کشویی‌ها */
+        .category-toggle {
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .category-toggle:focus {
+            outline: none;
+        }
+        
+        .category-toggle svg {
+            transition: transform 0.3s ease;
+        }
+        
+        /* اسکرول بار برای کشویی‌ها */
+        #gold_coin-prices::-webkit-scrollbar,
+        #currency-prices::-webkit-scrollbar,
+        #crypto-prices::-webkit-scrollbar {
+            width: 3px;
+        }
+        
+        /* استایل‌های جدید برای مودال‌های ریسپانسیو */
+        .modal-container {
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 100%;
+        }
+        
+        .modal-content {
+            width: 95%;
+            max-width: 500px;
+            margin: auto;
+        }
+        
+        @media (min-width: 640px) {
+            .modal-content {
+                width: 90%;
+                max-width: 550px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .modal-content {
+                width: 85%;
+                max-width: 600px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .modal-content {
+                width: 80%;
+                max-width: 650px;
+            }
+        }
+        
+        /* برای مودال تحلیل (بزرگ‌تر) */
+        .comparison-modal-content {
+            width: 98%;
+            max-width: 98vw;
+            margin: auto;
+        }
+        
+        @media (min-width: 640px) {
+            .comparison-modal-content {
+                width: 95%;
+                max-width: 95vw;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-modal-content {
+                width: 92%;
+                max-width: 92vw;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .comparison-modal-content {
+                width: 90%;
+                max-width: 90vw;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .comparison-modal-content {
+                width: 85%;
+                max-width: 85vw;
+            }
+        }
+        
+        /* اسکرول عمودی برای مودال‌ها */
+        .modal-scroll {
+            max-height: 65vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .modal-scroll {
+                max-height: 70vh;
+            }
+        }
+        
+        /* انیمیشن برای مودال */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-fade {
+            animation: fadeIn 0.2s ease-out;
+        }
+        
+        .modal-slide {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        /* استایل برای دکمه‌های عملیات */
+        .action-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-1px);
+        }
+        
+        /* استایل برای inputهای date در موبایل */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        
+        /* بهبود نمایش dropdownها در موبایل */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9d1d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 0.5rem center;
+            background-size: 1.2em;
+            padding-left: 2.5rem;
+        }
+        
+        /* بهبود نمایش جداول در موبایل */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* استایل برای کارت‌های قدرت خرید */
+        .purchase-card {
+            transition: all 0.3s ease;
+        }
+        
+        .purchase-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* بهبود نمایش فرم‌ها در موبایل */
+        .form-input-mobile {
+            font-size: 16px !important; /* جلوگیری از زوم در iOS */
+        }
+        
+        /* استایل برای اسکرول‌بار مودال */
+        .modal-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .modal-scroll::-webkit-scrollbar-track {
+            background: #161b22;
+        }
+        
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: #4f5861;
+            border-radius: 2px;
+        }
+        
+        /* استایل برای دکمه کشویی قدرت خرید */
+        .purchase-toggle {
+            transition: all 0.3s ease;
+        }
+        
+        .purchase-toggle.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .purchase-toggle.inactive {
+            background-color: #374151;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="p-3 sm:p-4 md:p-6">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-200">Assetly | مدیریت حرفه ای پورتفوی</h1>
+            <div class="flex flex-wrap gap-2 sm:gap-3 w-full sm:w-auto">
+                <button onclick="openComparisonModal()" class="flex-1 sm:flex-none bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
+                    📊 تحلیل ارزش
+                </button>
+                <button id="add-transaction-btn" class="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
+                    + ثبت تراکنش
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+            
+            <!-- A. Portfolio Summary & Chart (Main Column) -->
+            <div class="lg:col-span-9 space-y-4 sm:space-y-6">
+                
+                <!-- Summary Cards -->
+                <div id="summary-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Total Value Card -->
+                    <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl purchase-card">
+                        <p class="text-sm text-gray-400 mb-2">ارزش کل پورتفوی (تومان)</p>
+                        <p id="total-value" class="text-2xl sm:text-3xl font-extrabold text-white">در حال بارگذاری...</p>
+                        <span id="total-profit-pct" class="text-sm mt-1 flex items-center"></span>
+                    </div>
+
+                    <!-- Total Profit/Loss Card -->
+                    <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl purchase-card">
+                        <p class="text-sm text-gray-400 mb-2">سود / زیان خالص (تومان)</p>
+                        <p id="total-profit" class="text-2xl sm:text-3xl font-extrabold text-white">در حال بارگذاری...</p>
+                        <span class="text-xs text-gray-500 mt-1">از ابتدای فعالیت</span>
+                    </div>
+
+                    <!-- Rial Wallet Card -->
+                    <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl purchase-card">
+                        <p class="text-sm text-gray-400 mb-2">کیف پول ریالی (موجودی خالص)</p>
+                        <p id="rial-wallet-balance" class="text-2xl sm:text-3xl font-extrabold text-white">در حال بارگذاری...</p>
+                        <button onclick="openWalletModal()" class="text-blue-400 text-sm mt-1 hover:text-blue-300 transition duration-200">
+                            مدیریت واریز / برداشت
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Daily Profit/Loss Section -->
+                <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h2 class="text-lg font-semibold mb-3 text-gray-200">📈 عملکرد روزانه</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                        <!-- سود/زیان روزانه (تومان) -->
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">سود/زیان امروز</p>
+                            <p id="daily-profit-toman" class="text-xl sm:text-2xl font-bold text-white">-</p>
+                        </div>
+                        
+                        <!-- درصد سود/زیان روزانه -->
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">درصد تغییر امروز</p>
+                            <p id="daily-profit-percent" class="text-xl sm:text-2xl font-bold text-white">-</p>
+                        </div>
+                        
+                        <!-- ارزش کل در پایان روز قبل -->
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">ارزش دیروز</p>
+                            <p id="yesterday-value" class="text-xl sm:text-2xl font-bold text-white">-</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <button onclick="showDailyHistory()" class="text-blue-400 text-sm hover:text-blue-300 transition duration-200">
+                            مشاهده تاریخچه عملکرد روزانه
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Purchase Power Box -->
+                <div class="card p-4 rounded-xl shadow-xl">
+                    <div class="flex justify-between items-center mb-3">
+                        <h2 class="text-lg font-semibold text-gray-200">💰 قدرت خرید</h2>
+                        <div class="relative inline-block w-32">
+                            <!-- Toggle Switch -->
+                            <div class="flex items-center bg-gray-700 rounded-full p-1">
+                                <button id="purchase-mode-balance" 
+                                        class="flex-1 py-1 px-2 text-xs rounded-full transition-all duration-200 bg-blue-600 text-white purchase-toggle active">
+                                    کیف ریالی
+                                </button>
+                                <button id="purchase-mode-portfolio" 
+                                        class="flex-1 py-1 px-2 text-xs rounded-full transition-all duration-200 text-gray-300 purchase-toggle inactive">
+                                    کل پورتفو
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="purchase-power-box" class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg purchase-card">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-2">
+                                    <span class="text-white text-sm">$</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-300">دلار آمریکا</p>
+                                    <p id="usd-purchase" class="text-xs text-gray-500">در حال محاسبه...</p>
+                                </div>
+                            </div>
+                            <span id="usd-amount" class="font-mono text-white text-sm sm:text-base">-</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg purchase-card">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center mr-2">
+                                    <span class="text-white text-sm">G</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-300">گرم طلا</p>
+                                    <p id="gold-purchase" class="text-xs text-gray-500">در حال محاسبه...</p>
+                                </div>
+                            </div>
+                            <span id="gold-amount" class="font-mono text-white text-sm sm:text-base">-</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg purchase-card">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
+                                    <span class="text-white text-sm">₿</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-300">بیت‌کوین</p>
+                                    <p id="btc-purchase" class="text-xs text-gray-500">در حال محاسبه...</p>
+                                </div>
+                            </div>
+                            <span id="btc-amount" class="font-mono text-white text-sm sm:text-base">-</span>
+                        </div>
+                    </div>
+                    <p id="purchase-power-info" class="text-xs text-gray-500 mt-3 text-center">با کل موجودی کیف پول ریالی</p>
+                </div>
+
+                <!-- Performance Chart -->
+                <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-200">نمودار عملکرد پورتفوی</h2>
+                    <div class="h-64 sm:h-80 md:h-96">
+                        <canvas id="portfolioChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Assets Table -->
+                <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-200">دارایی‌های اسپات</h2>
+                    <div class="table-responsive">
+                        <table class="min-w-full divide-y divide-gray-700">
+                            <thead>
+                                <tr class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">نام دارایی (دسته)</th>
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">قیمت سر به سر</th>
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">قیمت لحظه‌ای</th>
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">موجودی</th>
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">ارزش کل</th>
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">سود / زیان</th>
+                                    <th class="px-2 py-2 sm:px-3 sm:py-3 text-center">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="assets-table-body" class="divide-y divide-gray-800">
+                                <tr><td colspan="7" class="py-4 text-center text-gray-500">در حال بارگذاری دارایی‌ها...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- B. Live Prices Sidebar (Side Column) -->
+            <div class="lg:col-span-3 space-y-4 sm:space-y-6">
+                <div class="card p-4 rounded-xl shadow-xl sticky top-4">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-200">قیمت‌های لحظه‌ای (تومان)</h2>
+                    <p id="last-updated" class="text-xs text-gray-500 mb-4">آخرین بروزرسانی: -</p>
+                    
+                    <!-- نمایش قیمت دارایی‌های موجود در پورتفو -->
+                    <div id="portfolio-prices" class="mb-6">
+                        <h3 class="text-lg font-medium mb-3 text-blue-400 border-b border-gray-700 pb-2">دارایی‌های پورتفو</h3>
+                        <div id="portfolio-prices-list" class="space-y-3">
+                            <p class="text-gray-500 text-sm text-center py-2">در حال بارگذاری...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- کشویی‌ها -->
+                    <div class="space-y-4">
+                        <!-- طلا و سکه -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="category-toggle w-full text-right p-3 bg-gray-800 hover:bg-gray-700 transition duration-200 flex justify-between items-center" data-category="gold_coin">
+                                <span class="font-medium text-gray-200">طلا و سکه</span>
+                                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="gold_coin-prices" class="hidden p-3 bg-gray-900 space-y-2 max-h-60 overflow-y-auto">
+                                <!-- محتوای طلا و سکه -->
+                            </div>
+                        </div>
+                        
+                        <!-- ارز -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="category-toggle w-full text-right p-3 bg-gray-800 hover:bg-gray-700 transition duration-200 flex justify-between items-center" data-category="currency">
+                                <span class="font-medium text-gray-200">ارز</span>
+                                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="currency-prices" class="hidden p-3 bg-gray-900 space-y-2 max-h-60 overflow-y-auto">
+                                <!-- محتوای ارز -->
+                            </div>
+                        </div>
+                        
+                        <!-- ارز دیجیتال -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="category-toggle w-full text-right p-3 bg-gray-800 hover:bg-gray-700 transition duration-200 flex justify-between items-center" data-category="crypto">
+                                <span class="font-medium text-gray-200">ارز دیجیتال</span>
+                                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="crypto-prices" class="hidden p-3 bg-gray-900 space-y-2 max-h-60 overflow-y-auto">
+                                <!-- محتوای ارز دیجیتال -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- 1. Transaction Modal -->
+    <div id="transaction-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+        <div class="modal-container">
+            <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-white">ثبت تراکنش</h3>
+                    <button type="button" data-close-modal="transaction-modal" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- نمایش موجودی کیف پول -->
+                <div id="wallet-balance-display" class="mb-4 p-3 bg-gray-800 rounded-lg hidden">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-300">موجودی کیف پول:</span>
+                        <span id="current-wallet-balance" class="font-mono text-green-400 text-sm sm:text-base"></span>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-400">
+                        <span id="purchase-power-info-modal"></span>
+                    </div>
+                </div>
+                
+                <div class="modal-scroll">
+                    <form id="transaction-form">
+                        <div class="space-y-3 sm:space-y-4">
+                            
+                            <!-- Transaction Type -->
+                            <div>
+                                <label for="tx-type" class="block text-sm font-medium mb-1">نوع تراکنش</label>
+                                <select id="tx-type" name="type" required class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">انتخاب کنید</option>
+                                    <option value="buy">خرید (Buy)</option>
+                                    <option value="sell">فروش (Sell)</option>
+                                    <option value="save_profit">سیو سود (Save Profit)</option>
+                                    <option value="deposit">واریز به کیف ریالی (Deposit)</option>
+                                    <option value="withdrawal">برداشت از کیف ریالی (Withdrawal)</option>
+                                </select>
+                            </div>
+
+                            <!-- Manual Date Input -->
+                            <div>
+                                <label for="tx-date" class="block text-sm font-medium mb-1">تاریخ تراکنش</label>
+                                <div class="flex space-x-2 space-x-reverse">
+                                    <input type="date" id="tx-date" name="date" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                                    <button type="button" id="reset-date" class="px-3 text-sm rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200 whitespace-nowrap">امروز</button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">خالی بگذارید برای تاریخ فعلی</p>
+                            </div>
+
+                            <!-- Asset Type (Hidden for Deposit/Withdrawal) -->
+                            <div id="asset-type-group">
+                                <label for="asset-type" class="block text-sm font-medium mb-1">نوع دارایی</label>
+                                <select id="asset-type" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">انتخاب کنید</option>
+                                    <option value="crypto">ارز دیجیتال</option>
+                                    <option value="gold_coin">طلا و سکه</option>
+                                    <option value="currency">ارز</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Asset Name/Symbol (Hidden for Deposit/Withdrawal) -->
+                            <div id="asset-name-group">
+                                <label for="asset-name" class="block text-sm font-medium mb-1">نام دارایی / نماد</label>
+                                <select id="asset-name" name="symbol" required disabled class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">...</option>
+                                </select>
+                            </div>
+
+                            <!-- Category -->
+                            <div id="category-group">
+                                <label for="tx-category" class="block text-sm font-medium mb-1">دسته بندی سفارش</label>
+                                <input type="text" id="tx-category" name="category" placeholder="مثلاً: خرید اول، نوسان‌گیری..." class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Quantity -->
+                            <div>
+                                <label for="tx-quantity" class="block text-sm font-medium mb-1"><span id="quantity-label">مقدار</span></label>
+                                <input type="number" step="any" id="tx-quantity" name="quantity" required placeholder="مقدار" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Price Per Unit (Hidden for Deposit/Withdrawal) -->
+                            <div id="price-per-unit-group">
+                                <label for="tx-price" class="block text-sm font-medium mb-1">قیمت واحد (به تومان)</label>
+                                <input type="number" step="any" id="tx-price" name="price_per_unit" placeholder="قیمت واحد به تومان" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Comment -->
+                            <div id="comment-group">
+                                <label for="tx-comment" class="block text-sm font-medium mb-1">کامنت / توضیحات</label>
+                                <textarea id="tx-comment" name="comment" rows="2" placeholder="جزئیات این تراکنش (اختیاری)" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div id="tx-message" class="text-sm mt-3 hidden"></div>
+
+                        <div class="mt-6 flex justify-end space-x-3 space-x-reverse">
+                            <button type="button" data-close-modal="transaction-modal" class="py-2 px-4 rounded-lg text-gray-400 hover:text-white transition duration-200">لغو</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">ثبت</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. History Modal -->
+    <div id="history-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+        <div class="modal-container">
+            <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h3 id="history-title" class="text-lg sm:text-xl font-bold text-white">تاریخچه تراکنش‌ها</h3>
+                    <button type="button" data-close-modal="history-modal" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-scroll">
+                    <div class="table-responsive">
+                        <table class="min-w-full divide-y divide-gray-700 text-xs sm:text-sm">
+                            <thead class="sticky top-0 bg-gray-800">
+                                <tr class="text-gray-400 uppercase tracking-wider">
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">تاریخ</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">نوع (دسته)</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">مقدار</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت واحد</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">کامنت</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-center">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table-body" class="divide-y divide-gray-800">
+                                <!-- History transactions will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button type="button" data-close-modal="history-modal" class="py-2 px-4 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Wallet Management Modal -->
+    <div id="wallet-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+        <div class="modal-container">
+            <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl modal-slide">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-white">مدیریت کیف پول ریالی</h3>
+                    <button type="button" data-close-modal="wallet-modal" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="wallet-current-balance" class="mb-4 text-center text-xl sm:text-2xl font-bold text-green-400">موجودی: -</div>
+                <p class="text-gray-400 mb-4 text-sm text-right">برای ثبت واریز یا برداشت از کیف پول، لطفاً از فرم ثبت تراکنش استفاده کنید. این بخش فقط برای اطلاع‌رسانی است.</p>
+                <div class="mt-6 flex justify-end">
+                    <button type="button" data-close-modal="wallet-modal" class="py-2 px-4 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Edit Transaction Modal -->
+    <div id="edit-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+        <div class="modal-container">
+            <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-white">ویرایش تراکنش</h3>
+                    <button type="button" data-close-modal="edit-modal" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-scroll">
+                    <form id="edit-form">
+                        <input type="hidden" id="edit-transaction-id">
+                        <input type="hidden" id="edit-asset-id">
+                        
+                        <div class="space-y-3 sm:space-y-4">
+                            <!-- Transaction Type (Readonly for save_profit) -->
+                            <div>
+                                <label for="edit-tx-type" class="block text-sm font-medium mb-1">نوع تراکنش</label>
+                                <select id="edit-tx-type" name="type" required disabled class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white">
+                                    <option value="buy">خرید (Buy)</option>
+                                    <option value="sell">فروش (Sell)</option>
+                                    <option value="save_profit">سیو سود (Save Profit)</option>
+                                    <option value="deposit">واریز (Deposit)</option>
+                                    <option value="withdrawal">برداشت (Withdrawal)</option>
+                                </select>
+                            </div>
+
+                            <!-- Date Input -->
+                            <div>
+                                <label for="edit-tx-date" class="block text-sm font-medium mb-1">تاریخ تراکنش</label>
+                                <input type="date" id="edit-tx-date" name="date" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Asset Name (Readonly) -->
+                            <div id="edit-asset-name-group">
+                                <label class="block text-sm font-medium mb-1">نام دارایی</label>
+                                <p id="edit-asset-name" class="p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white"></p>
+                            </div>
+
+                            <!-- Category -->
+                            <div>
+                                <label for="edit-tx-category" class="block text-sm font-medium mb-1">دسته بندی سفارش</label>
+                                <input type="text" id="edit-tx-category" name="category" placeholder="دسته بندی" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Quantity -->
+                            <div>
+                                <label for="edit-tx-quantity" class="block text-sm font-medium mb-1">مقدار</label>
+                                <input type="number" step="any" id="edit-tx-quantity" name="quantity" required class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Price Per Unit (for buy/sell/save_profit) -->
+                            <div id="edit-price-per-unit-group">
+                                <label for="edit-tx-price" class="block text-sm font-medium mb-1">قیمت واحد (تومان)</label>
+                                <input type="number" step="any" id="edit-tx-price" name="price_per_unit" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <!-- Comment -->
+                            <div>
+                                <label for="edit-tx-comment" class="block text-sm font-medium mb-1">کامنت / توضیحات</label>
+                                <textarea id="edit-tx-comment" name="comment" rows="2" class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                        </div>
+
+                        <div id="edit-message" class="text-sm mt-3 hidden"></div>
+
+                        <div class="mt-6 flex justify-end space-x-3 space-x-reverse">
+                            <button type="button" data-close-modal="edit-modal" class="py-2 px-4 rounded-lg text-gray-400 hover:text-white transition duration-200">لغو</button>
+                            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">ذخیره تغییرات</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Comparison Modal -->
+    <div id="comparison-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+        <div class="modal-container">
+            <div class="comparison-modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-white">📊 تحلیل ارزش پورتفو</h3>
+                    <button type="button" data-close-modal="comparison-modal" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="modal-scroll">
+                    <!-- Summary Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <div class="p-3 sm:p-4 bg-gray-800 rounded-lg">
+                            <p class="text-xs sm:text-sm text-gray-400">ارزش فعلی (تومان)</p>
+                            <p id="current-value" class="text-lg sm:text-2xl font-bold text-white mt-1">-</p>
+                        </div>
+                        <div class="p-3 sm:p-4 bg-gray-800 rounded-lg">
+                            <p class="text-xs sm:text-sm text-gray-400">معادل دلار</p>
+                            <p id="current-usd" class="text-lg sm:text-2xl font-bold text-white mt-1">-</p>
+                            <p id="usd-change" class="text-xs sm:text-sm mt-1"></p>
+                        </div>
+                        <div class="p-3 sm:p-4 bg-gray-800 rounded-lg">
+                            <p class="text-xs sm:text-sm text-gray-400">معادل طلا (گرم)</p>
+                            <p id="current-gold" class="text-lg sm:text-2xl font-bold text-white mt-1">-</p>
+                            <p id="gold-change" class="text-xs sm:text-sm mt-1"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Charts -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                        <div>
+                            <h4 class="text-sm sm:text-lg font-medium mb-2 sm:mb-3 text-gray-200">ارزش بر اساس دلار</h4>
+                            <div class="h-48 sm:h-64">
+                                <canvas id="usdChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm sm:text-lg font-medium mb-2 sm:mb-3 text-gray-200">ارزش بر اساس طلا</h4>
+                            <div class="h-48 sm:h-64">
+                                <canvas id="goldChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Table -->
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-700 text-xs sm:text-sm">
+                            <thead class="sticky top-0 bg-gray-800">
+                                <tr class="text-gray-400 uppercase tracking-wider">
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">تاریخ</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">ارزش کل</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت دلار</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت طلا</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">معادل دلار</th>
+                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">معادل طلا</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparison-table-body" class="divide-y divide-gray-800">
+                                <tr><td colspan="6" class="py-4 text-center text-gray-500">در حال بارگذاری...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Global Variables ---
+        let allPrices = {};
+        let allAssets = [];
+        let portfolioChart = null;
+        let usdChart = null;
+        let goldChart = null;
+        let purchaseMode = 'balance'; // 'balance' or 'portfolio'
+
+        // --- Helper Functions ---
+
+        /**
+         * Formats a number with Toman separator and adds the Toman suffix.
+         * @param {string|number} numberString 
+         */
+        const formatToman = (numberString) => {
+            if (!numberString) return '0';
+            const number = parseFloat(numberString);
+            if (isNaN(number)) return '-';
+
+            const formatted = number.toLocaleString('fa-IR', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: number < 1000 ? 2 : 0 
+            });
+            return `${formatted} ت`;
+        };
+        
+        /**
+         * Formats a percentage value.
+         * @param {string|number} numberString 
+         */
+        const formatPercent = (numberString) => {
+            if (!numberString) return '0.00%';
+            const number = parseFloat(numberString);
+            if (isNaN(number)) return '-';
+            const sign = number >= 0 ? '+' : '';
+            return `${sign}${number.toFixed(2)}%`;
+        };
+
+        const formatPrice = (price) => {
+            return parseFloat(price).toLocaleString('fa-IR', { minimumFractionDigits: 0, maximumFractionDigits: 4 });
+        };
+
+        const getStatusColor = (value) => {
+            const num = parseFloat(value);
+            return num >= 0 ? 'success' : 'danger';
+        };
+
+        const formatPersianDate = (dateString) => {
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('fa-IR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            } catch (e) {
+                return dateString;
+            }
+        };
+
+        // --- API & Data Fetching ---
+
+        const fetchPrices = async () => {
+            try {
+                const response = await fetch('/api/prices');
+                if (!response.ok) throw new Error('Failed to fetch prices');
+                allPrices = await response.json();
+                renderPricesSidebar(allPrices);
+                updateWalletBalanceDisplay();
+                updatePurchasePowerBox();
+            } catch (error) {
+                console.error('Error fetching prices:', error);
+                document.getElementById('last-updated').textContent = 'خطا در بروزرسانی قیمت‌ها';
+            }
+        };
+
+        const fetchAssets = async () => {
+            try {
+                const response = await fetch('/api/assets');
+                if (!response.ok) throw new Error('Failed to fetch assets');
+                allAssets = await response.json();
+                renderAssetsDashboard(allAssets);
+                renderPricesSidebar(allPrices);
+                updateWalletBalanceDisplay();
+                updatePurchasePowerBox();
+                updateDailyProfit();
+            } catch (error) {
+                console.error('Error fetching assets:', error);
+                document.getElementById('assets-table-body').innerHTML = `<tr><td colspan="7" class="py-4 text-center text-red-400">خطا در بارگذاری دارایی‌ها</td></tr>`;
+            }
+        };
+
+        const fetchChartData = async () => {
+            try {
+                const response = await fetch('/api/chart-data');
+                if (!response.ok) throw new Error('Failed to fetch chart data');
+                const data = await response.json();
+                renderChart(data);
+            } catch (error) {
+                console.error('Error fetching chart data:', error);
+            }
+        };
+
+        // --- Daily Profit Functions ---
+        // ---------------------------
+        // --- Daily Profit Functions ---
+const updateDailyProfit = async () => {
+    try {
+        const response = await fetch('/api/today-profit');
+        if (!response.ok) throw new Error('Failed to fetch daily profit');
+        const data = await response.json();
+        
+        if (data.error) {
+            console.error('Daily profit error:', data.error);
+            return;
+        }
+        
+        // Update daily profit display
+        const dailyChange = data.daily_change || 0;
+        const dailyPercent = data.daily_change_percent || 0;
+        const yesterdayValue = data.yesterday_value || (data.total_value - data.daily_change);
+        
+        document.getElementById('daily-profit-toman').textContent = formatToman(dailyChange);
+        document.getElementById('daily-profit-percent').textContent = formatPercent(dailyPercent);
+        document.getElementById('yesterday-value').textContent = formatToman(yesterdayValue);
+        
+        // Add color classes
+        const dailyTomanEl = document.getElementById('daily-profit-toman');
+        const dailyPercentEl = document.getElementById('daily-profit-percent');
+        
+        if (dailyChange >= 0) {
+            dailyTomanEl.classList.remove('text-red-400');
+            dailyTomanEl.classList.add('text-green-400');
+            dailyPercentEl.classList.remove('text-red-400');
+            dailyPercentEl.classList.add('text-green-400');
+        } else {
+            dailyTomanEl.classList.remove('text-green-400');
+            dailyTomanEl.classList.add('text-red-400');
+            dailyPercentEl.classList.remove('text-green-400');
+            dailyPercentEl.classList.add('text-red-400');
+        }
+        
+        // نمایش اطلاعات دیباگ در کنسول
+        console.log('Daily Profit Data:', {
+            today: data.total_value,
+            yesterday: yesterdayValue,
+            change: dailyChange,
+            percent: dailyPercent
+        });
+        
+    } catch (error) {
+        console.error('Error updating daily profit:', error);
+        document.getElementById('daily-profit-toman').textContent = 'خطا';
+        document.getElementById('daily-profit-percent').textContent = 'خطا';
+        document.getElementById('yesterday-value').textContent = 'خطا';
+    }
+};
+        // ------------------
+        // --- Purchase Power Mode Toggle ---
+        document.getElementById('purchase-mode-balance').addEventListener('click', () => {
+            if (purchaseMode !== 'balance') {
+                purchaseMode = 'balance';
+                updatePurchaseModeUI();
+                updatePurchasePowerBox();
+            }
+        });
+
+        document.getElementById('purchase-mode-portfolio').addEventListener('click', () => {
+            if (purchaseMode !== 'portfolio') {
+                purchaseMode = 'portfolio';
+                updatePurchaseModeUI();
+                updatePurchasePowerBox();
+            }
+        });
+
+        const updatePurchaseModeUI = () => {
+            const balanceBtn = document.getElementById('purchase-mode-balance');
+            const portfolioBtn = document.getElementById('purchase-mode-portfolio');
+            const infoText = document.getElementById('purchase-power-info');
+            
+            if (purchaseMode === 'balance') {
+                balanceBtn.classList.add('bg-blue-600', 'text-white');
+                balanceBtn.classList.remove('text-gray-300', 'bg-gray-700');
+                portfolioBtn.classList.remove('bg-blue-600', 'text-white');
+                portfolioBtn.classList.add('text-gray-300', 'bg-gray-700');
+                infoText.textContent = 'با کل موجودی کیف پول ریالی';
+            } else {
+                portfolioBtn.classList.add('bg-blue-600', 'text-white');
+                portfolioBtn.classList.remove('text-gray-300', 'bg-gray-700');
+                balanceBtn.classList.remove('bg-blue-600', 'text-white');
+                balanceBtn.classList.add('text-gray-300', 'bg-gray-700');
+                infoText.textContent = 'با کل ارزش پورتفوی';
+            }
+        };
+
+        // --- Updated Purchase Power Calculation ---
+        const updatePurchasePowerBox = () => {
+            let availableBalance = 0;
+            
+            if (purchaseMode === 'balance') {
+                // استفاده از کیف پول ریالی
+                const rialAsset = allAssets.find(a => a.symbol === 'RIAL_WALLET');
+                availableBalance = rialAsset ? parseFloat(rialAsset.total_quantity) : 0;
+            } else {
+                // استفاده از کل ارزش پورتفو
+                let totalPortfolioValue = 0;
+                allAssets.forEach(asset => {
+                    if (asset.symbol === 'RIAL_WALLET') {
+                        totalPortfolioValue += parseFloat(asset.total_quantity);
+                    } else {
+                        totalPortfolioValue += parseFloat(asset.current_value) || 0;
+                    }
+                });
+                availableBalance = totalPortfolioValue;
+            }
+            
+            if (availableBalance <= 0 || !allPrices) {
+                document.getElementById('usd-amount').textContent = '-';
+                document.getElementById('gold-amount').textContent = '-';
+                document.getElementById('btc-amount').textContent = '-';
+                return;
+            }
+            
+            // محاسبه تعداد دلار، طلا و بیت‌کوین قابل خرید
+            let usdPrice = 0;
+            let goldPrice = 0;
+            let btcPrice = 0;
+            
+            // پیدا کردن قیمت‌ها
+            for (const category in allPrices) {
+                if (allPrices[category]) {
+                    allPrices[category].forEach(item => {
+                        if (item.symbol === 'USD') usdPrice = item.toman_price;
+                        if (item.symbol === 'GOL18') goldPrice = item.toman_price;
+                        if (item.symbol === 'BITCOIN') btcPrice = item.toman_price;
+                    });
+                }
+            }
+            
+            // محاسبه مقادیر
+            if (usdPrice > 0) {
+                const usdAmount = availableBalance / usdPrice;
+                document.getElementById('usd-amount').textContent = usdAmount.toFixed(2);
+                document.getElementById('usd-purchase').textContent = `قیمت: ${formatToman(usdPrice)}`;
+            } else {
+                document.getElementById('usd-amount').textContent = '-';
+                document.getElementById('usd-purchase').textContent = 'قیمت موجود نیست';
+            }
+            
+            if (goldPrice > 0) {
+                const goldAmount = availableBalance / goldPrice;
+                document.getElementById('gold-amount').textContent = goldAmount.toFixed(3);
+                document.getElementById('gold-purchase').textContent = `قیمت: ${formatToman(goldPrice)}`;
+            } else {
+                document.getElementById('gold-amount').textContent = '-';
+                document.getElementById('gold-purchase').textContent = 'قیمت موجود نیست';
+            }
+            
+            if (btcPrice > 0) {
+                const btcAmount = availableBalance / btcPrice;
+                document.getElementById('btc-amount').textContent = btcAmount.toFixed(6);
+                document.getElementById('btc-purchase').textContent = `قیمت: ${formatToman(btcPrice)}`;
+            } else {
+                document.getElementById('btc-amount').textContent = '-';
+                document.getElementById('btc-purchase').textContent = 'قیمت موجود نیست';
+            }
+        };
+
+        // --- تاریخچه عملکرد روزانه ---
+        const showDailyHistory = async () => {
+            try {
+                const response = await fetch('/api/daily-profit');
+                if (!response.ok) throw new Error('Failed to fetch daily history');
+                const data = await response.json();
+                
+                // ساخت HTML برای نمایش تاریخچه
+                let html = '<div class="space-y-3">';
+                
+                // نمایش 10 روز آخر
+                const recentData = data.slice(-10).reverse();
+                
+                recentData.forEach(entry => {
+                    const date = new Date(entry.date).toLocaleDateString('fa-IR');
+                    const isPositive = entry.daily_change >= 0;
+                    const changeColor = isPositive ? 'text-green-400' : 'text-red-400';
+                    const changeIcon = isPositive ? '📈' : '📉';
+                    
+                    html += `
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-300">${date}</span>
+                                <span class="text-xs ${changeColor}">${changeIcon} ${formatPercent(entry.daily_change_percent)}</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div>
+                                    <span class="text-gray-500">ارزش کل:</span>
+                                    <span class="font-mono text-gray-300 mr-1">${formatToman(entry.total_value)}</span>
+                                </div>
+                                <div>
+                                    <span class="text-gray-500">تغییر روز:</span>
+                                    <span class="font-mono ${changeColor} mr-1">${formatToman(entry.daily_change)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+                
+                // نمایش در مودال
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4 modal-fade';
+                modal.innerHTML = `
+                    <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl modal-slide max-w-lg w-full max-h-[80vh] overflow-y-auto">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-white">📊 تاریخچه عملکرد روزانه</h3>
+                            <button type="button" onclick="this.parentElement.parentElement.remove()" class="text-gray-400 hover:text-white">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="text-sm text-gray-400 mb-3">
+                            نمایش 10 روز اخیر
+                        </div>
+                        ${html}
+                        <div class="mt-6 flex justify-end">
+                            <button type="button" onclick="this.parentElement.parentElement.remove()" class="py-2 px-4 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200">
+                                بستن
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+            } catch (error) {
+                console.error('Error showing daily history:', error);
+                alert('خطا در بارگذاری تاریخچه عملکرد');
+            }
+        };
+
+        // --- Rendering Logic ---
+
+        const renderPricesSidebar = (prices) => {
+            const now = new Date();
+            document.getElementById('last-updated').textContent = `آخرین بروزرسانی: ${now.toLocaleTimeString('fa-IR')}`;
+            
+            // ۱. نمایش قیمت دارایی‌های موجود در پورتفو
+            const portfolioPricesList = document.getElementById('portfolio-prices-list');
+            portfolioPricesList.innerHTML = '';
+            
+            // دارایی‌هایی که در پورتفو داریم (دارای موجودی > 0)
+            const portfolioAssets = allAssets.filter(asset => {
+                if (asset.symbol === 'RIAL_WALLET') return false;
+                return parseFloat(asset.total_quantity) > 0;
+            });
+            
+            if (portfolioAssets.length > 0) {
+                portfolioAssets.forEach(asset => {
+                    const currentPrice = parseFloat(asset.current_price);
+                    if (currentPrice > 0) {
+                        portfolioPricesList.innerHTML += `
+                            <div class="flex justify-between items-center py-1 px-2 hover:bg-gray-800 rounded">
+                                <div class="text-right">
+                                    <span class="text-gray-300 text-sm">${asset.title}</span>
+                                    <span class="text-gray-500 text-xs block">(${asset.symbol})</span>
+                                </div>
+                                <span class="font-mono text-white text-sm">${formatToman(currentPrice)}</span>
+                            </div>
+                        `;
+                    }
+                });
+            } else {
+                portfolioPricesList.innerHTML = '<p class="text-gray-500 text-sm text-center py-2">هنوز دارایی‌ای ثبت نشده</p>';
+            }
+            
+            // ۲. پر کردن کشویی‌ها
+            const categories = [
+                { id: 'gold_coin', title: 'طلا و سکه' },
+                { id: 'currency', title: 'ارز' },
+                { id: 'crypto', title: 'ارز دیجیتال' }
+            ];
+            
+            categories.forEach(category => {
+                const container = document.getElementById(`${category.id}-prices`);
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                if (prices[category.id] && prices[category.id].length > 0) {
+                    // محدود کردن تعداد نمایش
+                    const itemsToShow = prices[category.id].slice(0, 8);
+                    
+                    itemsToShow.forEach(item => {
+                        const priceDisplay = formatToman(item.toman_price);
+                        let subText = '';
+                        if (category.id === 'crypto' && item.usd_price) {
+                            subText = `($${parseFloat(item.usd_price).toFixed(3)})`;
+                        }
+                        
+                        container.innerHTML += `
+                            <div class="flex justify-between items-center py-1 px-1 hover:bg-gray-800 rounded">
+                                <span class="text-gray-300 text-sm truncate max-w-[60%]">${item.title}</span>
+                                <div class="text-left">
+                                    <span class="font-mono text-white text-sm">${priceDisplay}</span>
+                                    ${subText ? `<span class="text-xs text-gray-500 block">${subText}</span>` : ''}
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    // اگر آیتم بیشتری وجود داره
+                    if (prices[category.id].length > 8) {
+                        container.innerHTML += `
+                            <div class="text-center pt-2 border-t border-gray-800">
+                                <span class="text-gray-500 text-xs">و ${prices[category.id].length - 8} مورد دیگر</span>
+                            </div>
+                        `;
+                    }
+                } else {
+                    container.innerHTML = '<p class="text-gray-500 text-sm text-center py-2">قیمتی موجود نیست</p>';
+                }
+            });
+        };
+        // -**-*
+        const renderAssetsDashboard = (assets) => {
+    const tableBody = document.getElementById('assets-table-body');
+    tableBody.innerHTML = '';
+    
+    let totalValue = 0;
+    let totalProfit = 0;
+    let totalCostBasis = 0;
+    let rialWalletBalance = 0;
+
+    assets.forEach(asset => {
+        const quantity = parseFloat(asset.total_quantity);
+        const costBasis = parseFloat(asset.cost_basis);
+        const currentValue = parseFloat(asset.current_value);
+        const profitLoss = parseFloat(asset.profit_loss);
+        const returnPct = parseFloat(asset.return_pct);
+
+        if (asset.symbol === 'RIAL_WALLET') {
+            rialWalletBalance = quantity;
+            totalValue += quantity;
+            return;
+        }
+
+        if (quantity > 0) {
+            totalValue += currentValue;
+            totalProfit += profitLoss;
+            totalCostBasis += costBasis;
+
+            const statusClass = getStatusColor(profitLoss);
+            
+            tableBody.innerHTML += `
+                <tr class="hover:bg-gray-800 transition duration-150">
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-medium text-white text-xs sm:text-sm">
+                        <div class="flex flex-col">
+                            <span>${asset.title}</span>
+                            <span class="text-gray-500 text-xs">(${asset.symbol})</span>
+                        </div>
+                    </td>
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.break_even_price)}</td>
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.current_price)}</td>
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatPrice(asset.total_quantity)}</td>
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.current_value)}</td>
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm ${statusClass} font-semibold">
+                        ${formatToman(profitLoss)} 
+                        <span class="text-xs">(${formatPercent(returnPct)})</span>
+                    </td>
+                    <td class="px-2 py-2 sm:px-3 sm:py-3 text-center">
+                        <button onclick="openHistoryModal('${asset.title}', '${asset.id}')" class="text-blue-500 hover:text-blue-400 text-xs sm:text-sm action-btn">مشاهده</button>
+                    </td>
+                </tr>
+            `;
+        }
+    });
+
+    // Handle empty assets case
+    if (tableBody.innerHTML === '') {
+        tableBody.innerHTML = `<tr><td colspan="7" class="py-4 text-center text-gray-500">هنوز دارایی اسپاتی ثبت نشده است.</td></tr>`;
+    }
+
+    // --- Update Summary Cards ---
+    const overallReturnPct = totalCostBasis > 0 ? (totalProfit / totalCostBasis) * 100 : 0;
+    const overallStatusClass = getStatusColor(totalProfit);
+
+    // Update Total Value (Asset Value + Rial Wallet)
+    document.getElementById('total-value').textContent = formatToman(totalValue);
+    
+    // Update Total Profit/Loss (Only from Non-Wallet Assets)
+    document.getElementById('total-profit').textContent = formatToman(totalProfit);
+    document.getElementById('total-profit-pct').className = `text-sm mt-1 flex items-center ${overallStatusClass} font-medium`;
+    document.getElementById('total-profit-pct').innerHTML = `<svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="${totalProfit >= 0 ? 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z' : 'M14.707 7.293a1 1 0 00-1.414 0L10 10.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 000-1.414z'}" clip-rule="evenodd"></path></svg>${formatPercent(overallReturnPct)}`;
+    
+    // Update Rial Wallet Balance
+    document.getElementById('rial-wallet-balance').textContent = formatToman(rialWalletBalance);
+};
+        // -*-*
+        const renderChart = (data) => {
+            const dates = Object.keys(data).sort();
+            const values = dates.map(date => data[date]);
+
+            const ctx = document.getElementById('portfolioChart').getContext('2d');
+            
+            if (portfolioChart) {
+                portfolioChart.destroy();
+            }
+
+            portfolioChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'ارزش کل پورتفوی',
+                        data: values,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        fill: 'origin',
+                        tension: 0.2,
+                        pointRadius: 3,
+                        pointBackgroundColor: '#3b82f6',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    color: '#c9d1d9',
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: { unit: 'day', tooltipFormat: 'yyyy-MM-dd' },
+                            title: { display: true, text: 'تاریخ', color: '#8b949e' },
+                            ticks: { color: '#8b949e', maxRotation: 0 },
+                            grid: { color: '#30363d' }
+                        },
+                        y: {
+                            title: { display: true, text: 'ارزش (تومان)', color: '#8b949e' },
+                            ticks: {
+                                color: '#8b949e',
+                                callback: function(value) { return formatToman(value).replace('ت', ''); }
+                            },
+                            grid: { color: '#30363d' }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) { return ` ${context.dataset.label}: ${formatToman(context.parsed.y)}`; }
+                            },
+                            rtl: true
+                        }
+                    }
+                }
+            });
+        };
+
+        // --- Wallet Balance Display ---
+
+        const updateWalletBalanceDisplay = () => {
+            const rialAsset = allAssets.find(a => a.symbol === 'RIAL_WALLET');
+            const balance = rialAsset ? parseFloat(rialAsset.total_quantity) : 0;
+            
+            const walletDisplay = document.getElementById('wallet-balance-display');
+            const currentBalance = document.getElementById('current-wallet-balance');
+            const purchasePower = document.getElementById('purchase-power-info-modal');
+            
+            currentBalance.textContent = formatToman(balance);
+            
+            // اگر نوع تراکنش خرید هست، قدرت خرید رو محاسبه کن
+            const txType = document.getElementById('tx-type').value;
+            const assetSymbol = document.getElementById('asset-name').value;
+            
+            if (txType === 'buy' && assetSymbol && allPrices) {
+                // پیدا کردن قیمت دارایی
+                let assetPrice = 0;
+                for (const category in allPrices) {
+                    const asset = allPrices[category].find(a => a.symbol === assetSymbol);
+                    if (asset) {
+                        assetPrice = asset.toman_price;
+                        break;
+                    }
+                }
+                
+                if (assetPrice > 0 && balance > 0) {
+                    const maxQuantity = balance / assetPrice;
+                    purchasePower.textContent = `می‌توانید حداکثر ${formatPrice(maxQuantity)} واحد خریداری کنید`;
+                    walletDisplay.classList.remove('hidden');
+                } else {
+                    purchasePower.textContent = 'موجودی یا قیمت دارایی نامعتبر است';
+                    walletDisplay.classList.remove('hidden');
+                }
+            } else if (txType === 'buy') {
+                purchasePower.textContent = 'برای محاسبه قدرت خرید، ابتدا دارایی را انتخاب کنید';
+                walletDisplay.classList.remove('hidden');
+            } else {
+                walletDisplay.classList.add('hidden');
+            }
+        };
+
+        // --- Modals and Forms ---
+
+        const updateTransactionFormVisibility = (txType) => {
+            const isWalletTx = txType === 'deposit' || txType === 'withdrawal';
+            const isNonWalletTx = txType === 'buy' || txType === 'sell' || txType === 'save_profit';
+            
+            document.getElementById('asset-type-group').classList.toggle('hidden', isWalletTx);
+            document.getElementById('asset-name-group').classList.toggle('hidden', isWalletTx);
+            document.getElementById('price-per-unit-group').classList.toggle('hidden', isWalletTx || txType === '');
+            document.getElementById('category-group').classList.toggle('hidden', isWalletTx);
+
+            const quantityLabel = document.getElementById('quantity-label');
+            
+            if (txType === 'deposit' || txType === 'withdrawal') {
+                document.getElementById('asset-name').value = 'RIAL_WALLET';
+                document.getElementById('asset-name').name = 'symbol';
+                document.getElementById('asset-name').required = true;
+                
+                quantityLabel.textContent = (txType === 'deposit' ? 'مقدار واریز (تومان)' : 'مقدار برداشت (تومان)');
+                document.getElementById('tx-price').required = false;
+                document.getElementById('tx-price').value = '1';
+
+            } else if (isNonWalletTx) {
+                document.getElementById('asset-name').name = 'symbol';
+                document.getElementById('asset-name').required = true;
+                quantityLabel.textContent = 'مقدار';
+                document.getElementById('tx-price').required = true;
+            }
+            
+            // Update wallet display
+            updateWalletBalanceDisplay();
+        };
+
+        document.getElementById('tx-type').addEventListener('change', (e) => {
+            updateTransactionFormVisibility(e.target.value);
+            // Reset asset type/name for clarity
+            document.getElementById('asset-type').value = '';
+            document.getElementById('asset-name').innerHTML = '<option value="">...</option>';
+            document.getElementById('asset-name').disabled = true;
+        });
+
+        document.getElementById('add-transaction-btn').addEventListener('click', () => {
+            // Reset form for new transaction
+            document.getElementById('transaction-form').reset();
+            document.getElementById('tx-message').classList.add('hidden');
+            document.getElementById('tx-date').value = ''; // Reset date to today
+            document.getElementById('tx-type').dispatchEvent(new Event('change')); // Reset visibility
+            document.getElementById('transaction-modal').classList.remove('hidden');
+        });
+        
+        // Reset date button
+        document.getElementById('reset-date').addEventListener('click', () => {
+            document.getElementById('tx-date').value = '';
+        });
+
+        document.querySelectorAll('[data-close-modal]').forEach(btn => btn.addEventListener('click', () => {
+            document.getElementById(btn.dataset.closeModal).classList.add('hidden');
+        }));
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.fixed.inset-0').forEach(modal => {
+            modal.addEventListener('click', (e) => { 
+                if (e.target === modal) modal.classList.add('hidden'); 
+            });
+        });
+
+        const openWalletModal = () => {
+            const rialAsset = allAssets.find(a => a.symbol === 'RIAL_WALLET');
+            const balance = rialAsset ? parseFloat(rialAsset.total_quantity) : 0;
+            document.getElementById('wallet-current-balance').textContent = `موجودی: ${formatToman(balance)}`;
+            document.getElementById('wallet-modal').classList.remove('hidden');
+        };
+
+        const openHistoryModal = (assetTitle, assetId) => {
+            const asset = allAssets.find(a => a.id === assetId);
+            if (!asset) return;
+
+            document.getElementById('history-title').textContent = `تاریخچه تراکنش‌های ${assetTitle}`;
+            const tableBody = document.getElementById('history-table-body');
+            tableBody.innerHTML = '';
+
+            asset.transactions.forEach(tx => {
+                const date = formatPersianDate(tx.date);
+                const quantity = parseFloat(tx.quantity);
+                const pricePerUnit = tx.price_per_unit ? formatToman(tx.price_per_unit) : '-';
+                
+                let txTypeDisplay = '';
+                if (tx.type === 'buy') txTypeDisplay = `<span class="text-green-400">خرید</span>`;
+                else if (tx.type === 'sell') txTypeDisplay = `<span class="text-red-400">فروش</span>`;
+                else if (tx.type === 'save_profit') txTypeDisplay = `<span class="text-yellow-400">سیو سود</span>`;
+                else if (tx.type === 'deposit') txTypeDisplay = `<span class="text-green-500">واریز</span>`;
+                else if (tx.type === 'withdrawal') txTypeDisplay = `<span class="text-red-500">برداشت</span>`;
+                
+                tableBody.innerHTML += `
+                    <tr class="hover:bg-gray-800 transition duration-150">
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 text-xs">${date}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                            <div class="flex flex-col items-end">
+                                ${txTypeDisplay}
+                                <span class="text-gray-500 text-xs mt-1">${tx.category || '-'}</span>
+                            </div>
+                        </td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatPrice(quantity)}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${pricePerUnit}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 text-xs text-gray-400 max-w-[150px] sm:max-w-xs truncate" title="${tx.comment || '-'}">${tx.comment || '-'}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 text-center">
+                            <div class="flex justify-center space-x-2 space-x-reverse">
+                                <button onclick="openEditModal('${tx.transaction_id}', '${assetId}')" class="text-blue-500 hover:text-blue-400 text-xs sm:text-sm action-btn">ویرایش</button>
+                                <button onclick="deleteTransaction('${tx.transaction_id}')" class="text-red-500 hover:text-red-400 text-xs sm:text-sm action-btn">حذف</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('history-modal').classList.remove('hidden');
+        };
+
+        // --- Edit Transaction Functions ---
+
+        const openEditModal = (transactionId, assetId) => {
+            const asset = allAssets.find(a => a.id === assetId);
+            if (!asset) return;
+            
+            const transaction = asset.transactions.find(tx => tx.transaction_id === transactionId);
+            if (!transaction) return;
+            
+            // پر کردن فرم
+            document.getElementById('edit-transaction-id').value = transactionId;
+            document.getElementById('edit-asset-id').value = assetId;
+            document.getElementById('edit-tx-type').value = transaction.type;
+            document.getElementById('edit-asset-name').textContent = `${asset.title} (${asset.symbol})`;
+            document.getElementById('edit-tx-category').value = transaction.category || '';
+            document.getElementById('edit-tx-quantity').value = transaction.quantity;
+            document.getElementById('edit-tx-price').value = transaction.price_per_unit || '';
+            document.getElementById('edit-tx-comment').value = transaction.comment || '';
+            
+            // Set date
+            const txDate = new Date(transaction.date);
+            document.getElementById('edit-tx-date').value = txDate.toISOString().split('T')[0];
+            
+            // تنظیم visibility
+            const isPriceVisible = ['buy', 'sell', 'save_profit'].includes(transaction.type);
+            document.getElementById('edit-price-per-unit-group').classList.toggle('hidden', !isPriceVisible);
+            
+            // باز کردن مودال
+            document.getElementById('edit-modal').classList.remove('hidden');
+        };
+
+        // ارسال فرم ویرایش
+        document.getElementById('edit-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const messageEl = document.getElementById('edit-message');
+            messageEl.classList.add('hidden');
+            
+            const transactionId = document.getElementById('edit-transaction-id').value;
+            const data = {
+                type: document.getElementById('edit-tx-type').value,
+                date: document.getElementById('edit-tx-date').value ? 
+                    new Date(document.getElementById('edit-tx-date').value + 'T12:00:00Z').toISOString() : 
+                    null,
+                category: document.getElementById('edit-tx-category').value,
+                quantity: parseFloat(document.getElementById('edit-tx-quantity').value),
+                price_per_unit: document.getElementById('edit-tx-price').value ? 
+                    parseFloat(document.getElementById('edit-tx-price').value) : null,
+                comment: document.getElementById('edit-tx-comment').value
+            };
+            
+            try {
+                const response = await fetch(`/api/transactions/${transactionId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    messageEl.textContent = 'تراکنش با موفقیت ویرایش شد.';
+                    messageEl.classList.remove('danger');
+                    messageEl.classList.add('success');
+                    
+                    // Reload data
+                    await fetchAssets();
+                    await fetchChartData();
+                    
+                    // بستن مودال‌های باز
+                    document.getElementById('edit-modal').classList.add('hidden');
+                    document.getElementById('history-modal').classList.add('hidden');
+                    
+                    setTimeout(() => {
+                        messageEl.classList.add('hidden');
+                    }, 2000);
+                } else {
+                    const error = await response.json();
+                    messageEl.textContent = `خطا در ویرایش تراکنش: ${error.error || response.statusText}`;
+                    messageEl.classList.remove('success');
+                    messageEl.classList.add('danger');
+                }
+            } catch (error) {
+                console.error('Edit error:', error);
+                messageEl.textContent = 'خطای شبکه یا سرور رخ داد.';
+                messageEl.classList.remove('success');
+                messageEl.classList.add('danger');
+            }
+            messageEl.classList.remove('hidden');
+        });
+
+        // Asset dropdown population
+        document.getElementById('asset-type').addEventListener('change', () => { 
+            const selectedType = document.getElementById('asset-type').value;
+            const assetNameSelect = document.getElementById('asset-name');
+            assetNameSelect.innerHTML = '<option value="">...</option>'; 
+            assetNameSelect.disabled = true;
+            if (selectedType && allPrices[selectedType]) {
+                assetNameSelect.innerHTML = `<option value="">انتخاب کنید</option>${allPrices[selectedType].map(a => `<option value="${a.symbol}" data-title="${a.title}">${a.title} (${a.symbol})</option>`).join('')}`;
+                assetNameSelect.disabled = false;
+            }
+            updateWalletBalanceDisplay();
+        });
+
+        document.getElementById('asset-name').addEventListener('change', updateWalletBalanceDisplay);
+
+        document.getElementById('transaction-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const messageEl = document.getElementById('tx-message');
+            messageEl.classList.add('hidden');
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Convert numbers
+            data.quantity = parseFloat(data.quantity);
+            if (data.price_per_unit) {
+                data.price_per_unit = parseFloat(data.price_per_unit);
+            }
+            
+            // Handle date
+            if (!data.date) {
+                data.date = new Date().toISOString();
+            } else {
+                data.date = new Date(data.date + 'T12:00:00Z').toISOString();
+            }
+            
+            if (data.type === 'deposit' || data.type === 'withdrawal') {
+                data.symbol = 'RIAL_WALLET';
+                delete data.category;
+                delete data.price_per_unit;
+            }
+            
+            // Validation check
+            if (data.quantity <= 0) {
+                messageEl.textContent = 'مقدار باید بزرگتر از صفر باشد.';
+                messageEl.classList.remove('hidden');
+                messageEl.classList.add('danger');
+                return;
+            }
+
+            // Check wallet balance for buy transactions
+            if (data.type === 'buy' && data.symbol !== 'RIAL_WALLET') {
+                const rialAsset = allAssets.find(a => a.symbol === 'RIAL_WALLET');
+                if (rialAsset) {
+                    const balance = parseFloat(rialAsset.total_quantity);
+                    const totalCost = data.quantity * data.price_per_unit;
+                    
+                    if (totalCost > balance) {
+                        messageEl.textContent = `موجودی کیف پول کافی نیست. موجودی: ${formatToman(balance)}، مبلغ مورد نیاز: ${formatToman(totalCost)}`;
+                        messageEl.classList.remove('success');
+                        messageEl.classList.add('danger');
+                        messageEl.classList.remove('hidden');
+                        return;
+                    }
+                }
+            }
+
+            try {
+                const response = await fetch('/api/transactions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    messageEl.textContent = 'تراکنش با موفقیت ثبت شد.';
+                    messageEl.classList.remove('danger');
+                    messageEl.classList.add('success');
+                    form.reset();
+                    document.getElementById('tx-type').dispatchEvent(new Event('change'));
+                    
+                    // Reload data
+                    await fetchAssets();
+                    await fetchChartData();
+                    await updateDailyProfit();
+
+                    // Close modal after a short delay
+                    setTimeout(() => document.getElementById('transaction-modal').classList.add('hidden'), 1500);
+                } else {
+                    const error = await response.json();
+                    messageEl.textContent = `خطا در ثبت تراکنش: ${error.error || response.statusText}`;
+                    messageEl.classList.remove('success');
+                    messageEl.classList.add('danger');
+                }
+            } catch (error) {
+                console.error('Submit error:', error);
+                messageEl.textContent = 'خطای شبکه یا سرور رخ داد.';
+                messageEl.classList.remove('success');
+                messageEl.classList.add('danger');
+            }
+            messageEl.classList.remove('hidden');
+        });
+        
+        const deleteTransaction = async (id) => {
+            const isConfirmed = window.confirm('آیا مطمئن هستید که می‌خواهید این تراکنش را حذف کنید؟ این عملیات غیرقابل بازگشت است.');
+            if (!isConfirmed) return;
+
+            try {
+                const response = await fetch(`/api/transactions/${id}`, { method: 'DELETE' });
+                if (response.ok) {
+                    alert('تراکنش با موفقیت حذف شد.');
+                    document.getElementById('history-modal').classList.add('hidden');
+                    // Reload data
+                    await fetchAssets();
+                    await fetchChartData();
+                    await updateDailyProfit();
+                } else {
+                    const error = await response.json();
+                    alert(`خطا در حذف تراکنش: ${error.error || response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Delete error:', error);
+                alert('خطای شبکه یا سرور رخ داد.');
+            }
+        };
+
+        // --- Comparison Modal Functions ---
+
+        const openComparisonModal = async () => {
+            try {
+                const response = await fetch('/api/comparison-data');
+                if (!response.ok) throw new Error('Failed to fetch comparison data');
+                const data = await response.json();
+                
+                if (data.length > 0) {
+                    renderComparisonData(data);
+                } else {
+                    // اگر داده‌ای نیست، سعی کن یه رکورد ایجاد کن
+                    document.getElementById('comparison-table-body').innerHTML = 
+                        '<tr><td colspan="6" class="py-4 text-center text-gray-500">در حال بارگذاری داده‌ها...</td></tr>';
+                    
+                    // سعی کن به صورت دستی داده ایجاد کن
+                    await createInitialComparisonData();
+                }
+                
+                document.getElementById('comparison-modal').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error opening comparison modal:', error);
+                
+                // نمایش پیام خطای بهتر
+                document.getElementById('comparison-table-body').innerHTML = 
+                    `<tr><td colspan="6" class="py-4 text-center text-yellow-400">
+                        خطا در بارگذاری داده‌های تحلیل. لطفاً صفحه را رفرش کنید.
+                        <br><span class="text-xs text-gray-500">${error.message}</span>
+                    </td></tr>`;
+                
+                document.getElementById('comparison-modal').classList.remove('hidden');
+            }
+        };
+
+        // تابع برای ایجاد داده اولیه
+        const createInitialComparisonData = async () => {
+            try {
+                // اول قیمت‌ها رو بگیر
+                if (!allPrices || Object.keys(allPrices).length === 0) {
+                    await fetchPrices();
+                }
+                
+                // محاسبه ارزش فعلی
+                const rialAsset = allAssets.find(a => a.symbol === 'RIAL_WALLET');
+                const walletBalance = rialAsset ? parseFloat(rialAsset.total_quantity) : 0;
+                
+                let totalValue = walletBalance;
+                allAssets.forEach(asset => {
+                    if (asset.symbol !== 'RIAL_WALLET') {
+                        totalValue += parseFloat(asset.current_value) || 0;
+                    }
+                });
+                
+                // پیدا کردن قیمت دلار و طلا
+                let usdPrice = 0;
+                let goldPrice = 0;
+                
+                for (const category in allPrices) {
+                    if (allPrices[category]) {
+                        allPrices[category].forEach(item => {
+                            if (item.symbol === 'USD') usdPrice = item.toman_price;
+                            if (item.symbol === 'GOL18') goldPrice = item.toman_price;
+                        });
+                    }
+                }
+                
+                // محاسبه معادل‌ها
+                const equivalentUSD = usdPrice > 0 ? totalValue / usdPrice : 0;
+                const equivalentGold = goldPrice > 0 ? totalValue / goldPrice : 0;
+                
+                // آپدیت کارت‌های خلاصه
+                document.getElementById('current-value').textContent = formatToman(totalValue);
+                document.getElementById('current-usd').textContent = `${equivalentUSD.toFixed(2)} USD`;
+                document.getElementById('current-gold').textContent = `${equivalentGold.toFixed(3)} گرم`;
+                document.getElementById('usd-change').textContent = '';
+                document.getElementById('gold-change').textContent = '';
+                
+                // پیام راهنمایی
+                document.getElementById('comparison-table-body').innerHTML = 
+                    `<tr><td colspan="6" class="py-4 text-center text-gray-500">
+                        داده‌های تاریخی هنوز جمع‌آوری نشده‌اند.
+                        <br><span class="text-xs">داده‌ها از امروز شروع به جمع‌آوری می‌شوند.</span>
+                    </td></tr>`;
+                
+            } catch (error) {
+                console.error('Error creating initial comparison data:', error);
+            }
+        };
+
+        const renderComparisonData = (data) => {
+            const latest = data[data.length - 1];
+            
+            // Update summary cards
+            document.getElementById('current-value').textContent = formatToman(latest.total_value_toman);
+            document.getElementById('current-usd').textContent = `${latest.equivalent_usd.toFixed(2)} USD`;
+            document.getElementById('current-gold').textContent = `${latest.equivalent_gold_grams.toFixed(3)} گرم`;
+            
+            // Update change indicators
+            const usdChangeEl = document.getElementById('usd-change');
+            const goldChangeEl = document.getElementById('gold-change');
+            
+            usdChangeEl.textContent = formatPercent(latest.usd_change_percent);
+            usdChangeEl.className = `text-xs sm:text-sm mt-1 ${latest.usd_change_percent >= 0 ? 'text-green-400' : 'text-red-400'}`;
+            
+            goldChangeEl.textContent = formatPercent(latest.gold_change_percent);
+            goldChangeEl.className = `text-xs sm:text-sm mt-1 ${latest.gold_change_percent >= 0 ? 'text-green-400' : 'text-red-400'}`;
+            
+            // Render table
+            const tableBody = document.getElementById('comparison-table-body');
+            tableBody.innerHTML = '';
+            
+            // نمایش فقط 10 رکورد آخر
+            const displayData = data.slice(-10).reverse();
+            
+            displayData.forEach(entry => {
+                const date = new Date(entry.date).toLocaleDateString('fa-IR');
+                
+                tableBody.innerHTML += `
+                    <tr class="hover:bg-gray-800 transition duration-150">
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 text-xs">${date}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.total_value_toman)}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.usd_price)}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.gold_price_per_gram)}</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${entry.equivalent_usd.toFixed(2)} USD</td>
+                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${entry.equivalent_gold_grams.toFixed(3)} گرم</td>
+                    </tr>
+                `;
+            });
+            
+            // Render charts if enough data
+            if (data.length >= 2) {
+                renderComparisonCharts(data);
+            } else {
+                // Hide charts if not enough data
+                document.getElementById('usdChart').style.display = 'none';
+                document.getElementById('goldChart').style.display = 'none';
+                document.querySelectorAll('h4.text-gray-200').forEach(el => el.style.display = 'none');
+            }
+        };
+
+        const renderComparisonCharts = (data) => {
+            const dates = data.map(d => d.date).reverse();
+            const usdValues = data.map(d => d.equivalent_usd).reverse();
+            const goldValues = data.map(d => d.equivalent_gold_grams).reverse();
+            
+            // USD Chart
+            const usdCtx = document.getElementById('usdChart').getContext('2d');
+            if (usdChart) usdChart.destroy();
+            
+            usdChart = new Chart(usdCtx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'ارزش معادل دلار',
+                        data: usdValues,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)} USD`
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { 
+                            display: false,
+                            grid: { color: '#30363d' }
+                        },
+                        y: {
+                            title: { display: true, text: 'دلار', color: '#8b949e' },
+                            ticks: { color: '#8b949e' },
+                            grid: { color: '#30363d' }
+                        }
+                    }
+                }
+            });
+            
+            // Gold Chart
+            const goldCtx = document.getElementById('goldChart').getContext('2d');
+            if (goldChart) goldChart.destroy();
+            
+            goldChart = new Chart(goldCtx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'ارزش معادل طلا (گرم)',
+                        data: goldValues,
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(3)} گرم`
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { 
+                            display: false,
+                            grid: { color: '#30363d' }
+                        },
+                        y: {
+                            title: { display: true, text: 'گرم طلا', color: '#8b949e' },
+                            ticks: { color: '#8b949e' },
+                            grid: { color: '#30363d' }
+                        }
+                    }
+                }
+            });
+        };
+
+        // --- مدیریت کشویی‌ها ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // همه کشویی‌ها رو در ابتدا بسته نگه دار
+            document.querySelectorAll('.category-toggle').forEach(button => {
+                const category = button.getAttribute('data-category');
+                const content = document.getElementById(`${category}-prices`);
+                const arrow = button.querySelector('svg');
+                
+                if (content && arrow) {
+                    content.classList.add('hidden');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+                
+                button.addEventListener('click', () => {
+                    const content = document.getElementById(`${category}-prices`);
+                    const arrow = button.querySelector('svg');
+                    
+                    if (content && arrow) {
+                        const isHidden = content.classList.contains('hidden');
+                        
+                        // بستن همه کشویی‌های دیگر
+                        document.querySelectorAll('[id$="-prices"]').forEach(el => {
+                            if (el.id !== `${category}-prices`) {
+                                el.classList.add('hidden');
+                            }
+                        });
+                        
+                        // ریست کردن همه فلش‌ها
+                        document.querySelectorAll('.category-toggle svg').forEach(svg => {
+                            svg.style.transform = 'rotate(0deg)';
+                        });
+                        
+                        // تغییر وضعیت فعلی
+                        if (isHidden) {
+                            content.classList.remove('hidden');
+                            arrow.style.transform = 'rotate(180deg)';
+                        } else {
+                            content.classList.add('hidden');
+                            arrow.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+            });
+        });
+
+        // --- INITIALIZATION ---
+        const initialize = async () => {
+            // First time fetch of all necessary data
+            await fetchPrices();
+            await fetchAssets();
+            await fetchChartData();
+            await updateDailyProfit();
+            
+            // Update displays
+            updateWalletBalanceDisplay();
+            updatePurchasePowerBox();
+            updatePurchaseModeUI();
+            
+            // Start the periodic price update (every 60 seconds)
+            setInterval(fetchPrices, 60000);
+            setInterval(updateDailyProfit, 300000);  // هر 5 دقیقه سود روزانه رو آپدیت کن
+        };
+        
+        // Start initialization when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initialize);
+        } else {
+            initialize();
+        }
+    </script>
+</body>
+</html>
