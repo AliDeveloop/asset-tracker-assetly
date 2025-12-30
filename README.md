@@ -12,6 +12,12 @@ focused on **Iranian financial markets** 🇮🇷
 ![Flask](https://img.shields.io/badge/Flask-Backend-black)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
+<a href="https://www.coffeebede.com/alideveloop">
+  <img src="https://img.shields.io/badge/☕%20Buy%20me%20a%20coffee-Coffeebede-orange"
+       height="28"
+       alt="Support me" />
+</a>
+
 
 <br/>
 
@@ -220,5 +226,6 @@ Issue در GitHub باز کنید
 
 
 مراحل انجام شده را شرح دهید
+
 
 
