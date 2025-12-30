@@ -81,6 +81,7 @@ bash
 # کپی کردن دستور زیر:
 
 git clone https://github.com/AliDeveloop/asset-tracker-assetly.git
+
 cd portfolio-tracker
 
 روش ۲: دانلود مستقیم ZIP
@@ -97,9 +98,13 @@ pip install -r requirements.txt
 bash
 # به صورت جداگانه نصب کنید:
 pip install Flask
+
 pip install requests
+
 pip install beautifulsoup4
+
 pip install apscheduler
+
 مرحله ۴: اجرای برنامه
 روش ۱: از طریق فایل portfoilio.bat
 داخل پوشه پروژه، فایل portfoilio.bat را پیدا کنید
@@ -110,13 +115,14 @@ pip install apscheduler
 
 روش ۲: دستی در Command Prompt
 bash
+
 python app.py
 مرحله ۵: دسترسی به برنامه
 مرورگر خود را باز کنید (Chrome, Firefox, Edge)
 
 آدرس زیر را وارد کنید:
 
-text
+
 http://localhost:5000
 Assetly برای شما بارگذاری می‌شود 🎉
 
@@ -179,3 +185,4 @@ Issue در GitHub باز کنید
 
 
 مراحل انجام شده را شرح دهید
+
