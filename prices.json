@@ -1,293 +1,458 @@
 {
-    "currency": [
-        {
-            "symbol": "USD",
-            "title": "دلار آمریکا",
-            "price": 124050.0
-        },
-        {
-            "symbol": "EUR",
-            "title": "یورو",
-            "price": 144460.0
-        },
-        {
-            "symbol": "GBP",
-            "title": "پوند انگلیس",
-            "price": 165540.0
-        },
-        {
-            "symbol": "AED",
-            "title": "درهم امارات",
-            "price": 34110.0
-        },
-        {
-            "symbol": "CNY",
-            "title": "یوان چین",
-            "price": 17550.0
-        },
-        {
-            "symbol": "TRY",
-            "title": "لیر ترکیه",
-            "price": 2915.0
-        },
-        {
-            "symbol": "RUB",
-            "title": "روبل روسیه",
-            "price": 1615.0
-        },
-        {
-            "symbol": "CAD",
-            "title": "دلار کانادا",
-            "price": 89720.0
-        },
-        {
-            "symbol": "CHF",
-            "title": "فرانک سوئیس",
-            "price": 154310.0
-        },
-        {
-            "symbol": "OMR",
-            "title": "ریال عمان",
-            "price": 323220.0
-        },
-        {
-            "symbol": "NOK",
-            "title": "کرون نروژ",
-            "price": 12280.0
-        },
-        {
-            "symbol": "AZN",
-            "title": "منات آذربایجان",
-            "price": 72800.0
-        },
-        {
-            "symbol": "DKK",
-            "title": "کرون دانمارک",
-            "price": 19340.0
-        },
-        {
-            "symbol": "MYR",
-            "title": "رینگیت مالزی",
-            "price": 30170.0
-        },
-        {
-            "symbol": "AFN",
-            "title": "افغانی",
-            "price": 1875.0
-        },
-        {
-            "symbol": "KWD",
-            "title": "دینار کویت",
-            "price": 404110.0
-        },
-        {
-            "symbol": "SEK",
-            "title": "کرون سوئد",
-            "price": 13200.0
-        },
-        {
-            "symbol": "AUD",
-            "title": "دلار استرالیا",
-            "price": 82430.0
-        },
-        {
-            "symbol": "THB",
-            "title": "بات تایلند",
-            "price": 3890.0
-        },
-        {
-            "symbol": "SGD",
-            "title": "دلار سنگاپور",
-            "price": 95750.0
-        },
-        {
-            "symbol": "JPY",
-            "title": "۱۰ ین ژاپن",
-            "price": 8000.0
-        },
-        {
-            "symbol": "MEXUSD",
-            "title": "دلار صرافی ملی",
-            "price": 73391.7
-        },
-        {
-            "symbol": "INR",
-            "title": "روپیه هند",
-            "price": 1380.0
-        }
-    ],
-    "gold_coin": [
-        {
-            "symbol": "EMAMI1",
-            "title": "سکه امامی",
-            "price": 131900000.0
-        },
-        {
-            "symbol": "GOL18",
-            "title": "گرم طلا",
-            "price": 12689180.0
-        },
-        {
-            "symbol": "OUNCE",
-            "title": "انس طلا",
-            "price": 4197.0
-        },
-        {
-            "symbol": "MITHQAL",
-            "title": "مثقال طلا",
-            "price": 54967000.0
-        },
-        {
-            "symbol": "AZADI1_4",
-            "title": "ربع سکه",
-            "price": 39600000.0
-        },
-        {
-            "symbol": "AZADI1_2",
-            "title": "نیم سکه",
-            "price": 69800000.0
-        },
-        {
-            "symbol": "AZADI1",
-            "title": "تمام سکه",
-            "price": 125500000.0
-        },
-        {
-            "symbol": "AZADI1G",
-            "title": "سکه ۱ گرمی",
-            "price": 18600000.0
-        },
-        {
-            "symbol": "AYAR",
-            "title": "عیار",
-            "price": 355106.0
-        }
-    ],
     "crypto": [
-        {
-            "symbol": "USDT",
-            "title": "تتر",
-            "price": 124390.0
-        },
-        {
-            "symbol": "BITCOIN",
-            "title": "بیت کوین",
-            "price": 91334.24859257
-        },
-        {
-            "symbol": "XRP",
-            "title": "ریپل",
-            "price": 2.08629564
-        },
-        {
-            "symbol": "ETH",
-            "title": "اتریوم",
-            "price": 3137.69237574
-        },
-        {
-            "symbol": "BNB",
-            "title": "بایننس کوین",
-            "price": 903.01166157
-        },
-        {
-            "symbol": "TRX",
-            "title": "ترون",
-            "price": 0.28695512
-        },
-        {
-            "symbol": "BCH",
-            "title": "بیت کوین کش",
-            "price": 596.94209426
-        },
-        {
-            "symbol": "DOGE",
-            "title": "دوج کوین",
-            "price": 0.14194949
-        },
-        {
-            "symbol": "LTC",
-            "title": "لایت کوین",
-            "price": 83.08701946
-        },
-        {
-            "symbol": "SOL",
-            "title": "سولانا",
-            "price": 135.82628277
-        },
-        {
-            "symbol": "XMR",
-            "title": "مونرو",
-            "price": 375.81196719
-        },
-        {
-            "symbol": "DASH",
-            "title": "دش",
-            "price": 45.90107769
-        },
-        {
-            "symbol": "EOS",
-            "title": "ایاس",
-            "price": 0.18119672
-        },
-        {
-            "symbol": "TON",
-            "title": "تون کوین",
-            "price": 1.67009812
-        },
-        {
-            "symbol": "DOT",
-            "title": "پولکادات",
-            "price": 2.14613157
-        },
         {
             "symbol": "ADA",
             "title": "کاردانو",
-            "price": 0.43252373
-        },
-        {
-            "symbol": "AVAX",
-            "title": "اوالانچ",
-            "price": 13.77979733
-        },
-        {
-            "symbol": "FIL",
-            "title": "فایل کوین",
-            "price": 1.49059032
-        },
-        {
-            "symbol": "XLM",
-            "title": "استلار",
-            "price": 0.24256072
-        },
-        {
-            "symbol": "SHIB",
-            "title": "شیبا اینو",
-            "price": 8.51e-06
-        },
-        {
-            "symbol": "VET",
-            "title": "وی چین",
-            "price": 0.01262667
-        },
-        {
-            "symbol": "LINK",
-            "title": "چین لینک",
-            "price": 14.09264919
-        },
-        {
-            "symbol": "MATIC",
-            "title": "متیک - پولیگان",
-            "price": 0.17727885
+            "price": 48974.705906589996,
+            "toman_price": 48974.705906589996,
+            "usd_price": 0.35147881,
+            "last_update": "2025-12-30 18:04"
         },
         {
             "symbol": "ATOM",
             "title": "کازموس",
-            "price": 2.23315104
+            "price": 274504.78162271,
+            "toman_price": 274504.78162271,
+            "usd_price": 1.97004989,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "AVAX",
+            "title": "اوالانچ",
+            "price": 1739678.93905536,
+            "toman_price": 1739678.93905536,
+            "usd_price": 12.48522624,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "BCH",
+            "title": "بیت کوین کش",
+            "price": 83887841.96953028,
+            "toman_price": 83887841.96953028,
+            "usd_price": 602.04136652,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "BITCOIN",
+            "title": "بیت کوین",
+            "price": 12257186425.037857,
+            "toman_price": 12257186425.037857,
+            "usd_price": 87966.65990884,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "BNB",
+            "title": "بایننس کوین",
+            "price": 119620645.23730242,
+            "toman_price": 119620645.23730242,
+            "usd_price": 858.48646278,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "DASH",
+            "title": "دش",
+            "price": 6012549.27377801,
+            "toman_price": 6012549.27377801,
+            "usd_price": 43.15051259,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "DOGE",
+            "title": "دوج کوین",
+            "price": 17229.801018370003,
+            "toman_price": 17229.801018370003,
+            "usd_price": 0.12365383,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "DOT",
+            "title": "پولکادات",
+            "price": 251344.72391146,
+            "toman_price": 251344.72391146,
+            "usd_price": 1.80383614,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "EOS",
+            "title": "ایاس",
+            "price": 22949.69344278,
+            "toman_price": 22949.69344278,
+            "usd_price": 0.16470402,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "ETH",
+            "title": "اتریوم",
+            "price": 412917890.6075734,
+            "toman_price": 412917890.6075734,
+            "usd_price": 2963.40500942,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "FIL",
+            "title": "فایل کوین",
+            "price": 184138.48522787,
+            "toman_price": 184138.48522787,
+            "usd_price": 1.32151433,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "LINK",
+            "title": "چین لینک",
+            "price": 1730943.83148757,
+            "toman_price": 1730943.83148757,
+            "usd_price": 12.42253663,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "LTC",
+            "title": "لایت کوین",
+            "price": 10868217.61126118,
+            "toman_price": 10868217.61126118,
+            "usd_price": 77.99838962,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "MATIC",
+            "title": "متیک - پولیگان",
+            "price": 24701.85768015,
+            "toman_price": 24701.85768015,
+            "usd_price": 0.17727885,
+            "last_update": "2025-10-17 12:34"
+        },
+        {
+            "symbol": "SHIB",
+            "title": "شیبا اینو",
+            "price": 0.99766724,
+            "toman_price": 0.99766724,
+            "usd_price": 7.16e-06,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "SOL",
+            "title": "سولانا",
+            "price": 17320807.978766162,
+            "toman_price": 17320807.978766162,
+            "usd_price": 124.30696344,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "TON",
+            "title": "تون کوین",
+            "price": 226291.39196414998,
+            "toman_price": 226291.39196414998,
+            "usd_price": 1.62403485,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "TRX",
+            "title": "ترون",
+            "price": 39788.818559729996,
+            "toman_price": 39788.818559729996,
+            "usd_price": 0.28555407,
+            "last_update": "2025-12-30 18:04"
         },
         {
             "symbol": "UNI",
             "title": "یونی سواپ",
-            "price": 5.64138652
+            "price": 831107.47876057,
+            "toman_price": 831107.47876057,
+            "usd_price": 5.96464363,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "USDT",
+            "title": "تتر",
+            "price": 19415356921.0,
+            "toman_price": 19415356921.0,
+            "usd_price": 139339.0,
+            "last_update": "2025-12-30 18:05"
+        },
+        {
+            "symbol": "VET",
+            "title": "وی چین",
+            "price": 1522.63388945,
+            "toman_price": 1522.63388945,
+            "usd_price": 0.01092755,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "XLM",
+            "title": "استلار",
+            "price": 29761.475532380002,
+            "toman_price": 29761.475532380002,
+            "usd_price": 0.21359042,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "XMR",
+            "title": "مونرو",
+            "price": 60936815.99584531,
+            "toman_price": 60936815.99584531,
+            "usd_price": 437.32778329,
+            "last_update": "2025-12-30 18:04"
+        },
+        {
+            "symbol": "XRP",
+            "title": "ریپل",
+            "price": 259318.51662461,
+            "toman_price": 259318.51662461,
+            "usd_price": 1.86106199,
+            "last_update": "2025-12-30 18:04"
         }
-    ]
+    ],
+    "gold_coin": [
+        {
+            "symbol": "AYAR",
+            "title": "عیار",
+            "price": 40049.0,
+            "toman_price": 40049.0,
+            "usd_price": 0.2874213249700371,
+            "last_update": "2025-12-30 18:05",
+            "source": "chartix.ir"
+        },
+        {
+            "symbol": "AZADI1",
+            "title": "تمام سکه",
+            "price": 148000000.0,
+            "toman_price": 148000000.0,
+            "usd_price": 1062.157759134198,
+            "last_update": "2025-12-30 17:38"
+        },
+        {
+            "symbol": "AZADI1G",
+            "title": "سکه ۱ گرمی",
+            "price": 22400000.0,
+            "toman_price": 22400000.0,
+            "usd_price": 160.759012193284,
+            "last_update": "2025-12-30 14:48"
+        },
+        {
+            "symbol": "AZADI1_2",
+            "title": "نیم سکه",
+            "price": 83000000.0,
+            "toman_price": 83000000.0,
+            "usd_price": 595.6695541090434,
+            "last_update": "2025-12-30 17:38"
+        },
+        {
+            "symbol": "AZADI1_4",
+            "title": "ربع سکه",
+            "price": 50000000.0,
+            "toman_price": 50000000.0,
+            "usd_price": 358.83708078858035,
+            "last_update": "2025-12-30 17:38"
+        },
+        {
+            "symbol": "EMAMI1",
+            "title": "سکه امامی",
+            "price": 154000000.0,
+            "toman_price": 154000000.0,
+            "usd_price": 1105.2182088288275,
+            "last_update": "2025-12-30 17:38"
+        },
+        {
+            "symbol": "GOL18",
+            "title": "گرم طلا",
+            "price": 14758760.0,
+            "toman_price": 14758760.0,
+            "usd_price": 105.91980708918537,
+            "last_update": "2025-12-30 18:03"
+        },
+        {
+            "symbol": "MITHQAL",
+            "title": "مثقال طلا",
+            "price": 63932000.0,
+            "toman_price": 63932000.0,
+            "usd_price": 458.8234449795104,
+            "last_update": "2025-12-30 18:03"
+        },
+        {
+            "symbol": "OUNCE",
+            "title": "انس طلا",
+            "price": 4386.0,
+            "toman_price": 4386.0,
+            "usd_price": 0.03147718872677427,
+            "last_update": "2025-12-30 17:58"
+        }
+    ],
+    "currency": [
+        {
+            "symbol": "AED",
+            "title": "درهم امارات",
+            "price": 38300.0,
+            "toman_price": 38300.0,
+            "usd_price": 0.27486920388405256,
+            "last_update": "2025-12-30 17:53"
+        },
+        {
+            "symbol": "AFN",
+            "title": "افغانی",
+            "price": 2105.0,
+            "toman_price": 2105.0,
+            "usd_price": 0.015107041101199233,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "AUD",
+            "title": "دلار استرالیا",
+            "price": 93490.0,
+            "toman_price": 93490.0,
+            "usd_price": 0.6709535736584876,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "AZN",
+            "title": "منات آذربایجان",
+            "price": 81730.0,
+            "toman_price": 81730.0,
+            "usd_price": 0.5865550922570135,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "CAD",
+            "title": "دلار کانادا",
+            "price": 101800.0,
+            "toman_price": 101800.0,
+            "usd_price": 0.7305922964855497,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "CHF",
+            "title": "فرانک سوئیس",
+            "price": 176840.0,
+            "toman_price": 176840.0,
+            "usd_price": 1.269134987333051,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "CNY",
+            "title": "یوان چین",
+            "price": 19880.0,
+            "toman_price": 19880.0,
+            "usd_price": 0.14267362332153954,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "DKK",
+            "title": "کرون دانمارک",
+            "price": 21960.0,
+            "toman_price": 21960.0,
+            "usd_price": 0.1576012458823445,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "EUR",
+            "title": "یورو",
+            "price": 164020.0,
+            "toman_price": 164020.0,
+            "usd_price": 1.1771291598188591,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "GBP",
+            "title": "پوند انگلیس",
+            "price": 188470.0,
+            "toman_price": 188470.0,
+            "usd_price": 1.3526004923244748,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "JPY",
+            "title": "۱۰ ین ژاپن",
+            "price": 8950.0,
+            "toman_price": 8950.0,
+            "usd_price": 0.06423183746115589,
+            "last_update": "2025-12-30 15:46"
+        },
+        {
+            "symbol": "KWD",
+            "title": "دینار کویت",
+            "price": 452600.0,
+            "toman_price": 452600.0,
+            "usd_price": 3.2481932552982293,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "MEXUSD",
+            "title": "دلار صرافی ملی",
+            "price": 124149.3,
+            "toman_price": 124149.3,
+            "usd_price": 0.890987447878914,
+            "last_update": "2025-12-30 08:03"
+        },
+        {
+            "symbol": "MYR",
+            "title": "رینگیت مالزی",
+            "price": 34420.0,
+            "toman_price": 34420.0,
+            "usd_price": 0.24702344641485874,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "NOK",
+            "title": "کرون نروژ",
+            "price": 13890.0,
+            "toman_price": 13890.0,
+            "usd_price": 0.09968494104306763,
+            "last_update": "2025-12-30 17:22"
+        },
+        {
+            "symbol": "OMR",
+            "title": "ریال عمان",
+            "price": 362280.0,
+            "toman_price": 362280.0,
+            "usd_price": 2.599989952561738,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "RUB",
+            "title": "روبل روسیه",
+            "price": 1785.0,
+            "toman_price": 1785.0,
+            "usd_price": 0.012810483784152319,
+            "last_update": "2025-12-30 15:49"
+        },
+        {
+            "symbol": "SEK",
+            "title": "کرون سوئد",
+            "price": 15180.0,
+            "toman_price": 15180.0,
+            "usd_price": 0.108942937727413,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "SGD",
+            "title": "دلار سنگاپور",
+            "price": 108660.0,
+            "toman_price": 108660.0,
+            "usd_price": 0.7798247439697429,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "THB",
+            "title": "بات تایلند",
+            "price": 4430.0,
+            "toman_price": 4430.0,
+            "usd_price": 0.03179296535786822,
+            "last_update": "2025-12-30 17:39"
+        },
+        {
+            "symbol": "TRY",
+            "title": "لیر ترکیه",
+            "price": 3245.0,
+            "toman_price": 3245.0,
+            "usd_price": 0.023288526543178867,
+            "last_update": "2025-12-30 16:03"
+        },
+        {
+            "symbol": "USD",
+            "title": "دلار آمریکا",
+            "price": 139300.0,
+            "toman_price": 139300.0,
+            "usd_price": 0.9997201070769849,
+            "last_update": "2025-12-30 17:39"
+        }
+    ],
+    "stock": []
 }

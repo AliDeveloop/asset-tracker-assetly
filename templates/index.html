@@ -255,7 +255,7 @@
         <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-4">
             <h1 class="text-2xl sm:text-3xl font-bold text-gray-200">Assetly | مدیریت حرفه ای پورتفوی</h1>
             <div class="flex flex-wrap gap-2 sm:gap-3 w-full sm:w-auto">
-                <button onclick="openComparisonModal()" class="flex-1 sm:flex-none bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
+                <button onclick="openValueAnalysisModal()" class="flex-1 sm:flex-none bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
                     📊 تحلیل ارزش
                 </button>
                 <button id="add-transaction-btn" class="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
@@ -729,13 +729,13 @@
         </div>
     </div>
 
-    <!-- 5. Comparison Modal -->
-    <div id="comparison-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <!-- 5. Value Analysis Modal -->
+    <div id="value-analysis-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
         <div class="modal-container">
             <div class="comparison-modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
                     <h3 class="text-lg sm:text-xl font-bold text-white">📊 تحلیل ارزش پورتفو</h3>
-                    <button type="button" data-close-modal="comparison-modal" class="text-gray-400 hover:text-white">
+                    <button type="button" data-close-modal="value-analysis-modal" class="text-gray-400 hover:text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -761,39 +761,43 @@
                         </div>
                     </div>
                     
-                    <!-- Charts -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-                        <div>
-                            <h4 class="text-sm sm:text-lg font-medium mb-2 sm:mb-3 text-gray-200">ارزش بر اساس دلار</h4>
-                            <div class="h-48 sm:h-64">
-                                <canvas id="usdChart"></canvas>
+                    <!-- تحلیل تغییرات -->
+                    <div class="mb-6 p-4 bg-gray-800 rounded-lg">
+                        <h4 class="text-sm sm:text-lg font-medium mb-3 text-gray-200">📈 تحلیل تغییرات</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">تغییر معادل دلار</p>
+                                <p id="usd-change-detail" class="text-lg font-mono">-</p>
+                                <p id="usd-change-percent" class="text-xs">-</p>
                             </div>
-                        </div>
-                        <div>
-                            <h4 class="text-sm sm:text-lg font-medium mb-2 sm:mb-3 text-gray-200">ارزش بر اساس طلا</h4>
-                            <div class="h-48 sm:h-64">
-                                <canvas id="goldChart"></canvas>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">تغییر معادل طلا</p>
+                                <p id="gold-change-detail" class="text-lg font-mono">-</p>
+                                <p id="gold-change-percent" class="text-xs">-</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Table -->
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full divide-y divide-gray-700 text-xs sm:text-sm">
-                            <thead class="sticky top-0 bg-gray-800">
-                                <tr class="text-gray-400 uppercase tracking-wider">
-                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">تاریخ</th>
-                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">ارزش کل</th>
-                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت دلار</th>
-                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت طلا</th>
-                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">معادل دلار</th>
-                                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">معادل طلا</th>
-                                </tr>
-                            </thead>
-                            <tbody id="comparison-table-body" class="divide-y divide-gray-800">
-                                <tr><td colspan="6" class="py-4 text-center text-gray-500">در حال بارگذاری...</td></tr>
-                            </tbody>
-                        </table>
+                    <!-- History Table -->
+                    <div>
+                        <h4 class="text-sm sm:text-lg font-medium mb-3 text-gray-200">📅 تاریخچه تحلیل</h4>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-700 text-xs sm:text-sm">
+                                <thead class="sticky top-0 bg-gray-800">
+                                    <tr class="text-gray-400 uppercase tracking-wider">
+                                        <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">تاریخ</th>
+                                        <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">ارزش تومان</th>
+                                        <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت دلار</th>
+                                        <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">قیمت طلا</th>
+                                        <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">معادل دلار</th>
+                                        <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">معادل طلا</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="value-analysis-table-body" class="divide-y divide-gray-800">
+                                    <tr><td colspan="6" class="py-4 text-center text-gray-500">در حال بارگذاری...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -805,15 +809,12 @@
         let allPrices = {};
         let allAssets = [];
         let portfolioChart = null;
-        let usdChart = null;
-        let goldChart = null;
         let purchaseMode = 'balance'; // 'balance' or 'portfolio'
 
         // --- Helper Functions ---
 
         /**
          * Formats a number with Toman separator and adds the Toman suffix.
-         * @param {string|number} numberString 
          */
         const formatToman = (numberString) => {
             if (!numberString) return '0';
@@ -829,7 +830,6 @@
         
         /**
          * Formats a percentage value.
-         * @param {string|number} numberString 
          */
         const formatPercent = (numberString) => {
             if (!numberString) return '0.00%';
@@ -863,19 +863,65 @@
             }
         };
 
+        // --- API Error Popup ---
+        const showApiErrorPopup = (message) => {
+            const popup = document.createElement('div');
+            popup.className = 'fixed top-4 right-4 z-50 bg-yellow-600 text-white p-4 rounded-lg shadow-lg max-w-sm';
+            popup.innerHTML = `
+                <div class="flex items-start">
+                    <svg class="w-6 h-6 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.998-.833-2.732 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                    </svg>
+                    <div>
+                        <p class="font-semibold">⚠️ اتصال به سرور قیمت‌ها</p>
+                        <p class="text-sm mt-1">${message}</p>
+                        <p class="text-xs mt-2 opacity-80">قیمت‌های قبلی نمایش داده می‌شوند</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="mr-auto text-white hover:text-gray-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(popup);
+            
+            // حذف خودکار بعد از 10 ثانیه
+            setTimeout(() => {
+                if (popup.parentElement) {
+                    popup.remove();
+                }
+            }, 10000);
+        };
+
         // --- API & Data Fetching ---
 
         const fetchPrices = async () => {
             try {
                 const response = await fetch('/api/prices');
                 if (!response.ok) throw new Error('Failed to fetch prices');
-                allPrices = await response.json();
+                
+                const data = await response.json();
+                allPrices = data;
+                
+                // Check if there was an API error
+                if (data.api_error) {
+                    showApiErrorPopup(data.api_error);
+                }
+                
                 renderPricesSidebar(allPrices);
                 updateWalletBalanceDisplay();
                 updatePurchasePowerBox();
+                
+                // Update last updated time
+                const now = new Date();
+                document.getElementById('last-updated').textContent = 
+                    `آخرین بروزرسانی: ${now.toLocaleTimeString('fa-IR')} ${data.api_error ? '(کش شده)' : ''}`;
+                    
             } catch (error) {
                 console.error('Error fetching prices:', error);
-                document.getElementById('last-updated').textContent = 'خطا در بروزرسانی قیمت‌ها';
+                showApiErrorPopup('خطا در برقراری ارتباط با سرور قیمت‌ها');
             }
         };
 
@@ -907,60 +953,50 @@
         };
 
         // --- Daily Profit Functions ---
-        // ---------------------------
-        // --- Daily Profit Functions ---
-const updateDailyProfit = async () => {
-    try {
-        const response = await fetch('/api/today-profit');
-        if (!response.ok) throw new Error('Failed to fetch daily profit');
-        const data = await response.json();
-        
-        if (data.error) {
-            console.error('Daily profit error:', data.error);
-            return;
-        }
-        
-        // Update daily profit display
-        const dailyChange = data.daily_change || 0;
-        const dailyPercent = data.daily_change_percent || 0;
-        const yesterdayValue = data.yesterday_value || (data.total_value - data.daily_change);
-        
-        document.getElementById('daily-profit-toman').textContent = formatToman(dailyChange);
-        document.getElementById('daily-profit-percent').textContent = formatPercent(dailyPercent);
-        document.getElementById('yesterday-value').textContent = formatToman(yesterdayValue);
-        
-        // Add color classes
-        const dailyTomanEl = document.getElementById('daily-profit-toman');
-        const dailyPercentEl = document.getElementById('daily-profit-percent');
-        
-        if (dailyChange >= 0) {
-            dailyTomanEl.classList.remove('text-red-400');
-            dailyTomanEl.classList.add('text-green-400');
-            dailyPercentEl.classList.remove('text-red-400');
-            dailyPercentEl.classList.add('text-green-400');
-        } else {
-            dailyTomanEl.classList.remove('text-green-400');
-            dailyTomanEl.classList.add('text-red-400');
-            dailyPercentEl.classList.remove('text-green-400');
-            dailyPercentEl.classList.add('text-red-400');
-        }
-        
-        // نمایش اطلاعات دیباگ در کنسول
-        console.log('Daily Profit Data:', {
-            today: data.total_value,
-            yesterday: yesterdayValue,
-            change: dailyChange,
-            percent: dailyPercent
-        });
-        
-    } catch (error) {
-        console.error('Error updating daily profit:', error);
-        document.getElementById('daily-profit-toman').textContent = 'خطا';
-        document.getElementById('daily-profit-percent').textContent = 'خطا';
-        document.getElementById('yesterday-value').textContent = 'خطا';
-    }
-};
-        // ------------------
+        const updateDailyProfit = async () => {
+            try {
+                const response = await fetch('/api/today-profit');
+                if (!response.ok) throw new Error('Failed to fetch daily profit');
+                const data = await response.json();
+                
+                if (data.error) {
+                    console.error('Daily profit error:', data.error);
+                    return;
+                }
+                
+                // Update daily profit display
+                const dailyChange = data.daily_change || 0;
+                const dailyPercent = data.daily_change_percent || 0;
+                const yesterdayValue = data.yesterday_value || (data.total_value - data.daily_change);
+                
+                document.getElementById('daily-profit-toman').textContent = formatToman(dailyChange);
+                document.getElementById('daily-profit-percent').textContent = formatPercent(dailyPercent);
+                document.getElementById('yesterday-value').textContent = formatToman(yesterdayValue);
+                
+                // Add color classes
+                const dailyTomanEl = document.getElementById('daily-profit-toman');
+                const dailyPercentEl = document.getElementById('daily-profit-percent');
+                
+                if (dailyChange >= 0) {
+                    dailyTomanEl.classList.remove('text-red-400');
+                    dailyTomanEl.classList.add('text-green-400');
+                    dailyPercentEl.classList.remove('text-red-400');
+                    dailyPercentEl.classList.add('text-green-400');
+                } else {
+                    dailyTomanEl.classList.remove('text-green-400');
+                    dailyTomanEl.classList.add('text-red-400');
+                    dailyPercentEl.classList.remove('text-green-400');
+                    dailyPercentEl.classList.add('text-red-400');
+                }
+                
+            } catch (error) {
+                console.error('Error updating daily profit:', error);
+                document.getElementById('daily-profit-toman').textContent = 'خطا';
+                document.getElementById('daily-profit-percent').textContent = 'خطا';
+                document.getElementById('yesterday-value').textContent = 'خطا';
+            }
+        };
+
         // --- Purchase Power Mode Toggle ---
         document.getElementById('purchase-mode-balance').addEventListener('click', () => {
             if (purchaseMode !== 'balance') {
@@ -1033,11 +1069,11 @@ const updateDailyProfit = async () => {
             
             // پیدا کردن قیمت‌ها
             for (const category in allPrices) {
-                if (allPrices[category]) {
+                if (allPrices[category] && Array.isArray(allPrices[category])) {
                     allPrices[category].forEach(item => {
-                        if (item.symbol === 'USD') usdPrice = item.toman_price;
-                        if (item.symbol === 'GOL18') goldPrice = item.toman_price;
-                        if (item.symbol === 'BITCOIN') btcPrice = item.toman_price;
+                        if (item.symbol === 'USD') usdPrice = item.toman_price || item.price;
+                        if (item.symbol === 'GOL18') goldPrice = item.toman_price || item.price;
+                        if (item.symbol === 'BITCOIN') btcPrice = item.toman_price || item.price;
                     });
                 }
             }
@@ -1148,8 +1184,10 @@ const updateDailyProfit = async () => {
         // --- Rendering Logic ---
 
         const renderPricesSidebar = (prices) => {
-            const now = new Date();
-            document.getElementById('last-updated').textContent = `آخرین بروزرسانی: ${now.toLocaleTimeString('fa-IR')}`;
+            // حذف time از last_updated اگر وجود دارد
+            if (prices.last_updated) {
+                delete prices.last_updated;
+            }
             
             // ۱. نمایش قیمت دارایی‌های موجود در پورتفو
             const portfolioPricesList = document.getElementById('portfolio-prices-list');
@@ -1198,7 +1236,7 @@ const updateDailyProfit = async () => {
                     const itemsToShow = prices[category.id].slice(0, 8);
                     
                     itemsToShow.forEach(item => {
-                        const priceDisplay = formatToman(item.toman_price);
+                        const priceDisplay = formatToman(item.toman_price || item.price);
                         let subText = '';
                         if (category.id === 'crypto' && item.usd_price) {
                             subText = `($${parseFloat(item.usd_price).toFixed(3)})`;
@@ -1228,81 +1266,81 @@ const updateDailyProfit = async () => {
                 }
             });
         };
-        // -**-*
+
         const renderAssetsDashboard = (assets) => {
-    const tableBody = document.getElementById('assets-table-body');
-    tableBody.innerHTML = '';
-    
-    let totalValue = 0;
-    let totalProfit = 0;
-    let totalCostBasis = 0;
-    let rialWalletBalance = 0;
-
-    assets.forEach(asset => {
-        const quantity = parseFloat(asset.total_quantity);
-        const costBasis = parseFloat(asset.cost_basis);
-        const currentValue = parseFloat(asset.current_value);
-        const profitLoss = parseFloat(asset.profit_loss);
-        const returnPct = parseFloat(asset.return_pct);
-
-        if (asset.symbol === 'RIAL_WALLET') {
-            rialWalletBalance = quantity;
-            totalValue += quantity;
-            return;
-        }
-
-        if (quantity > 0) {
-            totalValue += currentValue;
-            totalProfit += profitLoss;
-            totalCostBasis += costBasis;
-
-            const statusClass = getStatusColor(profitLoss);
+            const tableBody = document.getElementById('assets-table-body');
+            tableBody.innerHTML = '';
             
-            tableBody.innerHTML += `
-                <tr class="hover:bg-gray-800 transition duration-150">
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-medium text-white text-xs sm:text-sm">
-                        <div class="flex flex-col">
-                            <span>${asset.title}</span>
-                            <span class="text-gray-500 text-xs">(${asset.symbol})</span>
-                        </div>
-                    </td>
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.break_even_price)}</td>
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.current_price)}</td>
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatPrice(asset.total_quantity)}</td>
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.current_value)}</td>
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm ${statusClass} font-semibold">
-                        ${formatToman(profitLoss)} 
-                        <span class="text-xs">(${formatPercent(returnPct)})</span>
-                    </td>
-                    <td class="px-2 py-2 sm:px-3 sm:py-3 text-center">
-                        <button onclick="openHistoryModal('${asset.title}', '${asset.id}')" class="text-blue-500 hover:text-blue-400 text-xs sm:text-sm action-btn">مشاهده</button>
-                    </td>
-                </tr>
-            `;
-        }
-    });
+            let totalValue = 0;
+            let totalProfit = 0;
+            let totalCostBasis = 0;
+            let rialWalletBalance = 0;
 
-    // Handle empty assets case
-    if (tableBody.innerHTML === '') {
-        tableBody.innerHTML = `<tr><td colspan="7" class="py-4 text-center text-gray-500">هنوز دارایی اسپاتی ثبت نشده است.</td></tr>`;
-    }
+            assets.forEach(asset => {
+                const quantity = parseFloat(asset.total_quantity);
+                const costBasis = parseFloat(asset.cost_basis);
+                const currentValue = parseFloat(asset.current_value);
+                const profitLoss = parseFloat(asset.profit_loss);
+                const returnPct = parseFloat(asset.return_pct);
 
-    // --- Update Summary Cards ---
-    const overallReturnPct = totalCostBasis > 0 ? (totalProfit / totalCostBasis) * 100 : 0;
-    const overallStatusClass = getStatusColor(totalProfit);
+                if (asset.symbol === 'RIAL_WALLET') {
+                    rialWalletBalance = quantity;
+                    totalValue += quantity;
+                    return;
+                }
 
-    // Update Total Value (Asset Value + Rial Wallet)
-    document.getElementById('total-value').textContent = formatToman(totalValue);
-    
-    // Update Total Profit/Loss (Only from Non-Wallet Assets)
-    document.getElementById('total-profit').textContent = formatToman(totalProfit);
-    document.getElementById('total-profit-pct').className = `text-sm mt-1 flex items-center ${overallStatusClass} font-medium`;
-    document.getElementById('total-profit-pct').innerHTML = `<svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="${totalProfit >= 0 ? 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z' : 'M14.707 7.293a1 1 0 00-1.414 0L10 10.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 000-1.414z'}" clip-rule="evenodd"></path></svg>${formatPercent(overallReturnPct)}`;
-    
-    // Update Rial Wallet Balance
-    document.getElementById('rial-wallet-balance').textContent = formatToman(rialWalletBalance);
-};
-        // -*-*
+                if (quantity > 0) {
+                    totalValue += currentValue;
+                    totalProfit += profitLoss;
+                    totalCostBasis += costBasis;
+
+                    const statusClass = getStatusColor(profitLoss);
+                    
+                    tableBody.innerHTML += `
+                        <tr class="hover:bg-gray-800 transition duration-150">
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 font-medium text-white text-xs sm:text-sm">
+                                <div class="flex flex-col">
+                                    <span>${asset.title}</span>
+                                    <span class="text-gray-500 text-xs">(${asset.symbol})</span>
+                                </div>
+                            </td>
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.break_even_price)}</td>
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.current_price)}</td>
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatPrice(asset.total_quantity)}</td>
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 font-mono text-xs sm:text-sm">${formatToman(asset.current_value)}</td>
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm ${statusClass} font-semibold">
+                                ${formatToman(profitLoss)} 
+                                <span class="text-xs">(${formatPercent(returnPct)})</span>
+                            </td>
+                            <td class="px-2 py-2 sm:px-3 sm:py-3 text-center">
+                                <button onclick="openHistoryModal('${asset.title}', '${asset.id}')" class="text-blue-500 hover:text-blue-400 text-xs sm:text-sm action-btn">مشاهده</button>
+                            </td>
+                        </tr>
+                    `;
+                }
+            });
+
+            // Handle empty assets case
+            if (tableBody.innerHTML === '') {
+                tableBody.innerHTML = `<tr><td colspan="7" class="py-4 text-center text-gray-500">هنوز دارایی اسپاتی ثبت نشده است.</td></tr>`;
+            }
+
+            // --- Update Summary Cards ---
+            const overallReturnPct = totalCostBasis > 0 ? (totalProfit / totalCostBasis) * 100 : 0;
+            const overallStatusClass = getStatusColor(totalProfit);
+
+            // Update Total Value (Asset Value + Rial Wallet)
+            document.getElementById('total-value').textContent = formatToman(totalValue);
+            
+            // Update Total Profit/Loss (Only from Non-Wallet Assets)
+            document.getElementById('total-profit').textContent = formatToman(totalProfit);
+            document.getElementById('total-profit-pct').className = `text-sm mt-1 flex items-center ${overallStatusClass} font-medium`;
+            document.getElementById('total-profit-pct').innerHTML = `<svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="${totalProfit >= 0 ? 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z' : 'M14.707 7.293a1 1 0 00-1.414 0L10 10.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 000-1.414z'}" clip-rule="evenodd"></path></svg>${formatPercent(overallReturnPct)}`;
+            
+            // Update Rial Wallet Balance
+            document.getElementById('rial-wallet-balance').textContent = formatToman(rialWalletBalance);
+        };
+
         const renderChart = (data) => {
             const dates = Object.keys(data).sort();
             const values = dates.map(date => data[date]);
@@ -1382,10 +1420,12 @@ const updateDailyProfit = async () => {
                 // پیدا کردن قیمت دارایی
                 let assetPrice = 0;
                 for (const category in allPrices) {
-                    const asset = allPrices[category].find(a => a.symbol === assetSymbol);
-                    if (asset) {
-                        assetPrice = asset.toman_price;
-                        break;
+                    if (allPrices[category] && Array.isArray(allPrices[category])) {
+                        const asset = allPrices[category].find(a => a.symbol === assetSymbol);
+                        if (asset) {
+                            assetPrice = asset.toman_price || asset.price;
+                            break;
+                        }
                     }
                 }
                 
@@ -1402,6 +1442,140 @@ const updateDailyProfit = async () => {
                 walletDisplay.classList.remove('hidden');
             } else {
                 walletDisplay.classList.add('hidden');
+            }
+        };
+
+        // --- Value Analysis Functions ---
+
+        const openValueAnalysisModal = async () => {
+            try {
+                const response = await fetch('/api/value-analysis');
+                if (!response.ok) throw new Error('Failed to fetch value analysis');
+                const data = await response.json();
+                
+                renderValueAnalysisData(data);
+                document.getElementById('value-analysis-modal').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error opening value analysis modal:', error);
+                alert('خطا در بارگذاری داده‌های تحلیل ارزش');
+            }
+        };
+
+        const renderValueAnalysisData = (data) => {
+            if (!data || Object.keys(data).length === 0) {
+                // نمایش پیام عدم وجود داده
+                document.getElementById('current-value').textContent = 'داده‌ای موجود نیست';
+                document.getElementById('current-usd').textContent = '-';
+                document.getElementById('current-gold').textContent = '-';
+                return;
+            }
+            
+            // Update summary cards
+            document.getElementById('current-value').textContent = formatToman(data.total_value_toman);
+            document.getElementById('current-usd').textContent = `${data.equivalent_usd?.toFixed(2) || '0.00'} USD`;
+            document.getElementById('current-gold').textContent = `${data.equivalent_gold_grams?.toFixed(3) || '0.000'} گرم`;
+            
+            // Update change indicators
+            const usdChange = data.usd_change || 0;
+            const goldChange = data.gold_change || 0;
+            const usdPercent = data.usd_change_percent || 0;
+            const goldPercent = data.gold_change_percent || 0;
+            
+            // Detailed change display
+            const usdChangeDetail = document.getElementById('usd-change-detail');
+            const goldChangeDetail = document.getElementById('gold-change-detail');
+            const usdPercentEl = document.getElementById('usd-change-percent');
+            const goldPercentEl = document.getElementById('gold-change-percent');
+            
+            if (usdChange !== 0) {
+                usdChangeDetail.textContent = `${usdChange >= 0 ? '+' : ''}${usdChange.toFixed(2)} USD`;
+                usdChangeDetail.className = `text-lg font-mono ${usdChange >= 0 ? 'text-green-400' : 'text-red-400'}`;
+                
+                usdPercentEl.textContent = `${usdPercent >= 0 ? '+' : ''}${usdPercent.toFixed(2)}%`;
+                usdPercentEl.className = `text-xs ${usdPercent >= 0 ? 'text-green-400' : 'text-red-400'}`;
+            } else {
+                usdChangeDetail.textContent = 'بدون تغییر';
+                usdChangeDetail.className = 'text-lg font-mono text-gray-400';
+                usdPercentEl.textContent = '0.00%';
+                usdPercentEl.className = 'text-xs text-gray-400';
+            }
+            
+            if (goldChange !== 0) {
+                goldChangeDetail.textContent = `${goldChange >= 0 ? '+' : ''}${goldChange.toFixed(3)} گرم`;
+                goldChangeDetail.className = `text-lg font-mono ${goldChange >= 0 ? 'text-green-400' : 'text-red-400'}`;
+                
+                goldPercentEl.textContent = `${goldPercent >= 0 ? '+' : ''}${goldPercent.toFixed(2)}%`;
+                goldPercentEl.className = `text-xs ${goldPercent >= 0 ? 'text-green-400' : 'text-red-400'}`;
+            } else {
+                goldChangeDetail.textContent = 'بدون تغییر';
+                goldChangeDetail.className = 'text-lg font-mono text-gray-400';
+                goldPercentEl.textContent = '0.00%';
+                goldPercentEl.className = 'text-xs text-gray-400';
+            }
+            
+            // Simple change indicators in summary cards
+            const simpleUsdChange = document.getElementById('usd-change');
+            const simpleGoldChange = document.getElementById('gold-change');
+            
+            if (usdPercent !== 0) {
+                simpleUsdChange.textContent = `${usdPercent >= 0 ? '📈 +' : '📉 '}${Math.abs(usdPercent).toFixed(1)}%`;
+                simpleUsdChange.className = `text-xs sm:text-sm mt-1 ${usdPercent >= 0 ? 'text-green-400' : 'text-red-400'}`;
+            } else {
+                simpleUsdChange.textContent = '';
+            }
+            
+            if (goldPercent !== 0) {
+                simpleGoldChange.textContent = `${goldPercent >= 0 ? '📈 +' : '📉 '}${Math.abs(goldPercent).toFixed(1)}%`;
+                simpleGoldChange.className = `text-xs sm:text-sm mt-1 ${goldPercent >= 0 ? 'text-green-400' : 'text-red-400'}`;
+            } else {
+                simpleGoldChange.textContent = '';
+            }
+            
+            // Load history table
+            loadValueAnalysisHistory();
+        };
+
+        const loadValueAnalysisHistory = async () => {
+            try {
+                const response = await fetch('/api/comparison-data');
+                if (!response.ok) throw new Error('Failed to fetch history');
+                const history = await response.json();
+                
+                const tableBody = document.getElementById('value-analysis-table-body');
+                tableBody.innerHTML = '';
+                
+                if (history.length === 0) {
+                    tableBody.innerHTML = `
+                        <tr><td colspan="6" class="py-4 text-center text-gray-500">
+                            تاریخچه‌ای موجود نیست
+                        </td></tr>`;
+                    return;
+                }
+                
+                // Display last 7 days (most recent first)
+                const displayData = history.slice(-7).reverse();
+                
+                displayData.forEach(entry => {
+                    const date = new Date(entry.date).toLocaleDateString('fa-IR');
+                    
+                    tableBody.innerHTML += `
+                        <tr class="hover:bg-gray-800 transition duration-150">
+                            <td class="px-2 py-1 sm:px-3 sm:py-2 text-xs">${date}</td>
+                            <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.total_value_toman)}</td>
+                            <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.usd_price)}</td>
+                            <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.gold_price_per_gram)}</td>
+                            <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${entry.equivalent_usd?.toFixed(2) || '0.00'} USD</td>
+                            <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${entry.equivalent_gold_grams?.toFixed(3) || '0.000'} گرم</td>
+                        </tr>
+                    `;
+                });
+                
+            } catch (error) {
+                console.error('Error loading value analysis history:', error);
+                document.getElementById('value-analysis-table-body').innerHTML = 
+                    `<tr><td colspan="6" class="py-4 text-center text-red-400">
+                        خطا در بارگذاری تاریخچه
+                    </td></tr>`;
             }
         };
 
@@ -1737,238 +1911,6 @@ const updateDailyProfit = async () => {
                 console.error('Delete error:', error);
                 alert('خطای شبکه یا سرور رخ داد.');
             }
-        };
-
-        // --- Comparison Modal Functions ---
-
-        const openComparisonModal = async () => {
-            try {
-                const response = await fetch('/api/comparison-data');
-                if (!response.ok) throw new Error('Failed to fetch comparison data');
-                const data = await response.json();
-                
-                if (data.length > 0) {
-                    renderComparisonData(data);
-                } else {
-                    // اگر داده‌ای نیست، سعی کن یه رکورد ایجاد کن
-                    document.getElementById('comparison-table-body').innerHTML = 
-                        '<tr><td colspan="6" class="py-4 text-center text-gray-500">در حال بارگذاری داده‌ها...</td></tr>';
-                    
-                    // سعی کن به صورت دستی داده ایجاد کن
-                    await createInitialComparisonData();
-                }
-                
-                document.getElementById('comparison-modal').classList.remove('hidden');
-            } catch (error) {
-                console.error('Error opening comparison modal:', error);
-                
-                // نمایش پیام خطای بهتر
-                document.getElementById('comparison-table-body').innerHTML = 
-                    `<tr><td colspan="6" class="py-4 text-center text-yellow-400">
-                        خطا در بارگذاری داده‌های تحلیل. لطفاً صفحه را رفرش کنید.
-                        <br><span class="text-xs text-gray-500">${error.message}</span>
-                    </td></tr>`;
-                
-                document.getElementById('comparison-modal').classList.remove('hidden');
-            }
-        };
-
-        // تابع برای ایجاد داده اولیه
-        const createInitialComparisonData = async () => {
-            try {
-                // اول قیمت‌ها رو بگیر
-                if (!allPrices || Object.keys(allPrices).length === 0) {
-                    await fetchPrices();
-                }
-                
-                // محاسبه ارزش فعلی
-                const rialAsset = allAssets.find(a => a.symbol === 'RIAL_WALLET');
-                const walletBalance = rialAsset ? parseFloat(rialAsset.total_quantity) : 0;
-                
-                let totalValue = walletBalance;
-                allAssets.forEach(asset => {
-                    if (asset.symbol !== 'RIAL_WALLET') {
-                        totalValue += parseFloat(asset.current_value) || 0;
-                    }
-                });
-                
-                // پیدا کردن قیمت دلار و طلا
-                let usdPrice = 0;
-                let goldPrice = 0;
-                
-                for (const category in allPrices) {
-                    if (allPrices[category]) {
-                        allPrices[category].forEach(item => {
-                            if (item.symbol === 'USD') usdPrice = item.toman_price;
-                            if (item.symbol === 'GOL18') goldPrice = item.toman_price;
-                        });
-                    }
-                }
-                
-                // محاسبه معادل‌ها
-                const equivalentUSD = usdPrice > 0 ? totalValue / usdPrice : 0;
-                const equivalentGold = goldPrice > 0 ? totalValue / goldPrice : 0;
-                
-                // آپدیت کارت‌های خلاصه
-                document.getElementById('current-value').textContent = formatToman(totalValue);
-                document.getElementById('current-usd').textContent = `${equivalentUSD.toFixed(2)} USD`;
-                document.getElementById('current-gold').textContent = `${equivalentGold.toFixed(3)} گرم`;
-                document.getElementById('usd-change').textContent = '';
-                document.getElementById('gold-change').textContent = '';
-                
-                // پیام راهنمایی
-                document.getElementById('comparison-table-body').innerHTML = 
-                    `<tr><td colspan="6" class="py-4 text-center text-gray-500">
-                        داده‌های تاریخی هنوز جمع‌آوری نشده‌اند.
-                        <br><span class="text-xs">داده‌ها از امروز شروع به جمع‌آوری می‌شوند.</span>
-                    </td></tr>`;
-                
-            } catch (error) {
-                console.error('Error creating initial comparison data:', error);
-            }
-        };
-
-        const renderComparisonData = (data) => {
-            const latest = data[data.length - 1];
-            
-            // Update summary cards
-            document.getElementById('current-value').textContent = formatToman(latest.total_value_toman);
-            document.getElementById('current-usd').textContent = `${latest.equivalent_usd.toFixed(2)} USD`;
-            document.getElementById('current-gold').textContent = `${latest.equivalent_gold_grams.toFixed(3)} گرم`;
-            
-            // Update change indicators
-            const usdChangeEl = document.getElementById('usd-change');
-            const goldChangeEl = document.getElementById('gold-change');
-            
-            usdChangeEl.textContent = formatPercent(latest.usd_change_percent);
-            usdChangeEl.className = `text-xs sm:text-sm mt-1 ${latest.usd_change_percent >= 0 ? 'text-green-400' : 'text-red-400'}`;
-            
-            goldChangeEl.textContent = formatPercent(latest.gold_change_percent);
-            goldChangeEl.className = `text-xs sm:text-sm mt-1 ${latest.gold_change_percent >= 0 ? 'text-green-400' : 'text-red-400'}`;
-            
-            // Render table
-            const tableBody = document.getElementById('comparison-table-body');
-            tableBody.innerHTML = '';
-            
-            // نمایش فقط 10 رکورد آخر
-            const displayData = data.slice(-10).reverse();
-            
-            displayData.forEach(entry => {
-                const date = new Date(entry.date).toLocaleDateString('fa-IR');
-                
-                tableBody.innerHTML += `
-                    <tr class="hover:bg-gray-800 transition duration-150">
-                        <td class="px-2 py-1 sm:px-3 sm:py-2 text-xs">${date}</td>
-                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.total_value_toman)}</td>
-                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.usd_price)}</td>
-                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${formatToman(entry.gold_price_per_gram)}</td>
-                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${entry.equivalent_usd.toFixed(2)} USD</td>
-                        <td class="px-2 py-1 sm:px-3 sm:py-2 font-mono text-xs sm:text-sm">${entry.equivalent_gold_grams.toFixed(3)} گرم</td>
-                    </tr>
-                `;
-            });
-            
-            // Render charts if enough data
-            if (data.length >= 2) {
-                renderComparisonCharts(data);
-            } else {
-                // Hide charts if not enough data
-                document.getElementById('usdChart').style.display = 'none';
-                document.getElementById('goldChart').style.display = 'none';
-                document.querySelectorAll('h4.text-gray-200').forEach(el => el.style.display = 'none');
-            }
-        };
-
-        const renderComparisonCharts = (data) => {
-            const dates = data.map(d => d.date).reverse();
-            const usdValues = data.map(d => d.equivalent_usd).reverse();
-            const goldValues = data.map(d => d.equivalent_gold_grams).reverse();
-            
-            // USD Chart
-            const usdCtx = document.getElementById('usdChart').getContext('2d');
-            if (usdChart) usdChart.destroy();
-            
-            usdChart = new Chart(usdCtx, {
-                type: 'line',
-                data: {
-                    labels: dates,
-                    datasets: [{
-                        label: 'ارزش معادل دلار',
-                        data: usdValues,
-                        borderColor: '#3b82f6',
-                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                        fill: true,
-                        tension: 0.3,
-                        pointRadius: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)} USD`
-                            }
-                        }
-                    },
-                    scales: {
-                        x: { 
-                            display: false,
-                            grid: { color: '#30363d' }
-                        },
-                        y: {
-                            title: { display: true, text: 'دلار', color: '#8b949e' },
-                            ticks: { color: '#8b949e' },
-                            grid: { color: '#30363d' }
-                        }
-                    }
-                }
-            });
-            
-            // Gold Chart
-            const goldCtx = document.getElementById('goldChart').getContext('2d');
-            if (goldChart) goldChart.destroy();
-            
-            goldChart = new Chart(goldCtx, {
-                type: 'line',
-                data: {
-                    labels: dates,
-                    datasets: [{
-                        label: 'ارزش معادل طلا (گرم)',
-                        data: goldValues,
-                        borderColor: '#f59e0b',
-                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                        fill: true,
-                        tension: 0.3,
-                        pointRadius: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(3)} گرم`
-                            }
-                        }
-                    },
-                    scales: {
-                        x: { 
-                            display: false,
-                            grid: { color: '#30363d' }
-                        },
-                        y: {
-                            title: { display: true, text: 'گرم طلا', color: '#8b949e' },
-                            ticks: { color: '#8b949e' },
-                            grid: { color: '#30363d' }
-                        }
-                    }
-                }
-            });
         };
 
         // --- مدیریت کشویی‌ها ---

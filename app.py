@@ -28,8 +28,8 @@ RIAL_WALLET_SYMBOL = 'RIAL_WALLET'
 ASSETS_FILE = 'assets.json'
 CHART_DATA_FILE = 'chart_data.json'
 COMPARISON_FILE = 'comparison_data.json'
-PRICES_HISTORY_FILE = 'prices_history.json'
 DAILY_PROFIT_FILE = 'daily_profit.json'
+PRICES_FILE = 'prices.json'  # فایل کش قیمت‌ها
 
 # Global variables
 allAssets = []
@@ -43,18 +43,26 @@ PRICE_CACHE_DURATION = 5  # minutes
 def read_json_file(file_path):
     """Reads and returns data from a JSON file."""
     if not os.path.exists(file_path):
-        return {} if file_path in [CHART_DATA_FILE, COMPARISON_FILE, PRICES_HISTORY_FILE] else []
+        return {} if file_path in [CHART_DATA_FILE, COMPARISON_FILE] else []
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except json.JSONDecodeError:
         print(f"Error decoding JSON from {file_path}. Returning empty data.")
-        return {} if file_path in [CHART_DATA_FILE, COMPARISON_FILE, PRICES_HISTORY_FILE] else []
+        return {} if file_path in [CHART_DATA_FILE, COMPARISON_FILE] else []
 
 def write_json_file(file_path, data):
     """Writes data to a JSON file."""
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
+
+def read_prices():
+    """Reads current prices from JSON file."""
+    return read_json_file(PRICES_FILE)
+
+def write_prices(data):
+    """Writes prices to JSON file."""
+    write_json_file(PRICES_FILE, data)
 
 def init_json_files():
     """Initializes all JSON files if they don't exist."""
@@ -62,8 +70,8 @@ def init_json_files():
         (ASSETS_FILE, []),
         (CHART_DATA_FILE, {}),
         (COMPARISON_FILE, []),
-        (PRICES_HISTORY_FILE, {}),
-        (DAILY_PROFIT_FILE, [])
+        (DAILY_PROFIT_FILE, []),
+        (PRICES_FILE, {})  # اضافه کردن فایل قیمت‌ها
     ]
     
     for file_path, default_data in files_to_init:
@@ -164,14 +172,6 @@ def write_comparison_data(data):
     """Writes comparison data to JSON file."""
     write_json_file(COMPARISON_FILE, data)
 
-def read_prices_history():
-    """Reads prices history from JSON file."""
-    return read_json_file(PRICES_HISTORY_FILE)
-
-def write_prices_history(data):
-    """Writes prices history to JSON file."""
-    write_json_file(PRICES_HISTORY_FILE, data)
-
 def read_daily_profit():
     """Reads daily profit data from JSON file."""
     return read_json_file(DAILY_PROFIT_FILE)
@@ -182,9 +182,42 @@ def write_daily_profit(data):
 
 # --- Price Fetching Logic ---
 
+def use_cached_prices(error_message=""):
+    """Use cached prices when API is unavailable."""
+    global current_prices
+    
+    try:
+        cached_prices = read_prices()
+        if cached_prices:
+            current_prices['categorized'] = cached_prices
+            current_prices['last_updated'] = datetime.now(timezone.utc).isoformat()
+            current_prices['api_error'] = error_message
+            
+            # Extract USD and Gold prices from cached data
+            for category in cached_prices.values():
+                if isinstance(category, list):
+                    for item in category:
+                        if item['symbol'] == 'USD':
+                            current_prices['USD'] = item['price']
+                        elif item['symbol'] == 'GOL18':
+                            current_prices['GOL18'] = item['price']
+                        elif item['symbol'] == 'USDT':
+                            current_prices['usdt_price'] = item['price']
+            
+            print(f"⚠️ Using cached prices due to: {error_message}")
+        else:
+            print("⚠️ No cached prices available")
+            # Set default prices if no cache
+            current_prices['USD'] = 124050.0
+            current_prices['GOL18'] = 12689180.0
+            current_prices['api_error'] = error_message
+    except Exception as e:
+        print(f"❌ Error reading cached prices: {e}")
+        current_prices['api_error'] = f"{error_message} (و خطا در خواندن کش)"
+
 def fetch_prices():
-    """Fetches real-time prices from external APIs with caching."""
-    global current_prices, allAssets
+    """Fetches real-time prices from external APIs with fallback to cached prices."""
+    global current_prices
     
     # Check if we're rate limited
     rate_limited_until = current_prices.get('rate_limited_until')
@@ -195,6 +228,7 @@ def fetch_prices():
             if now < limited_until:
                 remaining = (limited_until - now).total_seconds() / 60
                 print(f"⚠️ Rate limited. Using cached prices for {remaining:.1f} more minutes.")
+                use_cached_prices("محدودیت درخواست")
                 return
             else:
                 # Remove rate limit flag if expired
@@ -232,8 +266,9 @@ def fetch_prices():
         
         # Handle rate limiting
         if response.status_code == 429:
-            print("⚠️ Rate limited by baha24.com API. Using cached prices for next 10 minutes.")
+            print("⚠️ Rate limited by baha24.com API. Using cached prices.")
             current_prices['rate_limited_until'] = (datetime.now(timezone.utc) + timedelta(minutes=10)).isoformat()
+            use_cached_prices("محدودیت درخواست از API")
             return
         
         response.raise_for_status()
@@ -325,54 +360,26 @@ def fetch_prices():
         current_prices['last_updated'] = datetime.now(timezone.utc).isoformat()
         current_prices['usdt_price'] = usdt_price
         
+        # Save to prices.json cache
+        write_prices(processed_prices)
+        
+        # Clear any API error flag
+        if 'api_error' in current_prices:
+            del current_prices['api_error']
+        
         # Log summary
-        print(f"✅ Price fetching completed. USDT price: {usdt_price:,.0f} تومان")
+        print(f"✅ Price fetching completed and saved to cache. USDT price: {usdt_price:,.0f} تومان")
         for category, items in processed_prices.items():
             if items:
                 sample = items[0]
                 print(f"  {category}: {len(items)} items, sample: {sample['symbol']} = {sample['price']:,.0f} تومان")
         
-        # Save to history
-        save_prices_history()
-        
     except requests.RequestException as e:
         print(f"❌ Error fetching prices: {e}")
-        if '429' in str(e):
-            current_prices['rate_limited_until'] = (datetime.now(timezone.utc) + timedelta(minutes=10)).isoformat()
+        use_cached_prices(f"خطا در ارتباط با سرور: {str(e)}")
     except Exception as e:
         print(f"❌ Unexpected error in fetch_prices: {e}")
-
-def save_prices_history():
-    """Saves current prices to history file."""
-    try:
-        if not current_prices or 'categorized' not in current_prices:
-            return
-        
-        prices_history = read_prices_history()
-        today = datetime.now().strftime('%Y-%m-%d')
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
-        # Create today's entry if not exists
-        if today not in prices_history:
-            prices_history[today] = {}
-        
-        # Save categorized prices
-        prices_history[today][current_time] = {
-            'categorized': current_prices.get('categorized', {}),
-            'usdt_price': current_prices.get('usdt_price', 0),
-            'total_assets': len([a for a in allAssets if a['symbol'] != 'RIAL_WALLET'])
-        }
-        
-        # Keep only last 30 days
-        if len(prices_history) > 30:
-            oldest_date = sorted(prices_history.keys())[0]
-            del prices_history[oldest_date]
-        
-        write_prices_history(prices_history)
-        print(f"💾 Prices history saved for {current_time}")
-        
-    except Exception as e:
-        print(f"❌ Error saving prices history: {e}")
+        use_cached_prices("خطای غیرمنتظره در دریافت قیمت‌ها")
 
 # --- Core Logic ---
 
@@ -501,15 +508,17 @@ def update_chart_data():
     write_json_file(CHART_DATA_FILE, chart_data)
     print(f"📊 Chart updated: {today} = {float(total_value):,.0f} تومان")
 
-def update_comparison_data():
-    """Updates comparison data with current values."""
+# --- Value Analysis Functions ---
+
+def update_value_analysis():
+    """Updates value analysis data with current portfolio value and prices."""
     try:
         # Get current prices
         usd_price = current_prices.get('USD', 0)
-        gold_price = current_prices.get('GOL18', 0)  # قیمت گرم طلا
+        gold_price = current_prices.get('GOL18', 0)
         
         if usd_price <= 0 or gold_price <= 0:
-            print("⚠️ Cannot update comparison data: prices not available")
+            print("⚠️ Cannot update value analysis: prices not available")
             return
         
         # Calculate total portfolio value
@@ -523,14 +532,14 @@ def update_comparison_data():
             else:
                 total_value += decimal.Decimal(asset['total_quantity'])
         
-        # Convert to USD and Gold equivalent
+        # Calculate equivalents
         total_usd = float(total_value) / usd_price if usd_price > 0 else 0
         total_gold = float(total_value) / gold_price if gold_price > 0 else 0
         
         # Get comparison data
         comparison_data = read_comparison_data()
         
-        # Add new entry
+        # Add/update today's entry
         today = datetime.now().strftime('%Y-%m-%d')
         
         # Check if entry for today exists
@@ -542,38 +551,68 @@ def update_comparison_data():
             'usd_price': usd_price,
             'gold_price_per_gram': gold_price,
             'equivalent_usd': total_usd,
-            'equivalent_gold_grams': total_gold,
-            'usd_change_percent': 0,
-            'gold_change_percent': 0
+            'equivalent_gold_grams': total_gold
         }
         
-        # Calculate changes if we have previous data
-        if comparison_data and len(comparison_data) > 0:
-            last_entry = comparison_data[-1]
-            if last_entry['date'] != today:  # Only add if it's a new day
-                if last_entry['equivalent_usd'] > 0:
-                    new_entry['usd_change_percent'] = ((total_usd - last_entry['equivalent_usd']) / last_entry['equivalent_usd']) * 100
-                
-                if last_entry['equivalent_gold_grams'] > 0:
-                    new_entry['gold_change_percent'] = ((total_gold - last_entry['equivalent_gold_grams']) / last_entry['equivalent_gold_grams']) * 100
-                
-                comparison_data.append(new_entry)
-            else:
-                # Update today's entry
-                comparison_data[existing_index] = new_entry
+        if existing_index >= 0:
+            # Update existing entry
+            comparison_data[existing_index] = new_entry
+            print(f"🔄 Updated value analysis for {today}")
         else:
-            # First entry
+            # Add new entry
             comparison_data.append(new_entry)
+            print(f"➕ Added value analysis for {today}")
         
         # Keep only last 365 days
         if len(comparison_data) > 365:
             comparison_data = comparison_data[-365:]
         
         write_comparison_data(comparison_data)
-        print(f"📈 Comparison data updated for {today}")
+        print(f"📈 Value analysis updated for {today}")
         
     except Exception as e:
-        print(f"❌ Error updating comparison data: {e}")
+        print(f"❌ Error updating value analysis: {e}")
+
+def get_value_analysis_changes():
+    """Calculates changes in value analysis compared to previous days."""
+    try:
+        comparison_data = read_comparison_data()
+        if len(comparison_data) < 2:
+            return None
+        
+        # Sort by date
+        sorted_data = sorted(comparison_data, key=lambda x: x['date'])
+        
+        latest = sorted_data[-1]
+        previous = sorted_data[-2]
+        
+        changes = {
+            'date': latest['date'],
+            'total_value_toman': latest['total_value_toman'],
+            'usd_price': latest['usd_price'],
+            'gold_price_per_gram': latest['gold_price_per_gram'],
+            'equivalent_usd': latest['equivalent_usd'],
+            'equivalent_gold_grams': latest['equivalent_gold_grams'],
+            'usd_change': 0,
+            'gold_change': 0,
+            'usd_change_percent': 0,
+            'gold_change_percent': 0
+        }
+        
+        # Calculate changes if we have previous data
+        if previous['equivalent_usd'] > 0:
+            changes['usd_change'] = latest['equivalent_usd'] - previous['equivalent_usd']
+            changes['usd_change_percent'] = (changes['usd_change'] / previous['equivalent_usd']) * 100
+        
+        if previous['equivalent_gold_grams'] > 0:
+            changes['gold_change'] = latest['equivalent_gold_grams'] - previous['equivalent_gold_grams']
+            changes['gold_change_percent'] = (changes['gold_change'] / previous['equivalent_gold_grams']) * 100
+        
+        return changes
+        
+    except Exception as e:
+        print(f"❌ Error calculating value analysis changes: {e}")
+        return None
 
 def calculate_daily_profit():
     """Calculates and saves daily profit/loss with correct yesterday comparison."""
@@ -713,9 +752,17 @@ def get_assets():
 @app.route('/api/prices', methods=['GET'])
 def get_prices():
     """Returns categorized real-time prices."""
-    if 'categorized' not in current_prices:
+    if 'categorized' not in current_prices or not current_prices['categorized']:
         fetch_prices()
-    return jsonify(current_prices.get('categorized', {}))
+    
+    # Return prices with any API error message
+    result = current_prices.get('categorized', {})
+    if 'api_error' in current_prices:
+        result['api_error'] = current_prices['api_error']
+    if 'last_updated' in current_prices:
+        result['last_updated'] = current_prices['last_updated']
+    
+    return jsonify(result)
 
 @app.route('/api/chart-data', methods=['GET'])
 def get_chart_data():
@@ -728,6 +775,23 @@ def get_comparison_data():
     """Returns comparison data."""
     comparison_data = read_comparison_data()
     return jsonify(comparison_data)
+
+@app.route('/api/value-analysis', methods=['GET'])
+def get_value_analysis():
+    """Returns value analysis data with changes."""
+    try:
+        changes = get_value_analysis_changes()
+        if changes:
+            return jsonify(changes)
+        else:
+            # Return latest data even without changes
+            comparison_data = read_comparison_data()
+            if comparison_data:
+                latest = sorted(comparison_data, key=lambda x: x['date'])[-1]
+                return jsonify(latest)
+            return jsonify({})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/api/daily-profit', methods=['GET'])
 def get_daily_profit():
@@ -894,7 +958,7 @@ def add_transaction():
     
     write_json_file(ASSETS_FILE, assets)
     update_chart_data()
-    update_comparison_data()
+    update_value_analysis()
     calculate_daily_profit()
     print(f"✅ Transaction added: {tx_type} {quantity} {symbol}")
     return jsonify({'success': True}), 200
@@ -948,7 +1012,7 @@ def delete_transaction(transaction_id):
     assets_to_keep = [asset for asset in assets if asset.get('transactions') or asset['symbol'] == RIAL_WALLET_SYMBOL]
     write_json_file(ASSETS_FILE, assets_to_keep)
     update_chart_data()
-    update_comparison_data()
+    update_value_analysis()
     calculate_daily_profit()
     print(f"🗑️ Transaction deleted: {transaction_id}")
     return jsonify({'success': True}), 200
@@ -1043,7 +1107,7 @@ def update_transaction(transaction_id):
     
     write_json_file(ASSETS_FILE, assets)
     update_chart_data()
-    update_comparison_data()
+    update_value_analysis()
     calculate_daily_profit()
     print(f"✏️ Transaction updated: {transaction_id}")
     return jsonify({'success': True}), 200
@@ -1053,14 +1117,25 @@ def update_transaction(transaction_id):
 def initialize_app():
     """Initialize the application on startup."""
     init_json_files()
-    fetch_prices()  # فقط یک بار هنگام راه‌اندازی
+    
+    # Try to fetch fresh prices
+    fetch_prices()
+    
+    # If fetch failed, load cached prices
+    if 'categorized' not in current_prices or not current_prices['categorized']:
+        cached_prices = read_prices()
+        if cached_prices:
+            current_prices['categorized'] = cached_prices
+            print("✅ Loaded cached prices on startup")
+        else:
+            print("⚠️ No prices available on startup")
     
     # کمی تأخیر برای اطمینان از لود شدن قیمت‌ها
     import time
     time.sleep(2)
     
     update_chart_data()
-    update_comparison_data()
+    update_value_analysis()
     calculate_daily_profit()
     print("✅ Application initialized successfully")
 
@@ -1071,7 +1146,7 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(func=fetch_prices, trigger="interval", minutes=5)  # هر 5 دقیقه
 scheduler.add_job(func=calculate_daily_profit, trigger="interval", hours=2)  # هر 2 ساعت
 scheduler.add_job(func=update_chart_data, trigger="interval", hours=1)  # هر 1 ساعت
-scheduler.add_job(func=update_comparison_data, trigger="interval", hours=3)  # هر 3 ساعت
+scheduler.add_job(func=update_value_analysis, trigger="interval", hours=3)  # هر 3 ساعت
 
 scheduler.start()
 

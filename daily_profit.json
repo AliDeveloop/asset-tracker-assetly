@@ -1,103 +1,35 @@
 [
     {
-        "date": "2025-12-09",
-        "total_value": 29693595.0,
-        "total_profit": 8109435.0,
-        "profit_percent": 37.571232792937046,
+        "date": "2025-12-28",
+        "total_value": 1036826487.5671527,
+        "total_profit": 26826487.5671527,
+        "profit_percent": 2.0412070703041265,
         "daily_change": 0.0,
         "daily_change_percent": 0.0,
         "asset_count": 0,
-        "timestamp": "2025-12-09T17:20:43.529045"
-    },
-    {
-        "date": "2025-12-13",
-        "total_value": 31098611.0,
-        "total_profit": 7509808.0,
-        "profit_percent": 31.836325056426137,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-13T20:12:24.571300"
-    },
-    {
-        "date": "2025-12-15",
-        "total_value": 30933338.0,
-        "total_profit": 7344535.0,
-        "profit_percent": 31.135683315512026,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-15T12:41:36.488789"
-    },
-    {
-        "date": "2025-12-18",
-        "total_value": 30634288.0,
-        "total_profit": 7045485.0,
-        "profit_percent": 29.867920809716374,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-18T11:38:42.468909"
-    },
-    {
-        "date": "2025-12-22",
-        "total_value": 30956405.0,
-        "total_profit": 9121908.97284345,
-        "profit_percent": 41.77751096933092,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-22T12:19:32.479670"
-    },
-    {
-        "date": "2025-12-23",
-        "total_value": 32034545.0,
-        "total_profit": 4037344.9728434505,
-        "profit_percent": 14.420531227863258,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-23T18:23:50.329123"
-    },
-    {
-        "date": "2025-12-24",
-        "total_value": 32034530.0,
-        "total_profit": 4037329.9728434505,
-        "profit_percent": 14.420477651077059,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-24T02:33:54.494458"
-    },
-    {
-        "date": "2025-12-25",
-        "total_value": 32766903.0,
-        "total_profit": 3698844.4644737705,
-        "profit_percent": 12.724773001104076,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-25T03:02:00.782721"
-    },
-    {
-        "date": "2025-12-27",
-        "total_value": 34162605.0,
-        "total_profit": 5580944.869830065,
-        "profit_percent": 19.526314582192477,
-        "daily_change": 0.0,
-        "daily_change_percent": 0.0,
-        "asset_count": 0,
-        "timestamp": "2025-12-27T23:11:38.265050"
+        "yesterday_value": null,
+        "timestamp": "2025-12-29T14:20:39.765388"
     },
     {
         "date": "2025-12-29",
-        "total_value": 33346483.0,
-        "total_profit": 1934765.8966115387,
-        "profit_percent": 7.398816263984753,
-        "daily_change": -816122.0,
-        "daily_change_percent": -2.388933747880175,
+        "total_value": 1026389959.88776,
+        "total_profit": 26389959.88776,
+        "profit_percent": 2.991719746940256,
+        "daily_change": -10436527.6793927,
+        "daily_change_percent": -1.0065838213567775,
         "asset_count": 0,
-        "yesterday_value": 34162605.0,
-        "timestamp": "2025-12-29T13:24:52.873147"
+        "yesterday_value": 1036826487.5671527,
+        "timestamp": "2025-12-29T14:24:27.257987"
+    },
+    {
+        "date": "2025-12-30",
+        "total_value": 1012823328.5007571,
+        "total_profit": 12823328.50075714,
+        "profit_percent": 1.4537272985780683,
+        "daily_change": -13566631.38700286,
+        "daily_change_percent": -1.3217813810733716,
+        "asset_count": 0,
+        "yesterday_value": 1026389959.88776,
+        "timestamp": "2025-12-30T18:05:46.834575"
     }
 ]
