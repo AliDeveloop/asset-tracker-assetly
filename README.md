@@ -17,6 +17,7 @@ focused on **Iranian financial markets** 🇮🇷
        height="28"
        alt="Support me" />
 </a>
+![Repo Views](https://visitor-badge.laobi.icu/badge?page_id=alideveloop.asset-tracker-assetly)
 
 
 <br/>
@@ -226,6 +227,13 @@ Issue در GitHub باز کنید
 
 
 مراحل انجام شده را شرح دهید
+
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=alideveloop.asset-tracker-assetly&label=Repository%20Views&color=58a6ff&labelColor=0d1117&style=for-the-badge&logo=eye" />
+</p>
+
+
 
 
 
