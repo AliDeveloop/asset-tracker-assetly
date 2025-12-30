@@ -1,9 +1,42 @@
-﻿🚀 Assetly - مدیریت هوشمند پورتفوی مالی
+<div align="center">
+
+# 🚀 Assetly  
+### Smart Asset & Portfolio Tracker for Iranian Markets
+
+A professional portfolio tracker for **Crypto, Gold, Coins & Fiat currencies**  
+focused on **Iranian financial markets** 🇮🇷
+
+<br/>
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Flask](https://img.shields.io/badge/Flask-Backend-black)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+<br/>
+
+🔗 **Quick Access**  
+[📸 Screenshots](#-application-preview) •
+[✨ Features](#-features) •
+[🧠 Tech Stack](#-tech-stack) •
+[⚙️ Installation](#️-installation)
+<br/>
+
+ <br/>
+<a href="https://www.coffeebede.com/alideveloop">
+  <img src="https://coffeebede.ir/DashboardTemplateV2/app-assets/images/banner/default-yellow.svg"
+       width="180"
+       alt="Buy me a coffee" />
+</a>
+
+</div>
+
+ 🚀 Assetly - مدیریت هوشمند پورتفوی مالی
 یک سیستم مدیریت پورتفوی مالی برای کاربران ایرانی با قابلیت ردیابی دارایی‌های مختلف شامل ارز دیجیتال، طلا و سکه، و ارزهای فیات.
 
 🖼️ تصویر کلی از Assetly
 
-![داشبورد اصلی](https://raw.githubusercontent.com/AliDeveloop/asset-tracker-assetly/main/img/l1.png)
+![داشبورد اصلی](https://raw.githubusercontent.com/AliDeveloop/asset-tracker-assetly/main/img/in1.png)
 
 
 Assetly پلتفرمی جامع برای مدیریت حرفه‌ای سرمایه‌های شماست. چه در بازار ارز دیجیتال فعال باشید، چه طلا و سکه معامله کنید، یا ارزهای خارجی در اختیار داشته باشید، Assetly تمام دارایی‌های شما را در یک داشبورد قدرتمند جمع‌آوری و تحلیل می‌کند.
@@ -11,7 +44,7 @@ Assetly پلتفرمی جامع برای مدیریت حرفه‌ای سرمای
 📊 بخش‌های اصلی Assetly
 1. 📈 داشبورد اصلی
 
-https://github.com/AliDeveloop/asset-tracker-assetly/blob/main/img/l1.png
+![ داشبورد اصلی](https://raw.githubusercontent.com/AliDeveloop/asset-tracker-assetly/main/img/l1.png)
 
 ارزش کل پورتفوی: محاسبه لحظه‌ای کل دارایی‌های شما
 
@@ -76,7 +109,7 @@ https://github.com/AliDeveloop/asset-tracker-assetly/blob/main/img/l1.png
 دو روش برای دانلود:
 
 روش ۱: از GitHub (توصیه شده)
-bash
+cmd رو باز کنید 
 # باز کردن Command Prompt یا PowerShell
 # کپی کردن دستور زیر:
 
@@ -90,12 +123,14 @@ cd portfolio-tracker
 فایل ZIP را در محل دلخواه Extract کنید
 
 مرحله ۳: نصب کتابخانه‌های مورد نیاز
-bash
+cmd رو باز کنید 
 # در Command Prompt یا PowerShell، داخل پوشه پروژه:
+
 pip install -r requirements.txt
+
 اگر با خطا مواجه شدید:
 
-bash
+cmd رو باز کنید 
 # به صورت جداگانه نصب کنید:
 pip install Flask
 
@@ -114,7 +149,7 @@ pip install apscheduler
 برنامه به صورت خودکار اجرا می‌شود
 
 روش ۲: دستی در Command Prompt
-bash
+cmd رو باز کنید 
 
 python app.py
 مرحله ۵: دسترسی به برنامه
@@ -185,4 +220,5 @@ Issue در GitHub باز کنید
 
 
 مراحل انجام شده را شرح دهید
+
 
