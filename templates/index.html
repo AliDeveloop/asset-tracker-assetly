@@ -1,0 +1,2006 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>استزلی | Assetly</title>
+  <!-- Tailwind CSS -->
+  <script src="../static/js/tailwind.js"></script>
+  <!-- Chart.js -->
+  <script src="../static/js/chart.umd.min.js"></script>
+  <script src="../static/js/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <!--  Font -->
+  <link href="../static/css/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="p-3 sm:p-4 md:p-6">
+  <div class="max-w-7xl mx-auto">
+    <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-4">
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-200">Assetly | مدیریت حرفه ای پورتفوی</h1>
+      <div class="flex flex-wrap gap-2 sm:gap-3 w-full sm:w-auto">
+        <!-- تحلیل ارزش - حالا کنار دکمه‌ها -->
+        <button onclick="openValueAnalysisModal()"
+          class="flex-1 sm:flex-none bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
+          📊 تحلیل ارزش
+        </button>
+        <a href="/markets"
+          class="flex-1 sm:flex-none bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
+          📈 نمای بازارها
+        </a>
+        <button id="add-transaction-btn"
+          class="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg shadow-lg transition duration-200 action-btn text-sm sm:text-base">
+          + ثبت تراکنش
+        </button>
+
+        <!-- منوی کاربری -->
+        <div class="relative">
+          <button id="user-menu-btn"
+            class="hidden flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-lg transition duration-200">
+            <span id="user-greeting">پنل کاربری</span>
+            <svg class="w-4 h-4 transition-transform duration-200" id="user-menu-arrow" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- منوی کشویی کاربر -->
+          <div id="user-dropdown"
+            class="hidden absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl border border-gray-700 z-50">
+            <div class="p-4 border-b border-gray-700">
+              <p class="text-white font-medium" id="dropdown-fullname">-</p>
+              <p class="text-gray-400 text-sm" id="dropdown-email">-</p>
+            </div>
+            <div class="py-2">
+              <button onclick="openProfileModal()"
+                class="w-full text-right px-4 py-2 text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
+                <span>👤</span> ویرایش پروفایل
+              </button>
+              <button onclick="openChangePasswordModal()"
+                class="w-full text-right px-4 py-2 text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
+                <span>🔐</span> تغییر رمز عبور
+              </button>
+
+              <!-- ========== دکمه تغییر تم ========== -->
+              <button onclick="toggleTheme()"
+                class="w-full text-right px-4 py-2 text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
+                <span id="theme-toggle-icon">🌙</span>
+                <span id="theme-toggle-text">تم تاریک</span>
+              </button>
+              <!-- ================================ -->
+
+              <button onclick="openApiManagementModal()"
+                class="w-full text-right px-4 py-2 text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
+                <span>🔑</span> مدیریت API
+              </button>
+              <button onclick="openDataManagementModal()"
+                class="w-full text-right px-4 py-2 text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
+                <span>📦</span> ورودی/خروجی اطلاعات
+              </button>
+              <button onclick="openReportModal()"
+                class="w-full text-right px-4 py-2 text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
+                <span>📄</span> گزارش‌گیری PDF
+              </button>
+
+              <hr class="my-2 border-gray-700">
+              <button onclick="logout()"
+                class="w-full text-right px-4 py-2 text-red-400 hover:bg-gray-700 transition flex items-center gap-2">
+                <span>🚪</span> خروج
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- دکمه ورود -->
+        <button id="login-btn"
+          class="flex-1 sm:flex-none bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-lg transition duration-200">
+          🔐 ورود / ثبت‌نام
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+      <!-- A. Portfolio Summary & Chart (Main Column) -->
+      <div class="lg:col-span-9 space-y-4 sm:space-y-6">
+        <!-- Summary Cards -->
+        <div id="summary-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <!-- Total Value Card -->
+          <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl purchase-card">
+            <p class="text-sm text-gray-400 mb-2">ارزش کل پورتفوی (تومان)</p>
+            <p id="total-value" class="text-2xl sm:text-3xl font-extrabold text-white">
+              در حال بارگذاری...
+            </p>
+            <span id="total-profit-pct" class="text-sm mt-1 flex items-center"></span>
+          </div>
+
+          <!-- Total Profit/Loss Card -->
+          <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl purchase-card">
+            <p class="text-sm text-gray-400 mb-2">سود / زیان خالص (تومان)</p>
+            <p id="total-profit" class="text-2xl sm:text-3xl font-extrabold text-white">
+              در حال بارگذاری...
+            </p>
+            <span class="text-xs text-gray-500 mt-1">از ابتدای فعالیت</span>
+          </div>
+
+          <!-- Rial Wallet Card -->
+          <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl purchase-card">
+            <p class="text-sm text-gray-400 mb-2">
+              کیف پول ریالی (موجودی خالص)
+            </p>
+            <p id="rial-wallet-balance" class="text-2xl sm:text-3xl font-extrabold text-white">
+              در حال بارگذاری...
+            </p>
+            <button onclick="openWalletModal()"
+              class="text-blue-400 text-sm mt-1 hover:text-blue-300 transition duration-200">
+              مدیریت واریز / برداشت
+            </button>
+          </div>
+        </div>
+
+        <!-- Daily Profit/Loss Section -->
+        <div class="card p-4 sm:p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl">
+          <h2 class="text-lg font-semibold mb-3 text-gray-200">
+            📈 عملکرد روزانه
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+            <!-- سود/زیان روزانه (تومان) -->
+            <div class="p-3 bg-gray-800 rounded-lg">
+              <p class="text-xs text-gray-400 mb-1">سود/زیان امروز</p>
+              <p id="daily-profit-toman" class="text-xl sm:text-2xl font-bold text-white">
+                -
+              </p>
+            </div>
+
+            <!-- درصد سود/زیان روزانه -->
+            <div class="p-3 bg-gray-800 rounded-lg">
+              <p class="text-xs text-gray-400 mb-1">درصد تغییر امروز</p>
+              <p id="daily-profit-percent" class="text-xl sm:text-2xl font-bold text-white">
+                -
+              </p>
+            </div>
+
+            <!-- ارزش کل در پایان روز قبل -->
+            <div class="p-3 bg-gray-800 rounded-lg">
+              <p class="text-xs text-gray-400 mb-1">ارزش دیروز</p>
+              <p id="yesterday-value" class="text-xl sm:text-2xl font-bold text-white">
+                -
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 text-center">
+            <button onclick="showDailyHistory()"
+              class="text-blue-400 text-sm hover:text-blue-300 transition duration-200">
+              مشاهده تاریخچه عملکرد روزانه
+            </button>
+          </div>
+        </div>
+        <!-- ========== بخش هدف سرمایه‌گذاری ========== -->
+        <div id="investment-goal-section"
+          class="card p-4 rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <!-- حالت جمع شده (پیش‌فرض) -->
+          <div id="goal-collapsed" class="flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">🎯</span>
+              <div>
+                <p class="text-sm text-gray-400">هدف سرمایه‌گذاری</p>
+                <p id="goal-summary-text" class="text-xs text-gray-500">
+                  برای تنظیم هدف کلیک کنید
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="add-goal-btn" class="text-blue-400 hover:text-blue-300 text-sm">
+                <span id="goal-btn-text">+ افزودن هدف</span>
+              </button>
+              <svg id="goal-expand-icon" class="w-4 h-4 text-gray-400 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- حالت باز شده (نمایش نوار پیشرفت) -->
+          <div id="goal-expanded" class="hidden mt-4 pt-4 border-t border-gray-700">
+            <p class="text-xs text-gray-500 mb-3">
+              نزدیک شدن به اهداف را از نزدیک بررسی کنید
+            </p>
+
+            <div id="goal-progress-container" class="space-y-4">
+              <!-- هدف تومانی -->
+              <div id="goal-toman" class="hidden">
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-gray-400">🎯 هدف تومانی</span>
+                  <span class="text-gray-300">
+                    <span id="goal-toman-current">0</span> /
+                    <span id="goal-toman-target">0</span> ت
+                  </span>
+                </div>
+                <div class="relative h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div id="goal-toman-bar"
+                    class="absolute top-0 right-0 h-full bg-gradient-to-l from-green-500 to-green-400 rounded-full transition-all duration-500"
+                    style="width: 0%"></div>
+                </div>
+                <p id="goal-toman-motivation" class="text-xs text-gray-500 mt-2 text-center"></p>
+              </div>
+
+              <!-- هدف دلاری -->
+              <div id="goal-dollar" class="hidden">
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-gray-400">💵 هدف دلاری</span>
+                  <span class="text-gray-300">
+                    <span id="goal-dollar-current">$0</span> /
+                    <span id="goal-dollar-target">$0</span>
+                  </span>
+                </div>
+                <div class="relative h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div id="goal-dollar-bar"
+                    class="absolute top-0 right-0 h-full bg-gradient-to-l from-blue-500 to-blue-400 rounded-full transition-all duration-500"
+                    style="width: 0%"></div>
+                </div>
+                <p id="goal-dollar-motivation" class="text-xs text-gray-500 mt-2 text-center"></p>
+              </div>
+
+              <!-- هدف طلا -->
+              <div id="goal-gold" class="hidden">
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-gray-400">🥇 هدف طلا</span>
+                  <span class="text-gray-300">
+                    <span id="goal-gold-current">0</span> /
+                    <span id="goal-gold-target">0</span> گرم
+                  </span>
+                </div>
+                <div class="relative h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div id="goal-gold-bar"
+                    class="absolute top-0 right-0 h-full bg-gradient-to-l from-yellow-500 to-yellow-400 rounded-full transition-all duration-500"
+                    style="width: 0%"></div>
+                </div>
+                <p id="goal-gold-motivation" class="text-xs text-gray-500 mt-2 text-center"></p>
+              </div>
+
+              <!-- هدف بیت‌کوین -->
+              <div id="goal-bitcoin" class="hidden">
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-gray-400">₿ هدف بیت‌کوین</span>
+                  <span class="text-gray-300">
+                    <span id="goal-bitcoin-current">0</span> /
+                    <span id="goal-bitcoin-target">0</span> BTC
+                  </span>
+                </div>
+                <div class="relative h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div id="goal-bitcoin-bar"
+                    class="absolute top-0 right-0 h-full bg-gradient-to-l from-orange-500 to-orange-400 rounded-full transition-all duration-500"
+                    style="width: 0%"></div>
+                </div>
+                <p id="goal-bitcoin-motivation" class="text-xs text-gray-500 mt-2 text-center"></p>
+              </div>
+
+              <!-- ددلاین -->
+              <div id="goal-deadline" class="hidden text-center">
+                <p class="text-xs text-gray-400">
+                  ⏰ <span id="goal-deadline-text"></span>
+                </p>
+              </div>
+            </div>
+
+            <div id="no-goal-message" class="text-center py-4">
+              <p class="text-sm text-gray-500">هنوز هدفی تعیین نکرده‌اید</p>
+              <button id="add-goal-btn-secondary" class="mt-2 text-blue-400 hover:text-blue-300 text-sm">
+                + افزودن هدف جدید
+              </button>
+            </div>
+
+            <button id="edit-goal-btn"
+              class="hidden mt-3 text-xs text-gray-400 hover:text-gray-300 underline w-full text-center">
+              ✏️ ویرایش هدف
+            </button>
+          </div>
+        </div>
+
+        <!-- مودال افزودن/ویرایش هدف -->
+        <div id="goal-modal"
+          class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+          <div class="modal-container max-w-md w-full">
+            <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl modal-slide">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-white">
+                  🎯 تعیین هدف سرمایه‌گذاری
+                </h3>
+                <button type="button" id="close-goal-modal" class="text-gray-400 hover:text-white">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+
+              <form id="goal-form">
+                <div class="space-y-4">
+                  <!-- نوع هدف -->
+                  <div>
+                    <label class="block text-sm font-medium mb-2">نوع هدف</label>
+                    <div class="grid grid-cols-4 gap-2">
+                      <label
+                        class="flex items-center justify-center p-2 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700">
+                        <input type="radio" name="goal-type" value="toman" checked class="ml-2" />
+                        تومان
+                      </label>
+                      <label
+                        class="flex items-center justify-center p-2 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700">
+                        <input type="radio" name="goal-type" value="dollar" class="ml-2" />
+                        دلار
+                      </label>
+                      <label
+                        class="flex items-center justify-center p-2 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700">
+                        <input type="radio" name="goal-type" value="gold" class="ml-2" />
+                        طلا
+                      </label>
+                      <label
+                        class="flex items-center justify-center p-2 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700">
+                        <input type="radio" name="goal-type" value="bitcoin" class="ml-2" />
+                        بیت‌کوین
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- مبلغ هدف -->
+                  <div>
+                    <label for="goal-amount" class="block text-sm font-medium mb-1">
+                      <span id="goal-amount-label">مبلغ هدف (تومان)</span>
+                    </label>
+                    <input type="number" id="goal-amount" step="any" required
+                      class="w-full p-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500" />
+                    <p id="goal-equivalent" class="text-xs text-gray-500 mt-1"></p>
+                  </div>
+
+                  <!-- تعداد روز (اختیاری) -->
+                  <div>
+                    <label for="goal-days" class="block text-sm font-medium mb-1">
+                      تعداد روز تا هدف
+                      <span class="text-gray-500 text-xs">(اختیاری)</span>
+                    </label>
+                    <input type="number" id="goal-days" min="1" placeholder="مثلاً: 30"
+                      class="w-full p-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500" />
+                  </div>
+
+                  <!-- حذف هدف -->
+                  <div id="delete-goal-section" class="hidden">
+                    <button type="button" id="delete-goal-btn"
+                      class="w-full py-2 text-red-400 hover:text-red-300 text-sm border border-red-800 rounded-lg hover:border-red-600 transition">
+                      🗑️ حذف هدف
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex justify-end space-x-3 space-x-reverse">
+                  <button type="button" id="cancel-goal-modal"
+                    class="py-2 px-4 rounded-lg text-gray-400 hover:text-white">
+                    لغو
+                  </button>
+                  <button type="submit"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">
+                    ذخیره
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Purchase Power Box -->
+        <div class="card p-4 rounded-xl shadow-xl">
+          <div class="flex justify-between items-center mb-3">
+            <h2 class="text-lg font-semibold text-gray-200">💰 قدرت خرید</h2>
+            <div class="relative inline-block w-32">
+              <!-- Toggle Switch -->
+              <div class="flex items-center bg-gray-700 rounded-full p-1">
+                <button id="purchase-mode-balance"
+                  class="flex-1 py-1 px-2 text-xs rounded-full transition-all duration-200 bg-blue-600 text-white purchase-toggle active">
+                  کیف ریالی
+                </button>
+                <button id="purchase-mode-portfolio"
+                  class="flex-1 py-1 px-2 text-xs rounded-full transition-all duration-200 text-gray-300 purchase-toggle inactive">
+                  کل پورتفو
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="purchase-power-box" class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg purchase-card">
+              <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-2">
+                  <span class="text-white text-sm">$</span>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-300">دلار آمریکا</p>
+                  <p id="usd-purchase" class="text-xs text-gray-500">
+                    در حال محاسبه...
+                  </p>
+                </div>
+              </div>
+              <span id="usd-amount" class="font-mono text-white text-sm sm:text-base">-</span>
+            </div>
+
+            <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg purchase-card">
+              <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center mr-2">
+                  <span class="text-white text-sm">G</span>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-300">گرم طلا</p>
+                  <p id="gold-purchase" class="text-xs text-gray-500">
+                    در حال محاسبه...
+                  </p>
+                </div>
+              </div>
+              <span id="gold-amount" class="font-mono text-white text-sm sm:text-base">-</span>
+            </div>
+
+            <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg purchase-card">
+              <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
+                  <span class="text-white text-sm">₿</span>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-300">بیت‌کوین</p>
+                  <p id="btc-purchase" class="text-xs text-gray-500">
+                    در حال محاسبه...
+                  </p>
+                </div>
+              </div>
+              <span id="btc-amount" class="font-mono text-white text-sm sm:text-base">-</span>
+            </div>
+          </div>
+          <p id="purchase-power-info" class="text-xs text-gray-500 mt-3 text-center">
+            با کل موجودی کیف پول ریالی
+          </p>
+        </div>
+
+        <!-- Performance Chart -->
+        <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+          <h2 class="text-xl font-semibold mb-4 text-gray-200">
+            نمودار عملکرد پورتفوی
+          </h2>
+          <div class="h-64 sm:h-80 md:h-96">
+            <canvas id="portfolioChart"></canvas>
+          </div>
+        </div>
+        <!-- ========== بخش آزمون سنجش ریسک ========== -->
+        <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+          <h2 class="text-xl font-semibold mb-4 text-gray-200">
+            🎯 آزمون سنجش ریسک
+          </h2>
+
+          <div id="risk-test-section">
+            <!-- حالت قبل از آزمون -->
+            <div id="risk-test-start" class="text-center py-6">
+              <p class="text-gray-400 mb-4">
+                با انجام این آزمون ۱۰ سواله، میزان ریسک‌پذیری خود را بسنجید و
+                پورتفوی پیشنهادی دریافت کنید.
+              </p>
+              <button id="start-risk-test-btn"
+                class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition duration-200">
+                🚀 شروع آزمون
+              </button>
+            </div>
+
+            <!-- حالت بعد از آزمون (نمایش نتیجه و پورتفوی پیشنهادی) -->
+            <div id="risk-test-result" class="hidden">
+              <div
+                class="mb-4 p-4 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg border border-purple-700">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-gray-300">نمره ریسک‌پذیری شما:</span>
+                    <span id="risk-score-display" class="text-3xl font-bold text-purple-400 mr-2">-</span>
+                    <span class="text-gray-400 text-sm">از ۱۰۰</span>
+                  </div>
+                  <button id="retake-risk-test-btn" class="text-sm text-gray-400 hover:text-white underline">
+                    آزمون مجدد
+                  </button>
+                </div>
+                <p id="risk-level-text" class="text-gray-300 mt-2"></p>
+              </div>
+
+              <!-- پورتفوی پیشنهادی -->
+              <div class="flex flex-col lg:flex-row gap-4">
+                <div class="w-full lg:w-1/2 h-64">
+                  <canvas id="suggestedPortfolioChart"></canvas>
+                </div>
+                <div id="suggested-portfolio-legend" class="w-full lg:w-1/2 space-y-1 max-h-64 overflow-y-auto">
+                  <!-- افسانه نمودار -->
+                </div>
+              </div>
+
+              <p class="text-xs text-gray-500 mt-4 text-center">
+                ⚠️ این یک پورتفوی شبیه‌سازی شده بر اساس نمره شخصیتی شماست و
+                احتمال خطا در آن وجود دارد. قبل از تطبیق با پورتفوی واقعی،
+                تحلیل‌های لازم را روی همه دارایی‌ها انجام دهید.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- مودال آزمون ریسک -->
+        <div id="risk-test-modal"
+          class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+          <div class="modal-container max-w-2xl w-full">
+            <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl modal-slide max-h-[85vh] overflow-y-auto">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg sm:text-xl font-bold text-white">
+                  🎯 آزمون سنجش ریسک
+                </h3>
+                <button type="button" id="close-risk-modal" class="text-gray-400 hover:text-white">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+
+              <div id="risk-question-container">
+                <!-- سوالات اینجا تزریق میشن -->
+              </div>
+
+              <div class="mt-6 flex justify-between">
+                <button id="risk-prev-btn"
+                  class="py-2 px-4 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200 hidden">
+                  قبلی
+                </button>
+                <button id="risk-next-btn"
+                  class="py-2 px-4 rounded-lg bg-purple-600 hover:bg-purple-700 text-white transition duration-200">
+                  بعدی
+                </button>
+                <button id="risk-submit-btn"
+                  class="py-2 px-4 rounded-lg bg-green-600 hover:bg-green-700 text-white transition duration-200 hidden">
+                  ثبت و مشاهده نتیجه
+                </button>
+              </div>
+
+              <div id="risk-progress" class="mt-3 text-center text-sm text-gray-400"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Assets Table -->
+        <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+          <h2 class="text-xl font-semibold mb-4 text-gray-200">
+            دارایی‌های اسپات
+          </h2>
+          <div class="table-responsive">
+            <table class="min-w-full divide-y divide-gray-700">
+              <thead>
+                <tr class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">
+                    نام دارایی (دسته)
+                  </th>
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">
+                    قیمت سر به سر
+                  </th>
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">
+                    قیمت لحظه‌ای
+                  </th>
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">موجودی</th>
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">
+                    ارزش کل
+                  </th>
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-right">
+                    سود / زیان
+                  </th>
+                  <th class="px-2 py-2 sm:px-3 sm:py-3 text-center">
+                    عملیات
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="assets-table-body" class="divide-y divide-gray-800">
+                <tr>
+                  <td colspan="7" class="py-4 text-center text-gray-500">
+                    در حال بارگذاری دارایی‌ها...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- ========== بخش جدید ۱: نمودار دایره‌ای توزیع دارایی‌ها ========== -->
+        <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+          <h2 class="text-xl font-semibold mb-4 text-gray-200">
+            🥧 نمودار دایره‌ای دارایی‌ها
+          </h2>
+          <p class="text-sm text-gray-400 mb-4">
+            توزیع درصدی دارایی‌های موجود در پورتفوی
+          </p>
+          <div class="flex flex-col lg:flex-row items-center gap-4">
+            <div class="w-full lg:w-2/3 h-64 sm:h-80">
+              <canvas id="portfolioPieChart"></canvas>
+            </div>
+            <div id="pie-chart-legend" class="w-full lg:w-1/3 space-y-2 max-h-64 overflow-y-auto">
+              <!-- افسانه نمودار اینجا تزریق می‌شود -->
+              <p class="text-gray-500 text-sm text-center py-2">
+                در حال بارگذاری...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== بخش جدید ۲: تحلیل تعادل پورتفوی ========== -->
+        <div class="card p-4 sm:p-6 rounded-xl shadow-xl">
+          <h2 class="text-xl font-semibold mb-4 text-gray-200">
+            ⚖️ تحلیل تعادل پورتفوی
+          </h2>
+          <p class="text-sm text-gray-400 mb-6">
+            وضعیت تنوع‌بخشی و تعادل دارایی‌های شما
+          </p>
+
+          <!-- ۴ دایره وضعیت -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            <!-- متعادل -->
+            <div id="balance-status-balanced"
+              class="balance-status-item p-4 rounded-xl bg-gray-800 border-2 border-gray-700 transition-all duration-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 bg-gray-700">
+                  <span class="text-3xl">✅</span>
+                </div>
+                <span class="font-medium text-gray-200">متعادل</span>
+                <span class="text-xs text-gray-500 mt-1">زیر ۳۵٪</span>
+              </div>
+            </div>
+
+            <!-- نسبتا متعادل -->
+            <div id="balance-status-semi-balanced"
+              class="balance-status-item p-4 rounded-xl bg-gray-800 border-2 border-gray-700 transition-all duration-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 bg-gray-700">
+                  <span class="text-3xl">👍</span>
+                </div>
+                <span class="font-medium text-gray-200">نسبتا متعادل</span>
+                <span class="text-xs text-gray-500 mt-1">۳۵٪ تا ۴۵٪</span>
+              </div>
+            </div>
+
+            <!-- نیاز به بازبینی -->
+            <div id="balance-status-needs-review"
+              class="balance-status-item p-4 rounded-xl bg-gray-800 border-2 border-gray-700 transition-all duration-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 bg-gray-700">
+                  <span class="text-3xl">⚠️</span>
+                </div>
+                <span class="font-medium text-gray-200">نیاز به بازبینی</span>
+                <span class="text-xs text-gray-500 mt-1">۴۵٪ تا ۵۵٪</span>
+              </div>
+            </div>
+
+            <!-- خارج از تعادل -->
+            <div id="balance-status-unbalanced"
+              class="balance-status-item p-4 rounded-xl bg-gray-800 border-2 border-gray-700 transition-all duration-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 bg-gray-700">
+                  <span class="text-3xl">🔴</span>
+                </div>
+                <span class="font-medium text-gray-200">خارج از تعادل</span>
+                <span class="text-xs text-gray-500 mt-1">بالای ۵۵٪</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- راهنمای وضعیت فعلی -->
+          <div id="balance-guidance" class="p-4 rounded-lg bg-gray-800 border-r-4 border-gray-500">
+            <div class="flex items-start gap-3">
+              <span id="balance-guidance-icon" class="text-2xl">ℹ️</span>
+              <div>
+                <p id="balance-guidance-title" class="font-medium text-gray-200 mb-1">
+                  در حال تحلیل...
+                </p>
+                <p id="balance-guidance-text" class="text-sm text-gray-400">
+                  لطفاً منتظر بمانید تا تحلیل تعادل پورتفوی انجام شود.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- اطلاعات جزئیات -->
+          <div id="balance-details" class="mt-4 text-sm text-gray-400 p-3 bg-gray-900 rounded-lg">
+            <p class="mb-1">
+              📊 <span id="max-asset-name">-</span>:
+              <span id="max-asset-percent">-</span>
+            </p>
+            <p class="text-xs text-gray-500">
+              بیشترین سهم متعلق به این دارایی است.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- B. Recent Transactions Sidebar (جمع‌شونده) -->
+      <div class="lg:col-span-3 space-y-4 sm:space-y-6">
+        <div class="card p-4 rounded-xl shadow-xl sticky top-4">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold text-gray-200">📋 آخرین تراکنش‌ها</h2>
+            <button id="toggle-transactions-btn"
+              class="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1">
+              <span id="transaction-count-badge"
+                class="bg-gray-700 text-gray-300 text-xs px-2 py-0.5 rounded-full">3</span>
+              <svg id="transactions-expand-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+          <p id="last-transaction-update" class="text-xs text-gray-500 mb-4">۳ تراکنش اخیر</p>
+
+          <div id="recent-transactions-list"
+            class="space-y-2 max-h-[400px] overflow-y-auto transition-all duration-300">
+            <p class="text-gray-500 text-sm text-center py-4">در حال بارگذاری...</p>
+          </div>
+
+          <!-- دکمه مشاهده بیشتر -->
+          <div id="show-more-transactions" class="hidden mt-3 pt-3 border-t border-gray-700 text-center">
+            <button id="load-more-transactions-btn" class="text-blue-400 hover:text-blue-300 text-sm">
+              مشاهده همه تراکنش‌ها
+            </button>
+          </div>
+
+          <!-- <div class="mt-4 pt-3 border-t border-gray-700">
+            <button id="quick-add-transaction-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 text-sm">
+                + ثبت تراکنش جدید
+            </button>
+        </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ---- -->
+  </div>
+  </div>
+
+  <!-- Modals -->
+
+  <!-- 1. Transaction Modal -->
+  <div id="transaction-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <div class="modal-container">
+      <div
+        class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+        <div class="flex justify-between items-center mb-4 sm:mb-6">
+          <h3 class="text-lg sm:text-xl font-bold text-white">ثبت تراکنش</h3>
+          <button type="button" data-close-modal="transaction-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- نمایش موجودی کیف پول -->
+        <div id="wallet-balance-display" class="mb-4 p-3 bg-gray-800 rounded-lg hidden">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-300">موجودی کیف پول:</span>
+            <span id="current-wallet-balance" class="font-mono text-green-400 text-sm sm:text-base"></span>
+          </div>
+          <div class="mt-2 text-xs text-gray-400">
+            <span id="purchase-power-info-modal"></span>
+          </div>
+        </div>
+
+        <div class="modal-scroll">
+          <form id="transaction-form">
+            <div class="space-y-3 sm:space-y-4">
+              <!-- Transaction Type -->
+              <div>
+                <label for="tx-type" class="block text-sm font-medium mb-1">نوع تراکنش</label>
+                <select id="tx-type" name="type" required
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">انتخاب کنید</option>
+                  <option value="buy">خرید (Buy)</option>
+                  <option value="sell">فروش (Sell)</option>
+                  <option value="save_profit">سیو سود (Save Profit)</option>
+                  <option value="deposit">
+                    واریز به کیف ریالی (Deposit)
+                  </option>
+                  <option value="withdrawal">
+                    برداشت از کیف ریالی (Withdrawal)
+                  </option>
+                </select>
+              </div>
+
+              <!-- Manual Date Input -->
+              <div>
+                <label for="tx-date" class="block text-sm font-medium mb-1">تاریخ تراکنش</label>
+                <div class="flex space-x-2 space-x-reverse">
+                  <input type="date" id="tx-date" name="date"
+                    class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+                  <button type="button" id="reset-date"
+                    class="px-3 text-sm rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200 whitespace-nowrap">
+                    امروز
+                  </button>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  خالی بگذارید برای تاریخ فعلی
+                </p>
+              </div>
+
+              <!-- Asset Type (Hidden for Deposit/Withdrawal) -->
+              <div id="asset-type-group">
+                <label for="asset-type" class="block text-sm font-medium mb-1">نوع دارایی</label>
+                <select id="asset-type"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">انتخاب کنید</option>
+                  <option value="crypto">ارز دیجیتال</option>
+                  <option value="gold_coin">طلا و سکه</option>
+                  <option value="currency">ارز</option>
+                  <option value="stock">بورس تهران</option>
+                </select>
+              </div>
+
+              <!-- Asset Name/Symbol (Hidden for Deposit/Withdrawal) -->
+              <!-- Asset Name/Symbol with Search -->
+              <!-- Asset Name/Symbol with Search -->
+              <div id="asset-name-group">
+                <label for="asset-name" class="block text-sm font-medium mb-1">نام دارایی / نماد</label>
+
+                <!-- باکس جستجو -->
+                <div class="relative mb-2">
+                  <input type="text" id="asset-search-input" placeholder="جستجو کنید..." autocomplete="off"
+                    class="w-full p-2 text-sm rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                  <svg class="absolute left-2 top-2.5 w-4 h-4 text-gray-400 pointer-events-none" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </div>
+
+                <!-- منوی کشویی انتخاب -->
+                <select id="asset-name" name="symbol" required disabled
+                  class="w-full p-2 text-sm rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500"
+                  size="1">
+                  <option value="">ابتدا نوع دارایی را انتخاب کنید</option>
+                </select>
+              </div>
+
+              <!-- Category -->
+              <div id="category-group">
+                <label for="tx-category" class="block text-sm font-medium mb-1">دسته بندی سفارش</label>
+                <input type="text" id="tx-category" name="category" placeholder="مثلاً: خرید اول، نوسان‌گیری..."
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Quantity -->
+              <div>
+                <label for="tx-quantity" class="block text-sm font-medium mb-1"><span
+                    id="quantity-label">مقدار</span></label>
+                <input type="number" step="any" id="tx-quantity" name="quantity" required placeholder="مقدار"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Price Per Unit (Hidden for Deposit/Withdrawal) -->
+              <div id="price-per-unit-group">
+                <label for="tx-price" class="block text-sm font-medium mb-1">قیمت واحد (به تومان)</label>
+                <input type="number" step="any" id="tx-price" name="price_per_unit" placeholder="قیمت واحد به تومان"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Comment -->
+              <div id="comment-group">
+                <label for="tx-comment" class="block text-sm font-medium mb-1">کامنت / توضیحات</label>
+                <textarea id="tx-comment" name="comment" rows="2" placeholder="جزئیات این تراکنش (اختیاری)"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500"></textarea>
+              </div>
+            </div>
+
+            <div id="tx-message" class="text-sm mt-3 hidden"></div>
+
+            <div class="mt-6 flex justify-end space-x-3 space-x-reverse">
+              <button type="button" data-close-modal="transaction-modal"
+                class="py-2 px-4 rounded-lg text-gray-400 hover:text-white transition duration-200">
+                لغو
+              </button>
+              <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                ثبت
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. History Modal -->
+  <div id="history-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <div class="modal-container">
+      <div
+        class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+        <div class="flex justify-between items-center mb-4 sm:mb-6">
+          <h3 id="history-title" class="text-lg sm:text-xl font-bold text-white">
+            تاریخچه تراکنش‌ها
+          </h3>
+          <button type="button" data-close-modal="history-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-scroll">
+          <div class="table-responsive">
+            <table class="min-w-full divide-y divide-gray-700 text-xs sm:text-sm">
+              <thead class="sticky top-0 bg-gray-800">
+                <tr class="text-gray-400 uppercase tracking-wider">
+                  <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">تاریخ</th>
+                  <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                    نوع (دسته)
+                  </th>
+                  <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">مقدار</th>
+                  <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                    قیمت واحد
+                  </th>
+                  <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">کامنت</th>
+                  <th class="px-2 py-1 sm:px-3 sm:py-2 text-center">
+                    عملیات
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body" class="divide-y divide-gray-800">
+                <!-- History transactions will be injected here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="mt-6 flex justify-end">
+          <button type="button" data-close-modal="history-modal"
+            class="py-2 px-4 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200">
+            بستن
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Wallet Management Modal -->
+  <div id="wallet-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <div class="modal-container">
+      <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl modal-slide">
+        <div class="flex justify-between items-center mb-4 sm:mb-6">
+          <h3 class="text-lg sm:text-xl font-bold text-white">
+            مدیریت کیف پول ریالی
+          </h3>
+          <button type="button" data-close-modal="wallet-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="wallet-current-balance" class="mb-4 text-center text-xl sm:text-2xl font-bold text-green-400">
+          موجودی: -
+        </div>
+        <p class="text-gray-400 mb-4 text-sm text-right">
+          برای ثبت واریز یا برداشت از کیف پول، لطفاً از فرم ثبت تراکنش استفاده
+          کنید. این بخش فقط برای اطلاع‌رسانی است.
+        </p>
+        <div class="mt-6 flex justify-end">
+          <button type="button" data-close-modal="wallet-modal"
+            class="py-2 px-4 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition duration-200">
+            بستن
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Edit Transaction Modal -->
+  <div id="edit-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <div class="modal-container">
+      <div
+        class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+        <div class="flex justify-between items-center mb-4 sm:mb-6">
+          <h3 class="text-lg sm:text-xl font-bold text-white">
+            ویرایش تراکنش
+          </h3>
+          <button type="button" data-close-modal="edit-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-scroll">
+          <form id="edit-form">
+            <input type="hidden" id="edit-transaction-id" />
+            <input type="hidden" id="edit-asset-id" />
+
+            <div class="space-y-3 sm:space-y-4">
+              <!-- Transaction Type (Readonly for save_profit) -->
+              <div>
+                <label for="edit-tx-type" class="block text-sm font-medium mb-1">نوع تراکنش</label>
+                <select id="edit-tx-type" name="type" required disabled
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white">
+                  <option value="buy">خرید (Buy)</option>
+                  <option value="sell">فروش (Sell)</option>
+                  <option value="save_profit">سیو سود (Save Profit)</option>
+                  <option value="deposit">واریز (Deposit)</option>
+                  <option value="withdrawal">برداشت (Withdrawal)</option>
+                </select>
+              </div>
+
+              <!-- Date Input -->
+              <div>
+                <label for="edit-tx-date" class="block text-sm font-medium mb-1">تاریخ تراکنش</label>
+                <input type="date" id="edit-tx-date" name="date"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Asset Name (Readonly) -->
+              <!-- Asset Name/Symbol with Search -->
+              <div id="asset-name-group">
+                <label for="asset-name-search" class="block text-sm font-medium mb-1">نام دارایی / نماد</label>
+
+                <!-- سرچ باکس -->
+                <div class="relative mb-2">
+                  <input type="text" id="asset-name-search" placeholder="جستجوی دارایی..." autocomplete="off"
+                    class="w-full p-2 text-sm rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500">
+                  <svg class="absolute left-2 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </div>
+
+                <!-- لیست انتخاب (جایگزین select) -->
+                <div class="relative">
+                  <select id="asset-name" name="symbol" required disabled class="hidden" size="1">
+                    <option value="">...</option>
+                  </select>
+
+                  <!-- لیست سفارشی -->
+                  <div id="asset-dropdown"
+                    class="hidden absolute z-50 w-full mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-xl max-h-60 overflow-y-auto">
+                    <div id="asset-options-list" class="py-1">
+                      <!-- گزینه‌ها اینجا تزریق می‌شن -->
+                    </div>
+                  </div>
+
+                  <!-- نمایش دارایی انتخاب شده -->
+                  <div id="selected-asset-display" class="hidden p-2 bg-gray-700 rounded-lg border border-gray-600">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <span id="selected-asset-title" class="text-white font-medium"></span>
+                        <span id="selected-asset-symbol" class="text-gray-400 text-sm mr-2"></span>
+                      </div>
+                      <button type="button" id="clear-asset-selection" class="text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+                    <p id="selected-asset-price" class="text-xs text-gray-400 mt-1"></p>
+                  </div>
+
+                  <!-- دکمه انتخاب -->
+                  <button type="button" id="open-asset-dropdown-btn"
+                    class="w-full p-2 text-right rounded-lg bg-gray-700 border border-gray-600 text-gray-400 hover:text-white hover:bg-gray-600 transition">
+                    <span id="asset-select-placeholder">انتخاب دارایی...</span>
+                    <svg class="absolute left-2 top-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Category -->
+              <div>
+                <label for="edit-tx-category" class="block text-sm font-medium mb-1">دسته بندی سفارش</label>
+                <input type="text" id="edit-tx-category" name="category" placeholder="دسته بندی"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Quantity -->
+              <div>
+                <label for="edit-tx-quantity" class="block text-sm font-medium mb-1">مقدار</label>
+                <input type="number" step="any" id="edit-tx-quantity" name="quantity" required
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Price Per Unit (for buy/sell/save_profit) -->
+              <div id="edit-price-per-unit-group">
+                <label for="edit-tx-price" class="block text-sm font-medium mb-1">قیمت واحد (تومان)</label>
+                <input type="number" step="any" id="edit-tx-price" name="price_per_unit"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+
+              <!-- Comment -->
+              <div>
+                <label for="edit-tx-comment" class="block text-sm font-medium mb-1">کامنت / توضیحات</label>
+                <textarea id="edit-tx-comment" name="comment" rows="2"
+                  class="form-input-mobile w-full p-2 text-sm sm:text-base rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500"></textarea>
+              </div>
+            </div>
+
+            <div id="edit-message" class="text-sm mt-3 hidden"></div>
+
+            <div class="mt-6 flex justify-end space-x-3 space-x-reverse">
+              <button type="button" data-close-modal="edit-modal"
+                class="py-2 px-4 rounded-lg text-gray-400 hover:text-white transition duration-200">
+                لغو
+              </button>
+              <button type="submit"
+                class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                ذخیره تغییرات
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Value Analysis Modal -->
+  <div id="value-analysis-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <div class="modal-container">
+      <div
+        class="comparison-modal-content card p-4 sm:p-6 rounded-xl shadow-2xl transition-transform duration-300 transform scale-100 modal-slide">
+        <div class="flex justify-between items-center mb-4 sm:mb-6">
+          <h3 class="text-lg sm:text-xl font-bold text-white">
+            📊 تحلیل ارزش پورتفو
+          </h3>
+          <button type="button" data-close-modal="value-analysis-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-scroll">
+          <!-- Summary Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div class="p-3 sm:p-4 bg-gray-800 rounded-lg">
+              <p class="text-xs sm:text-sm text-gray-400">
+                ارزش فعلی (تومان)
+              </p>
+              <p id="current-value" class="text-lg sm:text-2xl font-bold text-white mt-1">
+                -
+              </p>
+            </div>
+            <div class="p-3 sm:p-4 bg-gray-800 rounded-lg">
+              <p class="text-xs sm:text-sm text-gray-400">معادل دلار</p>
+              <p id="current-usd" class="text-lg sm:text-2xl font-bold text-white mt-1">
+                -
+              </p>
+              <p id="usd-change" class="text-xs sm:text-sm mt-1"></p>
+            </div>
+            <div class="p-3 sm:p-4 bg-gray-800 rounded-lg">
+              <p class="text-xs sm:text-sm text-gray-400">معادل طلا (گرم)</p>
+              <p id="current-gold" class="text-lg sm:text-2xl font-bold text-white mt-1">
+                -
+              </p>
+              <p id="gold-change" class="text-xs sm:text-sm mt-1"></p>
+            </div>
+          </div>
+
+          <!-- تحلیل تغییرات -->
+          <div class="mb-6 p-4 bg-gray-800 rounded-lg">
+            <h4 class="text-sm sm:text-lg font-medium mb-3 text-gray-200">
+              📈 تحلیل تغییرات
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">تغییر معادل دلار</p>
+                <p id="usd-change-detail" class="text-lg font-mono">-</p>
+                <p id="usd-change-percent" class="text-xs">-</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 mb-1">تغییر معادل طلا</p>
+                <p id="gold-change-detail" class="text-lg font-mono">-</p>
+                <p id="gold-change-percent" class="text-xs">-</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- History Table -->
+          <div>
+            <h4 class="text-sm sm:text-lg font-medium mb-3 text-gray-200">
+              📅 تاریخچه تحلیل
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-700 text-xs sm:text-sm">
+                <thead class="sticky top-0 bg-gray-800">
+                  <tr class="text-gray-400 uppercase tracking-wider">
+                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                      تاریخ
+                    </th>
+                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                      ارزش تومان
+                    </th>
+                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                      قیمت دلار
+                    </th>
+                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                      قیمت طلا
+                    </th>
+                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                      معادل دلار
+                    </th>
+                    <th class="px-2 py-1 sm:px-3 sm:py-2 text-right">
+                      معادل طلا
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="value-analysis-table-body" class="divide-y divide-gray-800">
+                  <tr>
+                    <td colspan="6" class="py-4 text-center text-gray-500">
+                      در حال بارگذاری...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== فوتر سایت ========== -->
+<footer class="mt-8 py-6 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-center sm:text-right">
+                <p class="text-gray-400 text-sm">
+                    © ۲۰۲۵ تمامی حقوق متعلق به 
+                    <span class="text-blue-400 font-medium">تیم استزلی</span> 
+                    می‌باشد.
+                </p>
+                <p class="text-gray-500 text-xs mt-1">
+                    سامانه مدیریت حرفه‌ای پورتفوی - نسخه ۳.۰
+                </p>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/AliDeveloop/asset-tracker-assetly" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex items-center gap-2 text-gray-400 hover:text-white transition duration-200">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span class="text-sm">GitHub</span>
+                </a>
+                
+                <a href="https://github.com/AliDeveloop/asset-tracker-assetly" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-white text-sm hidden sm:inline">
+                    github.com/AliDeveloop/asset-tracker-assetly
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- فضای خالی برای نوار قیمت -->
+<div id="ticker-spacer" class="h-16"></div>
+  <!-- ========== نوار قیمت‌های شاخص (Ticker Bar) با اسکرول خودکار ========== -->
+  <div id="price-ticker-bar"
+    class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 shadow-2xl z-40 transition-transform duration-300 transform translate-y-0">
+    <!-- دکمه باز و بسته کردن -->
+    <button id="ticker-toggle-btn"
+      class="absolute -top-8 left-4 bg-gray-800 hover:bg-gray-700 text-white px-4 py-1 rounded-t-lg text-sm flex items-center gap-2 border border-gray-700 border-b-0 shadow-lg transition-all duration-200">
+      <span id="ticker-toggle-text">پنهان کردن قیمت‌ها</span>
+      <svg id="ticker-toggle-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+
+    <!-- محتوای نوار قیمت -->
+    <div id="ticker-content" class="overflow-hidden py-2">
+      <div class="flex items-center gap-2 px-2">
+        <!-- نشانگر بروزرسانی -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 bg-gray-800 px-3 py-1 rounded-full flex-shrink-0">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          <span id="ticker-last-update">--:--</span>
+        </div>
+
+        <!-- کانتینر اسکرول خودکار -->
+        <div class="ticker-wrapper flex-1 overflow-hidden">
+          <div id="ticker-scroll" class="ticker-scroll flex items-center gap-2">
+            <!-- محتوا با JavaScript پر می‌شود -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- فضای خالی برای جلوگیری از پوشانده شدن محتوا -->
+  <div id="ticker-spacer" class="h-16"></div>
+
+  <!-- استایل اسکرول خودکار -->
+  <!-- استایل نوار قیمت - نسخه ساده -->
+  <style>
+    .ticker-wrapper {
+      position: relative;
+      mask-image: linear-gradient(to left,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent);
+      -webkit-mask-image: linear-gradient(to left,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent);
+      overflow: hidden;
+    }
+
+    .ticker-scroll {
+      display: flex;
+      gap: 0.5rem;
+      width: max-content;
+      white-space: nowrap;
+      transition: none;
+    }
+
+    .ticker-scroll.paused {
+      animation-play-state: paused;
+    }
+
+    .ticker-category-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(31, 41, 55, 0.8);
+      border-radius: 0.5rem;
+      border: 1px solid #374151;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .ticker-item:hover {
+      background: rgba(55, 65, 81, 0.9);
+      border-color: #4b5563;
+    }
+
+    @media (max-width: 640px) {
+      .ticker-item {
+        padding: 0.15rem 0.5rem;
+      }
+
+      .ticker-item .text-sm {
+        font-size: 0.7rem !important;
+      }
+
+      .ticker-category-badge {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.6rem;
+      }
+    }
+  </style>
+  <!-- ========== مودال ورود / ثبت‌نام ========== -->
+  <div id="auth-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4 modal-fade">
+    <div class="modal-container max-w-md w-full">
+      <div class="modal-content card p-4 sm:p-6 rounded-xl shadow-2xl modal-slide">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-white" id="auth-modal-title">
+            ورود به حساب
+          </h3>
+          <button type="button" id="close-auth-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- تب‌های ورود و ثبت‌نام -->
+        <div class="flex mb-6 bg-gray-800 rounded-lg p-1">
+          <button id="auth-tab-login"
+            class="flex-1 py-2 rounded-md text-sm font-medium transition auth-tab active bg-blue-600 text-white">
+            ورود
+          </button>
+          <button id="auth-tab-register"
+            class="flex-1 py-2 rounded-md text-sm font-medium transition auth-tab text-gray-400 hover:text-white">
+            ثبت‌نام
+          </button>
+        </div>
+
+        <!-- فرم ورود -->
+        <form id="login-form" class="auth-form space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">ایمیل یا شماره تلفن</label>
+            <input type="text" name="identifier" required placeholder="example@email.com یا 09123456789"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">رمز عبور</label>
+            <input type="password" name="password" required placeholder="••••••••"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" name="remember_me" id="remember-me"
+              class="w-4 h-4 rounded bg-gray-700 border-gray-600" />
+            <label for="remember-me" class="mr-2 text-sm text-gray-300">مرا به خاطر بسپار</label>
+          </div>
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition duration-200">
+            ورود به حساب
+          </button>
+          <p class="text-center text-sm text-gray-400">
+            حساب ندارید؟
+            <button type="button" id="switch-to-register" class="text-blue-400 hover:text-blue-300">
+              ثبت‌نام کنید
+            </button>
+          </p>
+        </form>
+
+        <!-- فرم ثبت‌نام -->
+        <form id="register-form" class="auth-form hidden space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-sm font-medium mb-1">نام</label>
+              <input type="text" name="first_name" required placeholder="علی"
+                class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">نام خانوادگی</label>
+              <input type="text" name="last_name" required placeholder="محمدی"
+                class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">ایمیل</label>
+            <input type="email" name="email" required placeholder="example@email.com"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">شماره تلفن</label>
+            <input type="tel" name="phone" required placeholder="09123456789"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">رمز عبور</label>
+            <input type="password" name="password" required placeholder="حداقل ۶ کاراکتر"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">تکرار رمز عبور</label>
+            <input type="password" name="confirm_password" required placeholder="••••••••"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <button type="submit"
+            class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition duration-200">
+            ثبت‌نام
+          </button>
+          <p class="text-center text-sm text-gray-400">
+            قبلاً ثبت‌نام کرده‌اید؟
+            <button type="button" id="switch-to-login" class="text-blue-400 hover:text-blue-300">
+              وارد شوید
+            </button>
+          </p>
+        </form>
+
+        <div id="auth-message" class="mt-4 text-sm text-center hidden"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== مودال ویرایش پروفایل ========== -->
+  <div id="profile-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4">
+    <div class="modal-container max-w-md w-full">
+      <div class="modal-content card p-6 rounded-xl">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-white">👤 ویرایش پروفایل</h3>
+          <button type="button" id="close-profile-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <form id="profile-form" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">نام</label>
+            <input type="text" name="first_name" id="profile-first-name" required
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">نام خانوادگی</label>
+            <input type="text" name="last_name" id="profile-last-name" required
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">ایمیل</label>
+            <input type="email" id="profile-email" disabled
+              class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-gray-400 cursor-not-allowed" />
+            <p class="text-xs text-gray-500 mt-1">
+              امکان تغییر ایمیل وجود ندارد
+            </p>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">شماره تلفن</label>
+            <input type="tel" id="profile-phone" disabled
+              class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-gray-400 cursor-not-allowed" />
+            <p class="text-xs text-gray-500 mt-1">
+              امکان تغییر شماره تلفن وجود ندارد
+            </p>
+          </div>
+
+          <div class="flex justify-end gap-3 pt-4">
+            <button type="button" id="cancel-profile-modal" class="px-4 py-2 rounded-lg text-gray-400 hover:text-white">
+              لغو
+            </button>
+            <button type="submit" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+              ذخیره
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ========== مودال تغییر رمز عبور ========== -->
+  <div id="change-password-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4">
+    <div class="modal-container max-w-md w-full">
+      <div class="modal-content card p-6 rounded-xl">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-white">🔐 تغییر رمز عبور</h3>
+          <button type="button" id="close-password-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <form id="change-password-form" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">رمز عبور فعلی</label>
+            <input type="password" name="current_password" required placeholder="••••••••"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">رمز عبور جدید</label>
+            <input type="password" name="new_password" required placeholder="حداقل ۶ کاراکتر"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">تکرار رمز عبور جدید</label>
+            <input type="password" name="confirm_password" required placeholder="••••••••"
+              class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500" />
+          </div>
+
+          <div id="password-message" class="text-sm text-center hidden"></div>
+
+          <div class="flex justify-end gap-3 pt-4">
+            <button type="button" id="cancel-password-modal"
+              class="px-4 py-2 rounded-lg text-gray-400 hover:text-white">
+              لغو
+            </button>
+            <button type="submit" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+              ذخیره
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ========== مودال مدیریت API ========== -->
+  <div id="api-management-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4">
+    <div class="modal-container max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="modal-content card p-4 sm:p-6 rounded-xl">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>🔑</span> مدیریت API
+          </h3>
+          <button type="button" id="close-api-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- بخش چپ: ساخت کلید و اطلاعات -->
+          <div class="space-y-4">
+            <div class="p-4 bg-gray-800 rounded-lg">
+              <h4 class="font-medium text-white mb-3">🔐 کلید API شما</h4>
+
+              <div id="api-key-section">
+                <div id="no-api-key" class="text-center py-4">
+                  <p class="text-gray-400 text-sm mb-3">هنوز کلید API نساخته‌اید</p>
+                  <button id="generate-api-key-btn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition">
+                    ✨ ساخت کلید جدید
+                  </button>
+                </div>
+
+                <div id="has-api-key" class="hidden">
+                  <div class="flex items-center gap-2 mb-3">
+                    <input type="text" id="api-key-display" readonly
+                      class="flex-1 p-2 bg-gray-900 border border-gray-700 rounded-lg text-white font-mono text-sm">
+                    <button id="copy-api-key-btn"
+                      class="px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white text-sm transition">
+                      📋 کپی
+                    </button>
+                  </div>
+                  <div class="flex gap-2">
+                    <button id="regenerate-api-key-btn"
+                      class="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white px-3 py-1.5 rounded-lg text-sm transition">
+                      🔄 ساخت مجدد
+                    </button>
+                    <button id="revoke-api-key-btn"
+                      class="flex-1 bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm transition">
+                      🗑️ حذف کلید
+                    </button>
+                  </div>
+                  <p class="text-xs text-gray-500 mt-3">
+                    ⚠️ کلید خود را در اختیار دیگران قرار ندهید. در صورت فاش شدن، آن را حذف و مجدداً بسازید.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-gray-800 rounded-lg">
+              <h4 class="font-medium text-white mb-3">📊 آمار استفاده</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-gray-400">تعداد درخواست‌ها (امروز):</span>
+                  <span class="text-white font-mono" id="api-requests-today">0</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-400">تعداد درخواست‌ها (کل):</span>
+                  <span class="text-white font-mono" id="api-requests-total">0</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-400">آخرین بروزرسانی قیمت‌ها:</span>
+                  <span class="text-white font-mono text-xs" id="api-last-update">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- بخش راست: مستندات و نمونه خروجی -->
+          <div class="space-y-4">
+            <div class="p-4 bg-gray-800 rounded-lg">
+              <h4 class="font-medium text-white mb-3">📚 مستندات API</h4>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <p class="text-gray-300 font-medium mb-1">📍 Endpoint:</p>
+                  <code class="block p-2 bg-gray-900 rounded-lg text-green-400 font-mono text-xs break-all">
+                                    GET /api/v1/prices
+                                </code>
+                </div>
+                <div>
+                  <p class="text-gray-300 font-medium mb-1">🔑 هدر احراز هویت:</p>
+                  <code class="block p-2 bg-gray-900 rounded-lg text-yellow-400 font-mono text-xs break-all">
+                                    Authorization: Bearer YOUR_API_KEY
+                                </code>
+                </div>
+                <div>
+                  <p class="text-gray-300 font-medium mb-1">📋 پارامترهای اختیاری:</p>
+                  <ul class="text-gray-400 text-xs space-y-1 mt-2">
+                    <li><code class="bg-gray-900 px-1 rounded">?category=gold_coin</code> - فقط طلا و سکه</li>
+                    <li><code class="bg-gray-900 px-1 rounded">?category=currency</code> - فقط ارزها</li>
+                    <li><code class="bg-gray-900 px-1 rounded">?category=crypto</code> - فقط ارز دیجیتال</li>
+                    <li><code class="bg-gray-900 px-1 rounded">?category=stock</code> - فقط بورس تهران</li>
+                  </ul>
+                </div>
+                <div class="pt-2">
+                  <p class="text-gray-300 font-medium mb-1">💡 مثال درخواست با cURL:</p>
+                  <code class="block p-2 bg-gray-900 rounded-lg text-blue-400 font-mono text-xs break-all">
+                                    curl -H "Authorization: Bearer YOUR_API_KEY" https://yourdomain.com/api/v1/prices
+                                </code>
+                </div>
+                <div class="pt-2">
+                  <p class="text-gray-300 font-medium mb-1">🌐 مثال درخواست با JavaScript:</p>
+                  <code class="block p-2 bg-gray-900 rounded-lg text-purple-400 font-mono text-xs break-all">
+fetch('https://yourdomain.com/api/v1/prices', {
+    headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
+}).then(r => r.json()).then(console.log)
+                                </code>
+                </div>
+              </div>
+            </div>
+
+            <!-- پیش‌نمایش خروجی JSON -->
+            <div class="p-4 bg-gray-800 rounded-lg">
+              <div class="flex justify-between items-center mb-3">
+                <h4 class="font-medium text-white">📄 نمونه خروجی (price.json)</h4>
+                <button id="refresh-api-preview" class="text-blue-400 hover:text-blue-300 text-xs">
+                  🔄 بروزرسانی
+                </button>
+              </div>
+              <div class="relative">
+                <pre id="api-json-preview" class="p-3 bg-gray-900 rounded-lg text-xs overflow-auto max-h-64">
+                                <span class="text-gray-500">در حال بارگذاری...</span>
+                            </pre>
+                <button id="copy-json-preview"
+                  class="absolute top-2 left-2 px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-white text-xs transition">
+                  📋 کپی
+                </button>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                ⏰ قیمت‌ها هر ۱۰ دقیقه بروزرسانی می‌شوند. محدودیت: ۱۰۰ درخواست در روز
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-3 bg-blue-900/20 border border-blue-800 rounded-lg">
+          <p class="text-xs text-blue-300 flex items-start gap-2">
+            <span>💡</span>
+            <span>این سرویس کاملاً رایگان است. از کلید API خود می‌توانید در هر اپلیکیشن یا وب‌سایتی استفاده کنید.
+              قیمت‌ها از منابع معتبر جمع‌آوری می‌شوند و با تاخیر حداکثر ۱۰ دقیقه‌ای بروز هستند.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== مودال ورودی/خروجی اطلاعات ========== -->
+  <div id="data-management-modal"
+    class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden transition-opacity flex items-center justify-center p-2 sm:p-4">
+    <div class="modal-container max-w-3xl w-full">
+      <div class="modal-content card p-4 sm:p-6 rounded-xl max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>📦</span> ورودی/خروجی اطلاعات
+          </h3>
+          <button type="button" id="close-data-modal" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- بخش چپ: خروجی (Export) -->
+          <div class="p-5 bg-gray-800 rounded-xl border border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-900/30 rounded-full flex items-center justify-center">
+                <span class="text-2xl">📤</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-white text-lg">خروجی اطلاعات</h4>
+                <p class="text-xs text-gray-400">دریافت نسخه پشتیبان از تمام داده‌ها</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-3 bg-gray-900 rounded-lg">
+                <p class="text-sm text-gray-300 mb-2">📋 اطلاعاتی که در فایل خروجی ذخیره می‌شود:</p>
+                <ul class="text-xs text-gray-400 space-y-1 list-disc list-inside">
+                  <li>تمام دارایی‌های اسپات و موجودی‌ها</li>
+                  <li>تاریخچه کامل تراکنش‌ها</li>
+                  <li>نمودار عملکرد پورتفوی (تاریخچه ارزش)</li>
+                  <li>تحلیل ارزش و سود روزانه</li>
+                  <li>لیست علاقه‌مندی‌ها (دیده‌بان)</li>
+                  <li>هدف سرمایه‌گذاری و آزمون ریسک</li>
+                </ul>
+              </div>
+
+              <div class="p-3 bg-yellow-900/20 border border-yellow-800 rounded-lg">
+                <p class="text-xs text-yellow-300 flex items-start gap-2">
+                  <span>⚠️</span>
+                  <span>اطلاعات حساب کاربری (ایمیل، رمز عبور، شماره تلفن) در فایل خروجی ذخیره نمی‌شود.</span>
+                </p>
+              </div>
+
+              <button id="export-data-btn"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition duration-200 flex items-center justify-center gap-2">
+                <span>📥</span> دانلود فایل پشتیبان (JSON)
+              </button>
+
+              <p class="text-xs text-gray-500 text-center">
+                فایل با نام assetly_backup_[تاریخ].json ذخیره می‌شود
+              </p>
+            </div>
+          </div>
+
+          <!-- بخش راست: ورودی (Import) -->
+          <div class="p-5 bg-gray-800 rounded-xl border border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center">
+                <span class="text-2xl">📥</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-white text-lg">ورودی اطلاعات</h4>
+                <p class="text-xs text-gray-400">بازیابی اطلاعات از فایل پشتیبان</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-3 bg-red-900/20 border border-red-800 rounded-lg">
+                <p class="text-xs text-red-300 flex items-start gap-2">
+                  <span>⚠️</span>
+                  <span>با آپلود فایل، تمام اطلاعات فعلی شما با داده‌های فایل جایگزین می‌شود. این عملیات قابل بازگشت
+                    نیست!</span>
+                </p>
+              </div>
+
+              <div
+                class="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-blue-500 transition cursor-pointer"
+                id="import-dropzone">
+                <input type="file" id="import-file-input" accept=".json,application/json" class="hidden">
+                <div id="import-ready-state">
+                  <svg class="w-12 h-12 text-gray-400 mx-auto mb-3" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                  </svg>
+                  <p class="text-gray-300 mb-1">کلیک کنید یا فایل را اینجا رها کنید</p>
+                  <p class="text-xs text-gray-500">فقط فایل JSON با فرمت Assetly</p>
+                </div>
+                <div id="import-file-selected" class="hidden">
+                  <svg class="w-12 h-12 text-green-400 mx-auto mb-3" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <p class="text-green-400 mb-1" id="selected-file-name">فایل انتخاب شد</p>
+                  <p class="text-xs text-gray-500" id="selected-file-size"></p>
+                </div>
+              </div>
+
+              <div id="import-preview" class="hidden p-3 bg-gray-900 rounded-lg">
+                <p class="text-sm text-gray-300 mb-2">📊 پیش‌نمایش اطلاعات فایل:</p>
+                <div id="import-preview-content" class="text-xs text-gray-400 space-y-1"></div>
+              </div>
+
+              <button id="import-data-btn"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled>
+                <span>📤</span> جایگزینی اطلاعات
+              </button>
+
+              <p class="text-xs text-gray-500 text-center">
+                پس از آپلود، صفحه به صورت خودکار رفرش می‌شود
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="data-message" class="mt-4 p-3 rounded-lg text-sm text-center hidden"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== مودال گزارش‌گیری PDF ========== -->
+  <div id="report-modal"
+    class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden transition-opacity flex items-center justify-center p-4">
+    <div class="w-full h-full max-w-[1600px] flex flex-col">
+      <div class="bg-gray-900 rounded-xl shadow-2xl flex flex-col h-full overflow-hidden border border-gray-700">
+        <!-- هدر مودال -->
+        <div class="flex justify-between items-center p-5 border-b border-gray-700 flex-shrink-0">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>📄</span> گزارش‌گیری PDF
+          </h3>
+          <button type="button" id="close-report-modal" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- محتوای اصلی -->
+        <div class="flex flex-1 overflow-hidden min-h-0">
+          <!-- بخش چپ: تنظیمات -->
+          <div class="w-80 flex-shrink-0 overflow-y-auto p-5 border-l border-gray-700">
+            <div class="space-y-5">
+              <div class="p-4 bg-gray-800 rounded-lg">
+                <h4 class="font-medium text-white mb-4 text-lg">⚙️ تنظیمات گزارش</h4>
+
+                <div class="space-y-3">
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">📊 خلاصه پورتفوی</span>
+                    <input type="checkbox" id="report-summary" checked
+                      class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">📈 نمودار عملکرد</span>
+                    <input type="checkbox" id="report-chart" checked
+                      class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">🥧 نمودار دایره‌ای</span>
+                    <input type="checkbox" id="report-pie" checked class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">⚖️ تحلیل تعادل</span>
+                    <input type="checkbox" id="report-balance" checked
+                      class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">📋 جدول دارایی‌ها</span>
+                    <input type="checkbox" id="report-assets-table" checked
+                      class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">💰 قدرت خرید</span>
+                    <input type="checkbox" id="report-purchase-power"
+                      class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+
+                  <label class="flex items-center justify-between cursor-pointer py-1.5">
+                    <span class="text-gray-300">📅 عملکرد روزانه</span>
+                    <input type="checkbox" id="report-daily" checked
+                      class="w-5 h-5 rounded bg-gray-700 border-gray-600">
+                  </label>
+                </div>
+              </div>
+
+              <div class="p-4 bg-gray-800 rounded-lg">
+                <h4 class="font-medium text-white mb-4 text-lg">🎨 تنظیمات ظاهری</h4>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block text-sm text-gray-400 mb-2">عنوان گزارش</label>
+                    <input type="text" id="report-title" value="گزارش پورتفوی Assetly"
+                      class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500">
+                  </div>
+
+                  <div>
+                    <label class="block text-sm text-gray-400 mb-2">رنگ تم</label>
+                    <select id="report-theme"
+                      class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500">
+                      <option value="dark">🌙 تاریک (پیش‌فرض)</option>
+                      <option value="light">☀️ روشن</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-3 pt-2">
+                <button id="preview-report-btn"
+                  class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition">
+                  👁️ پیش‌نمایش در تب جدید
+                </button>
+                <button id="print-report-btn"
+                  class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition">
+                  🖨️ دانلود PDF
+                </button>
+              </div>
+
+              <p class="text-xs text-gray-500 text-center">
+                پیش‌نمایش در تب جدید باز می‌شود. برای چاپ، Ctrl+P را بزنید.
+              </p>
+            </div>
+          </div>
+
+          <!-- بخش راست: پیش‌نمایش کوچک -->
+          <div class="flex-1 flex flex-col p-5 min-w-0">
+            <div class="bg-gray-800 rounded-lg p-3 mb-3 flex-shrink-0">
+              <p class="text-gray-300 text-sm">📋 پیش‌نمایش سریع (برای مشاهده کامل، دکمه پیش‌نمایش را بزنید)</p>
+            </div>
+            <div class="flex-1 bg-gray-100 rounded-lg overflow-hidden shadow-inner">
+              <div id="report-mini-preview" class="h-full overflow-auto p-4">
+                <div class="flex items-center justify-center h-full">
+                  <p class="text-gray-500 text-center">
+                    برای مشاهده پیش‌نمایش، یکی از دکمه‌های بالا را بزنید
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,990 @@
+* {
+  font-family: "Vazirmatn", sans-serif !important;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 0
+  );
+  background-size: 25px 25px;
+  min-height: 100vh;
+}
+
+input,
+select,
+textarea,
+button,
+table,
+th,
+td,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Vazirmatn", sans-serif !important;
+}
+
+.font-mono {
+  font-family: "Vazirmatn", monospace !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+::webkit-scrollbar-corner {
+  background: #0d1117;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f5861;
+}
+
+.card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+}
+.success {
+  color: #34d399;
+}
+.danger {
+  color: #f87171;
+}
+
+.category-toggle {
+  cursor: pointer;
+  outline: none;
+}
+
+.category-toggle:focus {
+  outline: none;
+}
+
+.category-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+#gold_coin-prices::-webkit-scrollbar,
+#currency-prices::-webkit-scrollbar,
+#crypto-prices::-webkit-scrollbar,
+#stock-prices::-webkit-scrollbar {
+  width: 3px;
+}
+
+.modal-container {
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.modal-content {
+  width: 95%;
+  max-width: 500px;
+  margin: auto;
+}
+
+@media (min-width: 640px) {
+  .modal-content {
+    width: 90%;
+    max-width: 550px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    width: 85%;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 80%;
+    max-width: 650px;
+  }
+}
+
+.comparison-modal-content {
+  width: 98%;
+  max-width: 98vw;
+  margin: auto;
+}
+
+@media (min-width: 640px) {
+  .comparison-modal-content {
+    width: 95%;
+    max-width: 95vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .comparison-modal-content {
+    width: 92%;
+    max-width: 92vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comparison-modal-content {
+    width: 90%;
+    max-width: 90vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .comparison-modal-content {
+    width: 85%;
+    max-width: 85vw;
+  }
+}
+
+.modal-scroll {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+@media (min-width: 768px) {
+  .modal-scroll {
+    max-height: 70vh;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ========== تم لایت ========== */
+body.light-theme {
+    background-color: #f5f7fa !important;
+    background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0) !important;
+    background-size: 25px 25px !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme .card {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .bg-gray-800,
+body.light-theme .bg-gray-900 {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
+
+body.light-theme .bg-gray-700 {
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+}
+
+body.light-theme .text-gray-200,
+body.light-theme .text-gray-300,
+body.light-theme .text-white {
+    color: #1f2937 !important;
+}
+
+body.light-theme .text-gray-400 {
+    color: #4b5563 !important;
+}
+
+body.light-theme .text-gray-500 {
+    color: #6b7280 !important;
+}
+
+body.light-theme .border-gray-700 {
+    border-color: #e5e7eb !important;
+}
+
+body.light-theme .border-gray-600 {
+    border-color: #d1d5db !important;
+}
+
+body.light-theme .hover\:bg-gray-700:hover {
+    background-color: #f3f4f6 !important;
+}
+
+body.light-theme .hover\:bg-gray-800:hover {
+    background-color: #f9fafb !important;
+}
+
+body.light-theme input,
+body.light-theme select,
+body.light-theme textarea {
+    background-color: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme input:focus,
+body.light-theme select:focus,
+body.light-theme textarea:focus {
+    border-color: #3b82f6 !important;
+    ring-color: #3b82f6 !important;
+}
+
+body.light-theme button.bg-gray-600 {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme button.bg-gray-600:hover {
+    background-color: #d1d5db !important;
+}
+
+body.light-theme .purchase-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%) !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+body.light-theme .ticker-item {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme .ticker-item:hover {
+    background: #f9fafb !important;
+}
+
+body.light-theme .ticker-category-badge {
+    background: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+body.light-theme #price-ticker-bar {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+body.light-theme .modal-content {
+    background-color: #ffffff !important;
+}
+
+body.light-theme .modal-content .bg-gray-800 {
+    background-color: #f9fafb !important;
+}
+
+body.light-theme .modal-content .bg-gray-700 {
+    background-color: #f3f4f6 !important;
+}
+
+body.light-theme table thead tr {
+    background-color: #f9fafb !important;
+}
+
+body.light-theme table tbody tr:hover {
+    background-color: #f3f4f6 !important;
+}
+
+body.light-theme .success {
+    color: #059669 !important;
+}
+
+body.light-theme .danger {
+    color: #dc2626 !important;
+}
+
+body.light-theme .text-green-400 {
+    color: #059669 !important;
+}
+
+body.light-theme .text-red-400 {
+    color: #dc2626 !important;
+}
+
+body.light-theme .text-blue-400 {
+    color: #2563eb !important;
+}
+
+body.light-theme .text-yellow-400 {
+    color: #d97706 !important;
+}
+
+body.light-theme .bg-green-900\/30 {
+    background-color: rgba(5, 150, 105, 0.1) !important;
+}
+
+body.light-theme .bg-red-900\/30 {
+    background-color: rgba(220, 38, 38, 0.1) !important;
+}
+
+body.light-theme .bg-yellow-900\/30 {
+    background-color: rgba(217, 119, 6, 0.1) !important;
+}
+
+body.light-theme .bg-blue-900\/30 {
+    background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+body.light-theme .bg-orange-900\/30 {
+    background-color: rgba(234, 88, 12, 0.1) !important;
+}
+
+/* تنظیمات خاص برای نمودارها */
+body.light-theme canvas {
+    filter: none !important;
+}
+
+/* تنظیمات مودال‌ها */
+body.light-theme .fixed.inset-0 {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* تنظیمات اسکرول بار */
+body.light-theme ::-webkit-scrollbar-track {
+    background: #f3f4f6 !important;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+    background: #9ca3af !important;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280 !important;
+}
+
+.modal-fade {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-slide {
+  animation: slideIn 0.3s ease-out;
+}
+
+.action-btn {
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9d1d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 0.5rem center;
+  background-size: 1.2em;
+  padding-left: 2.5rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.purchase-card {
+  transition: all 0.3s ease;
+}
+
+.purchase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.form-input-mobile {
+  font-size: 16px !important;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #4f5861;
+  border-radius: 2px;
+}
+
+.purchase-toggle {
+  transition: all 0.3s ease;
+}
+
+.purchase-toggle.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.purchase-toggle.inactive {
+  background-color: #374151;
+  color: #9ca3af;
+}
+/* ========== استایل‌های جدید برای بخش تعادل پورتفوی ========== */
+
+.balance-status-item {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.balance-status-item.border-green-500 {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
+.balance-status-item.border-yellow-500 {
+  border-color: #eab308 !important;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.15);
+}
+
+.balance-status-item.border-orange-500 {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.15);
+}
+
+.balance-status-item.border-red-500 {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+}
+
+/* انیمیشن برای نمودار دایره‌ای */
+#portfolioPieChart {
+  transition: all 0.3s ease;
+}
+
+/* استایل legend نمودار دایره‌ای */
+#pie-chart-legend::-webkit-scrollbar {
+  width: 3px;
+}
+
+#pie-chart-legend::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+#pie-chart-legend::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+#pie-chart-legend::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* استایل راهنمای تعادل */
+#balance-guidance {
+  transition: all 0.3s ease;
+}
+
+#balance-guidance.border-green-500 {
+  border-right-color: #10b981 !important;
+  background: linear-gradient(to left, rgba(16, 185, 129, 0.05), transparent);
+}
+
+#balance-guidance.border-yellow-500 {
+  border-right-color: #eab308 !important;
+  background: linear-gradient(to left, rgba(234, 179, 8, 0.05), transparent);
+}
+
+#balance-guidance.border-orange-500 {
+  border-right-color: #f97316 !important;
+  background: linear-gradient(to left, rgba(249, 115, 22, 0.05), transparent);
+}
+
+#balance-guidance.border-red-500 {
+  border-right-color: #ef4444 !important;
+  background: linear-gradient(to left, rgba(239, 68, 68, 0.05), transparent);
+}
+
+/* ریسپانسیو برای نمودار دایره‌ای */
+@media (max-width: 640px) {
+  #portfolioPieChart {
+    max-height: 250px;
+  }
+
+  .balance-status-item {
+    padding: 0.75rem !important;
+  }
+
+  .balance-status-item .w-16.h-16 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .balance-status-item .text-3xl {
+    font-size: 1.5rem !important;
+  }
+}
+/* ========== استایل‌های نوار قیمت (Ticker Bar) ========== */
+
+#price-ticker-bar {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#ticker-scroll-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+#ticker-scroll-container::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 2px;
+}
+
+#ticker-scroll-container::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 2px;
+}
+
+#ticker-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+#ticker-toggle-btn {
+  z-index: 41;
+}
+
+#ticker-toggle-btn:hover #ticker-toggle-icon {
+  transform: translateY(2px);
+}
+
+/* انیمیشن پالس برای نقطه سبز */
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 5px #10b981;
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 15px #10b981;
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+/* استایل آیتم‌های تراکنش اخیر */
+#recent-transactions-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+#recent-transactions-list::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+#recent-transactions-list::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+/* فضای خالی برای نوار قیمت */
+#ticker-spacer {
+  transition: height 0.3s ease;
+}
+
+#ticker-spacer.h-0 {
+  height: 0 !important;
+}
+
+/* تنظیمات ریسپانسیو برای نوار قیمت */
+@media (max-width: 640px) {
+  #ticker-items > div {
+    padding: 0.5rem 0.75rem;
+  }
+
+  #ticker-items .text-sm {
+    font-size: 0.75rem;
+  }
+
+  #ticker-toggle-btn {
+    left: 1rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+}
+
+/* استایل برای دکمه بستن/باز کردن نوار قیمت */
+#ticker-toggle-btn {
+  backdrop-filter: blur(8px);
+  background-color: rgba(31, 41, 55, 0.95);
+}
+
+#ticker-toggle-btn:hover {
+  background-color: rgba(55, 65, 81, 0.95);
+}
+/* ========== استایل‌های نوار قیمت اسکرول شونده ========== */
+
+#price-ticker-bar {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  background-color: rgba(17, 24, 39, 0.95);
+}
+
+#ticker-scroll {
+  display: flex;
+  gap: 0.5rem;
+  width: max-content;
+}
+
+#ticker-scroll:hover {
+  animation-play-state: paused !important;
+}
+
+.ticker-category-badge {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.ticker-item {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.ticker-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#ticker-toggle-btn {
+  z-index: 41;
+  backdrop-filter: blur(8px);
+  background-color: rgba(31, 41, 55, 0.95);
+}
+
+#ticker-toggle-btn:hover {
+  background-color: rgba(55, 65, 81, 0.95);
+}
+
+#ticker-toggle-btn:hover #ticker-toggle-icon {
+  transform: translateY(2px);
+}
+
+/* انیمیشن پالس برای نقطه سبز */
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 5px #10b981;
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 15px #10b981;
+  }
+}
+
+.animate-pulse {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+/* افکت محو شدن در لبه‌ها */
+.ticker-wrapper {
+  position: relative;
+  mask-image: linear-gradient(
+    to left,
+    transparent,
+    black 3%,
+    black 97%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent,
+    black 3%,
+    black 97%,
+    transparent
+  );
+}
+
+/* فضای خالی */
+#ticker-spacer {
+  transition: height 0.3s ease;
+}
+
+#ticker-spacer.h-0 {
+  height: 0 !important;
+}
+
+/* ریسپانسیو */
+@media (max-width: 640px) {
+  .ticker-category-badge {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .ticker-item {
+    padding: 0.15rem 0.5rem;
+  }
+
+  .ticker-item .text-sm {
+    font-size: 0.7rem !important;
+  }
+
+  .ticker-item .text-xs {
+    font-size: 0.6rem !important;
+  }
+
+  #ticker-toggle-btn {
+    left: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+/* استایل اسکرول برای مودال گزارش */
+#report-preview {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+}
+
+#report-preview::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+#report-preview::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 4px;
+}
+
+#report-preview::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+#report-preview::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* برای بخش تنظیمات هم اسکرول زیبا */
+#report-modal .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 3px;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+/* استایل مودال گزارش */
+#report-modal .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 3px;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+
+#report-mini-preview {
+    scrollbar-width: thin;
+}
+
+#report-mini-preview::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+#report-mini-preview::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
+
+#report-mini-preview::-webkit-scrollbar-thumb {
+    background: #9ca3af;
+    border-radius: 4px;
+}
+/* ========== Toast Notification ========== */
+.toast-notification {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 400px;
+    background: #1a1f2a;
+    border: 1px solid #4b5563;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: toastSlideIn 0.3s ease-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-notification.toast-hiding {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+}
+
+.toast-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.toast-message {
+    flex: 1;
+    color: #e5e7eb;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.toast-close {
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: color 0.2s;
+    padding: 4px;
+}
+
+.toast-close:hover {
+    color: #f3f4f6;
+}
+
+.toast-progress-bar {
+    height: 3px;
+    background: #4b5563;
+    width: 100%;
+}
+
+.toast-progress-fill {
+    height: 100%;
+    width: 100%;
+    background: #10b981;
+    animation: toastProgress 5s linear forwards;
+}
+
+.toast-notification.toast-success .toast-progress-fill {
+    background: #10b981;
+}
+
+.toast-notification.toast-error .toast-progress-fill {
+    background: #ef4444;
+}
+
+.toast-notification.toast-warning .toast-progress-fill {
+    background: #f59e0b;
+}
+
+.toast-notification.toast-info .toast-progress-fill {
+    background: #3b82f6;
+}
+
+@keyframes toastProgress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* تم لایت برای نوتیفیکیشن */
+body.light-theme .toast-notification {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .toast-message {
+    color: #1f2937;
+}
+
+body.light-theme .toast-close {
+    color: #6b7280;
+}
+
+body.light-theme .toast-close:hover {
+    color: #374151;
+}
+
+body.light-theme .toast-progress-bar {
+    background: #e5e7eb;
+}
+/* ========== استایل فوتر ========== */
+footer {
+    border-top-color: #30363d;
+}
+
+body.light-theme footer {
+    border-top-color: #e5e7eb !important;
+}
+
+body.light-theme footer .text-gray-400 {
+    color: #6b7280 !important;
+}
+
+body.light-theme footer .text-gray-500 {
+    color: #9ca3af !important;
+}
+
+body.light-theme footer .text-blue-400 {
+    color: #2563eb !important;
+}
+
+body.light-theme footer a:hover {
+    color: #1f2937 !important;
+}

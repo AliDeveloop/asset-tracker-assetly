@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمای بازارها | Assetly</title>
+    <script src="../static/js/tailwind.js"></script>
+    <link href="../static/css/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        .market-card {
+            background: linear-gradient(145deg, #1a1f2a 0%, #161b22 100%);
+            border: 1px solid #30363d;
+            transition: all 0.2s ease;
+        }
+        .market-card:hover {
+            transform: translateY(-2px);
+            border-color: #4f5861;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .tab-active {
+            background: #3b82f6;
+            color: white;
+            border-bottom: 2px solid #3b82f6;
+        }
+        .tab-inactive {
+            background: transparent;
+            color: #9ca3af;
+            border-bottom: 2px solid transparent;
+        }
+        .tab-inactive:hover {
+            color: white;
+            background: #374151;
+        }
+        .favorite-btn {
+            transition: all 0.2s ease;
+        }
+        .favorite-btn.active {
+            color: #fbbf24;
+        }
+        .watchlist-badge {
+            background: #3b82f6;
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 9999px;
+        }
+        .category-badge {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        .search-highlight {
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="p-3 sm:p-4 md:p-6">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- هدر -->
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+            <div class="flex items-center gap-4">
+                <a href="/" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                </a>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-200">📊 نمای بازارها</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <span id="last-update-time" class="text-xs text-gray-500">در حال بارگذاری...</span>
+                <button onclick="window.location.reload()" class="text-blue-400 hover:text-blue-300 text-sm">
+                    🔄 بروزرسانی
+                </button>
+            </div>
+        </header>
+
+        <!-- تب‌های دسته‌بندی -->
+        <div class="flex flex-wrap gap-1 mb-4 border-b border-gray-700 pb-1">
+            <button class="tab-btn tab-active px-4 py-2 rounded-t-lg text-sm font-medium transition" data-tab="watchlist">
+                ⭐ دیده‌بان
+                <span id="watchlist-count" class="watchlist-badge mr-1">0</span>
+            </button>
+            <button class="tab-btn tab-inactive px-4 py-2 rounded-t-lg text-sm font-medium transition" data-tab="all">
+                📋 همه
+            </button>
+            <button class="tab-btn tab-inactive px-4 py-2 rounded-t-lg text-sm font-medium transition" data-tab="gold_coin">
+                🏆 سکه و طلا
+            </button>
+            <button class="tab-btn tab-inactive px-4 py-2 rounded-t-lg text-sm font-medium transition" data-tab="currency">
+                💵 ارز
+            </button>
+            <button class="tab-btn tab-inactive px-4 py-2 rounded-t-lg text-sm font-medium transition" data-tab="crypto">
+                ₿ ارز دیجیتال
+            </button>
+            <button class="tab-btn tab-inactive px-4 py-2 rounded-t-lg text-sm font-medium transition" data-tab="stock">
+                📈 بورس
+            </button>
+        </div>
+
+        <!-- نوار جستجو -->
+        <div class="mb-4">
+            <div class="relative">
+                <input type="text" id="market-search" placeholder="جستجوی نماد یا نام دارایی..." 
+                       class="w-full p-3 pr-10 rounded-xl bg-gray-800 border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <svg class="absolute left-3 top-3 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- شبکه کارت‌ها -->
+        <div id="markets-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
+            <!-- کارت‌ها با JavaScript تزریق می‌شن -->
+            <div class="col-span-full text-center py-8 text-gray-500">در حال بارگذاری بازارها...</div>
+        </div>
+
+        <!-- پیام خالی بودن -->
+        <div id="empty-message" class="hidden text-center py-8 text-gray-500">
+            <p class="text-lg">🔍 موردی یافت نشد</p>
+            <p class="text-sm mt-2">با معیارهای جستجوی شما نتیجه‌ای پیدا نشد.</p>
+        </div>
+
+    </div>
+
+    <script src="../static/js/markets.js"></script>
+</body>
+</html>
