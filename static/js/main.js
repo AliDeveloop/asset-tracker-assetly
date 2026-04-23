@@ -6,6 +6,7 @@ let portfolioPieChart = null;
 let purchaseMode = 'balance';
 let tickerVisible = true;
 
+
 // --- متغیرهای نوار قیمت ---
 let tickerAnimationFrame = null;
 let tickerPosition = 0;
