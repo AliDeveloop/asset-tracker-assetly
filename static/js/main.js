@@ -490,6 +490,7 @@ const fetchAssets = async () => {
         updateWalletBalanceDisplay();
         updatePurchasePowerBox();
         updateDailyProfit();
+        if (investmentGoal) updateGoalDisplay();
     } catch (error) {
         console.error('Error fetching assets:', error);
         document.getElementById('assets-table-body').innerHTML = '<tr><td colspan="7" class="py-4 text-center text-red-400">خطا در بارگذاری دارایی‌ها</td></tr>';
@@ -2294,11 +2295,186 @@ const resetRiskTest = () => {
     localStorage.removeItem('riskTestAnswers');
 };
 
+// --- Investment Goal Functions ---
+let investmentGoal = null;
+
+const loadInvestmentGoal = () => {
+    const saved = localStorage.getItem('investmentGoal');
+    if (saved) {
+        try {
+            investmentGoal = JSON.parse(saved);
+            updateGoalDisplay();
+        } catch (e) {
+            console.error('Error loading goal:', e);
+        }
+    }
+};
+
+const saveInvestmentGoal = (goal) => {
+    investmentGoal = { ...goal, startDate: new Date().toISOString() };
+    localStorage.setItem('investmentGoal', JSON.stringify(investmentGoal));
+    updateGoalDisplay();
+};
+
+const deleteInvestmentGoal = () => {
+    investmentGoal = null;
+    localStorage.removeItem('investmentGoal');
+    updateGoalDisplay();
+};
+
+const calculateCurrentValue = (type) => {
+    if (!allAssets || allAssets.length === 0) return 0;
+    
+    let totalValue = 0;
+    allAssets.forEach(asset => {
+        if (asset.symbol === 'RIAL_WALLET') {
+            totalValue += parseFloat(asset.total_quantity) || 0;
+        } else {
+            totalValue += parseFloat(asset.current_value) || 0;
+        }
+    });
+    
+    if (type === 'toman') return totalValue;
+    
+    let usdPrice = 0, goldPrice = 0, btcPrice = 0;
+    if (allPrices) {
+        ['currency', 'gold_coin', 'crypto'].forEach(cat => {
+            const items = allPrices[cat] || [];
+            items.forEach(item => {
+                if (item.symbol === 'USD') usdPrice = item.toman_price || item.price;
+                if (item.symbol === 'IR_GOLD_18K') goldPrice = item.toman_price || item.price;
+                if (item.symbol === 'BTC') btcPrice = item.toman_price || item.price;
+            });
+        });
+    }
+    
+    if (type === 'dollar') return usdPrice > 0 ? totalValue / usdPrice : 0;
+    if (type === 'gold') return goldPrice > 0 ? totalValue / goldPrice : 0;
+    if (type === 'bitcoin') return btcPrice > 0 ? totalValue / btcPrice : 0;
+    return totalValue;
+};
+
+const updateGoalDisplay = () => {
+    const summaryText = document.getElementById('goal-summary-text');
+    const btnText = document.getElementById('goal-btn-text');
+    const deleteSection = document.getElementById('delete-goal-section');
+    const noGoalMsg = document.getElementById('no-goal-message');
+    const editBtn = document.getElementById('edit-goal-btn');
+    
+    if (!investmentGoal) {
+        if (summaryText) summaryText.textContent = 'برای تنظیم هدف کلیک کنید';
+        if (btnText) btnText.textContent = '+ افزودن هدف';
+        if (deleteSection) deleteSection.classList.add('hidden');
+        if (noGoalMsg) noGoalMsg.classList.remove('hidden');
+        if (editBtn) editBtn.classList.add('hidden');
+        
+        ['toman', 'dollar', 'gold', 'bitcoin'].forEach(type => {
+            document.getElementById(`goal-${type}`)?.classList.add('hidden');
+        });
+        document.getElementById('goal-deadline')?.classList.add('hidden');
+        return;
+    }
+    
+    if (btnText) btnText.textContent = '✏️ ویرایش';
+    if (deleteSection) deleteSection.classList.remove('hidden');
+    if (noGoalMsg) noGoalMsg.classList.add('hidden');
+    if (editBtn) editBtn.classList.remove('hidden');
+    
+    const { type, amount, days } = investmentGoal;
+    const currentRaw = calculateCurrentValue(type);
+    
+    let typeName = type === 'toman' ? 'تومانی' : (type === 'dollar' ? 'دلاری' : (type === 'gold' ? 'طلا' : 'بیت‌کوین'));
+    let unit = type === 'toman' ? 'تومان' : (type === 'dollar' ? 'دلار' : (type === 'gold' ? 'گرم' : 'BTC'));
+    if (summaryText) summaryText.textContent = `هدف ${typeName}: ${formatNumber(amount, type)} ${unit}`;
+    
+    ['toman', 'dollar', 'gold', 'bitcoin'].forEach(t => {
+        document.getElementById(`goal-${t}`)?.classList.toggle('hidden', t !== type);
+    });
+    
+    const current = currentRaw;
+    const percent = Math.min(100, (current / amount) * 100);
+    const remaining = Math.max(0, amount - current);
+    const remainingPercent = 100 - percent;
+    
+    const barEl = document.getElementById(`goal-${type}-bar`);
+    if (barEl) barEl.style.width = `${percent}%`;
+    
+    const currentEl = document.getElementById(`goal-${type}-current`);
+    const targetEl = document.getElementById(`goal-${type}-target`);
+    if (currentEl) currentEl.textContent = formatNumber(current, type);
+    if (targetEl) targetEl.textContent = formatNumber(amount, type);
+    
+    const motivationEl = document.getElementById(`goal-${type}-motivation`);
+    if (motivationEl) {
+        if (percent >= 100) {
+            motivationEl.textContent = '🎉 تبریک! به هدفت رسیدی! 🎉';
+            motivationEl.className = 'text-xs text-green-400 mt-2 text-center font-medium';
+            showNotification('🎉 تبریک! به هدف سرمایه‌گذاری خود رسیدید!', 'success');
+        } else {
+            const remainingFormatted = formatNumber(remaining, type);
+            motivationEl.textContent = `💪 فقط ${remainingFormatted} ${unit} دیگه مونده تا به هدفت برسی! (${remainingPercent.toFixed(1)}% باقی‌مونده)`;
+            motivationEl.className = 'text-xs text-gray-500 mt-2 text-center';
+        }
+    }
+    
+    const deadlineEl = document.getElementById('goal-deadline');
+    const deadlineTextEl = document.getElementById('goal-deadline-text');
+    if (days && deadlineEl && deadlineTextEl) {
+        const startDate = new Date(investmentGoal.startDate);
+        const targetDate = new Date(startDate.getTime() + days * 24 * 60 * 60 * 1000);
+        const today = new Date();
+        const daysLeft = Math.max(0, Math.ceil((targetDate - today) / (24 * 60 * 60 * 1000)));
+        
+        if (daysLeft > 0) {
+            deadlineTextEl.textContent = `${daysLeft} روز تا پایان مهلت باقی‌مانده`;
+            if (daysLeft <= 3) {
+                showNotification(`⚠️ فقط ${daysLeft} روز تا پایان مهلت هدف باقی‌مانده!`, 'warning');
+            }
+        } else {
+            deadlineTextEl.textContent = '⏰ مهلت به پایان رسیده است';
+        }
+        deadlineEl.classList.remove('hidden');
+    } else {
+        if (deadlineEl) deadlineEl.classList.add('hidden');
+    }
+};
+
+const formatNumber = (num, type) => {
+    if (type === 'dollar') return `$${num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (type === 'gold') return `${num.toLocaleString('fa-IR', { minimumFractionDigits: 3, maximumFractionDigits: 3 })}`;
+    if (type === 'bitcoin') return `${num.toLocaleString('en-US', { minimumFractionDigits: 6, maximumFractionDigits: 6 })}`;
+    return num.toLocaleString('fa-IR');
+};
+
+const updateGoalAmountLabel = () => {
+    const type = document.querySelector('input[name="goal-type"]:checked')?.value;
+    const label = document.getElementById('goal-amount-label');
+    const equivalent = document.getElementById('goal-equivalent');
+    
+    if (type === 'toman') {
+        if (label) label.textContent = 'مبلغ هدف (تومان)';
+        if (equivalent) equivalent.textContent = '';
+    } else if (type === 'dollar') {
+        if (label) label.textContent = 'مبلغ هدف (دلار)';
+        const usdPrice = allPrices?.currency?.find(i => i.symbol === 'USD')?.toman_price || 0;
+        if (equivalent) equivalent.textContent = usdPrice ? `≈ ${usdPrice.toLocaleString('fa-IR')} تومان به ازای هر دلار` : '';
+    } else if (type === 'gold') {
+        if (label) label.textContent = 'مبلغ هدف (گرم طلا)';
+        const goldPrice = allPrices?.gold_coin?.find(i => i.symbol === 'IR_GOLD_18K')?.toman_price || 0;
+        if (equivalent) equivalent.textContent = goldPrice ? `≈ ${goldPrice.toLocaleString('fa-IR')} تومان به ازای هر گرم` : '';
+    } else if (type === 'bitcoin') {
+        if (label) label.textContent = 'مبلغ هدف (بیت‌کوین)';
+        const btcPrice = allPrices?.crypto?.find(i => i.symbol === 'BTC')?.toman_price || 0;
+        if (equivalent) equivalent.textContent = btcPrice ? `≈ ${btcPrice.toLocaleString('fa-IR')} تومان به ازای هر بیت‌کوین` : '';
+    }
+};
+
 // --- Initialize ---
 const initialize = async () => {
     initTheme();
     initPriceTicker();
     loadSavedRiskTest();
+    loadInvestmentGoal();
     const loggedIn = await checkAuth();
     if (!loggedIn) {
         showAuthModal('login');
@@ -2320,7 +2496,72 @@ const initialize = async () => {
 
 // --- Event Listeners ---
 document.addEventListener('DOMContentLoaded', () => {
+// Goal Management
+document.getElementById('add-goal-btn')?.addEventListener('click', () => {
+    document.getElementById('goal-form').reset();
+    if (investmentGoal) {
+        document.querySelector(`input[name="goal-type"][value="${investmentGoal.type}"]`).checked = true;
+        document.getElementById('goal-amount').value = investmentGoal.amount;
+        document.getElementById('goal-days').value = investmentGoal.days || '';
+        updateGoalAmountLabel();
+    }
+    document.getElementById('goal-modal').classList.remove('hidden');
+});
 
+document.getElementById('add-goal-btn-secondary')?.addEventListener('click', () => {
+    document.getElementById('add-goal-btn').click();
+});
+
+document.getElementById('edit-goal-btn')?.addEventListener('click', () => {
+    document.getElementById('add-goal-btn').click();
+});
+
+['close-goal-modal', 'cancel-goal-modal'].forEach(id => {
+    document.getElementById(id)?.addEventListener('click', () => {
+        document.getElementById('goal-modal').classList.add('hidden');
+    });
+});
+
+document.querySelectorAll('input[name="goal-type"]').forEach(radio => {
+    radio.addEventListener('change', updateGoalAmountLabel);
+});
+
+document.getElementById('delete-goal-btn')?.addEventListener('click', () => {
+    if (confirm('آیا مطمئن هستید که می‌خواهید هدف را حذف کنید؟')) {
+        deleteInvestmentGoal();
+        document.getElementById('goal-modal').classList.add('hidden');
+        document.getElementById('goal-expanded').classList.add('hidden');
+        document.getElementById('goal-expand-icon').style.transform = 'rotate(0deg)';
+    }
+});
+
+document.getElementById('goal-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const type = document.querySelector('input[name="goal-type"]:checked').value;
+    const amount = parseFloat(document.getElementById('goal-amount').value);
+    const days = document.getElementById('goal-days').value ? parseInt(document.getElementById('goal-days').value) : null;
+    
+    if (!amount || amount <= 0) {
+        alert('لطفاً مبلغ هدف را وارد کنید.');
+        return;
+    }
+    
+    saveInvestmentGoal({ type, amount, days });
+    document.getElementById('goal-modal').classList.add('hidden');
+    document.getElementById('goal-expanded').classList.remove('hidden');
+    document.getElementById('goal-expand-icon').style.transform = 'rotate(180deg)';
+    showNotification('✅ هدف سرمایه‌گذاری با موفقیت ذخیره شد', 'success');
+});
+
+// Goal section expand/collapse
+document.getElementById('goal-collapsed')?.addEventListener('click', (e) => {
+    if (e.target.closest('button')) return;
+    const expanded = document.getElementById('goal-expanded');
+    const icon = document.getElementById('goal-expand-icon');
+    expanded.classList.toggle('hidden');
+    if (icon) icon.style.transform = expanded.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+});
   // Risk Test Event Listeners
 document.getElementById('start-risk-test-btn')?.addEventListener('click', () => {
     resetRiskTest();
@@ -2378,7 +2619,7 @@ document.getElementById('risk-submit-btn')?.addEventListener('click', () => {
     const score = calculateRiskScore();
     renderSuggestedPortfolio(score);
     document.getElementById('risk-test-modal').classList.add('hidden');
-    showNotification(`✅ آزمون با موفقیت完成 شد! نمره شما: ${score} از ۱۰۰`, 'success');
+    showNotification(`✅ آزمون با موفقیت شد! نمره شما: ${score} از ۱۰۰`, 'success');
 });
     // Auth
     document.getElementById('login-btn')?.addEventListener('click', () => showAuthModal('login'));
