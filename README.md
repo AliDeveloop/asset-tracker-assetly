@@ -12,6 +12,7 @@ focused on **Iranian financial markets** 🇮🇷
 ![Flask](https://img.shields.io/badge/Flask-Backend-black)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Visitors](https://hits.sh/github.com/AliDeveloop/asset-tracker-assetly.svg?style=flat&label=Bazdid&color=3b82f6)
 
 <br/>
 
