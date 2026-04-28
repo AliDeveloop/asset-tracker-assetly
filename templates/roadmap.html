@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نقشه راه | Assetly Roadmap</title>
+  <script src="../static/js/tailwind.js"></script>
+  <link href="../static/css/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+  <style>
+    :root {
+      --v1-color: #10b981;
+      --v2-color: #3b82f6;
+      --v3-color: #8b5cf6;
+      --v4-color: #f59e0b;
+      --v5-color: #ef4444;
+      --v6-color: #06b6d4;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    @keyframes pulse-version {
+      0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+    }
+
+    @keyframes scan-line {
+      0% { top: -5%; }
+      100% { top: 105%; }
+    }
+
+    @keyframes glitch-text {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, -2px); }
+      80% { transform: translate(2px, 2px); }
+    }
+
+    .timeline-container {
+      position: relative;
+      padding-right: 60px;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      right: 28px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, 
+        var(--v1-color), 
+        #1a1a1a 18%,      /* V2 - مشکی */
+        #1a1a1a 35%,      /* V2 continued */
+        var(--v3-color) 38%,  /* V3 - بنفش */
+        var(--v3-color) 55%,
+        #374151 60%,      /* V4 - اسپویلر */
+        #374151 75%,      /* V5 - اسپویلر */
+        var(--v6-color)
+      );
+      border-radius: 4px;
+      opacity: 0.6;
+    }
+
+    .version-node {
+      position: absolute;
+      right: 16px;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 3px solid;
+      z-index: 2;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .version-node.completed {
+      animation: pulse-version 3s ease-in-out infinite;
+    }
+
+    .version-card {
+      position: relative;
+      border: 1px solid #1f2937;
+      background: linear-gradient(145deg, #111827 0%, #1a1f2a 100%);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .version-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .version-card:hover {
+      transform: translateY(-2px);
+      border-color: #374151;
+    }
+
+    .version-card:hover::before {
+      opacity: 0.5;
+    }
+
+    .spoiler-blur {
+      filter: blur(8px) grayscale(50%);
+      user-select: none;
+      pointer-events: none;
+      transition: all 0.5s ease;
+      position: relative;
+    }
+
+    .spoiler-overlay {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spoiler-overlay::after {
+      content: ' COMING SOON';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.3em;
+      color: #6b7280;
+      z-index: 10;
+      text-shadow: 0 0 30px rgba(107, 114, 128, 0.5);
+      pointer-events: none;
+      animation: glitch-text 2s ease-in-out infinite;
+    }
+
+    .feature-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.6rem;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+    }
+
+    .feature-chip:hover {
+      transform: translateX(-3px);
+    }
+
+    .scan-effect {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+      animation: scan-line 4s linear infinite;
+      pointer-events: none;
+    }
+
+    .constellation-dot {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    /* فونت دست‌نویس */
+    @font-face {
+      font-family: 'Handwritten';
+      src: local('Segoe Script'), local('Comic Sans MS'), local('Tahoma');
+    }
+
+    .handwritten-note {
+      font-family: 'Handwritten', 'Segoe Script', 'Tahoma', cursive;
+      font-size: 0.85rem;
+      line-height: 2;
+      color: #6b7280;
+      opacity: 0.8;
+      position: relative;
+      padding-right: 1rem;
+    }
+
+    .handwritten-note::before {
+      content: '—';
+      position: absolute;
+      right: 0;
+      color: #4b5563;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-container {
+        padding-right: 50px;
+      }
+      .timeline-container::before {
+        right: 22px;
+      }
+      .version-node {
+        right: 12px;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
+</head>
+<body class="p-3 sm:p-6 min-h-screen relative overflow-x-hidden">
+  
+  <div id="stars-container" class="fixed inset-0 pointer-events-none" style="z-index: 0;"></div>
+
+  <div class="max-w-4xl mx-auto relative z-10">
+    
+    <!-- هدر -->
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="inline-block mb-4">
+        <span class="text-6xl sm:text-7xl">🗺️</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">
+        <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
+          نقشه راه
+        </span>
+      </h1>
+      <p class="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
+        سفری از یک اپ ساده لوکال تا یک پلتفرم حرفه‌ای مدیریت دارایی
+        <br>
+        <span class="text-sm text-gray-600 mt-2 inline-block">
+          هر نسخه، یک قدم به سوی تکامل 🚀
+        </span>
+      </p>
+      
+      <div class="flex justify-center gap-1 mt-6">
+        <div class="h-1 w-12 rounded-full" style="background: var(--v1-color)"></div>
+        <div class="h-1 w-12 rounded-full bg-gray-800"></div>
+        <div class="h-1 w-12 rounded-full" style="background: var(--v3-color)"></div>
+        <div class="h-1 w-12 rounded-full bg-gray-700"></div>
+        <div class="h-1 w-12 rounded-full bg-gray-700"></div>
+        <div class="h-1 w-12 rounded-full bg-gray-700"></div>
+      </div>
+    </div>
+
+    <!-- تایم‌لاین -->
+    <div class="timeline-container space-y-12 sm:space-y-16">
+      
+      <!-- ===== V1.0.0 ===== -->
+      <div class="relative">
+        <div class="version-node completed" style="background: var(--v1-color); border-color: var(--v1-color); box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);">
+          1
+        </div>
+        <div class="version-card rounded-2xl p-6 sm:p-8 ml-4" style="background: linear-gradient(145deg, #0d1b14 0%, #111827 100%); border-color: #064e3b;">
+          <div class="scan-effect"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-900/50 text-emerald-400 border border-emerald-800">
+                 ✅ منتشر شد 
+                </span>
+                <span class="text-gray-600 text-sm">آذر ۱۴۰۴</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-black text-white">
+                V<span class="text-emerald-400">1</span>.0.0
+              </h2>
+            </div>
+            <div class="text-5xl opacity-20 select-none">🌱</div>
+          </div>
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">بذر اولیه - Single Player Mode</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="feature-chip bg-emerald-900/20 text-emerald-400 border border-emerald-900/50">🏠 اپ تک‌کاربره لوکال</span>
+            <span class="feature-chip bg-emerald-900/20 text-emerald-400 border border-emerald-900/50">📈 روند افزایش/کاهش ارزش</span>
+            <span class="feature-chip bg-emerald-900/20 text-emerald-400 border border-emerald-900/50">💹 سود و زیان لحظه‌ای</span>
+            <span class="feature-chip bg-emerald-900/20 text-emerald-400 border border-emerald-900/50">🎯 قیمت سر به سر</span>
+            <span class="feature-chip bg-emerald-900/20 text-emerald-400 border border-emerald-900/50">📊 نمودار عملکرد</span>
+          </div>
+          <div class="mt-3 pt-3 border-t border-emerald-900/30">
+            <p class="handwritten-note">
+آذر 404 شروع استزلی - اینجا فقط میخواستیم پولمون چقدر بود و چقدر شد            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== V2.0.0 ===== -->
+      <div class="relative">
+        <div class="version-node" style="background: #1a1a1a; border-color: #444; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+          <span class="text-gray-400">2</span>
+        </div>
+        <div class="version-card rounded-2xl p-6 sm:p-8 ml-4 border-gray-800" style="background: linear-gradient(145deg, #0a0a0a 0%, #111 100%);">
+          <div class="scan-effect" style="animation-delay: 1s; background: linear-gradient(90deg, transparent, #333, transparent);"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-black border border-gray-700 text-gray-400">
+                  🛠️ توسعه داده شد
+                </span>
+                <span class="text-gray-600 text-sm">دی ۱۴۰۴</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-black text-gray-500">
+                V<span class="text-gray-400">2</span>.0.0
+              </h2>
+            </div>
+            <div class="text-5xl opacity-10 select-none grayscale">📊</div>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-500 mb-4">تحلیلگر هوشمند - Smart Analytics</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="feature-chip bg-gray-900 text-gray-600 border border-gray-800">📈 عملکرد روزانه</span>
+            <span class="feature-chip bg-gray-900 text-gray-600 border border-gray-800">💰 قدرت خرید</span>
+            <span class="feature-chip bg-gray-900 text-gray-600 border border-gray-800">💵 تبدیل به دلار</span>
+            <span class="feature-chip bg-gray-900 text-gray-600 border border-gray-800">🥇 تبدیل به طلا</span>
+            <span class="feature-chip bg-gray-900 text-gray-600 border border-gray-800">₿ تبدیل به بیت‌کوین</span>
+          </div>
+          <div class="mt-3 pt-3 border-t border-gray-800/50">
+            <p class="handwritten-note" style="color: #555;">
+دی 404 سرد تاریک غمگین بدون اینترنت - نسخه دو توسعه داده شد اما بدلیل شرایط منتشر نشد          </div>
+        </div>
+      </div>
+
+      <!-- ===== V3.0.0   ===== -->
+      <div class="relative">
+        <div class="version-node" style="background: var(--v3-color); border-color: var(--v3-color); box-shadow: 0 0 30px rgba(139, 92, 246, 0.7); animation: pulse-version 2s ease-in-out infinite;">
+          <span class="text-white">3</span>
+        </div>
+        <div class="version-card rounded-2xl p-6 sm:p-8 ml-4 border-purple-800/50" style="box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);">
+          <div class="scan-effect" style="animation-delay: 2s; background: linear-gradient(90deg, transparent, #8b5cf6, transparent);"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-purple-900/50 text-purple-400 border border-purple-800 animate-pulse">
+                  نسخه فعلی
+                </span>
+                <span class="text-gray-600 text-sm"> بهمن و اسفند ۱۴۰۴ </span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-black text-white">
+                V<span class="text-purple-400">3</span>.0.0
+              </h2>
+            </div>
+            <div class="text-5xl opacity-20 select-none">🚀</div>
+          </div>
+          <h3 class="text-lg font-semibold text-purple-400 mb-4">پلتفرم حرفه‌ای - Pro Platform</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">👥 چند کاربره</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">🎯 هدف سرمایه‌گذاری</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">🧪 آزمون سنجش ریسک</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">📊 پورتفوی اختصاصی</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">🥧 نمودار دایره‌ای</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">📋 آخرین تراکنش‌ها</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">✏️ ویرایش و حذف</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">⚖️ تحلیل تعادل</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">👤 پروفایل کاربری</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">🔐 تغییر رمز</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">🌙 تم تاریک/روشن</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">🔑 مدیریت API</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">📦 ورودی/خروجی</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">📄 گزارش PDF</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">📊 تحلیل ارزش</span>
+            <span class="feature-chip bg-purple-900/20 text-purple-400 border border-purple-900/50">📈 نمای بازارها</span>
+          </div>
+          <div class="mt-3 pt-3 border-t border-purple-900/30">
+            <p class="handwritten-note">
+جنگه نت قطعه ولی استزلی واقعا خفن شده اگه داری اینو میبینی ینی نسخه اماده شده و منی که دارم برات اینو مینویسم 60 امین روز قطعی اینترنت رو هم دارم پشت سر میذارم. امیدوارم زندگی از اینی که هست بهتر شده باشه            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== V4.0.0  ===== -->
+      <div class="relative">
+        <div class="version-node" style="background: #374151; border-color: #4b5563;">
+          <span class="text-gray-500">4</span>
+        </div>
+        <div class="spoiler-overlay rounded-2xl ml-4">
+          <div class="version-card rounded-2xl p-6 sm:p-8 spoiler-blur">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+              <div>
+                <div class="flex items-center gap-3 mb-1">
+                  <span class="text-xs font-mono px-3 py-1 rounded-full bg-yellow-900/30 text-yellow-600 border border-yellow-900/30">COMING SOON</span>
+                  <span class="text-gray-700 text-sm">آینده نزدیک</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-gray-700">V<span class="text-yellow-600">4</span>.0.0</h2>
+              </div>
+              <div class="text-5xl opacity-10 select-none">🤖</div>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-600 mb-4">هوش مصنوعی - AI Powered</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🧠 پیش‌بینی قیمت با AI</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">💬 دستیار هوشمند</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📊 تحلیل تکنیکال خودکار</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🔔 هشدارهای هوشمند</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📱 اپ PWA موبایل</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🔄 سینک خودکار</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== V5.0.0  ===== -->
+      <div class="relative">
+        <div class="version-node" style="background: #374151; border-color: #4b5563;">
+          <span class="text-gray-500">5</span>
+        </div>
+        <div class="spoiler-overlay rounded-2xl ml-4">
+          <div class="version-card rounded-2xl p-6 sm:p-8 spoiler-blur">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+              <div>
+                <div class="flex items-center gap-3 mb-1">
+                  <span class="text-xs font-mono px-3 py-1 rounded-full bg-red-900/30 text-red-600 border border-red-900/30">COMING SOON</span>
+                  <span class="text-gray-700 text-sm">آینده</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-gray-700">V<span class="text-red-600">5</span>.0.0</h2>
+              </div>
+              <div class="text-5xl opacity-10 select-none">🌐</div>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-600 mb-4">اجتماعی - Social Trading</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">👥 پورتفوی‌های عمومی</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📢 اشتراک‌گذاری تحلیل</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🏆 لیدربورد</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">💬 چت و کامنت</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📊 مقایسه با دیگران</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🔗 کپی‌تریدینگ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== V6.0.0  ===== -->
+      <div class="relative">
+        <div class="version-node" style="background: #374151; border-color: #4b5563;">
+          <span class="text-gray-500">6</span>
+        </div>
+        <div class="spoiler-overlay rounded-2xl ml-4">
+          <div class="version-card rounded-2xl p-6 sm:p-8 spoiler-blur">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+              <div>
+                <div class="flex items-center gap-3 mb-1">
+                  <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-900/30 text-cyan-600 border border-cyan-900/30">COMING SOON</span>
+                  <span class="text-gray-700 text-sm">آینده دور</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-gray-700">V<span class="text-cyan-600">6</span>.0.0</h2>
+              </div>
+              <div class="text-5xl opacity-10 select-none">🏦</div>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-600 mb-4">اکوسیستم کامل - Full Ecosystem</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">💳 درگاه پرداخت</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🏦 اتصال به بروکر</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📊 بک‌تست استراتژی</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🤖 ربات معامله‌گر</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📈 API عمومی</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🌍 چندزبانه</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">📱 اپلیکیشن موبایل</span>
+              <span class="feature-chip bg-gray-800 text-gray-600 border border-gray-800">🔐 2FA امنیتی</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- فوتر -->
+    <div class="text-center mt-16 sm:mt-20 pb-8">
+      <div class="inline-block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 backdrop-blur-sm">
+        <p class="text-gray-400 text-sm mb-2">💡 ایده‌ای داری؟</p>
+        <p class="text-gray-500 text-xs">ما همیشه مشتاق شنیدن نظرات و پیشنهادات شما هستیم</p>
+        <a href="mailto:ali.zekrian016@gmail.com" class="inline-block mt-3 text-blue-400 hover:text-blue-300 text-sm transition">
+          📧 ali.zekrian016@gmail.com
+        </a>
+      </div>
+      
+      <div class="mt-8">
+        <a href="/" class="text-gray-500 hover:text-gray-400 text-sm transition flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          برگشت به داشبورد
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const starsContainer = document.getElementById('stars-container');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'constellation-dot';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      star.style.opacity = Math.random() * 0.5 + 0.1;
+      star.style.width = (Math.random() * 3 + 1) + 'px';
+      star.style.height = star.style.width;
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>

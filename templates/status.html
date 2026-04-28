@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وضعیت سیستم | Assetly</title>
+  <script src="../static/js/tailwind.js"></script>
+  <link href="../static/css/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="p-4 sm:p-6">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">🟢 وضعیت سیستم</h1>
+        <p class="text-gray-500 text-sm">نمایش وضعیت سرویس‌های Assetly</p>
+      </div>
+      <a href="/" class="text-gray-400 hover:text-white transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- وضعیت کلی -->
+    <div class="card p-4 rounded-xl mb-6 text-center">
+      {% set active_count = services.values()|selectattr('status', 'equalto', 'active')|list|length %}
+      {% set total = services.values()|list|length %}
+      
+      {% if active_count == total %}
+        <span class="text-4xl">✅</span>
+        <p class="text-green-400 text-lg mt-2">همه سرویس‌ها فعال هستند</p>
+      {% elif active_count >= total / 2 %}
+        <span class="text-4xl">⚠️</span>
+        <p class="text-yellow-400 text-lg mt-2">{{ total - active_count }} سرویس غیرفعال</p>
+      {% else %}
+        <span class="text-4xl">🔴</span>
+        <p class="text-red-400 text-lg mt-2">{{ total - active_count }} سرویس غیرفعال - نیاز به بررسی</p>
+      {% endif %}
+      
+      <p class="text-gray-500 text-xs mt-2">آخرین بروزرسانی: {{ last_updated }}</p>
+    </div>
+
+    <!-- لیست سرویس‌ها -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {% for key, service in services.items() %}
+      <div class="card p-4 rounded-xl border 
+        {% if service.status == 'active' %}border-green-800
+        {% elif service.status == 'maintenance' %}border-yellow-800
+        {% else %}border-red-800{% endif %}">
+        
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-medium text-white">{{ service.name }}</h3>
+          <span class="px-2 py-0.5 rounded text-xs 
+            {% if service.status == 'active' %}bg-green-900/50 text-green-400
+            {% elif service.status == 'maintenance' %}bg-yellow-900/50 text-yellow-400
+            {% else %}bg-red-900/50 text-red-400{% endif %}">
+            {% if service.status == 'active' %}فعال
+            {% elif service.status == 'maintenance' %}در حال تعمیر
+            {% else %}غیرفعال{% endif %}
+          </span>
+        </div>
+        
+        <p class="text-gray-500 text-xs">{{ service.description }}</p>
+        
+        {% if service.last_check %}
+        <p class="text-gray-600 text-xs mt-2">آخرین بررسی: {{ service.last_check }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</body>
+</html>

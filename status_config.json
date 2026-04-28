@@ -1,0 +1,53 @@
+{
+  "services": {
+    "price_api": {
+      "name": "📡 دریافت قیمت‌ها",
+      "status": "active",
+      "description": "اتصال به brsapi.ir برای دریافت قیمت طلا، ارز و رمزارز",
+      "last_check": ""
+    },
+    "tsetmc_api": {
+      "name": "📈 بورس تهران",
+      "status": "active",
+      "description": "دریافت داده‌های بورس از TSETMC",
+      "last_check": ""
+    },
+    "database": {
+      "name": "🗄️ دیتابیس",
+      "status": "active",
+      "description": "SQLite - ذخیره اطلاعات کاربران و تراکنش‌ها",
+      "last_check": ""
+    },
+    "scheduler": {
+      "name": "⏰ زمان‌بندی",
+      "status": "active",
+      "description": "APScheduler - بروزرسانی خودکار قیمت‌ها",
+      "last_check": ""
+    },
+    "auth_system": {
+      "name": "🔐 احراز هویت",
+      "status": "active",
+      "description": "سیستم ثبت‌نام، ورود و مدیریت نشست",
+      "last_check": ""
+    },
+    "public_api": {
+      "name": "🔑 API عمومی",
+      "status": "active",
+      "description": "دسترسی برنامه‌ای به قیمت‌ها با کلید API",
+      "last_check": ""
+    },
+    "pdf_report": {
+      "name": "📄 گزارش PDF",
+      "status": "active",
+      "description": "تولید گزارش از پورتفوی با قالب HTML به PDF",
+      "last_check": ""
+    },
+    "backup_system": {
+      "name": "📦 پشتیبان‌گیری",
+      "status": "active",
+      "description": "ورودی/خروجی اطلاعات کاربران",
+      "last_check": ""
+    }
+  },
+  "last_updated": ""
+}

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>۴۰۴ - صفحه پیدا نشد | Assetly</title>
+    <script src="../static/js/tailwind.js"></script>
+    <link href="../static/css/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* انیمیشن‌های اختصاصی صفحه 404 */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-25px) rotate(-2deg);
+            }
+        }
+
+        @keyframes pulse-soft {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes glitch {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-3px, 3px);
+            }
+
+            40% {
+                transform: translate(3px, -3px);
+            }
+
+            60% {
+                transform: translate(-3px, -3px);
+            }
+
+            80% {
+                transform: translate(3px, 3px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-soft {
+            animation: pulse-soft 2s ease-in-out infinite;
+        }
+
+        .animate-glitch {
+            animation: glitch 0.3s ease-in-out infinite;
+            animation-play-state: paused;
+        }
+
+        .animate-glitch:hover {
+            animation-play-state: running;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        /* ذرات پس‌زمینه */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="p-4 min-h-screen flex items-center justify-center relative">
+
+    <!-- ذرات پس‌زمینه -->
+    <div id="particles-container" class="absolute inset-0 pointer-events-none"></div>
+
+    <div class="max-w-2xl w-full text-center relative z-10">
+
+        <!-- آیکون گم شدن -->
+        <div class="animate-float mb-8">
+            <div class="inline-block relative">
+                <!-- دایره بزرگ پشت -->
+                <div
+                    class="w-40 h-40 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 border-2 border-blue-500/30 flex items-center justify-center mx-auto animate-spin-slow">
+                    <!-- دایره وسط -->
+                    <div
+                        class="w-32 h-32 rounded-full bg-gradient-to-br from-blue-700/30 to-purple-700/30 border border-blue-400/40 flex items-center justify-center">
+                        <!-- ایموجی -->
+                        <span class="text-7xl">🧭</span>
+                    </div>
+                </div>
+                <!-- علامت سوال شناور -->
+                <span class="absolute -top-2 -right-2 text-4xl animate-pulse-soft">❓</span>
+                <span class="absolute -bottom-2 -left-2 text-3xl animate-pulse-soft"
+                    style="animation-delay: 0.5s;">📍</span>
+            </div>
+        </div>
+
+        <!-- عدد 404 -->
+        <div class="animate-fade-in-up delay-100 mb-4">
+            <h1
+                class="text-8xl sm:text-9xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-glitch select-none">
+                ۴۰۴
+            </h1>
+        </div>
+
+        <!-- متن اصلی -->
+        <div class="animate-fade-in-up delay-200 mb-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-200 mb-3">
+                🗺️ بنظر میاد راه رو گم کردی!
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                این صفحه مثل یه قطب‌نمای خراب می‌مونه!
+                <br class="hidden sm:block">
+                احتمالاً آدرس رو اشتباه زدی یا این صفحه به یه جای دیگه کوچ کرده.
+            </p>
+        </div>
+
+        <!-- نکات کمکی -->
+        <div class="animate-fade-in-up delay-300 mb-8">
+            <div class="inline-block bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-4 max-w-lg">
+                <p class="text-sm text-gray-400 mb-3">🤔 شاید دنبال یکی از اینا می‌گشتی:</p>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <a href="/"
+                        class="text-blue-400 hover:text-blue-300 transition p-2 rounded-lg hover:bg-gray-700/50">
+                        📊 داشبورد اصلی
+                    </a>
+                    <a href="/markets"
+                        class="text-green-400 hover:text-green-300 transition p-2 rounded-lg hover:bg-gray-700/50">
+                        📈 نمای بازارها
+                    </a>
+                    <a href="/roadmap"
+                        class="text-yellow-400 hover:text-yellow-300 transition p-2 rounded-lg hover:bg-gray-700/50">
+                        🗺️ نقشه راه
+                    </a>
+                    <a href="https://github.com/AliDeveloop/asset-tracker-assetly" target="_blank" rel="noopener"
+                        class="text-purple-400 hover:text-purple-300 transition p-2 rounded-lg hover:bg-gray-700/50">
+                        💻 گیت‌هاب پروژه
+                    </a>
+                    <a href="/about" class="text-purple-400 hover:text-purple-300 transition p-2 rounded-lg hover:bg-gray-700/50">
+    👤 درباره سازنده
+</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- دکمه برگشت -->
+        <div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="/"
+                class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+                برگشت به خانه
+            </a>
+
+            <button onclick="history.back()"
+                class="inline-flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                صفحه قبلی
+            </button>
+        </div>
+
+        <!-- نقل قول -->
+            <!-- نقل قول ماندگار -->
+    <div class="animate-fade-in-up delay-500 mt-10 max-w-lg mx-auto">
+      <div class="relative">
+        <!-- خط تزئینی بالا -->
+        <div class="absolute top-0 right-0 w-16 h-px bg-gradient-to-l from-red-500/50 to-transparent"></div>
+        
+        <p class="text-gray-500 text-sm leading-relaxed pt-4 pb-2 italic">
+          بعضی راه‌ها را نمی‌توان روی نقشه پیدا کرد.
+        </p>
+        <p class="text-gray-600 text-xs leading-relaxed">
+          راه‌هایی که با جان و خون هموار شدند، جایی در نقشه‌های از پیش رسم‌شده ندارند.
+          <br>
+          این صفحه پیدا نشد، اما راهی که آنها رفتند،
+          <span class="text-red-400/70">هرگز</span> 
+          از یاد نخواهد رفت.
+        </p>
+        
+        <!-- امضا -->
+        <p class="text-gray-700 text-xs text-center mt-3">
+          به یاد آنان که راه را نشان دادند و خود در راه ماندند
+        </p>
+        
+        <!-- خط تزئینی پایین -->
+        <div class="absolute bottom-0 left-0 w-24 h-px bg-gradient-to-r from-red-500/30 to-transparent"></div>
+      </div>
+      
+      <!-- دایره‌های کوچک تزئینی -->
+      <div class="flex justify-center gap-2 mt-4 opacity-20">
+        <div class="w-1 h-1 rounded-full bg-red-400"></div>
+        <div class="w-1 h-1 rounded-full bg-white"></div>
+        <div class="w-1 h-1 rounded-full bg-green-400"></div>
+        <div class="w-1 h-1 rounded-full bg-white"></div>
+        <div class="w-1 h-1 rounded-full bg-red-400"></div>
+      </div>
+    </div>
+
+    </div>
+
+    <script>
+        // ساخت ذرات پس‌زمینه
+        const particlesContainer = document.getElementById('particles-container');
+        const particleColors = ['#3b82f6', '#8b5cf6', '#ec4899', '#06b6d4', '#10b981', '#f59e0b'];
+
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            const size = Math.random() * 6 + 2;
+            const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            const delay = Math.random() * 4;
+            const duration = Math.random() * 4 + 3;
+            const opacity = Math.random() * 0.3 + 0.1;
+
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.backgroundColor = color;
+            particle.style.left = left + '%';
+            particle.style.top = top + '%';
+            particle.style.opacity = opacity;
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = delay + 's';
+
+            particlesContainer.appendChild(particle);
+        }
+
+        // تغییر جهت قطب‌نما به سمت خانه
+        const compass = document.querySelector('.animate-float');
+        if (compass) {
+            compass.addEventListener('mouseenter', () => {
+                compass.style.transform = 'scale(1.1) rotate(10deg)';
+                compass.style.transition = 'transform 0.3s ease';
+            });
+
+            compass.addEventListener('mouseleave', () => {
+                compass.style.transform = 'scale(1) rotate(0deg)';
+            });
+        }
+    </script>
+</body>
+
+</html>

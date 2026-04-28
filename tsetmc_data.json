@@ -3,11 +3,11 @@
         "symbol": "آتش",
         "title": "صندوق س.کالای کهکشان فیروزه",
         "name": "صندوق س.کالای کهکشان فیروزه",
-        "price": 3112,
-        "toman_price": 3112,
-        "change_value": 50,
-        "change_percent": 1.64,
-        "last_update": "2026-04-22 23:19"
+        "price": 3450,
+        "toman_price": 3450,
+        "change_value": 250,
+        "change_percent": 7.81,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آتیمس",
@@ -17,17 +17,17 @@
         "toman_price": 55399,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آتیه ملت",
         "title": "صندوق س آتیه ملت-ثابت",
         "name": "صندوق س آتیه ملت-ثابت",
-        "price": 1727,
-        "toman_price": 1727,
-        "change_value": 2,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "price": 1735,
+        "toman_price": 1735,
+        "change_value": 1,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آذرین",
@@ -37,7 +37,7 @@
         "toman_price": 2060,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آرام",
@@ -47,17 +47,17 @@
         "toman_price": 2549,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آرامش",
         "title": "صندوق سرمایه گذاری آرامش-ثابت",
         "name": "صندوق سرمایه گذاری آرامش-ثابت",
-        "price": 1761,
-        "toman_price": 1761,
+        "price": 1769,
+        "toman_price": 1769,
         "change_value": 2,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آرمان",
@@ -67,17 +67,7 @@
         "toman_price": 192,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "آریا",
-        "title": "پلیمر آریا ساسول",
-        "name": "پلیمر آریا ساسول",
-        "price": 3535,
-        "toman_price": 3535,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آس",
@@ -87,17 +77,27 @@
         "toman_price": 1208,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آسا",
         "title": "صندوق س آرمان کارآفرین-ثابت",
         "name": "صندوق س آرمان کارآفرین-ثابت",
-        "price": 1002,
-        "toman_price": 1002,
+        "price": 1007,
+        "toman_price": 1007,
         "change_value": 1,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "آسا2",
+        "title": "صندوق س آرمان کارآفرین-ثابت",
+        "name": "صندوق س آرمان کارآفرین-ثابت",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -1005,
+        "change_percent": -99.99,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آساس",
@@ -107,7 +107,7 @@
         "toman_price": 6057,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آسام",
@@ -117,77 +117,57 @@
         "toman_price": 4458,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آسان",
         "title": "صندوق س.درآمدثابت گنجینه مهر-د",
         "name": "صندوق س.درآمدثابت گنجینه مهر-د",
-        "price": 1346,
-        "toman_price": 1346,
+        "price": 1351,
+        "toman_price": 1351,
         "change_value": 1,
-        "change_percent": 0.11,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آسود",
         "title": "ص.س.درآمد ثابت آرمان اقتصاد-د",
         "name": "ص.س.درآمد ثابت آرمان اقتصاد-د",
-        "price": 1472,
-        "toman_price": 1472,
-        "change_value": 3,
-        "change_percent": 0.22,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "آسود2",
-        "title": "ص.س.درآمد ثابت آرمان اقتصاد-د",
-        "name": "ص.س.درآمد ثابت آرمان اقتصاد-د",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -1469,
-        "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "آسیا",
-        "title": "بیمه آسیا",
-        "name": "بیمه آسیا",
-        "price": 191,
-        "toman_price": 191,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "price": 1479,
+        "toman_price": 1479,
+        "change_value": 1,
+        "change_percent": 0.09,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آفاق",
         "title": "صندوق س نوع دوم افق آتی-ثابت",
         "name": "صندوق س نوع دوم افق آتی-ثابت",
-        "price": 1035,
-        "toman_price": 1035,
+        "price": 1040,
+        "toman_price": 1040,
         "change_value": 1,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آلا",
         "title": "صندوق س.اعتماد ارغوان-د",
         "name": "صندوق س.اعتماد ارغوان-د",
-        "price": 2188,
-        "toman_price": 2188,
+        "price": 2197,
+        "toman_price": 2197,
         "change_value": 2,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آلتون",
         "title": "صندوق س. کالای آسمان",
         "name": "صندوق س. کالای آسمان",
-        "price": 5579,
-        "toman_price": 5579,
-        "change_value": 116,
-        "change_percent": 2.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 6149,
+        "toman_price": 6149,
+        "change_value": 441,
+        "change_percent": 7.74,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آلیاژ",
@@ -197,7 +177,7 @@
         "toman_price": 1530,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آمیتیس",
@@ -207,57 +187,37 @@
         "toman_price": 1528,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "آواپارس",
-        "title": "بیمه اتکایی آوای پارس",
-        "name": "بیمه اتکایی آوای پارس",
-        "price": 179,
-        "toman_price": 179,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آوند",
         "title": "صندوق س. آوند مفید-د",
         "name": "صندوق س. آوند مفید-د",
-        "price": 2664,
-        "toman_price": 2664,
-        "change_value": 5,
-        "change_percent": 0.21,
-        "last_update": "2026-04-22 23:19"
+        "price": 2673,
+        "toman_price": 2673,
+        "change_value": 2,
+        "change_percent": 0.08,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آکام",
         "title": "صندوق س. نوع دوم آکام-د",
         "name": "صندوق س. نوع دوم آکام-د",
-        "price": 1011,
-        "toman_price": 1011,
+        "price": 1016,
+        "toman_price": 1016,
         "change_value": 1,
-        "change_percent": 0.11,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آکورد",
         "title": "صندوق س. آرمان آتی کوثر-د",
         "name": "صندوق س. آرمان آتی کوثر-د",
-        "price": 10888,
-        "toman_price": 10888,
+        "price": 10943,
+        "toman_price": 10943,
         "change_value": 13,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "آکورد2",
-        "title": "صندوق س. آرمان آتی کوثر-د",
-        "name": "صندوق س. آرمان آتی کوثر-د",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -10874,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آگاس",
@@ -267,7 +227,7 @@
         "toman_price": 25995,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "آینده",
@@ -277,7 +237,7 @@
         "toman_price": 325,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ابتکار",
@@ -287,7 +247,7 @@
         "toman_price": 1206,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اتوآگاه",
@@ -297,7 +257,7 @@
         "toman_price": 1093,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اتوداریوش",
@@ -307,7 +267,7 @@
         "toman_price": 999,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اتکام",
@@ -317,17 +277,7 @@
         "toman_price": 185,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "اتکای",
-        "title": "بیمه اتکایی ایرانیان",
-        "name": "بیمه اتکایی ایرانیان",
-        "price": 220,
-        "toman_price": 220,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اردستان",
@@ -337,7 +287,7 @@
         "toman_price": 2158,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ارزش",
@@ -347,7 +297,7 @@
         "toman_price": 3113,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ارزش مسکن",
@@ -357,17 +307,17 @@
         "toman_price": 2390,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ارمغان",
         "title": "ص سرمایه گذاری ارمغان ایرانیان",
         "name": "ص سرمایه گذاری ارمغان ایرانیان",
-        "price": 1015,
-        "toman_price": 1015,
+        "price": 1019,
+        "toman_price": 1019,
         "change_value": 1,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اروند",
@@ -377,17 +327,17 @@
         "toman_price": 5270,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ارکیده",
         "title": "صندوق سرمایه گذاری ارکیده-ثابت",
         "name": "صندوق سرمایه گذاری ارکیده-ثابت",
-        "price": 1705,
-        "toman_price": 1705,
+        "price": 1713,
+        "toman_price": 1713,
         "change_value": 2,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ارکیده2",
@@ -395,9 +345,9 @@
         "name": "صندوق سرمایه گذاری ارکیده-ثابت",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1703,
+        "change_value": -1711,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "استقلال",
@@ -407,7 +357,7 @@
         "toman_price": 103,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "استیل",
@@ -417,17 +367,17 @@
         "toman_price": 1801,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اصیل",
         "title": "صندوق درآمدثابت مشترک البرز-د",
         "name": "صندوق درآمدثابت مشترک البرز-د",
-        "price": 1904,
-        "toman_price": 1904,
+        "price": 1913,
+        "toman_price": 1913,
         "change_value": 2,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اصیل2",
@@ -435,9 +385,9 @@
         "name": "صندوق درآمدثابت مشترک البرز-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1902,
+        "change_value": -1911,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اطلس",
@@ -447,27 +397,27 @@
         "toman_price": 8385,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اطمینان",
         "title": "ص.س.درآمد ثابت اطمینان هیوا-د",
         "name": "ص.س.درآمد ثابت اطمینان هیوا-د",
-        "price": 1595,
-        "toman_price": 1595,
+        "price": 1604,
+        "toman_price": 1604,
         "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اعتبار",
         "title": "صندوق س. نوع دوم اعتبار-د",
         "name": "صندوق س. نوع دوم اعتبار-د",
-        "price": 2571,
-        "toman_price": 2571,
+        "price": 2584,
+        "toman_price": 2584,
         "change_value": 3,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اعتبار2",
@@ -475,29 +425,39 @@
         "name": "صندوق س. نوع دوم اعتبار-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2568,
+        "change_value": -2581,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اعتماد",
         "title": "صندوق س.اعتماد آفرین پارسیان-د",
         "name": "صندوق س.اعتماد آفرین پارسیان-د",
-        "price": 12245,
-        "toman_price": 12245,
+        "price": 12304,
+        "toman_price": 12304,
         "change_value": 14,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "اعتماد2",
+        "title": "صندوق س.اعتماد آفرین پارسیان-د",
+        "name": "صندوق س.اعتماد آفرین پارسیان-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -12289,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "افران",
         "title": "صندوق س افرا نماد پایدار-ثابت",
         "name": "صندوق س افرا نماد پایدار-ثابت",
-        "price": 4704,
-        "toman_price": 4704,
-        "change_value": 11,
-        "change_percent": 0.25,
-        "last_update": "2026-04-22 23:19"
+        "price": 4732,
+        "toman_price": 4732,
+        "change_value": 2,
+        "change_percent": 0.05,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "افران2",
@@ -505,9 +465,9 @@
         "name": "صندوق س افرا نماد پایدار-ثابت",
         "price": 0,
         "toman_price": 0,
-        "change_value": -4692,
+        "change_value": -4730,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "افق ملت",
@@ -517,7 +477,7 @@
         "toman_price": 33000,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "البرز",
@@ -527,7 +487,7 @@
         "toman_price": 210,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "امتیاز",
@@ -537,17 +497,17 @@
         "toman_price": 997,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "امرالد",
         "title": "صندوق س.پشتوانه طلای کیمیا",
         "name": "صندوق س.پشتوانه طلای کیمیا",
-        "price": 2294,
-        "toman_price": 2294,
-        "change_value": 39,
-        "change_percent": 1.73,
-        "last_update": "2026-04-22 23:19"
+        "price": 2545,
+        "toman_price": 2545,
+        "change_value": 183,
+        "change_percent": 7.75,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "امین شهر",
@@ -557,17 +517,17 @@
         "toman_price": 1719,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "امین یکم",
         "title": "صندوق درآمد ثابت امین یکم فردا",
         "name": "صندوق درآمد ثابت امین یکم فردا",
-        "price": 1002,
-        "toman_price": 1002,
+        "price": 1007,
+        "toman_price": 1007,
         "change_value": 1,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "انار",
@@ -577,7 +537,7 @@
         "toman_price": 3209,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "انتخاب",
@@ -587,17 +547,17 @@
         "toman_price": 100,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اندوخته داریوش",
         "title": "ص.س.درآمدثابت اندوخته داریوش-د",
         "name": "ص.س.درآمدثابت اندوخته داریوش-د",
-        "price": 1002,
-        "toman_price": 1002,
+        "price": 1006,
+        "toman_price": 1006,
         "change_value": 1,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "انرژی",
@@ -607,7 +567,7 @@
         "toman_price": 907,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اهرم",
@@ -617,27 +577,17 @@
         "toman_price": 2855,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "اوان",
-        "title": "مبین وان کیش",
-        "name": "مبین وان کیش",
-        "price": 1500,
-        "toman_price": 1500,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اوصتا",
         "title": "صندوق اندیشه ورزان صباتامین -د",
         "name": "صندوق اندیشه ورزان صباتامین -د",
-        "price": 6133,
-        "toman_price": 6133,
+        "price": 6163,
+        "toman_price": 6163,
         "change_value": 7,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اوصتا2",
@@ -645,19 +595,19 @@
         "name": "صندوق اندیشه ورزان صباتامین -د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -6125,
+        "change_value": -6155,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اونیکس",
         "title": "ص.س.درآمد ثابت کیمیا-د",
         "name": "ص.س.درآمد ثابت کیمیا-د",
-        "price": 2181,
-        "toman_price": 2181,
+        "price": 2192,
+        "toman_price": 2192,
         "change_value": 2,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اپال",
@@ -667,7 +617,7 @@
         "toman_price": 912,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اپرداز",
@@ -677,7 +627,7 @@
         "toman_price": 303,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "اکتان",
@@ -687,7 +637,7 @@
         "toman_price": 1926,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "باران",
@@ -697,17 +647,27 @@
         "toman_price": 136,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بازده",
         "title": "صندوق س. بازده ثابت-د",
         "name": "صندوق س. بازده ثابت-د",
-        "price": 2294,
-        "toman_price": 2294,
-        "change_value": 7,
-        "change_percent": 0.31,
-        "last_update": "2026-04-22 23:19"
+        "price": 2300,
+        "toman_price": 2300,
+        "change_value": 1,
+        "change_percent": 0.08,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "بازده2",
+        "title": "صندوق س. بازده ثابت-د",
+        "name": "صندوق س. بازده ثابت-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -2298,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بالبر",
@@ -717,7 +677,7 @@
         "toman_price": 3054,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بانکا",
@@ -727,7 +687,7 @@
         "toman_price": 1062,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بایکا",
@@ -737,7 +697,7 @@
         "toman_price": 2345,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بترانس",
@@ -747,17 +707,7 @@
         "toman_price": 230,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "بتیس",
-        "title": "بیمه زندگی ایساتیس",
-        "name": "بیمه زندگی ایساتیس",
-        "price": 189,
-        "toman_price": 189,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بخاور",
@@ -767,7 +717,7 @@
         "toman_price": 460,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "برلیان",
@@ -777,7 +727,7 @@
         "toman_price": 2254,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "برکت",
@@ -787,7 +737,7 @@
         "toman_price": 198,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بزرگ",
@@ -797,27 +747,17 @@
         "toman_price": 971,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "بشهاب",
-        "title": "لامپ‌  پارس‌ شهاب",
-        "name": "لامپ‌  پارس‌ شهاب",
-        "price": 663,
-        "toman_price": 663,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بلوط",
         "title": "صندوق س شکوه بامداد زاگرس-ثابت",
         "name": "صندوق س شکوه بامداد زاگرس-ثابت",
-        "price": 1016,
-        "toman_price": 1016,
+        "price": 1020,
+        "toman_price": 1020,
         "change_value": 1,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بلوط2",
@@ -825,19 +765,19 @@
         "name": "صندوق س شکوه بامداد زاگرس-ثابت",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1014,
+        "change_value": -1019,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بمان",
         "title": "صندوق س.بازده مانا-د",
         "name": "صندوق س.بازده مانا-د",
-        "price": 1932,
-        "toman_price": 1932,
-        "change_value": 3,
-        "change_percent": 0.17,
-        "last_update": "2026-04-22 23:19"
+        "price": 1940,
+        "toman_price": 1940,
+        "change_value": 1,
+        "change_percent": 0.08,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بمان2",
@@ -845,9 +785,9 @@
         "name": "صندوق س.بازده مانا-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1928,
+        "change_value": -1938,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بموتو",
@@ -857,7 +797,7 @@
         "toman_price": 196,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بمیلا",
@@ -867,17 +807,7 @@
         "toman_price": 571,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "بهامرز",
-        "title": "بیمه زندگی هامرز",
-        "name": "بیمه زندگی هامرز",
-        "price": 264,
-        "toman_price": 264,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بهین رو",
@@ -887,7 +817,7 @@
         "toman_price": 1216,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بوعلی",
@@ -897,7 +827,7 @@
         "toman_price": 3432,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بپاس",
@@ -907,7 +837,7 @@
         "toman_price": 540,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بکاب",
@@ -917,7 +847,7 @@
         "toman_price": 1202,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بکام",
@@ -927,7 +857,7 @@
         "toman_price": 179,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بکامح",
@@ -937,7 +867,7 @@
         "toman_price": 70,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "بیدار",
@@ -947,17 +877,17 @@
         "toman_price": 1939,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تابش",
         "title": "صندوق س.کالای تابان تمدن",
         "name": "صندوق س.کالای تابان تمدن",
-        "price": 6926,
-        "toman_price": 6926,
-        "change_value": 140,
-        "change_percent": 2.07,
-        "last_update": "2026-04-22 23:19"
+        "price": 7700,
+        "toman_price": 7700,
+        "change_value": 569,
+        "change_percent": 7.99,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تابش2",
@@ -965,29 +895,19 @@
         "name": "صندوق س.کالای تابان تمدن",
         "price": 0,
         "toman_price": 0,
-        "change_value": -6785,
+        "change_value": -7130,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تاصیکو",
         "title": "سرمایه گذاری صدرتامین",
         "name": "سرمایه گذاری صدرتامین",
-        "price": 1369,
-        "toman_price": 1369,
+        "price": 964,
+        "toman_price": 964,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "تاپکیش",
-        "title": "تجارت الکترونیک پارسیان کیش",
-        "name": "تجارت الکترونیک پارسیان کیش",
-        "price": 324,
-        "toman_price": 324,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تاپیکو",
@@ -997,7 +917,7 @@
         "toman_price": 1897,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تبرک",
@@ -1007,7 +927,7 @@
         "toman_price": 1324,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تجلی",
@@ -1017,7 +937,7 @@
         "toman_price": 141,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تخت گاز",
@@ -1027,27 +947,27 @@
         "toman_price": 954,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تداوم",
         "title": "صندوق تداوم اطمینان تمدن-ثابت",
         "name": "صندوق تداوم اطمینان تمدن-ثابت",
-        "price": 2306,
-        "toman_price": 2306,
+        "price": 2317,
+        "toman_price": 2317,
         "change_value": 2,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ترنج ثابت",
         "title": "ص.س.درآمد ثابت ترنج سودمند-د",
         "name": "ص.س.درآمد ثابت ترنج سودمند-د",
-        "price": 1005,
-        "toman_price": 1005,
-        "change_value": 4,
-        "change_percent": 0.42,
-        "last_update": "2026-04-22 23:19"
+        "price": 1028,
+        "toman_price": 1028,
+        "change_value": 12,
+        "change_percent": 1.19,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تشتاد",
@@ -1057,17 +977,17 @@
         "toman_price": 400,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تصمیم",
         "title": "صندوق س با درآمد ثابت تصمیم",
         "name": "صندوق س با درآمد ثابت تصمیم",
-        "price": 5293,
-        "toman_price": 5293,
-        "change_value": 7,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "price": 5320,
+        "toman_price": 5320,
+        "change_value": 6,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تفیرو",
@@ -1077,7 +997,7 @@
         "toman_price": 16635,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تلیسه",
@@ -1087,7 +1007,7 @@
         "toman_price": 458,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تماوند",
@@ -1097,7 +1017,7 @@
         "toman_price": 230,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تمحرکه",
@@ -1107,7 +1027,7 @@
         "toman_price": 586,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تمشک",
@@ -1117,7 +1037,7 @@
         "toman_price": 4050,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تنوین",
@@ -1127,7 +1047,7 @@
         "toman_price": 152,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "توان",
@@ -1137,7 +1057,7 @@
         "toman_price": 2944,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "توریل",
@@ -1147,17 +1067,17 @@
         "toman_price": 356,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "توسکا",
         "title": "صندوق س توسعه فولاد- ثابت",
         "name": "صندوق س توسعه فولاد- ثابت",
-        "price": 2121,
-        "toman_price": 2121,
+        "price": 2132,
+        "toman_price": 2132,
         "change_value": 2,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تپمپی",
@@ -1167,7 +1087,7 @@
         "toman_price": 365,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تپولا",
@@ -1177,7 +1097,7 @@
         "toman_price": 1181,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تپکو",
@@ -1187,7 +1107,7 @@
         "toman_price": 34,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تکمبا",
@@ -1197,7 +1117,7 @@
         "toman_price": 518,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "تیپیکو",
@@ -1207,27 +1127,17 @@
         "toman_price": 3500,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثابت اکسیژن",
         "title": "ص.س.درآمد ثابت اکسیژن-د",
         "name": "ص.س.درآمد ثابت اکسیژن-د",
-        "price": 1712,
-        "toman_price": 1712,
+        "price": 1720,
+        "toman_price": 1720,
         "change_value": 2,
-        "change_percent": 0.16,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ثابت اکسیژن2",
-        "title": "ص.س.درآمد ثابت اکسیژن-د",
-        "name": "ص.س.درآمد ثابت اکسیژن-د",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -1709,
-        "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثالوند",
@@ -1237,7 +1147,7 @@
         "toman_price": 327,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثامان",
@@ -1247,17 +1157,17 @@
         "toman_price": 2696,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثبات",
         "title": "صندوق س. ثبات ویستا -د",
         "name": "صندوق س. ثبات ویستا -د",
-        "price": 3287,
-        "toman_price": 3287,
-        "change_value": 14,
-        "change_percent": 0.46,
-        "last_update": "2026-04-22 23:19"
+        "price": 3293,
+        "toman_price": 3293,
+        "change_value": 4,
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثبات2",
@@ -1265,9 +1175,9 @@
         "name": "صندوق س. ثبات ویستا -د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -3272,
+        "change_value": -3289,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثباغ",
@@ -1277,7 +1187,7 @@
         "toman_price": 409,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثتران",
@@ -1287,7 +1197,7 @@
         "toman_price": 375,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثتوسا",
@@ -1297,7 +1207,7 @@
         "toman_price": 1292,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثجنوب",
@@ -1307,7 +1217,7 @@
         "toman_price": 912,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثروت",
@@ -1317,7 +1227,7 @@
         "toman_price": 90825,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثروت ساز",
@@ -1327,7 +1237,7 @@
         "toman_price": 1592,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثرود",
@@ -1337,7 +1247,7 @@
         "toman_price": 493,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثروین",
@@ -1347,7 +1257,7 @@
         "toman_price": 940,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثشاهد",
@@ -1357,7 +1267,7 @@
         "toman_price": 596,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثشرق",
@@ -1367,7 +1277,7 @@
         "toman_price": 2197,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثعتما",
@@ -1377,17 +1287,7 @@
         "toman_price": 2110,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ثعمرا",
-        "title": "عمران و توسعه شاهد",
-        "name": "عمران و توسعه شاهد",
-        "price": 750,
-        "toman_price": 750,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثغرب",
@@ -1397,27 +1297,17 @@
         "toman_price": 377,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ثقزوی",
-        "title": "شرکت عمران و سازندگی قزوین",
-        "name": "شرکت عمران و سازندگی قزوین",
-        "price": 218,
-        "toman_price": 218,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثمر",
         "title": "صندوق س ثمرگندم-ثابت",
         "name": "صندوق س ثمرگندم-ثابت",
-        "price": 1228,
-        "toman_price": 1228,
+        "price": 1234,
+        "toman_price": 1234,
         "change_value": 1,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثنام",
@@ -1427,7 +1317,7 @@
         "toman_price": 99,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثنوسا",
@@ -1437,7 +1327,7 @@
         "toman_price": 501,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ثهام",
@@ -1447,17 +1337,17 @@
         "toman_price": 5017,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جام طلا",
         "title": "صندوق س.مبتنی بر کالای فارابی",
         "name": "صندوق س.مبتنی بر کالای فارابی",
-        "price": 1606,
-        "toman_price": 1606,
-        "change_value": 32,
-        "change_percent": 2.07,
-        "last_update": "2026-04-22 23:19"
+        "price": 1758,
+        "toman_price": 1758,
+        "change_value": 131,
+        "change_percent": 8.08,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جم",
@@ -1467,7 +1357,7 @@
         "toman_price": 4380,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جم پیلن",
@@ -1477,7 +1367,7 @@
         "toman_price": 19472,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جهرم",
@@ -1487,7 +1377,7 @@
         "toman_price": 63,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جهش",
@@ -1497,17 +1387,17 @@
         "toman_price": 1389,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جواهر",
         "title": "صندوق س.پشتوانه طلا دنای زاگرس",
         "name": "صندوق س.پشتوانه طلا دنای زاگرس",
-        "price": 6384,
-        "toman_price": 6384,
-        "change_value": 126,
-        "change_percent": 2.03,
-        "last_update": "2026-04-22 23:19"
+        "price": 7140,
+        "toman_price": 7140,
+        "change_value": 554,
+        "change_percent": 8.42,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جواهر2",
@@ -1515,9 +1405,9 @@
         "name": "صندوق س.پشتوانه طلا دنای زاگرس",
         "price": 0,
         "toman_price": 0,
-        "change_value": -6257,
+        "change_value": -6586,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "جوین",
@@ -1527,7 +1417,7 @@
         "toman_price": 314,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حآفرین",
@@ -1537,7 +1427,7 @@
         "toman_price": 132,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حخزر",
@@ -1547,7 +1437,7 @@
         "toman_price": 301,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حریل",
@@ -1557,7 +1447,7 @@
         "toman_price": 169,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حسیر",
@@ -1567,7 +1457,7 @@
         "toman_price": 321,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حسینا",
@@ -1577,17 +1467,17 @@
         "toman_price": 1274,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حشکوه",
         "title": "دلیجان طلایی شکوه پارس",
         "name": "دلیجان طلایی شکوه پارس",
-        "price": 165,
-        "toman_price": 165,
+        "price": 111,
+        "toman_price": 111,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حپارسا",
@@ -1597,7 +1487,7 @@
         "toman_price": 770,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حپترو",
@@ -1607,7 +1497,7 @@
         "toman_price": 1263,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حکشتی",
@@ -1617,7 +1507,7 @@
         "toman_price": 575,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "حگردش",
@@ -1627,27 +1517,17 @@
         "toman_price": 191,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "حیات",
-        "title": "بیمه زندگی مفید",
-        "name": "بیمه زندگی مفید",
-        "price": 505,
-        "toman_price": 505,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خاتم",
         "title": "صندوق س خاتم ایساتیس پویا-ثابت",
         "name": "صندوق س خاتم ایساتیس پویا-ثابت",
-        "price": 3658,
-        "toman_price": 3658,
-        "change_value": 5,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 3676,
+        "toman_price": 3676,
+        "change_value": 4,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خاذین",
@@ -1657,7 +1537,7 @@
         "toman_price": 163,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خبازرس",
@@ -1667,7 +1547,7 @@
         "toman_price": 1464,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خبنیان",
@@ -1677,7 +1557,7 @@
         "toman_price": 122,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خبهمن",
@@ -1687,17 +1567,7 @@
         "toman_price": 143,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ختور",
-        "title": "رادیاتور ایران",
-        "name": "رادیاتور ایران",
-        "price": 153,
-        "toman_price": 153,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ختوقا",
@@ -1707,17 +1577,7 @@
         "toman_price": 349,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "خدیزل",
-        "title": "بهمن  دیزل",
-        "name": "بهمن  دیزل",
-        "price": 153,
-        "toman_price": 153,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خریخت",
@@ -1727,7 +1587,7 @@
         "toman_price": 78,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خرینگ",
@@ -1737,17 +1597,17 @@
         "toman_price": 993,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خزانه ملت",
         "title": "صندوق س.مختص اوراق دولتی ملت-د",
         "name": "صندوق س.مختص اوراق دولتی ملت-د",
-        "price": 1592,
-        "toman_price": 1592,
-        "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 1599,
+        "toman_price": 1599,
+        "change_value": 1,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خصدرا",
@@ -1757,7 +1617,7 @@
         "toman_price": 164,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خعمرا",
@@ -1767,7 +1627,7 @@
         "toman_price": 429,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خفناور",
@@ -1777,17 +1637,7 @@
         "toman_price": 1493,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "خمحرکه",
-        "title": "نیرو محرکه",
-        "name": "نیرو محرکه",
-        "price": 318,
-        "toman_price": 318,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خمحور",
@@ -1797,7 +1647,7 @@
         "toman_price": 345,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خمهر",
@@ -1807,7 +1657,7 @@
         "toman_price": 175,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خنصیر",
@@ -1817,7 +1667,7 @@
         "toman_price": 237,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خودران",
@@ -1827,17 +1677,17 @@
         "toman_price": 979,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خورشید",
         "title": "صندوق س. طلوع تدبیر پایا-د",
         "name": "صندوق س. طلوع تدبیر پایا-د",
-        "price": 2138,
-        "toman_price": 2138,
+        "price": 2148,
+        "toman_price": 2148,
         "change_value": 2,
         "change_percent": 0.11,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خوساز",
@@ -1847,7 +1697,7 @@
         "toman_price": 1097,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خوشه",
@@ -1857,17 +1707,7 @@
         "toman_price": 2272,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "خپویش",
-        "title": "سازه‌ پویش",
-        "name": "سازه‌ پویش",
-        "price": 245,
-        "toman_price": 245,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خچرخش",
@@ -1877,7 +1717,7 @@
         "toman_price": 1180,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خکمک",
@@ -1887,7 +1727,7 @@
         "toman_price": 172,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خگستر",
@@ -1897,7 +1737,7 @@
         "toman_price": 235,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خگسترح",
@@ -1907,7 +1747,7 @@
         "toman_price": 120,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "خیمن",
@@ -1917,7 +1757,7 @@
         "toman_price": 262,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دابور",
@@ -1927,17 +1767,17 @@
         "toman_price": 2468,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دارا",
         "title": "صندوق س. دارا الگوریتم-د",
         "name": "صندوق س. دارا الگوریتم-د",
-        "price": 2207,
-        "toman_price": 2207,
+        "price": 2217,
+        "toman_price": 2217,
         "change_value": 2,
-        "change_percent": 0.1,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دارا یکم",
@@ -1947,7 +1787,7 @@
         "toman_price": 29000,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دارا2",
@@ -1955,9 +1795,9 @@
         "name": "صندوق س. دارا الگوریتم-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2205,
+        "change_value": -2214,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "داراب",
@@ -1967,7 +1807,7 @@
         "toman_price": 58,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دارو",
@@ -1977,7 +1817,7 @@
         "toman_price": 240,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دارونو",
@@ -1987,37 +1827,37 @@
         "toman_price": 1317,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "داریک",
         "title": "صندوق س.اعتماد داریک-د",
         "name": "صندوق س.اعتماد داریک-د",
-        "price": 3566,
-        "toman_price": 3566,
+        "price": 3583,
+        "toman_price": 3583,
         "change_value": 4,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
-        "symbol": "دالبر",
-        "title": "البرزدارو",
-        "name": "البرزدارو",
-        "price": 343,
-        "toman_price": 343,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "symbol": "داریک2",
+        "title": "صندوق س.اعتماد داریک-د",
+        "name": "صندوق س.اعتماد داریک-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -3579,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دامون",
         "title": "ص.س. درآمد ثابت آسمان دامون-د",
         "name": "ص.س. درآمد ثابت آسمان دامون-د",
-        "price": 1902,
-        "toman_price": 1902,
+        "price": 1911,
+        "toman_price": 1911,
         "change_value": 2,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دانیک",
@@ -2027,7 +1867,7 @@
         "toman_price": 1053,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دتهران",
@@ -2037,7 +1877,7 @@
         "toman_price": 24,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دتوزیع",
@@ -2047,7 +1887,7 @@
         "toman_price": 223,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دتولید",
@@ -2057,7 +1897,7 @@
         "toman_price": 212,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دحاوی",
@@ -2067,7 +1907,7 @@
         "toman_price": 192,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ددام",
@@ -2077,7 +1917,7 @@
         "toman_price": 493,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درازک",
@@ -2087,7 +1927,7 @@
         "toman_price": 145,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درازی",
@@ -2097,17 +1937,17 @@
         "toman_price": 1100,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درخشان",
         "title": "صندوق س.کالای آبان",
         "name": "صندوق س.کالای آبان",
-        "price": 3145,
-        "toman_price": 3145,
-        "change_value": 57,
-        "change_percent": 1.87,
-        "last_update": "2026-04-22 23:19"
+        "price": 3489,
+        "toman_price": 3489,
+        "change_value": 300,
+        "change_percent": 9.42,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درسا",
@@ -2117,17 +1957,17 @@
         "toman_price": 2900,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درنا",
         "title": "صندوق س.پشتوانه طلای درنا",
         "name": "صندوق س.پشتوانه طلای درنا",
-        "price": 1971,
-        "toman_price": 1971,
-        "change_value": 38,
-        "change_percent": 1.98,
-        "last_update": "2026-04-22 23:19"
+        "price": 2171,
+        "toman_price": 2171,
+        "change_value": 151,
+        "change_percent": 7.48,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درهآور",
@@ -2137,7 +1977,7 @@
         "toman_price": 930,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دروز",
@@ -2147,7 +1987,7 @@
         "toman_price": 853,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دریا",
@@ -2157,17 +1997,17 @@
         "toman_price": 2870,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "درین",
         "title": "صندوق س. درین آتا-د",
         "name": "صندوق س. درین آتا-د",
-        "price": 2292,
-        "toman_price": 2292,
+        "price": 2304,
+        "toman_price": 2304,
         "change_value": 3,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دسانکو",
@@ -2177,7 +2017,7 @@
         "toman_price": 141,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دسبحا",
@@ -2187,17 +2027,7 @@
         "toman_price": 237,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "دسبحان",
-        "title": "سبحان دارو",
-        "name": "سبحان دارو",
-        "price": 297,
-        "toman_price": 297,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دسینا",
@@ -2207,7 +2037,7 @@
         "toman_price": 4062,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دشیری",
@@ -2217,7 +2047,7 @@
         "toman_price": 27010,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دشیمی",
@@ -2227,7 +2057,7 @@
         "toman_price": 1410,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دهدشت",
@@ -2237,7 +2067,7 @@
         "toman_price": 720,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دوایکس",
@@ -2247,7 +2077,7 @@
         "toman_price": 1032,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دکپسول",
@@ -2257,17 +2087,7 @@
         "toman_price": 12630,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "دکیمی",
-        "title": "کیمیدارو",
-        "name": "کیمیدارو",
-        "price": 1809,
-        "toman_price": 1809,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دی سهام",
@@ -2277,7 +2097,7 @@
         "toman_price": 1320,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دیار",
@@ -2287,17 +2107,17 @@
         "toman_price": 1076,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دیبا",
         "title": "صندوق س اوراق دولتی صبا-ثابت",
         "name": "صندوق س اوراق دولتی صبا-ثابت",
-        "price": 2316,
-        "toman_price": 2316,
+        "price": 2327,
+        "toman_price": 2327,
         "change_value": 2,
         "change_percent": 0.11,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دیران",
@@ -2307,7 +2127,7 @@
         "toman_price": 363,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "دیوان",
@@ -2317,7 +2137,7 @@
         "toman_price": 60000,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ذوب",
@@ -2327,17 +2147,17 @@
         "toman_price": 33,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رابین",
         "title": "صندوق س. توسعه افق رابین-د",
         "name": "صندوق س. توسعه افق رابین-د",
-        "price": 2464,
-        "toman_price": 2464,
-        "change_value": 3,
+        "price": 2476,
+        "toman_price": 2476,
+        "change_value": 2,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رابین2",
@@ -2345,9 +2165,9 @@
         "name": "صندوق س. توسعه افق رابین-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2461,
+        "change_value": -2473,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رادان",
@@ -2357,7 +2177,7 @@
         "toman_price": 874,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رانفور",
@@ -2367,37 +2187,37 @@
         "toman_price": 291,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رایبد",
         "title": "صندوق س رایبد-ثابت",
         "name": "صندوق س رایبد-ثابت",
-        "price": 1108,
-        "toman_price": 1108,
+        "price": 1114,
+        "toman_price": 1114,
         "change_value": 1,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رایکا",
         "title": "صندوق س نوع دوم رایکا- ثابت",
         "name": "صندوق س نوع دوم رایکا- ثابت",
-        "price": 2438,
-        "toman_price": 2438,
-        "change_value": 3,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 2449,
+        "toman_price": 2449,
+        "change_value": 2,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رز ترنج",
         "title": "صندوق س.پشتوانه طلای رز",
         "name": "صندوق س.پشتوانه طلای رز",
-        "price": 2165,
-        "toman_price": 2165,
-        "change_value": 37,
-        "change_percent": 1.74,
-        "last_update": "2026-04-22 23:19"
+        "price": 2380,
+        "toman_price": 2380,
+        "change_value": 158,
+        "change_percent": 7.15,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رز ترنج2",
@@ -2405,29 +2225,29 @@
         "name": "صندوق س.پشتوانه طلای رز",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2127,
+        "change_value": -2221,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رزگلد",
         "title": "صندوق س.پشتوانه طلا آرمان آتی",
         "name": "صندوق س.پشتوانه طلا آرمان آتی",
-        "price": 1613,
-        "toman_price": 1613,
-        "change_value": 23,
-        "change_percent": 1.47,
-        "last_update": "2026-04-22 23:19"
+        "price": 1776,
+        "toman_price": 1776,
+        "change_value": 114,
+        "change_percent": 6.87,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رشد",
         "title": "صندوق س.رشد پایدار آبان-د",
         "name": "صندوق س.رشد پایدار آبان-د",
-        "price": 1924,
-        "toman_price": 1924,
+        "price": 1934,
+        "toman_price": 1934,
         "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رفاه",
@@ -2437,7 +2257,7 @@
         "toman_price": 4410,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رمپنا",
@@ -2447,7 +2267,7 @@
         "toman_price": 1251,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "رنیک",
@@ -2457,27 +2277,27 @@
         "toman_price": 1115,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "رکیش",
-        "title": "کارت اعتباری ایران کیش",
-        "name": "کارت اعتباری ایران کیش",
-        "price": 137,
-        "toman_price": 137,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ریتون",
         "title": "صندوق س.پشتوانه طلاجام زرینپاد",
         "name": "صندوق س.پشتوانه طلاجام زرینپاد",
-        "price": 1648,
-        "toman_price": 1648,
-        "change_value": 30,
-        "change_percent": 1.87,
-        "last_update": "2026-04-22 23:19"
+        "price": 1818,
+        "toman_price": 1818,
+        "change_value": 112,
+        "change_percent": 6.6,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "ریتون2",
+        "title": "صندوق س.پشتوانه طلاجام زرینپاد",
+        "name": "صندوق س.پشتوانه طلاجام زرینپاد",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -1705,
+        "change_percent": -99.99,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ریشمک",
@@ -2487,7 +2307,7 @@
         "toman_price": 841,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زاگرس",
@@ -2497,7 +2317,7 @@
         "toman_price": 10010,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زبینا",
@@ -2507,47 +2327,57 @@
         "toman_price": 634,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زر",
         "title": "صندوق س.پشتوانه طلای زرافشان",
         "name": "صندوق س.پشتوانه طلای زرافشان",
-        "price": 72820,
-        "toman_price": 72820,
-        "change_value": 1385,
-        "change_percent": 1.94,
-        "last_update": "2026-04-22 23:19"
+        "price": 81980,
+        "toman_price": 81980,
+        "change_value": 6391,
+        "change_percent": 8.45,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زرفام",
         "title": "صندوق س.پشتوانه طلا زرفام آشنا",
         "name": "صندوق س.پشتوانه طلا زرفام آشنا",
-        "price": 12612,
-        "toman_price": 12612,
-        "change_value": 218,
-        "change_percent": 1.77,
-        "last_update": "2026-04-22 23:19"
+        "price": 14149,
+        "toman_price": 14149,
+        "change_value": 1036,
+        "change_percent": 7.9,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "زرفام2",
+        "title": "صندوق س.پشتوانه طلا زرفام آشنا",
+        "name": "صندوق س.پشتوانه طلا زرفام آشنا",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -13112,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زروان",
         "title": "صندوق س.کالای ویستا",
         "name": "صندوق س.کالای ویستا",
-        "price": 3489,
-        "toman_price": 3489,
-        "change_value": 69,
-        "change_percent": 2.04,
-        "last_update": "2026-04-22 23:19"
+        "price": 3847,
+        "toman_price": 3847,
+        "change_value": 285,
+        "change_percent": 8.02,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زرگر",
         "title": "صندوق س.کالای کارآمد",
         "name": "صندوق س.کالای کارآمد",
-        "price": 1744,
-        "toman_price": 1744,
-        "change_value": 31,
-        "change_percent": 1.81,
-        "last_update": "2026-04-22 23:19"
+        "price": 1911,
+        "toman_price": 1911,
+        "change_value": 123,
+        "change_percent": 6.89,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زرگر2",
@@ -2555,9 +2385,9 @@
         "name": "صندوق س.کالای کارآمد",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1713,
+        "change_value": -1788,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زشریف",
@@ -2567,7 +2397,7 @@
         "toman_price": 1031,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زشگزا",
@@ -2577,7 +2407,7 @@
         "toman_price": 1700,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زفجر",
@@ -2587,17 +2417,7 @@
         "toman_price": 2200,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "زفکا",
-        "title": "کشت و دامداری فکا",
-        "name": "کشت و دامداری فکا",
-        "price": 533,
-        "toman_price": 533,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زقیام",
@@ -2607,7 +2427,7 @@
         "toman_price": 544,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زماهان",
@@ -2617,37 +2437,27 @@
         "toman_price": 830,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زمرد",
         "title": "صندوق س.کالای زمرد بیدار",
         "name": "صندوق س.کالای زمرد بیدار",
-        "price": 2454,
-        "toman_price": 2454,
-        "change_value": 40,
-        "change_percent": 1.66,
-        "last_update": "2026-04-22 23:19"
+        "price": 2715,
+        "toman_price": 2715,
+        "change_value": 165,
+        "change_percent": 6.47,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زمرد کوروش",
         "title": "صندوق س زمرد کوروش-ثابت",
         "name": "صندوق س زمرد کوروش-ثابت",
-        "price": 1570,
-        "toman_price": 1570,
-        "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "زمرد2",
-        "title": "صندوق س.کالای زمرد بیدار",
-        "name": "صندوق س.کالای زمرد بیدار",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -2414,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "price": 1578,
+        "toman_price": 1578,
+        "change_value": 1,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زملارد",
@@ -2657,7 +2467,7 @@
         "toman_price": 73,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زمگسا",
@@ -2667,7 +2477,7 @@
         "toman_price": 5100,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زنگان",
@@ -2677,7 +2487,7 @@
         "toman_price": 470,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زپارس",
@@ -2687,7 +2497,7 @@
         "toman_price": 2000,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زکشت",
@@ -2697,7 +2507,7 @@
         "toman_price": 1083,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زکوثر",
@@ -2707,7 +2517,7 @@
         "toman_price": 3161,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زگلدشت",
@@ -2717,7 +2527,7 @@
         "toman_price": 550,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "زیتون",
@@ -2727,7 +2537,7 @@
         "toman_price": 3579,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سآبیک",
@@ -2737,17 +2547,17 @@
         "toman_price": 4322,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساحل",
         "title": "ص.ساحل سرمایه امن خلیج فارس-د",
         "name": "ص.ساحل سرمایه امن خلیج فارس-د",
-        "price": 2655,
-        "toman_price": 2655,
-        "change_value": 4,
-        "change_percent": 0.15,
-        "last_update": "2026-04-22 23:19"
+        "price": 2667,
+        "toman_price": 2667,
+        "change_value": 2,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساحل2",
@@ -2755,9 +2565,9 @@
         "name": "ص.ساحل سرمایه امن خلیج فارس-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2651,
+        "change_value": -2664,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساراب",
@@ -2767,7 +2577,7 @@
         "toman_price": 4487,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساربیل",
@@ -2777,7 +2587,7 @@
         "toman_price": 5651,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساروج",
@@ -2787,7 +2597,7 @@
         "toman_price": 5560,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساروم",
@@ -2797,17 +2607,37 @@
         "toman_price": 12562,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "سافرون",
+        "title": "صندوق س.کالای گنجینه زمین",
+        "name": "صندوق س.کالای گنجینه زمین",
+        "price": 6012,
+        "toman_price": 6012,
+        "change_value": -63,
+        "change_percent": -1.04,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "سافرون2",
+        "title": "صندوق س.کالای گنجینه زمین",
+        "name": "صندوق س.کالای گنجینه زمین",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -6075,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سام",
         "title": "صندوق س.درآمد ثابت سام-د",
         "name": "صندوق س.درآمد ثابت سام-د",
-        "price": 1890,
-        "toman_price": 1890,
+        "price": 1899,
+        "toman_price": 1899,
         "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ساوه",
@@ -2817,7 +2647,7 @@
         "toman_price": 768,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سبجنو",
@@ -2827,7 +2657,7 @@
         "toman_price": 3047,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سبزوا",
@@ -2837,7 +2667,7 @@
         "toman_price": 573,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سبهان",
@@ -2847,17 +2677,17 @@
         "toman_price": 365,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ستاره",
         "title": "ص.س.ستاره پایدارسپهر-د",
         "name": "ص.س.ستاره پایدارسپهر-د",
-        "price": 1906,
-        "toman_price": 1906,
+        "price": 1916,
+        "toman_price": 1916,
         "change_value": 2,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ستران",
@@ -2867,27 +2697,7 @@
         "toman_price": 796,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "سحرخیز",
-        "title": "صندوق س.کالای گنجینه زمین",
-        "name": "صندوق س.کالای گنجینه زمین",
-        "price": 5269,
-        "toman_price": 5269,
-        "change_value": 108,
-        "change_percent": 2.1,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "سحرخیز2",
-        "title": "صندوق س.کالای گنجینه زمین",
-        "name": "صندوق س.کالای گنجینه زمین",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -5160,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سخاش",
@@ -2897,7 +2707,7 @@
         "toman_price": 886,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سخزر",
@@ -2907,17 +2717,17 @@
         "toman_price": 408,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سخند",
         "title": "صندوق س.سپهرخبرگان نفت-د",
         "name": "صندوق س.سپهرخبرگان نفت-د",
-        "price": 1068,
-        "toman_price": 1068,
-        "change_value": 3,
-        "change_percent": 0.29,
-        "last_update": "2026-04-22 23:19"
+        "price": 1071,
+        "toman_price": 1071,
+        "change_value": 1,
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سخوز",
@@ -2927,7 +2737,7 @@
         "toman_price": 7287,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سدبیر",
@@ -2937,7 +2747,7 @@
         "toman_price": 2140,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سدشت",
@@ -2947,7 +2757,7 @@
         "toman_price": 2864,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سدور",
@@ -2957,7 +2767,7 @@
         "toman_price": 1205,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سرو",
@@ -2967,7 +2777,7 @@
         "toman_price": 2438,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سرود",
@@ -2977,7 +2787,7 @@
         "toman_price": 730,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سرچشمه",
@@ -2987,7 +2797,7 @@
         "toman_price": 364,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سشرق",
@@ -2997,7 +2807,7 @@
         "toman_price": 1111,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سشمالح",
@@ -3007,7 +2817,7 @@
         "toman_price": 668,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سصفها",
@@ -3017,7 +2827,7 @@
         "toman_price": 1693,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سغدیر",
@@ -3027,7 +2837,7 @@
         "toman_price": 1053,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سغرب",
@@ -3037,17 +2847,7 @@
         "toman_price": 638,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "سفار",
-        "title": "سیمان‌فارس",
-        "name": "سیمان‌فارس",
-        "price": 17304,
-        "toman_price": 17304,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سفارس",
@@ -3057,7 +2857,7 @@
         "toman_price": 1570,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سفارود",
@@ -3067,7 +2867,7 @@
         "toman_price": 601,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سفاسی",
@@ -3077,7 +2877,7 @@
         "toman_price": 239,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سقاین",
@@ -3087,7 +2887,7 @@
         "toman_price": 1082,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سلار",
@@ -3097,7 +2897,7 @@
         "toman_price": 198,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سلام",
@@ -3107,7 +2907,7 @@
         "toman_price": 2700,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سمازن",
@@ -3117,7 +2917,7 @@
         "toman_price": 3518,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سمان",
@@ -3127,17 +2927,7 @@
         "toman_price": 2159,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "سنوین",
-        "title": "سرمایه گذاری اقتصاد نوین",
-        "name": "سرمایه گذاری اقتصاد نوین",
-        "price": 469,
-        "toman_price": 469,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سنیر",
@@ -3147,7 +2937,7 @@
         "toman_price": 430,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سهگمت",
@@ -3157,7 +2947,7 @@
         "toman_price": 10939,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپاها",
@@ -3167,27 +2957,27 @@
         "toman_price": 964,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپر",
         "title": "صندوق س سپر سرمایه بیدار- ثابت",
         "name": "صندوق س سپر سرمایه بیدار- ثابت",
-        "price": 4096,
-        "toman_price": 4096,
-        "change_value": 5,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 4116,
+        "toman_price": 4116,
+        "change_value": 6,
+        "change_percent": 0.15,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپنتارود",
         "title": "ص.س.د.ثابت ماه آفرید سپینود-د",
         "name": "ص.س.د.ثابت ماه آفرید سپینود-د",
-        "price": 1497,
-        "toman_price": 1497,
-        "change_value": 2,
+        "price": 1504,
+        "toman_price": 1504,
+        "change_value": 1,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپید",
@@ -3197,17 +2987,17 @@
         "toman_price": 1373,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپیدما",
         "title": "صندوق س. سپید دماوند-د",
         "name": "صندوق س. سپید دماوند-د",
-        "price": 3148,
-        "toman_price": 3148,
-        "change_value": 4,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 3164,
+        "toman_price": 3164,
+        "change_value": 3,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپیدما2",
@@ -3215,9 +3005,9 @@
         "name": "صندوق س. سپید دماوند-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -3144,
+        "change_value": -3160,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سپینود",
@@ -3227,7 +3017,7 @@
         "toman_price": 1724,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سکرد",
@@ -3237,7 +3027,7 @@
         "toman_price": 804,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سکرما",
@@ -3247,7 +3037,7 @@
         "toman_price": 5710,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیتا",
@@ -3257,7 +3047,7 @@
         "toman_price": 1709,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیدکو",
@@ -3267,7 +3057,7 @@
         "toman_price": 2849,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیلام",
@@ -3277,17 +3067,17 @@
         "toman_price": 1250,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیلور",
         "title": "صندوق س.بازده نقره نوا",
         "name": "صندوق س.بازده نقره نوا",
-        "price": 1027,
-        "toman_price": 1027,
-        "change_value": 2,
-        "change_percent": 0.21,
-        "last_update": "2026-04-22 23:19"
+        "price": 1262,
+        "toman_price": 1262,
+        "change_value": 114,
+        "change_percent": 9.99,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیلور2",
@@ -3295,9 +3085,9 @@
         "name": "صندوق س.بازده نقره نوا",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1025,
+        "change_value": -1147,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیمانا",
@@ -3307,7 +3097,7 @@
         "toman_price": 1977,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیمانو",
@@ -3317,7 +3107,7 @@
         "toman_price": 2144,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیمانیا",
@@ -3327,27 +3117,27 @@
         "toman_price": 1766,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیمین",
         "title": "صندوق س.نقره سیمین هوبر",
         "name": "صندوق س.نقره سیمین هوبر",
-        "price": 1024,
-        "toman_price": 1024,
-        "change_value": 5,
-        "change_percent": 0.58,
-        "last_update": "2026-04-22 23:19"
+        "price": 1280,
+        "toman_price": 1280,
+        "change_value": 116,
+        "change_percent": 9.99,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "سیناد",
         "title": "صندوق س.سپهرسودمند سینا-د",
         "name": "صندوق س.سپهرسودمند سینا-د",
-        "price": 2385,
-        "toman_price": 2385,
+        "price": 2396,
+        "toman_price": 2396,
         "change_value": 2,
-        "change_percent": 0.11,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شاراک",
@@ -3357,7 +3147,7 @@
         "toman_price": 1043,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شاوان",
@@ -3367,7 +3157,7 @@
         "toman_price": 2330,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شبریز",
@@ -3377,7 +3167,7 @@
         "toman_price": 2590,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شبندر",
@@ -3387,7 +3177,7 @@
         "toman_price": 694,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شبهرن",
@@ -3397,7 +3187,7 @@
         "toman_price": 2023,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شتاب",
@@ -3407,7 +3197,7 @@
         "toman_price": 1777,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شتهران",
@@ -3417,17 +3207,7 @@
         "toman_price": 615,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "شتوکا",
-        "title": "توکا رنگ فولاد سپاهان",
-        "name": "توکا رنگ فولاد سپاهان",
-        "price": 820,
-        "toman_price": 820,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شجم",
@@ -3437,7 +3217,7 @@
         "toman_price": 889,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شخارک",
@@ -3447,7 +3227,7 @@
         "toman_price": 10001,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شدوص",
@@ -3457,7 +3237,7 @@
         "toman_price": 415,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شرانل",
@@ -3467,7 +3247,7 @@
         "toman_price": 5185,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شستا",
@@ -3477,7 +3257,7 @@
         "toman_price": 163,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شستان",
@@ -3487,7 +3267,7 @@
         "toman_price": 121,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شسپا",
@@ -3497,7 +3277,7 @@
         "toman_price": 800,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شغدیر",
@@ -3507,7 +3287,7 @@
         "toman_price": 2635,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شفا",
@@ -3517,7 +3297,7 @@
         "toman_price": 1621,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شفارس",
@@ -3527,7 +3307,7 @@
         "toman_price": 117,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شلعاب",
@@ -3537,7 +3317,7 @@
         "toman_price": 72,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شملی",
@@ -3547,7 +3327,7 @@
         "toman_price": 331,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شمواد",
@@ -3557,17 +3337,17 @@
         "toman_price": 412,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شمیم",
         "title": "صندوق س.درآمدثابت شمیم تابان-د",
         "name": "صندوق س.درآمدثابت شمیم تابان-د",
-        "price": 1667,
-        "toman_price": 1667,
+        "price": 1674,
+        "toman_price": 1674,
         "change_value": 2,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شمیم2",
@@ -3575,19 +3355,9 @@
         "name": "صندوق س.درآمدثابت شمیم تابان-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1664,
+        "change_value": -1672,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "شنفت",
-        "title": "نفت‌ پارس",
-        "name": "نفت‌ پارس",
-        "price": 1225,
-        "toman_price": 1225,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شپارس",
@@ -3597,7 +3367,7 @@
         "toman_price": 121,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شپاس",
@@ -3607,7 +3377,7 @@
         "toman_price": 3920,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شپترو",
@@ -3617,7 +3387,7 @@
         "toman_price": 105,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شپنا",
@@ -3627,17 +3397,7 @@
         "toman_price": 615,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "شکام",
-        "title": "صنایع شیمیایی کیمیاگران امروز",
-        "name": "صنایع شیمیایی کیمیاگران امروز",
-        "price": 339,
-        "toman_price": 339,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شکربن",
@@ -3647,7 +3407,7 @@
         "toman_price": 621,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شکلر",
@@ -3657,7 +3417,7 @@
         "toman_price": 1229,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شگامرن",
@@ -3667,7 +3427,7 @@
         "toman_price": 1800,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شیران",
@@ -3677,7 +3437,7 @@
         "toman_price": 610,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "شیلد",
@@ -3687,27 +3447,47 @@
         "toman_price": 1528,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "صایند",
         "title": "صندوق س. گنجینه آینده روشن-د",
         "name": "صندوق س. گنجینه آینده روشن-د",
-        "price": 2706,
-        "toman_price": 2706,
+        "price": 2719,
+        "toman_price": 2719,
         "change_value": 3,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "صایند2",
+        "title": "صندوق س. گنجینه آینده روشن-د",
+        "name": "صندوق س. گنجینه آینده روشن-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -2716,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "صنهال",
         "title": "صندوق س. نهال ایرانیان-ثابت",
         "name": "صندوق س. نهال ایرانیان-ثابت",
-        "price": 2244,
-        "toman_price": 2244,
-        "change_value": 3,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 2255,
+        "toman_price": 2255,
+        "change_value": 2,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "صنهال2",
+        "title": "صندوق س. نهال ایرانیان-ثابت",
+        "name": "صندوق س. نهال ایرانیان-ثابت",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -2252,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "صنوین",
@@ -3717,7 +3497,7 @@
         "toman_price": 36533,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ضمان",
@@ -3727,7 +3507,7 @@
         "toman_price": 2629,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "طعام",
@@ -3737,27 +3517,37 @@
         "toman_price": 1419,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "طلا",
         "title": "صندوق س.پشتوانه طلای لوتوس",
         "name": "صندوق س.پشتوانه طلای لوتوس",
-        "price": 122880,
-        "toman_price": 122880,
-        "change_value": 2092,
-        "change_percent": 1.73,
-        "last_update": "2026-04-22 23:19"
+        "price": 137200,
+        "toman_price": 137200,
+        "change_value": 10144,
+        "change_percent": 7.98,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "طلا2",
+        "title": "صندوق س.پشتوانه طلای لوتوس",
+        "name": "صندوق س.پشتوانه طلای لوتوس",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -127055,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "طلوع",
         "title": "صندوق س.طلوع نوین ثابت-د",
         "name": "صندوق س.طلوع نوین ثابت-د",
-        "price": 6923,
-        "toman_price": 6923,
+        "price": 6956,
+        "toman_price": 6956,
         "change_value": 8,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "طلوع2",
@@ -3765,9 +3555,9 @@
         "name": "صندوق س.طلوع نوین ثابت-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -6914,
+        "change_value": -6947,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "عقیق",
@@ -3777,27 +3567,17 @@
         "toman_price": 1824,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "عیار",
         "title": "صندوق طلای عیار مفید",
         "name": "صندوق طلای عیار مفید",
-        "price": 47548,
-        "toman_price": 47548,
-        "change_value": 920,
-        "change_percent": 1.97,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "غالبر",
-        "title": "لبنیات‌ کالبر",
-        "name": "لبنیات‌ کالبر",
-        "price": 3052,
-        "toman_price": 3052,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "price": 53736,
+        "toman_price": 53736,
+        "change_value": 4205,
+        "change_percent": 8.49,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غبهنوش",
@@ -3807,7 +3587,7 @@
         "toman_price": 7240,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غدام",
@@ -3817,7 +3597,7 @@
         "toman_price": 3495,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غدانه",
@@ -3827,7 +3607,7 @@
         "toman_price": 646,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غسالم",
@@ -3837,7 +3617,7 @@
         "toman_price": 486,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غشان",
@@ -3847,7 +3627,7 @@
         "toman_price": 407,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غشهد",
@@ -3857,7 +3637,7 @@
         "toman_price": 661,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غنوش",
@@ -3867,7 +3647,7 @@
         "toman_price": 1400,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غنیلی",
@@ -3877,17 +3657,7 @@
         "toman_price": 450,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "غویتا",
-        "title": "ویتانا",
-        "name": "ویتانا",
-        "price": 210,
-        "toman_price": 210,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "غگل",
@@ -3897,27 +3667,17 @@
         "toman_price": 481,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فاخر",
         "title": "صندوق س.ثروت افزون فاخر-د",
         "name": "صندوق س.ثروت افزون فاخر-د",
-        "price": 2205,
-        "toman_price": 2205,
-        "change_value": 3,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "فاخر2",
-        "title": "صندوق س.ثروت افزون فاخر-د",
-        "name": "صندوق س.ثروت افزون فاخر-د",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -2201,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "price": 2216,
+        "toman_price": 2216,
+        "change_value": 2,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فاذر",
@@ -3927,7 +3687,7 @@
         "toman_price": 90,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فاراک",
@@ -3937,7 +3697,7 @@
         "toman_price": 103,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فارس",
@@ -3947,7 +3707,7 @@
         "toman_price": 1050,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فارما کیان",
@@ -3957,7 +3717,7 @@
         "toman_price": 1232,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فارمانی",
@@ -3967,7 +3727,7 @@
         "toman_price": 1157,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فافق",
@@ -3977,7 +3737,7 @@
         "toman_price": 694,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فاهواز",
@@ -3987,7 +3747,7 @@
         "toman_price": 604,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فایرا",
@@ -3997,7 +3757,7 @@
         "toman_price": 557,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فباهنر",
@@ -4007,7 +3767,7 @@
         "toman_price": 746,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فجام",
@@ -4017,7 +3777,7 @@
         "toman_price": 807,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فجر",
@@ -4027,7 +3787,7 @@
         "toman_price": 293,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فجوش",
@@ -4037,7 +3797,7 @@
         "toman_price": 218,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فخوز",
@@ -4047,7 +3807,7 @@
         "toman_price": 200,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فرآور",
@@ -4057,7 +3817,7 @@
         "toman_price": 488,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فرابورس",
@@ -4067,7 +3827,7 @@
         "toman_price": 358,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فراز",
@@ -4077,17 +3837,17 @@
         "toman_price": 2556,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فردا",
         "title": "صندوق س آوای فردای زاگرس-ثابت",
         "name": "صندوق س آوای فردای زاگرس-ثابت",
-        "price": 3711,
-        "toman_price": 3711,
+        "price": 3730,
+        "toman_price": 3730,
         "change_value": 4,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فرود",
@@ -4097,7 +3857,7 @@
         "toman_price": 397,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فزرین",
@@ -4107,7 +3867,7 @@
         "toman_price": 261,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فسا",
@@ -4117,7 +3877,7 @@
         "toman_price": 59,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فسدید",
@@ -4127,7 +3887,7 @@
         "toman_price": 9325,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فسرب",
@@ -4137,7 +3897,7 @@
         "toman_price": 131,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فسپا",
@@ -4147,17 +3907,7 @@
         "toman_price": 272,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "فطلوع",
-        "title": "طلوع فولاد پارس",
-        "name": "طلوع فولاد پارس",
-        "price": 250,
-        "toman_price": 250,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فغدیر",
@@ -4167,7 +3917,7 @@
         "toman_price": 418,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فلات",
@@ -4177,7 +3927,7 @@
         "toman_price": 956,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فلزا",
@@ -4187,17 +3937,7 @@
         "toman_price": 1699,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "فلوله",
-        "title": "لوله‌وماشین‌سازی‌ایران",
-        "name": "لوله‌وماشین‌سازی‌ایران",
-        "price": 195,
-        "toman_price": 195,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فماک",
@@ -4207,7 +3947,7 @@
         "toman_price": 1055,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فمراد",
@@ -4217,7 +3957,7 @@
         "toman_price": 884,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فملی",
@@ -4227,7 +3967,7 @@
         "toman_price": 1370,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فن آوا",
@@ -4237,7 +3977,7 @@
         "toman_price": 104,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فنورد",
@@ -4247,7 +3987,7 @@
         "toman_price": 712,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فولاژ",
@@ -4257,7 +3997,7 @@
         "toman_price": 320,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فپنتا",
@@ -4267,7 +4007,7 @@
         "toman_price": 2550,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فکمند",
@@ -4277,17 +4017,17 @@
         "toman_price": 908,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فیروزا",
         "title": "صندوق ارمغان فیروزه آسیا-ثابت",
         "name": "صندوق ارمغان فیروزه آسیا-ثابت",
-        "price": 7971,
-        "toman_price": 7971,
-        "change_value": 14,
-        "change_percent": 0.18,
-        "last_update": "2026-04-22 23:19"
+        "price": 8008,
+        "toman_price": 8008,
+        "change_value": 10,
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "فیروزه",
@@ -4297,17 +4037,17 @@
         "toman_price": 1985,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "قیراط",
         "title": "صندوق س.کالای درفش دماوند",
         "name": "صندوق س.کالای درفش دماوند",
-        "price": 3118,
-        "toman_price": 3118,
-        "change_value": 58,
-        "change_percent": 1.93,
-        "last_update": "2026-04-22 23:19"
+        "price": 3440,
+        "toman_price": 3440,
+        "change_value": 252,
+        "change_percent": 7.9,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لابسا",
@@ -4317,17 +4057,17 @@
         "toman_price": 321,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لبخند",
         "title": "صندوق س. لبخند فارابی-د",
         "name": "صندوق س. لبخند فارابی-د",
-        "price": 2690,
-        "toman_price": 2690,
-        "change_value": 4,
-        "change_percent": 0.16,
-        "last_update": "2026-04-22 23:19"
+        "price": 2702,
+        "toman_price": 2702,
+        "change_value": 3,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لبوتان",
@@ -4337,7 +4077,7 @@
         "toman_price": 223,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لخزر",
@@ -4347,7 +4087,7 @@
         "toman_price": 494,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لذیذ",
@@ -4357,7 +4097,7 @@
         "toman_price": 1240,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لسرما",
@@ -4367,7 +4107,7 @@
         "toman_price": 342,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لطیف",
@@ -4377,7 +4117,7 @@
         "toman_price": 244,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لپارس",
@@ -4387,17 +4127,17 @@
         "toman_price": 1516,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "لیان",
         "title": "صندوق س.کالای دیبای معیار",
         "name": "صندوق س.کالای دیبای معیار",
-        "price": 3181,
-        "toman_price": 3181,
-        "change_value": 58,
-        "change_percent": 1.86,
-        "last_update": "2026-04-22 23:19"
+        "price": 3542,
+        "toman_price": 3542,
+        "change_value": 264,
+        "change_percent": 8.06,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ما",
@@ -4407,7 +4147,7 @@
         "toman_price": 241,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مارون",
@@ -4417,7 +4157,7 @@
         "toman_price": 4945,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مالک آتیه",
@@ -4427,47 +4167,47 @@
         "toman_price": 1122,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مانی",
         "title": "صندوق س. با درآمد ثابت مانی",
         "name": "صندوق س. با درآمد ثابت مانی",
-        "price": 2982,
-        "toman_price": 2982,
+        "price": 2997,
+        "toman_price": 2997,
         "change_value": 3,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ماهور",
         "title": "صندوق سرمایه گذاری ماهور-ثابت",
         "name": "صندوق سرمایه گذاری ماهور-ثابت",
-        "price": 2038,
-        "toman_price": 2038,
+        "price": 2048,
+        "toman_price": 2048,
         "change_value": 2,
-        "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ماکان",
         "title": "ص.س.درآمدثابت ثروت ماکان-د",
         "name": "ص.س.درآمدثابت ثروت ماکان-د",
-        "price": 1295,
-        "toman_price": 1295,
+        "price": 1297,
+        "toman_price": 1297,
         "change_value": 0,
-        "change_percent": 0.05,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.04,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مثقال",
         "title": "صندوق س.کالای آگاه",
         "name": "صندوق س.کالای آگاه",
-        "price": 13845,
-        "toman_price": 13845,
-        "change_value": 198,
-        "change_percent": 1.46,
-        "last_update": "2026-04-22 23:19"
+        "price": 15489,
+        "toman_price": 15489,
+        "change_value": 1179,
+        "change_percent": 8.24,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مدیر",
@@ -4477,7 +4217,7 @@
         "toman_price": 2741,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مدیریت",
@@ -4487,17 +4227,7 @@
         "toman_price": 304,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "مرقام",
-        "title": "ایران ارقام",
-        "name": "ایران ارقام",
-        "price": 710,
-        "toman_price": 710,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مروارید",
@@ -4507,7 +4237,7 @@
         "toman_price": 1276,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "مزه",
@@ -4517,7 +4247,7 @@
         "toman_price": 1301,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "معدن",
@@ -4527,7 +4257,7 @@
         "toman_price": 1009,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "معیار",
@@ -4537,27 +4267,7 @@
         "toman_price": 135,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "مفاخر",
-        "title": "توسعه فناوری اطلاعات خوارزمی",
-        "name": "توسعه فناوری اطلاعات خوارزمی",
-        "price": 608,
-        "toman_price": 608,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ملت",
-        "title": "بیمه ملت",
-        "name": "بیمه ملت",
-        "price": 202,
-        "toman_price": 202,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ممسنی",
@@ -4567,7 +4277,7 @@
         "toman_price": 570,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "موج",
@@ -4577,17 +4287,17 @@
         "toman_price": 3198,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "میراث",
         "title": "صندوق س.کالای کوروش",
         "name": "صندوق س.کالای کوروش",
-        "price": 1018,
-        "toman_price": 1018,
-        "change_value": 16,
-        "change_percent": 1.64,
-        "last_update": "2026-04-22 23:19"
+        "price": 1159,
+        "toman_price": 1159,
+        "change_value": 100,
+        "change_percent": 9.48,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "میهن",
@@ -4597,17 +4307,17 @@
         "toman_price": 203,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ناب",
         "title": "صندوق س.پشتوانه طلا نهایت نگر",
         "name": "صندوق س.پشتوانه طلا نهایت نگر",
-        "price": 5873,
-        "toman_price": 5873,
-        "change_value": 118,
-        "change_percent": 2.05,
-        "last_update": "2026-04-22 23:19"
+        "price": 6528,
+        "toman_price": 6528,
+        "change_value": 470,
+        "change_percent": 7.76,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ناب2",
@@ -4615,9 +4325,9 @@
         "name": "صندوق س.پشتوانه طلا نهایت نگر",
         "price": 0,
         "toman_price": 0,
-        "change_value": -5755,
+        "change_value": -6057,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نارنج اهرم",
@@ -4627,7 +4337,7 @@
         "toman_price": 2251,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نبات",
@@ -4637,7 +4347,7 @@
         "toman_price": 999,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نبروج",
@@ -4647,7 +4357,7 @@
         "toman_price": 1893,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نتوس",
@@ -4657,17 +4367,17 @@
         "toman_price": 670,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نخل",
         "title": "صندوق س.خلیج فارس-د",
         "name": "صندوق س.خلیج فارس-د",
-        "price": 1002,
-        "toman_price": 1002,
-        "change_value": 1,
-        "change_percent": 0.16,
-        "last_update": "2026-04-22 23:19"
+        "price": 1006,
+        "toman_price": 1006,
+        "change_value": 0,
+        "change_percent": 0.08,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نشار",
@@ -4677,17 +4387,17 @@
         "toman_price": 0,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نشان",
         "title": "صندوق س. نشان هامرز-د",
         "name": "صندوق س. نشان هامرز-د",
-        "price": 2790,
-        "toman_price": 2790,
-        "change_value": 4,
-        "change_percent": 0.15,
-        "last_update": "2026-04-22 23:19"
+        "price": 2803,
+        "toman_price": 2803,
+        "change_value": 2,
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نفتوداریوش",
@@ -4697,57 +4407,37 @@
         "toman_price": 945,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نفیس",
         "title": "صندوق س.پشتوانه طلای صبا",
         "name": "صندوق س.پشتوانه طلای صبا",
-        "price": 9904,
-        "toman_price": 9904,
-        "change_value": 161,
-        "change_percent": 1.65,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "نفیس2",
-        "title": "صندوق س.پشتوانه طلای صبا",
-        "name": "صندوق س.پشتوانه طلای صبا",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -9742,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "price": 11111,
+        "toman_price": 11111,
+        "change_value": 844,
+        "change_percent": 8.22,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نقرابی",
         "title": "صندوق س.کالای کهکشان فیروزه1",
         "name": "صندوق س.کالای کهکشان فیروزه1",
-        "price": 1100,
-        "toman_price": 1100,
-        "change_value": 9,
-        "change_percent": 0.85,
-        "last_update": "2026-04-22 23:19"
+        "price": 1347,
+        "toman_price": 1347,
+        "change_value": 122,
+        "change_percent": 10.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نقران",
         "title": "صندوق س.کالای کهربا1",
         "name": "صندوق س.کالای کهربا1",
-        "price": 1008,
-        "toman_price": 1008,
-        "change_value": 6,
-        "change_percent": 0.6,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "نقران2",
-        "title": "صندوق س.کالای کهربا1",
-        "name": "صندوق س.کالای کهربا1",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -1001,
-        "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "price": 1256,
+        "toman_price": 1256,
+        "change_value": 114,
+        "change_percent": 10.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نماد",
@@ -4757,27 +4447,17 @@
         "toman_price": 291,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نهال",
         "title": "صندوق س.کالای نوویرا",
         "name": "صندوق س.کالای نوویرا",
-        "price": 4986,
-        "toman_price": 4986,
-        "change_value": 17,
-        "change_percent": 0.35,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "نهال2",
-        "title": "صندوق س.کالای نوویرا",
-        "name": "صندوق س.کالای نوویرا",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -4968,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "price": 5887,
+        "toman_price": 5887,
+        "change_value": -15,
+        "change_percent": -0.27,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نوری",
@@ -4787,7 +4467,7 @@
         "toman_price": 4560,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نوین",
@@ -4797,17 +4477,17 @@
         "toman_price": 307,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نگین فارس",
         "title": "صندوق س.طلا زردیس خلیج فارس",
         "name": "صندوق س.طلا زردیس خلیج فارس",
-        "price": 1340,
-        "toman_price": 1340,
-        "change_value": 37,
-        "change_percent": 2.91,
-        "last_update": "2026-04-22 23:19"
+        "price": 1470,
+        "toman_price": 1470,
+        "change_value": 104,
+        "change_percent": 7.68,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نیرو",
@@ -4817,7 +4497,7 @@
         "toman_price": 607,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نیروانا",
@@ -4827,17 +4507,17 @@
         "toman_price": 805,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نیلی",
         "title": "صندوق س. نوع دوم نیلی دماوند-د",
         "name": "صندوق س. نوع دوم نیلی دماوند-د",
-        "price": 1013,
-        "toman_price": 1013,
+        "price": 1017,
+        "toman_price": 1017,
         "change_value": 1,
         "change_percent": 0.11,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نیلی2",
@@ -4845,29 +4525,29 @@
         "name": "صندوق س. نوع دوم نیلی دماوند-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1012,
+        "change_value": -1016,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "نیک گستر",
         "title": "صندوق س توسعه سرمایه نیکی-ثابت",
         "name": "صندوق س توسعه سرمایه نیکی-ثابت",
-        "price": 10916,
-        "toman_price": 10916,
+        "price": 10968,
+        "toman_price": 10968,
         "change_value": 12,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هامرز",
         "title": "صندوق س اعتماد هامرز-ثابت",
         "name": "صندوق س اعتماد هامرز-ثابت",
-        "price": 1015,
-        "toman_price": 1015,
+        "price": 1020,
+        "toman_price": 1020,
         "change_value": 1,
-        "change_percent": 0.15,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هامون",
@@ -4877,7 +4557,7 @@
         "toman_price": 1498,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "های وب",
@@ -4887,7 +4567,7 @@
         "toman_price": 28,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هجرت",
@@ -4897,17 +4577,17 @@
         "toman_price": 269,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هدف",
         "title": "ص.س.دثابت مشترک صبای هدف-د",
         "name": "ص.س.دثابت مشترک صبای هدف-د",
-        "price": 1387,
-        "toman_price": 1387,
+        "price": 1392,
+        "toman_price": 1392,
         "change_value": 1,
         "change_percent": 0.1,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هم ارز",
@@ -4917,7 +4597,7 @@
         "toman_price": 929,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هم تراز",
@@ -4927,7 +4607,7 @@
         "toman_price": 1295,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هم وزن",
@@ -4937,17 +4617,17 @@
         "toman_price": 2114,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "همای",
         "title": "صندوق س همای آگاه-ثابت",
         "name": "صندوق س همای آگاه-ثابت",
-        "price": 1003,
-        "toman_price": 1003,
+        "price": 1008,
+        "toman_price": 1008,
         "change_value": 1,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "همای2",
@@ -4955,9 +4635,9 @@
         "name": "صندوق س همای آگاه-ثابت",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1002,
+        "change_value": -1007,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "همراه",
@@ -4967,7 +4647,7 @@
         "toman_price": 376,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "همسنگ",
@@ -4977,27 +4657,27 @@
         "toman_price": 967,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "همگام",
         "title": "صندوق س. م.اوراق دولتی همگام-د",
         "name": "صندوق س. م.اوراق دولتی همگام-د",
-        "price": 1086,
-        "toman_price": 1086,
+        "price": 1091,
+        "toman_price": 1091,
         "change_value": 1,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "همیان",
         "title": "صندوق س.پشتوانه طلا همیان سپهر",
         "name": "صندوق س.پشتوانه طلا همیان سپهر",
-        "price": 1526,
-        "toman_price": 1526,
-        "change_value": 26,
-        "change_percent": 1.79,
-        "last_update": "2026-04-22 23:19"
+        "price": 1684,
+        "toman_price": 1684,
+        "change_value": 103,
+        "change_percent": 6.57,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هوشمند",
@@ -5007,7 +4687,7 @@
         "toman_price": 1104,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هوشیار",
@@ -5017,7 +4697,7 @@
         "toman_price": 1317,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "هیبرید",
@@ -5027,7 +4707,7 @@
         "toman_price": 1772,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وآذر",
@@ -5037,7 +4717,7 @@
         "toman_price": 371,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وآفر",
@@ -5047,17 +4727,7 @@
         "toman_price": 1128,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "وآوا",
-        "title": "سرمایه گذاری آوا نوین",
-        "name": "سرمایه گذاری آوا نوین",
-        "price": 186,
-        "toman_price": 186,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "واحصا",
@@ -5067,7 +4737,7 @@
         "toman_price": 1167,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "واعتبار",
@@ -5077,7 +4747,7 @@
         "toman_price": 200,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "والبر",
@@ -5087,7 +4757,7 @@
         "toman_price": 199,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وامید",
@@ -5097,7 +4767,7 @@
         "toman_price": 542,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وایران",
@@ -5107,7 +4777,7 @@
         "toman_price": 373,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وبازار",
@@ -5117,7 +4787,7 @@
         "toman_price": 3319,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وبرق",
@@ -5127,7 +4797,7 @@
         "toman_price": 2480,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وبصادر",
@@ -5137,7 +4807,7 @@
         "toman_price": 48,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وبیمه",
@@ -5147,7 +4817,7 @@
         "toman_price": 118,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وتوسکا",
@@ -5157,7 +4827,7 @@
         "toman_price": 118,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وتوشه",
@@ -5167,7 +4837,7 @@
         "toman_price": 592,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وتوصا",
@@ -5177,7 +4847,7 @@
         "toman_price": 145,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وثخوز",
@@ -5187,7 +4857,7 @@
         "toman_price": 674,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وخارزم",
@@ -5197,7 +4867,7 @@
         "toman_price": 292,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وخارزمح",
@@ -5207,7 +4877,7 @@
         "toman_price": 181,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وخاور",
@@ -5217,7 +4887,7 @@
         "toman_price": 263,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ودانا",
@@ -5227,7 +4897,7 @@
         "toman_price": 376,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ورازی",
@@ -5237,7 +4907,7 @@
         "toman_price": 84,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وساخت",
@@ -5247,7 +4917,7 @@
         "toman_price": 93,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وساپا",
@@ -5257,7 +4927,7 @@
         "toman_price": 631,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وسرمد",
@@ -5267,7 +4937,7 @@
         "toman_price": 99,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وسپهر",
@@ -5277,7 +4947,7 @@
         "toman_price": 360,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وشمال",
@@ -5287,7 +4957,7 @@
         "toman_price": 1307,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وصندوق",
@@ -5297,7 +4967,7 @@
         "toman_price": 1699,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وصنعت",
@@ -5307,7 +4977,7 @@
         "toman_price": 150,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وطوبی",
@@ -5317,7 +4987,7 @@
         "toman_price": 260,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وفتخار",
@@ -5327,7 +4997,7 @@
         "toman_price": 148,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ولانا",
@@ -5337,7 +5007,7 @@
         "toman_price": 2445,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ولبهمن",
@@ -5347,7 +5017,7 @@
         "toman_price": 204,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ولراز",
@@ -5357,17 +5027,7 @@
         "toman_price": 158,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ولشرق",
-        "title": "لیزینگ ایران و شرق",
-        "name": "لیزینگ ایران و شرق",
-        "price": 328,
-        "toman_price": 328,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ولکار",
@@ -5377,17 +5037,7 @@
         "toman_price": 312,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "ولیز",
-        "title": "لیزینگ ایران",
-        "name": "لیزینگ ایران",
-        "price": 217,
-        "toman_price": 217,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ومدیر",
@@ -5397,7 +5047,7 @@
         "toman_price": 254,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ومعادن",
@@ -5407,7 +5057,7 @@
         "toman_price": 204,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ومعلم",
@@ -5417,17 +5067,7 @@
         "toman_price": 245,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "وملت",
-        "title": "سرمایه گذاری ملت",
-        "name": "سرمایه گذاری ملت",
-        "price": 335,
-        "toman_price": 335,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وملی",
@@ -5437,7 +5077,7 @@
         "toman_price": 16700,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ونفت",
@@ -5447,7 +5087,7 @@
         "toman_price": 422,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "ونچر",
@@ -5457,7 +5097,7 @@
         "toman_price": 151400,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وهامون",
@@ -5467,7 +5107,7 @@
         "toman_price": 122,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وهامونح",
@@ -5477,7 +5117,7 @@
         "toman_price": 12,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وپترو",
@@ -5487,7 +5127,7 @@
         "toman_price": 3788,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وپخش",
@@ -5497,7 +5137,7 @@
         "toman_price": 2183,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وپسا",
@@ -5507,7 +5147,7 @@
         "toman_price": 144,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وپویا",
@@ -5517,7 +5157,7 @@
         "toman_price": 173,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وکبهمن",
@@ -5527,7 +5167,7 @@
         "toman_price": 208,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وکغدیر",
@@ -5537,7 +5177,7 @@
         "toman_price": 276,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "وگستر",
@@ -5547,17 +5187,17 @@
         "toman_price": 454,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پاداش",
         "title": "صندوق س. ارزش پاداش-د",
         "name": "صندوق س. ارزش پاداش-د",
-        "price": 2494,
-        "toman_price": 2494,
+        "price": 2507,
+        "toman_price": 2507,
         "change_value": 3,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.14,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پاداش2",
@@ -5565,9 +5205,9 @@
         "name": "صندوق س. ارزش پاداش-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2490,
+        "change_value": -2504,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پارس",
@@ -5577,7 +5217,7 @@
         "toman_price": 274,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پارسان",
@@ -5587,7 +5227,7 @@
         "toman_price": 2701,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پارسیان",
@@ -5597,27 +5237,27 @@
         "toman_price": 125,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پارند",
         "title": "صندوق س. پارند پایدار سپهر",
         "name": "صندوق س. پارند پایدار سپهر",
-        "price": 1015,
-        "toman_price": 1015,
-        "change_value": 1,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 1020,
+        "toman_price": 1020,
+        "change_value": 0,
+        "change_percent": 0.09,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پاسارگاد",
         "title": "صندوق س.درآمد ثابت پاسارگاد-د",
         "name": "صندوق س.درآمد ثابت پاسارگاد-د",
-        "price": 1512,
-        "toman_price": 1512,
-        "change_value": 2,
-        "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "price": 1520,
+        "toman_price": 1520,
+        "change_value": 1,
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پاسارگاد2",
@@ -5625,19 +5265,19 @@
         "name": "صندوق س.درآمد ثابت پاسارگاد-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1510,
+        "change_value": -1518,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پایا",
         "title": "صندوق س.پایا قلک پویا-د",
         "name": "صندوق س.پایا قلک پویا-د",
-        "price": 2470,
-        "toman_price": 2470,
-        "change_value": 2,
-        "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "price": 2482,
+        "toman_price": 2482,
+        "change_value": 3,
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پایا2",
@@ -5645,19 +5285,29 @@
         "name": "صندوق س.پایا قلک پویا-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2467,
+        "change_value": -2478,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پایش",
         "title": "صندوق س.درآمد ثابت دینا-د",
         "name": "صندوق س.درآمد ثابت دینا-د",
-        "price": 1843,
-        "toman_price": 1843,
-        "change_value": 2,
-        "change_percent": 0.15,
-        "last_update": "2026-04-22 23:19"
+        "price": 1853,
+        "toman_price": 1853,
+        "change_value": 3,
+        "change_percent": 0.19,
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "پایش2",
+        "title": "صندوق س.درآمد ثابت دینا-د",
+        "name": "صندوق س.درآمد ثابت دینا-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -1849,
+        "change_percent": -99.99,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پتروآبان",
@@ -5667,7 +5317,7 @@
         "toman_price": 1849,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پتروآگاه",
@@ -5677,7 +5327,7 @@
         "toman_price": 2390,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پتروداریوش",
@@ -5687,7 +5337,7 @@
         "toman_price": 1649,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پتروسورین",
@@ -5697,7 +5347,7 @@
         "toman_price": 819,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پخش",
@@ -5707,7 +5357,7 @@
         "toman_price": 584,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پدرخش",
@@ -5717,7 +5367,7 @@
         "toman_price": 390,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پرتو",
@@ -5727,7 +5377,7 @@
         "toman_price": 2480,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پرتوسا",
@@ -5737,7 +5387,7 @@
         "toman_price": 1455,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پرداخت",
@@ -5747,17 +5397,7 @@
         "toman_price": 459,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "پردیس",
-        "title": "سرمایه گذاری پردیس",
-        "name": "سرمایه گذاری پردیس",
-        "price": 183,
-        "toman_price": 183,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پسهند",
@@ -5767,7 +5407,7 @@
         "toman_price": 1982,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پلاسک",
@@ -5777,7 +5417,7 @@
         "toman_price": 372,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پلوله",
@@ -5787,7 +5427,7 @@
         "toman_price": 416,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پولاد",
@@ -5797,7 +5437,7 @@
         "toman_price": 1499,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پویا",
@@ -5807,7 +5447,7 @@
         "toman_price": 65312,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پی پاد",
@@ -5817,7 +5457,7 @@
         "toman_price": 298,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "پیشران",
@@ -5827,7 +5467,7 @@
         "toman_price": 1686,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "چاشنی",
@@ -5837,7 +5477,7 @@
         "toman_price": 968,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "چافست",
@@ -5847,7 +5487,7 @@
         "toman_price": 1086,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "چتر",
@@ -5857,7 +5497,7 @@
         "toman_price": 1105,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "چخزر",
@@ -5867,7 +5507,7 @@
         "toman_price": 6065,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "چنوپا",
@@ -5877,7 +5517,7 @@
         "toman_price": 1215,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "چکارن",
@@ -5887,7 +5527,7 @@
         "toman_price": 310,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کابگن",
@@ -5897,17 +5537,17 @@
         "toman_price": 3335,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کاج",
         "title": "صندوق س. نوع دوم نو ویرا -د",
         "name": "صندوق س. نوع دوم نو ویرا -د",
-        "price": 2567,
-        "toman_price": 2567,
+        "price": 2581,
+        "toman_price": 2581,
         "change_value": 3,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کاج2",
@@ -5915,19 +5555,19 @@
         "name": "صندوق س. نوع دوم نو ویرا -د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -2564,
+        "change_value": -2577,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کارآمد",
         "title": "صندوق س.درآمد ثابت کارآمد-د",
         "name": "صندوق س.درآمد ثابت کارآمد-د",
-        "price": 1609,
-        "toman_price": 1609,
-        "change_value": 2,
-        "change_percent": 0.16,
-        "last_update": "2026-04-22 23:19"
+        "price": 1616,
+        "toman_price": 1616,
+        "change_value": 1,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کارآمد2",
@@ -5935,29 +5575,19 @@
         "name": "صندوق س.درآمد ثابت کارآمد-د",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1606,
+        "change_value": -1614,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کارا",
         "title": "صندوق س. کارا -د",
         "name": "صندوق س. کارا -د",
-        "price": 3229,
-        "toman_price": 3229,
-        "change_value": 4,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کارا2",
-        "title": "صندوق س. کارا -د",
-        "name": "صندوق س. کارا -د",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -3225,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "price": 3245,
+        "toman_price": 3245,
+        "change_value": 3,
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کارام",
@@ -5967,7 +5597,7 @@
         "toman_price": 144,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کاردان",
@@ -5977,27 +5607,17 @@
         "toman_price": 16412,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کارما",
         "title": "صندوق س.درآمد ثابت کیهان-د",
         "name": "صندوق س.درآمد ثابت کیهان-د",
-        "price": 1845,
-        "toman_price": 1845,
+        "price": 1854,
+        "toman_price": 1854,
         "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کاریز",
-        "title": "بیمه زندگی کاریزما",
-        "name": "بیمه زندگی کاریزما",
-        "price": 865,
-        "toman_price": 865,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.12,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کاریس",
@@ -6007,17 +5627,17 @@
         "toman_price": 4377,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کارین",
         "title": "صندوق س نگین سامان-ثابت",
         "name": "صندوق س نگین سامان-ثابت",
-        "price": 1705,
-        "toman_price": 1705,
+        "price": 1714,
+        "toman_price": 1714,
         "change_value": 2,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.16,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کاشانه",
@@ -6027,7 +5647,7 @@
         "toman_price": 1148,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کالا",
@@ -6037,17 +5657,27 @@
         "toman_price": 905,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کامیاب",
         "title": "صندوق س. کامیاب آشنا-د",
         "name": "صندوق س. کامیاب آشنا-د",
-        "price": 3399,
-        "toman_price": 3399,
+        "price": 3416,
+        "toman_price": 3416,
         "change_value": 4,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "کامیاب2",
+        "title": "صندوق س. کامیاب آشنا-د",
+        "name": "صندوق س. کامیاب آشنا-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -3411,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کاوه",
@@ -6057,7 +5687,7 @@
         "toman_price": 424,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کبافق",
@@ -6067,17 +5697,7 @@
         "toman_price": 2156,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کترام",
-        "title": "تولیدی‌ کاشی‌ تکسرام",
-        "name": "تولیدی‌ کاشی‌ تکسرام",
-        "price": 166,
-        "toman_price": 166,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کتوسعه",
@@ -6087,7 +5707,7 @@
         "toman_price": 1312,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کرازی",
@@ -6097,17 +5717,7 @@
         "toman_price": 91,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کرماشا",
-        "title": "صنایع پتروشیمی کرمانشاه",
-        "name": "صنایع پتروشیمی کرمانشاه",
-        "price": 3583,
-        "toman_price": 3583,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کرمان",
@@ -6117,7 +5727,7 @@
         "toman_price": 99,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کروی",
@@ -6127,7 +5737,7 @@
         "toman_price": 421,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کزغال",
@@ -6137,17 +5747,7 @@
         "toman_price": 344,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کسعدی",
-        "title": "کاشی‌ سعدی",
-        "name": "کاشی‌ سعدی",
-        "price": 750,
-        "toman_price": 750,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کشرق",
@@ -6157,17 +5757,7 @@
         "toman_price": 6895,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کطبس",
-        "title": "ذغال‌سنگ‌ نگین‌ ط‌بس",
-        "name": "ذغال‌سنگ‌ نگین‌ ط‌بس",
-        "price": 824,
-        "toman_price": 824,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کفرا",
@@ -6177,7 +5767,7 @@
         "toman_price": 116,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کفپارس",
@@ -6187,7 +5777,7 @@
         "toman_price": 251,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کقزوی",
@@ -6197,7 +5787,7 @@
         "toman_price": 43,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کلر",
@@ -6207,7 +5797,7 @@
         "toman_price": 727,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کلید",
@@ -6217,7 +5807,7 @@
         "toman_price": 1053,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کمان",
@@ -6227,17 +5817,17 @@
         "toman_price": 55000,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کمند",
         "title": "صندوق س. با درآمد ثابت کمند",
         "name": "صندوق س. با درآمد ثابت کمند",
-        "price": 1016,
-        "toman_price": 1016,
-        "change_value": 0,
-        "change_percent": 0.09,
-        "last_update": "2026-04-22 23:19"
+        "price": 1020,
+        "toman_price": 1020,
+        "change_value": 1,
+        "change_percent": 0.1,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کمند2",
@@ -6245,19 +5835,9 @@
         "name": "صندوق س. با درآمد ثابت کمند",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1015,
+        "change_value": -1019,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کمنگنز",
-        "title": "معادن‌منگنزایران",
-        "name": "معادن‌منگنزایران",
-        "price": 494,
-        "toman_price": 494,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کمینا",
@@ -6267,17 +5847,17 @@
         "toman_price": 643,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کهربا",
         "title": "صندوق س. کالای کهربا",
         "name": "صندوق س. کالای کهربا",
-        "price": 16653,
-        "toman_price": 16653,
-        "change_value": 342,
-        "change_percent": 2.1,
-        "last_update": "2026-04-22 23:19"
+        "price": 18603,
+        "toman_price": 18603,
+        "change_value": 1357,
+        "change_percent": 7.87,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کهربا2",
@@ -6285,9 +5865,9 @@
         "name": "صندوق س. کالای کهربا",
         "price": 0,
         "toman_price": 0,
-        "change_value": -16311,
+        "change_value": -17246,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کهمدا",
@@ -6297,7 +5877,7 @@
         "toman_price": 189,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کوثر",
@@ -6307,7 +5887,7 @@
         "toman_price": 156,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کورز",
@@ -6317,7 +5897,7 @@
         "toman_price": 438,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کویر",
@@ -6327,7 +5907,7 @@
         "toman_price": 114,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کپرور",
@@ -6337,17 +5917,7 @@
         "toman_price": 989,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "کچاد",
-        "title": "معدنی‌وصنعتی‌چادرملو",
-        "name": "معدنی‌وصنعتی‌چادرملو",
-        "price": 248,
-        "toman_price": 248,
-        "change_value": 0,
-        "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کگاز",
@@ -6357,17 +5927,17 @@
         "toman_price": 2486,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کگل",
         "title": "معدنی و صنعتی گل گهر",
         "name": "معدنی و صنعتی گل گهر",
-        "price": 199,
-        "toman_price": 199,
+        "price": 182,
+        "toman_price": 182,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کگهر",
@@ -6377,7 +5947,7 @@
         "toman_price": 684,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کیا",
@@ -6387,17 +5957,17 @@
         "toman_price": 797,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کیان",
         "title": "صندوق س. با درآمد ثابت کیان",
         "name": "صندوق س. با درآمد ثابت کیان",
-        "price": 9750,
-        "toman_price": 9750,
-        "change_value": 13,
-        "change_percent": 0.14,
-        "last_update": "2026-04-22 23:19"
+        "price": 9801,
+        "toman_price": 9801,
+        "change_value": 12,
+        "change_percent": 0.13,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کیان2",
@@ -6405,9 +5975,9 @@
         "name": "صندوق س. با درآمد ثابت کیان",
         "price": 0,
         "toman_price": 0,
-        "change_value": -9737,
+        "change_value": -9788,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کیانا",
@@ -6417,7 +5987,7 @@
         "toman_price": 836,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "کیمیاتک",
@@ -6427,7 +5997,7 @@
         "toman_price": 724,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گدنا",
@@ -6437,17 +6007,17 @@
         "toman_price": 435,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گلدا",
         "title": "صندوق س.پشتوانه طلای پاداش",
         "name": "صندوق س.پشتوانه طلای پاداش",
-        "price": 1630,
-        "toman_price": 1630,
-        "change_value": 32,
-        "change_percent": 2.03,
-        "last_update": "2026-04-22 23:19"
+        "price": 1769,
+        "toman_price": 1769,
+        "change_value": 116,
+        "change_percent": 7.04,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گلدا2",
@@ -6455,49 +6025,49 @@
         "name": "صندوق س.پشتوانه طلای پاداش",
         "price": 0,
         "toman_price": 0,
-        "change_value": -1598,
+        "change_value": -1653,
         "change_percent": -99.99,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گلدیس",
         "title": "صندوق س.پشتوانه طلا گلدیس نوین",
         "name": "صندوق س.پشتوانه طلا گلدیس نوین",
-        "price": 3379,
-        "toman_price": 3379,
-        "change_value": 73,
-        "change_percent": 2.23,
-        "last_update": "2026-04-22 23:19"
+        "price": 3739,
+        "toman_price": 3739,
+        "change_value": 288,
+        "change_percent": 8.35,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گنج",
         "title": "صندوق س. سیمای کاردان",
         "name": "صندوق س. سیمای کاردان",
-        "price": 14859,
-        "toman_price": 14859,
-        "change_value": 331,
-        "change_percent": 2.28,
-        "last_update": "2026-04-22 23:19"
+        "price": 16540,
+        "toman_price": 16540,
+        "change_value": 1268,
+        "change_percent": 8.31,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گنجین",
         "title": "صندوق س. گنجینه یکم آوید-د",
         "name": "صندوق س. گنجینه یکم آوید-د",
-        "price": 3746,
-        "toman_price": 3746,
+        "price": 3764,
+        "toman_price": 3764,
         "change_value": 4,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گنجینه",
         "title": "صندوق س. گنجینه داریوش-د",
         "name": "صندوق س. گنجینه داریوش-د",
-        "price": 1904,
-        "toman_price": 1904,
+        "price": 1913,
+        "toman_price": 1913,
         "change_value": 2,
-        "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
+        "change_percent": 0.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گنگین",
@@ -6507,17 +6077,17 @@
         "toman_price": 1076,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گوهر",
         "title": "صندوق طلای کیان",
         "name": "صندوق طلای کیان",
-        "price": 82779,
-        "toman_price": 82779,
-        "change_value": 1428,
-        "change_percent": 1.76,
-        "last_update": "2026-04-22 23:19"
+        "price": 91700,
+        "toman_price": 91700,
+        "change_value": 6881,
+        "change_percent": 8.11,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گوهر2",
@@ -6525,9 +6095,9 @@
         "name": "صندوق طلای کیان",
         "price": 0,
         "toman_price": 0,
-        "change_value": -81350,
+        "change_value": -84818,
         "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گوهران",
@@ -6537,7 +6107,7 @@
         "toman_price": 328,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "گکوثر",
@@ -6547,37 +6117,37 @@
         "toman_price": 329,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "یارا",
         "title": "صندوق س. آریا-د",
         "name": "صندوق س. آریا-د",
-        "price": 3102,
-        "toman_price": 3102,
-        "change_value": 4,
+        "price": 3118,
+        "toman_price": 3118,
+        "change_value": 3,
         "change_percent": 0.13,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
+    },
+    {
+        "symbol": "یارا2",
+        "title": "صندوق س. آریا-د",
+        "name": "صندوق س. آریا-د",
+        "price": 0,
+        "toman_price": 0,
+        "change_value": -3114,
+        "change_percent": -100.0,
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "یاقوت",
         "title": "صندوق س یاقوت آگاه-ثابت",
         "name": "صندوق س یاقوت آگاه-ثابت",
-        "price": 4111,
-        "toman_price": 4111,
+        "price": 4131,
+        "toman_price": 4131,
         "change_value": 5,
         "change_percent": 0.12,
-        "last_update": "2026-04-22 23:19"
-    },
-    {
-        "symbol": "یاقوت2",
-        "title": "صندوق س یاقوت آگاه-ثابت",
-        "name": "صندوق س یاقوت آگاه-ثابت",
-        "price": 0,
-        "toman_price": 0,
-        "change_value": -4106,
-        "change_percent": -100.0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     },
     {
         "symbol": "یوتیلیتی",
@@ -6587,6 +6157,6 @@
         "toman_price": 836,
         "change_value": 0,
         "change_percent": 0,
-        "last_update": "2026-04-22 23:19"
+        "last_update": "2026-04-29 02:41"
     }
 ]

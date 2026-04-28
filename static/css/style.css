@@ -1,3 +1,12 @@
+/* ============================================================
+   Assetly - استایل‌های اصلی
+   نسخه: 3.0.0
+   ============================================================ */
+
+/* ============================================================
+   بخش ۱: ریست و تنظیمات پایه
+   ============================================================ */
+
 * {
   font-family: "Vazirmatn", sans-serif !important;
 }
@@ -14,6 +23,7 @@ body {
   min-height: 100vh;
 }
 
+/* اطمینان از فونت وزیرمتن در تمام المنت‌ها */
 input,
 select,
 textarea,
@@ -36,35 +46,65 @@ h6 {
   font-family: "Vazirmatn", monospace !important;
 }
 
+
+/* ============================================================
+   بخش ۲: اسکرول‌بار سفارشی
+   ============================================================ */
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0d1117;
 }
-::webkit-scrollbar-corner {
+
+::-webkit-scrollbar-corner {
   background: #0d1117;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #30363d;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #4f5861;
 }
+
+
+/* ============================================================
+   بخش ۳: کلاس‌های عمومی
+   ============================================================ */
 
 .card {
   background-color: #161b22;
   border: 1px solid #30363d;
 }
+
 .success {
   color: #34d399;
 }
+
 .danger {
   color: #f87171;
 }
 
+
+/* ============================================================
+   بخش ۴: دکمه‌های عملیاتی
+   ============================================================ */
+
+.action-btn {
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* دکمه باز و بسته کردن دسته‌بندی‌ها */
 .category-toggle {
   cursor: pointer;
   outline: none;
@@ -78,339 +118,10 @@ h6 {
   transition: transform 0.3s ease;
 }
 
-#gold_coin-prices::-webkit-scrollbar,
-#currency-prices::-webkit-scrollbar,
-#crypto-prices::-webkit-scrollbar,
-#stock-prices::-webkit-scrollbar {
-  width: 3px;
-}
 
-.modal-container {
-  max-height: 90vh;
-  overflow-y: auto;
-  width: 100%;
-}
-
-.modal-content {
-  width: 95%;
-  max-width: 500px;
-  margin: auto;
-}
-
-@media (min-width: 640px) {
-  .modal-content {
-    width: 90%;
-    max-width: 550px;
-  }
-}
-
-@media (min-width: 768px) {
-  .modal-content {
-    width: 85%;
-    max-width: 600px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .modal-content {
-    width: 80%;
-    max-width: 650px;
-  }
-}
-
-.comparison-modal-content {
-  width: 98%;
-  max-width: 98vw;
-  margin: auto;
-}
-
-@media (min-width: 640px) {
-  .comparison-modal-content {
-    width: 95%;
-    max-width: 95vw;
-  }
-}
-
-@media (min-width: 768px) {
-  .comparison-modal-content {
-    width: 92%;
-    max-width: 92vw;
-  }
-}
-
-@media (min-width: 1024px) {
-  .comparison-modal-content {
-    width: 90%;
-    max-width: 90vw;
-  }
-}
-
-@media (min-width: 1280px) {
-  .comparison-modal-content {
-    width: 85%;
-    max-width: 85vw;
-  }
-}
-
-.modal-scroll {
-  max-height: 65vh;
-  overflow-y: auto;
-  padding-right: 5px;
-}
-
-@media (min-width: 768px) {
-  .modal-scroll {
-    max-height: 70vh;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-/* ========== تم لایت ========== */
-body.light-theme {
-    background-color: #f5f7fa !important;
-    background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0) !important;
-    background-size: 25px 25px !important;
-    color: #1f2937 !important;
-}
-
-body.light-theme .card {
-    background-color: #ffffff !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-}
-
-body.light-theme .bg-gray-800,
-body.light-theme .bg-gray-900 {
-    background-color: #ffffff !important;
-    border-color: #e5e7eb !important;
-}
-
-body.light-theme .bg-gray-700 {
-    background-color: #f3f4f6 !important;
-    border-color: #d1d5db !important;
-}
-
-body.light-theme .text-gray-200,
-body.light-theme .text-gray-300,
-body.light-theme .text-white {
-    color: #1f2937 !important;
-}
-
-body.light-theme .text-gray-400 {
-    color: #4b5563 !important;
-}
-
-body.light-theme .text-gray-500 {
-    color: #6b7280 !important;
-}
-
-body.light-theme .border-gray-700 {
-    border-color: #e5e7eb !important;
-}
-
-body.light-theme .border-gray-600 {
-    border-color: #d1d5db !important;
-}
-
-body.light-theme .hover\:bg-gray-700:hover {
-    background-color: #f3f4f6 !important;
-}
-
-body.light-theme .hover\:bg-gray-800:hover {
-    background-color: #f9fafb !important;
-}
-
-body.light-theme input,
-body.light-theme select,
-body.light-theme textarea {
-    background-color: #ffffff !important;
-    border-color: #d1d5db !important;
-    color: #1f2937 !important;
-}
-
-body.light-theme input:focus,
-body.light-theme select:focus,
-body.light-theme textarea:focus {
-    border-color: #3b82f6 !important;
-    ring-color: #3b82f6 !important;
-}
-
-body.light-theme button.bg-gray-600 {
-    background-color: #e5e7eb !important;
-    color: #1f2937 !important;
-}
-
-body.light-theme button.bg-gray-600:hover {
-    background-color: #d1d5db !important;
-}
-
-body.light-theme .purchase-card {
-    background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%) !important;
-    border: 1px solid #e5e7eb !important;
-}
-
-body.light-theme .ticker-item {
-    background: #ffffff !important;
-    border: 1px solid #e5e7eb !important;
-    color: #1f2937 !important;
-}
-
-body.light-theme .ticker-item:hover {
-    background: #f9fafb !important;
-}
-
-body.light-theme .ticker-category-badge {
-    background: #f3f4f6 !important;
-    border: 1px solid #e5e7eb !important;
-}
-
-body.light-theme #price-ticker-bar {
-    background-color: #ffffff !important;
-    border-top: 1px solid #e5e7eb !important;
-}
-
-body.light-theme .modal-content {
-    background-color: #ffffff !important;
-}
-
-body.light-theme .modal-content .bg-gray-800 {
-    background-color: #f9fafb !important;
-}
-
-body.light-theme .modal-content .bg-gray-700 {
-    background-color: #f3f4f6 !important;
-}
-
-body.light-theme table thead tr {
-    background-color: #f9fafb !important;
-}
-
-body.light-theme table tbody tr:hover {
-    background-color: #f3f4f6 !important;
-}
-
-body.light-theme .success {
-    color: #059669 !important;
-}
-
-body.light-theme .danger {
-    color: #dc2626 !important;
-}
-
-body.light-theme .text-green-400 {
-    color: #059669 !important;
-}
-
-body.light-theme .text-red-400 {
-    color: #dc2626 !important;
-}
-
-body.light-theme .text-blue-400 {
-    color: #2563eb !important;
-}
-
-body.light-theme .text-yellow-400 {
-    color: #d97706 !important;
-}
-
-body.light-theme .bg-green-900\/30 {
-    background-color: rgba(5, 150, 105, 0.1) !important;
-}
-
-body.light-theme .bg-red-900\/30 {
-    background-color: rgba(220, 38, 38, 0.1) !important;
-}
-
-body.light-theme .bg-yellow-900\/30 {
-    background-color: rgba(217, 119, 6, 0.1) !important;
-}
-
-body.light-theme .bg-blue-900\/30 {
-    background-color: rgba(37, 99, 235, 0.1) !important;
-}
-
-body.light-theme .bg-orange-900\/30 {
-    background-color: rgba(234, 88, 12, 0.1) !important;
-}
-
-/* تنظیمات خاص برای نمودارها */
-body.light-theme canvas {
-    filter: none !important;
-}
-
-/* تنظیمات مودال‌ها */
-body.light-theme .fixed.inset-0 {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-/* تنظیمات اسکرول بار */
-body.light-theme ::-webkit-scrollbar-track {
-    background: #f3f4f6 !important;
-}
-
-body.light-theme ::-webkit-scrollbar-thumb {
-    background: #9ca3af !important;
-}
-
-body.light-theme ::-webkit-scrollbar-thumb:hover {
-    background: #6b7280 !important;
-}
-
-.modal-fade {
-  animation: fadeIn 0.2s ease-out;
-}
-
-.modal-slide {
-  animation: slideIn 0.3s ease-out;
-}
-
-.action-btn {
-  transition: all 0.2s ease;
-}
-
-.action-btn:hover {
-  transform: translateY(-1px);
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9d1d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: left 0.5rem center;
-  background-size: 1.2em;
-  padding-left: 2.5rem;
-}
-
-.table-responsive {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
+/* ============================================================
+   بخش ۵: کارت‌های خرید
+   ============================================================ */
 
 .purchase-card {
   transition: all 0.3s ease;
@@ -419,23 +130,6 @@ select {
 .purchase-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.form-input-mobile {
-  font-size: 16px !important;
-}
-
-.modal-scroll::-webkit-scrollbar {
-  width: 4px;
-}
-
-.modal-scroll::-webkit-scrollbar-track {
-  background: #161b22;
-}
-
-.modal-scroll::-webkit-scrollbar-thumb {
-  background: #4f5861;
-  border-radius: 2px;
 }
 
 .purchase-toggle {
@@ -451,7 +145,206 @@ select {
   background-color: #374151;
   color: #9ca3af;
 }
-/* ========== استایل‌های جدید برای بخش تعادل پورتفوی ========== */
+
+
+/* ============================================================
+   بخش ۶: فرم‌ها و ورودی‌ها
+   ============================================================ */
+
+.form-input-mobile {
+  font-size: 16px !important;
+}
+
+/* آیکون تقویم در input date */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* استایل سلکت باکس سفارشی */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9d1d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 0.5rem center;
+  background-size: 1.2em;
+  padding-left: 2.5rem;
+}
+
+
+/* ============================================================
+   بخش ۷: جداول
+   ============================================================ */
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* ============================================================
+   بخش ۸: مودال‌ها
+   ============================================================ */
+
+.modal-container {
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.modal-content {
+  width: 95%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* مودال‌های مقایسه‌ای (عریض‌تر) */
+.comparison-modal-content {
+  width: 98%;
+  max-width: 98vw;
+  margin: auto;
+}
+
+.modal-scroll {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* اسکرول‌بار داخل مودال‌ها */
+.modal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #4f5861;
+  border-radius: 2px;
+}
+
+
+/* ============================================================
+   بخش ۹: مودال گزارش
+   ============================================================ */
+
+#report-preview {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
+
+#report-preview::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#report-preview::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+#report-preview::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+#report-preview::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+#report-modal .overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+#report-modal .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+#report-mini-preview {
+  scrollbar-width: thin;
+}
+
+#report-mini-preview::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#report-mini-preview::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+#report-mini-preview::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 4px;
+}
+
+
+/* ============================================================
+   بخش ۱۰: اسکرول‌بار بخش‌های خاص
+   ============================================================ */
+
+/* اسکرول‌بار نمودار دایره‌ای */
+#pie-chart-legend::-webkit-scrollbar {
+  width: 3px;
+}
+
+#pie-chart-legend::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+#pie-chart-legend::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+#pie-chart-legend::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* اسکرول‌بار لیست تراکنش‌های اخیر */
+#recent-transactions-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+#recent-transactions-list::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+#recent-transactions-list::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+/* اسکرول‌بار نوار قیمت - عمودی (hidden) */
+#gold_coin-prices::-webkit-scrollbar,
+#currency-prices::-webkit-scrollbar,
+#crypto-prices::-webkit-scrollbar,
+#stock-prices::-webkit-scrollbar {
+  width: 3px;
+}
+
+
+/* ============================================================
+   بخش ۱۱: تحلیل تعادل پورتفوی
+   ============================================================ */
 
 .balance-status-item {
   transition: all 0.3s ease;
@@ -478,31 +371,12 @@ select {
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
 }
 
-/* انیمیشن برای نمودار دایره‌ای */
+/* نمودار دایره‌ای */
 #portfolioPieChart {
   transition: all 0.3s ease;
 }
 
-/* استایل legend نمودار دایره‌ای */
-#pie-chart-legend::-webkit-scrollbar {
-  width: 3px;
-}
-
-#pie-chart-legend::-webkit-scrollbar-track {
-  background: #1f2937;
-  border-radius: 3px;
-}
-
-#pie-chart-legend::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 3px;
-}
-
-#pie-chart-legend::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-/* استایل راهنمای تعادل */
+/* راهنمای تعادل */
 #balance-guidance {
   transition: all 0.3s ease;
 }
@@ -527,31 +401,75 @@ select {
   background: linear-gradient(to left, rgba(239, 68, 68, 0.05), transparent);
 }
 
-/* ریسپانسیو برای نمودار دایره‌ای */
-@media (max-width: 640px) {
-  #portfolioPieChart {
-    max-height: 250px;
-  }
 
-  .balance-status-item {
-    padding: 0.75rem !important;
-  }
+/* ============================================================
+   بخش ۱۲: انیمیشن‌ها
+   ============================================================ */
 
-  .balance-status-item .w-16.h-16 {
-    width: 3rem !important;
-    height: 3rem !important;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  .balance-status-item .text-3xl {
-    font-size: 1.5rem !important;
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-/* ========== استایل‌های نوار قیمت (Ticker Bar) ========== */
+
+@keyframes pulse-green {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 5px #10b981;
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 15px #10b981;
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+.modal-fade {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-slide {
+  animation: slideIn 0.3s ease-out;
+}
+
+
+/* ============================================================
+   بخش ۱۳: نوار قیمت (Ticker Bar)
+   ============================================================ */
 
 #price-ticker-bar {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  background-color: rgba(17, 24, 39, 0.95);
 }
 
+/* فضای خالی برای نوار قیمت */
+#ticker-spacer {
+  transition: height 0.3s ease;
+}
+
+#ticker-spacer.h-0 {
+  height: 0 !important;
+}
+
+/* اسکرول‌بار نوار قیمت */
 #ticker-scroll-container::-webkit-scrollbar {
   height: 4px;
 }
@@ -570,89 +488,7 @@ select {
   background: #6b7280;
 }
 
-#ticker-toggle-btn {
-  z-index: 41;
-}
-
-#ticker-toggle-btn:hover #ticker-toggle-icon {
-  transform: translateY(2px);
-}
-
-/* انیمیشن پالس برای نقطه سبز */
-@keyframes pulse-green {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 5px #10b981;
-  }
-  50% {
-    opacity: 0.5;
-    box-shadow: 0 0 15px #10b981;
-  }
-}
-
-.animate-pulse-green {
-  animation: pulse-green 2s ease-in-out infinite;
-}
-
-/* استایل آیتم‌های تراکنش اخیر */
-#recent-transactions-list::-webkit-scrollbar {
-  width: 3px;
-}
-
-#recent-transactions-list::-webkit-scrollbar-track {
-  background: #1f2937;
-  border-radius: 3px;
-}
-
-#recent-transactions-list::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 3px;
-}
-
-/* فضای خالی برای نوار قیمت */
-#ticker-spacer {
-  transition: height 0.3s ease;
-}
-
-#ticker-spacer.h-0 {
-  height: 0 !important;
-}
-
-/* تنظیمات ریسپانسیو برای نوار قیمت */
-@media (max-width: 640px) {
-  #ticker-items > div {
-    padding: 0.5rem 0.75rem;
-  }
-
-  #ticker-items .text-sm {
-    font-size: 0.75rem;
-  }
-
-  #ticker-toggle-btn {
-    left: 1rem;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-  }
-}
-
-/* استایل برای دکمه بستن/باز کردن نوار قیمت */
-#ticker-toggle-btn {
-  backdrop-filter: blur(8px);
-  background-color: rgba(31, 41, 55, 0.95);
-}
-
-#ticker-toggle-btn:hover {
-  background-color: rgba(55, 65, 81, 0.95);
-}
-/* ========== استایل‌های نوار قیمت اسکرول شونده ========== */
-
-#price-ticker-bar {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(8px);
-  background-color: rgba(17, 24, 39, 0.95);
-}
-
+/* کانتینر اسکرول */
 #ticker-scroll {
   display: flex;
   gap: 0.5rem;
@@ -663,21 +499,7 @@ select {
   animation-play-state: paused !important;
 }
 
-.ticker-category-badge {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.3px;
-}
-
-.ticker-item {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
-.ticker-item:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
+/* دکمه باز و بسته کردن */
 #ticker-toggle-btn {
   z-index: 41;
   backdrop-filter: blur(8px);
@@ -692,21 +514,21 @@ select {
   transform: translateY(2px);
 }
 
-/* انیمیشن پالس برای نقطه سبز */
-@keyframes pulse-green {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 5px #10b981;
-  }
-  50% {
-    opacity: 0.5;
-    box-shadow: 0 0 15px #10b981;
-  }
+/* برچسب دسته‌بندی */
+.ticker-category-badge {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.3px;
 }
 
-.animate-pulse {
-  animation: pulse-green 2s ease-in-out infinite;
+/* هر آیتم قیمت */
+.ticker-item {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.ticker-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* افکت محو شدن در لبه‌ها */
@@ -728,17 +550,483 @@ select {
   );
 }
 
-/* فضای خالی */
-#ticker-spacer {
-  transition: height 0.3s ease;
+
+/* ============================================================
+   بخش ۱۴: نوتیفیکیشن (Toast)
+   ============================================================ */
+
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  min-width: 300px;
+  max-width: 400px;
+  background: #1a1f2a;
+  border: 1px solid #4b5563;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: toastSlideIn 0.3s ease-out;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#ticker-spacer.h-0 {
-  height: 0 !important;
+.toast-notification.toast-hiding {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
-/* ریسپانسیو */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+}
+
+.toast-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  flex: 1;
+  color: #e5e7eb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.toast-close {
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: color 0.2s;
+  padding: 4px;
+}
+
+.toast-close:hover {
+  color: #f3f4f6;
+}
+
+/* نوار پیشرفت زمان */
+.toast-progress-bar {
+  height: 3px;
+  background: #4b5563;
+  width: 100%;
+}
+
+.toast-progress-fill {
+  height: 100%;
+  width: 100%;
+  background: #10b981;
+  animation: toastProgress 5s linear forwards;
+}
+
+/* رنگ‌های وضعیت‌های مختلف */
+.toast-notification.toast-success .toast-progress-fill {
+  background: #10b981;
+}
+
+.toast-notification.toast-error .toast-progress-fill {
+  background: #ef4444;
+}
+
+.toast-notification.toast-warning .toast-progress-fill {
+  background: #f59e0b;
+}
+
+.toast-notification.toast-info .toast-progress-fill {
+  background: #3b82f6;
+}
+
+@keyframes toastProgress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+
+/* ============================================================
+   بخش ۱۵: تور راهنما
+   ============================================================ */
+
+@keyframes tooltipIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#onboarding-tooltip {
+  animation: tooltipIn 0.3s ease-out;
+}
+
+#onboarding-overlay {
+  backdrop-filter: blur(2px);
+}
+
+
+/* ============================================================
+   بخش ۱۶: فوتر
+   ============================================================ */
+
+footer {
+  border-top-color: #30363d;
+}
+
+body.light-theme footer {
+  border-top-color: #e5e7eb !important;
+}
+
+body.light-theme footer .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+body.light-theme footer .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+body.light-theme footer .text-blue-400 {
+  color: #2563eb !important;
+}
+
+body.light-theme footer a:hover {
+  color: #1f2937 !important;
+}
+
+
+/* ============================================================
+   بخش ۱۷: تم لایت (Light Theme)
+   ============================================================ */
+
+body.light-theme {
+  background-color: #f5f7fa !important;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 0
+  ) !important;
+  background-size: 25px 25px !important;
+  color: #1f2937 !important;
+}
+
+/* کارت‌ها */
+body.light-theme .card {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .bg-gray-800,
+body.light-theme .bg-gray-900 {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+body.light-theme .bg-gray-700 {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+}
+
+/* متن‌ها */
+body.light-theme .text-gray-200,
+body.light-theme .text-gray-300,
+body.light-theme .text-white {
+  color: #1f2937 !important;
+}
+
+body.light-theme .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+body.light-theme .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+body.light-theme .border-gray-700 {
+  border-color: #e5e7eb !important;
+}
+
+body.light-theme .border-gray-600 {
+  border-color: #d1d5db !important;
+}
+
+/* رنگ‌های وضعیت */
+body.light-theme .success {
+  color: #059669 !important;
+}
+
+body.light-theme .danger {
+  color: #dc2626 !important;
+}
+
+body.light-theme .text-green-400 {
+  color: #059669 !important;
+}
+
+body.light-theme .text-red-400 {
+  color: #dc2626 !important;
+}
+
+body.light-theme .text-blue-400 {
+  color: #2563eb !important;
+}
+
+body.light-theme .text-yellow-400 {
+  color: #d97706 !important;
+}
+
+/* پس‌زمینه‌های رنگی */
+body.light-theme .bg-green-900\/30 {
+  background-color: rgba(5, 150, 105, 0.1) !important;
+}
+
+body.light-theme .bg-red-900\/30 {
+  background-color: rgba(220, 38, 38, 0.1) !important;
+}
+
+body.light-theme .bg-yellow-900\/30 {
+  background-color: rgba(217, 119, 6, 0.1) !important;
+}
+
+body.light-theme .bg-blue-900\/30 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+body.light-theme .bg-orange-900\/30 {
+  background-color: rgba(234, 88, 12, 0.1) !important;
+}
+
+/* هاورها */
+body.light-theme .hover\:bg-gray-700:hover {
+  background-color: #f3f4f6 !important;
+}
+
+body.light-theme .hover\:bg-gray-800:hover {
+  background-color: #f9fafb !important;
+}
+
+/* فرم‌ها */
+body.light-theme input,
+body.light-theme select,
+body.light-theme textarea {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #1f2937 !important;
+}
+
+body.light-theme input:focus,
+body.light-theme select:focus,
+body.light-theme textarea:focus {
+  border-color: #3b82f6 !important;
+  ring-color: #3b82f6 !important;
+}
+
+body.light-theme button.bg-gray-600 {
+  background-color: #e5e7eb !important;
+  color: #1f2937 !important;
+}
+
+body.light-theme button.bg-gray-600:hover {
+  background-color: #d1d5db !important;
+}
+
+/* نمودارها */
+body.light-theme canvas {
+  filter: none !important;
+}
+
+/* اسکرول‌بار */
+body.light-theme ::-webkit-scrollbar-track {
+  background: #f3f4f6 !important;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #9ca3af !important;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280 !important;
+}
+
+/* overlay مودال */
+body.light-theme .fixed.inset-0 {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* مودال‌ها */
+body.light-theme .modal-content {
+  background-color: #ffffff !important;
+}
+
+body.light-theme .modal-content .bg-gray-800 {
+  background-color: #f9fafb !important;
+}
+
+body.light-theme .modal-content .bg-gray-700 {
+  background-color: #f3f4f6 !important;
+}
+
+/* جداول */
+body.light-theme table thead tr {
+  background-color: #f9fafb !important;
+}
+
+body.light-theme table tbody tr:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* نوار قیمت */
+body.light-theme #price-ticker-bar {
+  background-color: #ffffff !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+body.light-theme .ticker-item {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #1f2937 !important;
+}
+
+body.light-theme .ticker-item:hover {
+  background: #f9fafb !important;
+}
+
+body.light-theme .ticker-category-badge {
+  background: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* کارت خرید */
+body.light-theme .purchase-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%) !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* نوتیفیکیشن */
+body.light-theme .toast-notification {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .toast-message {
+  color: #1f2937;
+}
+
+body.light-theme .toast-close {
+  color: #6b7280;
+}
+
+body.light-theme .toast-close:hover {
+  color: #374151;
+}
+
+body.light-theme .toast-progress-bar {
+  background: #e5e7eb;
+}
+
+
+/* ============================================================
+   بخش ۱۸: ریسپانسیو (Responsive)
+   ============================================================ */
+
+/* مودال‌ها - اندازه‌های مختلف */
+@media (min-width: 640px) {
+  .modal-content {
+    width: 90%;
+    max-width: 550px;
+  }
+
+  .comparison-modal-content {
+    width: 95%;
+    max-width: 95vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    width: 85%;
+    max-width: 600px;
+  }
+
+  .modal-scroll {
+    max-height: 70vh;
+  }
+
+  .comparison-modal-content {
+    width: 92%;
+    max-width: 92vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 80%;
+    max-width: 650px;
+  }
+
+  .comparison-modal-content {
+    width: 90%;
+    max-width: 90vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .comparison-modal-content {
+    width: 85%;
+    max-width: 85vw;
+  }
+}
+
+/* نمودار دایره‌ای و وضعیت تعادل در موبایل */
 @media (max-width: 640px) {
+  #portfolioPieChart {
+    max-height: 250px;
+  }
+
+  .balance-status-item {
+    padding: 0.75rem !important;
+  }
+
+  .balance-status-item .w-16.h-16 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .balance-status-item .text-3xl {
+    font-size: 1.5rem !important;
+  }
+
+  /* نوار قیمت */
+  #ticker-items > div {
+    padding: 0.5rem 0.75rem;
+  }
+
+  #ticker-items .text-sm {
+    font-size: 0.75rem;
+  }
+
+  #ticker-toggle-btn {
+    left: 1rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+
   .ticker-category-badge {
     padding: 0.15rem 0.5rem;
     font-size: 0.6rem;
@@ -762,229 +1050,216 @@ select {
     padding: 0.2rem 0.5rem;
   }
 }
-/* استایل اسکرول برای مودال گزارش */
-#report-preview {
-    scrollbar-width: thin;
-    scrollbar-color: #4b5563 #1f2937;
-}
 
-#report-preview::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
 
-#report-preview::-webkit-scrollbar-track {
-    background: #1f2937;
-    border-radius: 4px;
-}
+/* ============================================================
+   بخش ۱۹: استایل‌های پرینت (Print Styles)
+   ============================================================ */
 
-#report-preview::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 4px;
-}
+@media print {
+  /* ========================================== */
+  /* تنظیمات کلی صفحه */
+  /* ========================================== */
+  @page {
+    margin: 8mm;
+    size: A4 landscape;
+  }
 
-#report-preview::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
-}
+  /* ========================================== */
+  /* اطمینان از چاپ رنگ‌های پس‌زمینه */
+  /* ========================================== */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
 
-/* برای بخش تنظیمات هم اسکرول زیبا */
-#report-modal .overflow-y-auto {
-    scrollbar-width: thin;
-    scrollbar-color: #4b5563 #1f2937;
-}
+  html, body {
+    background-color: white !important;
+    color: black !important;
+  }
 
-#report-modal .overflow-y-auto::-webkit-scrollbar {
-    width: 6px;
-}
+  /* ========================================== */
+  /* مخفی کردن المان‌های غیرضروری */
+  /* ========================================== */
+  .no-print,
+  #price-ticker-bar,
+  #ticker-spacer,
+  header button,
+  .action-btn,
+  #user-menu-btn,
+  #login-btn,
+  nav,
+  footer,
+  #onboarding-overlay,
+  #onboarding-tooltip,
+  .toast-notification,
+  #ticker-toggle-btn {
+    display: none !important;
+  }
 
-#report-modal .overflow-y-auto::-webkit-scrollbar-track {
-    background: #1f2937;
-    border-radius: 3px;
-}
-
-#report-modal .overflow-y-auto::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 3px;
-}
-/* استایل مودال گزارش */
-#report-modal .overflow-y-auto {
-    scrollbar-width: thin;
-    scrollbar-color: #4b5563 #1f2937;
-}
-
-#report-modal .overflow-y-auto::-webkit-scrollbar {
-    width: 6px;
-}
-
-#report-modal .overflow-y-auto::-webkit-scrollbar-track {
-    background: #1f2937;
-    border-radius: 3px;
-}
-
-#report-modal .overflow-y-auto::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 3px;
-}
-
-#report-mini-preview {
-    scrollbar-width: thin;
-}
-
-#report-mini-preview::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-#report-mini-preview::-webkit-scrollbar-track {
-    background: #e5e7eb;
-}
-
-#report-mini-preview::-webkit-scrollbar-thumb {
-    background: #9ca3af;
-    border-radius: 4px;
-}
-/* ========== Toast Notification ========== */
-.toast-notification {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    z-index: 9999;
-    min-width: 300px;
-    max-width: 400px;
-    background: #1a1f2a;
-    border: 1px solid #4b5563;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    animation: toastSlideIn 0.3s ease-out;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.toast-notification.toast-hiding {
-    opacity: 0;
-    transform: translateX(-20px);
-}
-
-@keyframes toastSlideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.toast-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 18px;
-}
-
-.toast-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-}
-
-.toast-message {
-    flex: 1;
-    color: #e5e7eb;
-    font-size: 14px;
+  /* ========================================== */
+  /* تنظیم بدنه */
+  /* ========================================== */
+  body {
+    font-size: 11pt;
     line-height: 1.5;
-}
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
-.toast-close {
-    color: #9ca3af;
-    cursor: pointer;
-    font-size: 18px;
-    flex-shrink: 0;
-    transition: color 0.2s;
-    padding: 4px;
-}
+  /* ========================================== */
+  /* کارت‌ها */
+  /* ========================================== */
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
 
-.toast-close:hover {
-    color: #f3f4f6;
-}
+  /* ========================================== */
+  /* جداول - بهینه‌شده برای پرینت */
+  /* ========================================== */
+  .table-responsive {
+    overflow-x: visible !important;
+  }
 
-.toast-progress-bar {
-    height: 3px;
-    background: #4b5563;
-    width: 100%;
-}
+  table {
+    break-inside: auto;
+    width: 100% !important;
+    font-size: 9pt !important;
+    border-collapse: collapse;
+  }
 
-.toast-progress-fill {
-    height: 100%;
-    width: 100%;
-    background: #10b981;
-    animation: toastProgress 5s linear forwards;
-}
+  thead {
+    display: table-header-group !important;
+  }
 
-.toast-notification.toast-success .toast-progress-fill {
-    background: #10b981;
-}
-
-.toast-notification.toast-error .toast-progress-fill {
-    background: #ef4444;
-}
-
-.toast-notification.toast-warning .toast-progress-fill {
-    background: #f59e0b;
-}
-
-.toast-notification.toast-info .toast-progress-fill {
-    background: #3b82f6;
-}
-
-@keyframes toastProgress {
-    from { width: 100%; }
-    to { width: 0%; }
-}
-
-/* تم لایت برای نوتیفیکیشن */
-body.light-theme .toast-notification {
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-body.light-theme .toast-message {
-    color: #1f2937;
-}
-
-body.light-theme .toast-close {
-    color: #6b7280;
-}
-
-body.light-theme .toast-close:hover {
-    color: #374151;
-}
-
-body.light-theme .toast-progress-bar {
-    background: #e5e7eb;
-}
-/* ========== استایل فوتر ========== */
-footer {
-    border-top-color: #30363d;
-}
-
-body.light-theme footer {
-    border-top-color: #e5e7eb !important;
-}
-
-body.light-theme footer .text-gray-400 {
-    color: #6b7280 !important;
-}
-
-body.light-theme footer .text-gray-500 {
-    color: #9ca3af !important;
-}
-
-body.light-theme footer .text-blue-400 {
-    color: #2563eb !important;
-}
-
-body.light-theme footer a:hover {
+  thead th {
+    background-color: #f3f4f6 !important;
     color: #1f2937 !important;
+    font-weight: bold !important;
+    border-bottom: 2px solid #d1d5db !important;
+    padding: 6px 4px !important;
+    font-size: 8pt !important;
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 5px 4px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    font-size: 8pt !important;
+    white-space: nowrap;
+  }
+
+  tbody {
+    break-inside: auto;
+  }
+
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb !important;
+  }
+
+  /* ========================================== */
+  /* نمودارها */
+  /* ========================================== */
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .chart-container,
+  .card canvas {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* ========================================== */
+  /* بخش‌ها */
+  /* ========================================== */
+  .section,
+  .grid-2,
+  .grid-3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* ========================================== */
+  /* لینک‌ها */
+  /* ========================================== */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  /* ========================================== */
+  /* حاشیه‌ها */
+  /* ========================================== */
+  .max-w-7xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ========================================== */
+  /* فاصله‌ها */
+  /* ========================================== */
+  .mb-6, .mb-8 {
+    margin-bottom: 10pt !important;
+  }
+
+  .p-4, .p-6 {
+    padding: 6pt !important;
+  }
+
+  /* ========================================== */
+  /* رنگ‌های وضعیت */
+  /* ========================================== */
+  .success, .text-green-400 {
+    color: #059669 !important;
+  }
+
+  .danger, .text-red-400 {
+    color: #dc2626 !important;
+  }
+
+  .text-blue-400 {
+    color: #2563eb !important;
+  }
+
+  .text-yellow-400 {
+    color: #d97706 !important;
+  }
+
+  /* ========================================== */
+/* 🔥 فونت وزیر - لود مستقیم برای پرینت */
+/* ========================================== */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
 }
